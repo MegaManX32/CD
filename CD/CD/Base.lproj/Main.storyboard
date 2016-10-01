@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -31,7 +32,7 @@
         <!--Start View Controller-->
         <scene sceneID="Z7m-T0-5B0">
             <objects>
-                <viewController storyboardIdentifier="StartViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="MrJ-Cs-mAe" customClass="StartViewController" customModule="CustomDeal" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="StartViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="MrJ-Cs-mAe" customClass="StartViewController" customModule="CD" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="TBT-qG-s3M"/>
                         <viewControllerLayoutGuide type="bottom" id="BWU-Ql-fl4"/>
@@ -151,7 +152,7 @@
         <!--Signup View Controller-->
         <scene sceneID="Tnp-Zl-DqT">
             <objects>
-                <viewController storyboardIdentifier="SignupViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="u4Y-yb-Ua9" customClass="SignupViewController" customModule="CustomDeal" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignupViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="u4Y-yb-Ua9" customClass="SignupViewController" customModule="CD" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="DJF-Pz-VmW"/>
                         <viewControllerLayoutGuide type="bottom" id="bCB-ak-0WG"/>
@@ -176,27 +177,27 @@
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cJs-bb-7de">
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SQY-pz-4Pp" customClass="IntroTextField" customModule="CustomDeal" customModuleProvider="target">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SQY-pz-4Pp" customClass="IntroTextField" customModule="CD" customModuleProvider="target">
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cFr-s5-61D" customClass="IntroTextField" customModule="CustomDeal" customModuleProvider="target">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cFr-s5-61D" customClass="IntroTextField" customModule="CD" customModuleProvider="target">
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hlw-ln-rye" customClass="IntroTextField" customModule="CustomDeal" customModuleProvider="target">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hlw-ln-rye" customClass="IntroTextField" customModule="CD" customModuleProvider="target">
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="glY-Dr-rNx" customClass="IntroTextField" customModule="CustomDeal" customModuleProvider="target">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="glY-Dr-rNx" customClass="IntroTextField" customModule="CD" customModuleProvider="target">
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wAf-4K-FP8" customClass="IntroTextField" customModule="CustomDeal" customModuleProvider="target">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wAf-4K-FP8" customClass="IntroTextField" customModule="CD" customModuleProvider="target">
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uO4-cl-UT8" customClass="IntroButton" customModule="CustomDeal" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uO4-cl-UT8" customClass="IntroButton" customModule="CD" customModuleProvider="target">
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="Vjg-fR-36f"/>
                                         </constraints>
@@ -262,7 +263,7 @@
         <!--Signup Finished View Controller-->
         <scene sceneID="DuV-BO-aio">
             <objects>
-                <viewController storyboardIdentifier="SignupFinishedViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="kdu-x8-VBs" customClass="SignupFinishedViewController" customModule="CustomDeal" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignupFinishedViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="kdu-x8-VBs" customClass="SignupFinishedViewController" customModule="CD" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="iZq-9b-YlV"/>
                         <viewControllerLayoutGuide type="bottom" id="jvy-Yh-RXx"/>
@@ -289,7 +290,7 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vQT-0h-j2u" customClass="IntroButton" customModule="CustomDeal" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vQT-0h-j2u" customClass="IntroButton" customModule="CD" customModuleProvider="target">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="AFS-cG-JzI"/>
                                 </constraints>
@@ -332,7 +333,7 @@
         <!--Signup Confirm Phone View Controller-->
         <scene sceneID="Kse-od-S5s">
             <objects>
-                <viewController storyboardIdentifier="SignupConfirmPhoneViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cu3-fX-L1V" customClass="SignupConfirmPhoneViewController" customModule="CustomDeal" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignupConfirmPhoneViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cu3-fX-L1V" customClass="SignupConfirmPhoneViewController" customModule="CD" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zxn-SK-DnY"/>
                         <viewControllerLayoutGuide type="bottom" id="Vwq-pi-lH1"/>
@@ -368,7 +369,7 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qs8-2t-BHJ" customClass="IntroButton" customModule="CustomDeal" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qs8-2t-BHJ" customClass="IntroButton" customModule="CD" customModuleProvider="target">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="nl5-cp-meD"/>
                                 </constraints>
@@ -432,7 +433,7 @@
         <!--Signup Four Digit Code View Controller-->
         <scene sceneID="AAt-ge-hYU">
             <objects>
-                <viewController storyboardIdentifier="SignupFourDigitCodeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="lah-yn-Zws" customClass="SignupFourDigitCodeViewController" customModule="CustomDeal" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignupFourDigitCodeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="lah-yn-Zws" customClass="SignupFourDigitCodeViewController" customModule="CD" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ps4-mh-vvT"/>
                         <viewControllerLayoutGuide type="bottom" id="D1m-af-1AT"/>
@@ -567,7 +568,7 @@
         <!--Signup Great View Controller-->
         <scene sceneID="m94-Ab-m92">
             <objects>
-                <viewController storyboardIdentifier="SignupGreatViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gHm-tG-oPM" customClass="SignupGreatViewController" customModule="CustomDeal" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignupGreatViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gHm-tG-oPM" customClass="SignupGreatViewController" customModule="CD" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="c8i-04-BsT"/>
                         <viewControllerLayoutGuide type="bottom" id="QgA-NG-J5T"/>
@@ -600,7 +601,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hGH-i0-2Dm" customClass="IntroButton" customModule="CustomDeal" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hGH-i0-2Dm" customClass="IntroButton" customModule="CD" customModuleProvider="target">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="qmd-VY-89l"/>
                                 </constraints>
@@ -641,7 +642,7 @@
         <!--Signup Add Your Photo View Controller-->
         <scene sceneID="eWO-wa-tat">
             <objects>
-                <viewController storyboardIdentifier="SignupAddYourPhotoViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="mzx-k3-kEm" customClass="SignupAddYourPhotoViewController" customModule="CustomDeal" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignupAddYourPhotoViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="mzx-k3-kEm" customClass="SignupAddYourPhotoViewController" customModule="CD" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ngd-wZ-XIc"/>
                         <viewControllerLayoutGuide type="bottom" id="meL-re-uw4"/>
@@ -674,28 +675,28 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fvx-wQ-vt9" customClass="DotView" customModule="CustomDeal" customModuleProvider="target">
+                            <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fvx-wQ-vt9" customClass="DotView" customModule="CD" customModuleProvider="target">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="10" id="Uv0-Rh-BUY"/>
                                     <constraint firstAttribute="height" constant="10" id="qF4-jd-f4I"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LrU-LX-MUt" customClass="DotView" customModule="CustomDeal" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LrU-LX-MUt" customClass="DotView" customModule="CD" customModuleProvider="target">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="10" id="0Mk-Zn-rEP"/>
                                     <constraint firstAttribute="width" constant="10" id="x6A-GH-k54"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O8Y-Zy-tGg" customClass="DotView" customModule="CustomDeal" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O8Y-Zy-tGg" customClass="DotView" customModule="CD" customModuleProvider="target">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="10" id="KYz-6Z-19x"/>
                                     <constraint firstAttribute="height" constant="10" id="KgF-T4-Jx9"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gbC-PF-rWF" customClass="IntroButtonWhite" customModule="CustomDeal" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gbC-PF-rWF" customClass="IntroButtonWhite" customModule="CD" customModuleProvider="target">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="T5g-qq-AUV"/>
                                 </constraints>
@@ -704,7 +705,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Sw-So-iiM" customClass="IntroButtonWhite" customModule="CustomDeal" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Sw-So-iiM" customClass="IntroButtonWhite" customModule="CD" customModuleProvider="target">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="g0C-Lv-Tic"/>
                                 </constraints>
@@ -766,7 +767,7 @@
         <!--Signup You Look Good View Controller-->
         <scene sceneID="CwH-kM-3fg">
             <objects>
-                <viewController storyboardIdentifier="SignupYouLookGoodViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="G3N-Eb-I7a" customClass="SignupYouLookGoodViewController" customModule="CustomDeal" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignupYouLookGoodViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="G3N-Eb-I7a" customClass="SignupYouLookGoodViewController" customModule="CD" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Wju-Vi-t54"/>
                         <viewControllerLayoutGuide type="bottom" id="a36-iY-Yp2"/>
@@ -799,28 +800,28 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mtc-mv-sV9" customClass="DotView" customModule="CustomDeal" customModuleProvider="target">
+                            <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mtc-mv-sV9" customClass="DotView" customModule="CD" customModuleProvider="target">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="10" id="7YQ-zb-OZC"/>
                                     <constraint firstAttribute="width" constant="10" id="Cp4-8d-hCZ"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fe3-Ba-fJU" customClass="DotView" customModule="CustomDeal" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fe3-Ba-fJU" customClass="DotView" customModule="CD" customModuleProvider="target">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="10" id="kK1-oC-kuG"/>
                                     <constraint firstAttribute="width" constant="10" id="ykn-Ae-Acy"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AOe-Ng-AqI" customClass="DotView" customModule="CustomDeal" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AOe-Ng-AqI" customClass="DotView" customModule="CD" customModuleProvider="target">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="10" id="6fV-th-fcy"/>
                                     <constraint firstAttribute="width" constant="10" id="Qoh-rz-xqV"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NoT-xv-id2" customClass="IntroButtonWhite" customModule="CustomDeal" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NoT-xv-id2" customClass="IntroButtonWhite" customModule="CD" customModuleProvider="target">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="UqB-pG-AJM"/>
                                 </constraints>
@@ -829,7 +830,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pD8-3T-yti" customClass="IntroButton" customModule="CustomDeal" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pD8-3T-yti" customClass="IntroButton" customModule="CD" customModuleProvider="target">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="gtc-Ew-4jQ"/>
                                 </constraints>
@@ -891,7 +892,7 @@
         <!--Signup Country View Controller-->
         <scene sceneID="6c6-nc-5bx">
             <objects>
-                <viewController storyboardIdentifier="SignupCountryViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="tBH-wb-ULj" customClass="SignupCountryViewController" customModule="CustomDeal" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignupCountryViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="tBH-wb-ULj" customClass="SignupCountryViewController" customModule="CD" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="huU-hH-ka1"/>
                         <viewControllerLayoutGuide type="bottom" id="4Zq-kA-w3a"/>
@@ -901,36 +902,36 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="signupBackground" translatesAutoresizingMaskIntoConstraints="NO" id="im4-Ce-nt7"/>
-                            <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rEH-D7-cRC" customClass="DotView" customModule="CustomDeal" customModuleProvider="target">
+                            <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rEH-D7-cRC" customClass="DotView" customModule="CD" customModuleProvider="target">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="10" id="bdk-dY-ZOU"/>
                                     <constraint firstAttribute="width" constant="10" id="eqP-aI-Yz4"/>
                                 </constraints>
                             </view>
-                            <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fc7-pp-2fd" customClass="DotView" customModule="CustomDeal" customModuleProvider="target">
+                            <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fc7-pp-2fd" customClass="DotView" customModule="CD" customModuleProvider="target">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="10" id="kAK-06-oLe"/>
                                     <constraint firstAttribute="width" constant="10" id="tHf-hI-YFz"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c5g-u3-0EB" customClass="DotView" customModule="CustomDeal" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c5g-u3-0EB" customClass="DotView" customModule="CD" customModuleProvider="target">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="10" id="mYf-TL-Gh1"/>
                                     <constraint firstAttribute="height" constant="10" id="pPU-sF-nPm"/>
                                 </constraints>
                             </view>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uIj-cd-YEK" customClass="IntroTextField" customModule="CustomDeal" customModuleProvider="target">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uIj-cd-YEK" customClass="IntroTextField" customModule="CD" customModuleProvider="target">
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iAw-Hl-4pA" customClass="IntroTextField" customModule="CustomDeal" customModuleProvider="target">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iAw-Hl-4pA" customClass="IntroTextField" customModule="CD" customModuleProvider="target">
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5LC-uG-wQc" customClass="IntroTextField" customModule="CustomDeal" customModuleProvider="target">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5LC-uG-wQc" customClass="IntroTextField" customModule="CD" customModuleProvider="target">
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -940,11 +941,11 @@
                                     <constraint firstAttribute="height" constant="2" id="5mJ-Kd-iF4"/>
                                 </constraints>
                             </view>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UCg-i2-HcN" customClass="IntroTextField" customModule="CustomDeal" customModuleProvider="target">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UCg-i2-HcN" customClass="IntroTextField" customModule="CD" customModuleProvider="target">
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e4z-nt-3Un" customClass="IntroButton" customModule="CustomDeal" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e4z-nt-3Un" customClass="IntroButton" customModule="CD" customModuleProvider="target">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="STB-r4-dma"/>
                                 </constraints>
@@ -963,7 +964,7 @@
                                     <color key="titleColor" white="1" alpha="0.5" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NwV-QT-JBf" customClass="IntroTextField" customModule="CustomDeal" customModuleProvider="target">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NwV-QT-JBf" customClass="IntroTextField" customModule="CD" customModuleProvider="target">
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -1038,7 +1039,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="SignupInterestsCollectionViewCell" reuseIdentifier="SignupInterestsCollectionViewCell" id="4k3-KK-LZT" customClass="SignupInterestsCollectionViewCell" customModule="CustomDeal" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="SignupInterestsCollectionViewCell" reuseIdentifier="SignupInterestsCollectionViewCell" id="4k3-KK-LZT" customClass="SignupInterestsCollectionViewCell" customModule="CD" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -1074,10 +1075,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="avatarPlaceholder" width="375" height="667"/>
-        <image name="correctSign" width="375" height="667"/>
+        <image name="avatarPlaceholder" width="107" height="107"/>
+        <image name="correctSign" width="91" height="91"/>
         <image name="introBackground" width="375" height="667"/>
-        <image name="introBackground2" width="375" height="667"/>
-        <image name="signupBackground" width="375" height="667"/>
+        <image name="introBackground2" width="330" height="587"/>
+        <image name="signupBackground" width="375" height="647"/>
     </resources>
 </document>
