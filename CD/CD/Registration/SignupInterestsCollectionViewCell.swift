@@ -13,12 +13,18 @@ class SignupInterestsCollectionViewCell: UICollectionViewCell {
     // MARK: - Properties
     
     @IBOutlet weak var interestImageView: UIImageView?
+    @IBOutlet weak var interestLabel: UILabel?
+    
+    // MARK: - Helper methods
+    
+    func populateCellWithInterest(name:String, imageName:String) {
+        self.interestLabel?.text = name
+        self.interestImageView?.image = UIImage.init(named:imageName)
+    }
     
     // MARK: - Type methods
     
     class func cellIdentifier() -> String {
-        print("\(String(describing:self))")
         return String(describing:self)
     }
-    
 }

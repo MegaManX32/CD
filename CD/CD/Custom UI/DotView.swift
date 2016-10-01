@@ -24,7 +24,8 @@ class DotView: UIView {
         self.layer.masksToBounds = true
         
         // needed to calculate the view frame
-        self.layoutIfNeeded()
+        self.removeConstraints(self.constraints) // for removing temporary constraints
+        self.layoutIfNeeded() // apply real constraints
         self.layer.cornerRadius = self.frame.size.width / 2.0
     }
 

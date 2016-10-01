@@ -193,13 +193,13 @@
 			isa = PBXGroup;
 			children = (
 				154A54921D9FD8A20021A803 /* SignupViewController.swift */,
+				154A548E1D9FD8A20021A803 /* SignupFinishedViewController.swift */,
 				154A548C1D9FD8A20021A803 /* SignupConfirmPhoneViewController.swift */,
 				154A548F1D9FD8A20021A803 /* SignupFourDigitCodeViewController.swift */,
 				154A548B1D9FD8A20021A803 /* SignupAddYourPhotoViewController.swift */,
 				154A54931D9FD8A20021A803 /* SignupYouLookGoodViewController.swift */,
 				154A54901D9FD8A20021A803 /* SignupGreatViewController.swift */,
 				154A548D1D9FD8A20021A803 /* SignupCountryViewController.swift */,
-				154A548E1D9FD8A20021A803 /* SignupFinishedViewController.swift */,
 				154A54941D9FD8A20021A803 /* SignupYourInterestsViewController.swift */,
 				154A54911D9FD8A20021A803 /* SignupInterestsCollectionViewCell.swift */,
 			);
