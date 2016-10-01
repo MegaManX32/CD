@@ -1029,44 +1029,7 @@
                     <view key="view" contentMode="scaleToFill" id="d2B-pK-1uV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="N2l-Jm-s4v">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="eTP-rt-tcX">
-                                    <size key="itemSize" width="98" height="72"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="SignupInterestsCollectionViewCell" reuseIdentifier="SignupInterestsCollectionViewCell" id="4k3-KK-LZT" customClass="SignupInterestsCollectionViewCell" customModule="CD" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatarPlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="9TW-AM-UhQ"/>
-                                            </subviews>
-                                        </view>
-                                        <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="9TW-AM-UhQ" secondAttribute="trailing" id="MeR-M7-cHc"/>
-                                            <constraint firstItem="9TW-AM-UhQ" firstAttribute="leading" secondItem="4k3-KK-LZT" secondAttribute="leading" id="VHR-lq-AO8"/>
-                                            <constraint firstItem="9TW-AM-UhQ" firstAttribute="top" secondItem="4k3-KK-LZT" secondAttribute="top" id="Vhy-r9-Nof"/>
-                                            <constraint firstAttribute="bottom" secondItem="9TW-AM-UhQ" secondAttribute="bottom" id="Xk6-PS-Goc"/>
-                                        </constraints>
-                                        <size key="customSize" width="80" height="80"/>
-                                    </collectionViewCell>
-                                </cells>
-                            </collectionView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="N2l-Jm-s4v" firstAttribute="top" secondItem="fKX-12-9Ke" secondAttribute="bottom" constant="-20" id="1hX-YQ-CRi"/>
-                            <constraint firstItem="N2l-Jm-s4v" firstAttribute="leading" secondItem="d2B-pK-1uV" secondAttribute="leadingMargin" constant="-16" id="AuM-8q-pLX"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="N2l-Jm-s4v" secondAttribute="trailing" constant="-16" id="DbX-Yo-mro"/>
-                            <constraint firstItem="Hcl-sC-05k" firstAttribute="top" secondItem="N2l-Jm-s4v" secondAttribute="bottom" id="iLN-uO-EcM"/>
-                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bd6-0v-CIU" userLabel="First Responder" sceneMemberID="firstResponder"/>
