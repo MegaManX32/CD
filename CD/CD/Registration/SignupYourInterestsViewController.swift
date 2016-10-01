@@ -15,7 +15,7 @@ class SignupYourInterestsViewController: UIViewController, UICollectionViewDataS
     
     // MARK: - Properties
     
-    @IBOutlet weak var collectionView : UICollectionView?
+    @IBOutlet weak var collectionView : UICollectionView!
 
     override func viewDidLoad() {
         super.viewDidLoad()

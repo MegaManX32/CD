@@ -12,7 +12,7 @@ class SignupFinishedViewController: UIViewController {
     
     // MARK: - Properties
     
-    @IBOutlet weak var titleLabel: UILabel?
+    @IBOutlet weak var titleLabel: UILabel!
     
     // MARK: - View Lifecycle
 

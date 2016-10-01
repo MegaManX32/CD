@@ -12,7 +12,7 @@ class SignupConfirmPhoneViewController: UIViewController {
     
     // MARK: - Properties
     
-    @IBOutlet weak var countryCodeLabel: UILabel?
+    @IBOutlet weak var countryCodeLabel: UILabel!
 
     // MARK: - View Lifecycle
     
@@ -20,9 +20,9 @@ class SignupConfirmPhoneViewController: UIViewController {
         super.viewDidLoad()
 
         // update label corners
-        self.countryCodeLabel?.layer.cornerRadius = 4
-        self.countryCodeLabel?.layer.borderWidth = 2
-        self.countryCodeLabel?.layer.borderColor = UIColor.init(red: 1, green: 1, blue: 1, alpha: 0.5).cgColor
+        self.countryCodeLabel.layer.cornerRadius = 4
+        self.countryCodeLabel.layer.borderWidth = 2
+        self.countryCodeLabel.layer.borderColor = UIColor.init(red: 1, green: 1, blue: 1, alpha: 0.5).cgColor
     }
 
     override func didReceiveMemoryWarning() {

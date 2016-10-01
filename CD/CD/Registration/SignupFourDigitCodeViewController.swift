@@ -12,12 +12,12 @@ class SignupFourDigitCodeViewController: UIViewController, UITextFieldDelegate {
     
     // MARK: - Properties
     
-    @IBOutlet weak var code1Label: UILabel?
-    @IBOutlet weak var code2Label: UILabel?
-    @IBOutlet weak var code3Label: UILabel?
-    @IBOutlet weak var code4Label: UILabel?
-    @IBOutlet weak var codeTextField: UITextField?
-    @IBOutlet weak var noticeLabel: UILabel?
+    @IBOutlet weak var code1Label: UILabel!
+    @IBOutlet weak var code2Label: UILabel!
+    @IBOutlet weak var code3Label: UILabel!
+    @IBOutlet weak var code4Label: UILabel!
+    @IBOutlet weak var codeTextField: UITextField!
+    @IBOutlet weak var noticeLabel: UILabel!
     
     var codeLabelsArray: [UILabel] = []
     
@@ -27,12 +27,12 @@ class SignupFourDigitCodeViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
 
         // prepare code text field invisible
-        self.codeTextField?.alpha = 0
-        self.codeTextField?.keyboardType = UIKeyboardType.numberPad
-        self.codeTextField?.delegate = self
+        self.codeTextField.alpha = 0
+        self.codeTextField.keyboardType = UIKeyboardType.numberPad
+        self.codeTextField.delegate = self
         
         // prepare code labels
-        self.codeLabelsArray = [code1Label!, code2Label!, code3Label!, code4Label!]
+        self.codeLabelsArray = [code1Label, code2Label, code3Label, code4Label]
         
         // prepare notice label
         self.noticeLabel?.text = String.localizedStringWithFormat(NSLocalizedString("We sent a code to %@. Enter the code in that message.", comment: "Enter code message"), "064112233")
