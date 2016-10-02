@@ -1034,6 +1034,27 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="signupBackground" translatesAutoresizingMaskIntoConstraints="NO" id="pQg-CR-9lf"/>
+                            <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3ng-ML-Ir2" customClass="DotView" customModule="CD" customModuleProvider="target">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="10" id="GCb-oQ-Imc"/>
+                                    <constraint firstAttribute="height" constant="10" id="pCe-TL-mgY"/>
+                                </constraints>
+                            </view>
+                            <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qfZ-xy-ZwC" customClass="DotView" customModule="CD" customModuleProvider="target">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="10" id="XeX-nw-uR9"/>
+                                    <constraint firstAttribute="height" constant="10" id="wIw-ym-zTW"/>
+                                </constraints>
+                            </view>
+                            <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jq3-dC-Gdj" customClass="DotView" customModule="CD" customModuleProvider="target">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="10" id="PdT-QW-0Kk"/>
+                                    <constraint firstAttribute="width" constant="10" id="Rnh-ga-dxg"/>
+                                </constraints>
+                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Interests?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="40d-F2-jhP">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="BWs-cd-xu4"/>
@@ -1051,27 +1072,6 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3ng-ML-Ir2" customClass="DotView" customModule="CD" customModuleProvider="target">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="10" id="GCb-oQ-Imc"/>
-                                    <constraint firstAttribute="height" constant="10" id="pCe-TL-mgY"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qfZ-xy-ZwC" customClass="DotView" customModule="CD" customModuleProvider="target">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="10" id="XeX-nw-uR9"/>
-                                    <constraint firstAttribute="height" constant="10" id="wIw-ym-zTW"/>
-                                </constraints>
-                            </view>
-                            <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jq3-dC-Gdj" customClass="DotView" customModule="CD" customModuleProvider="target">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="10" id="PdT-QW-0Kk"/>
-                                    <constraint firstAttribute="width" constant="10" id="Rnh-ga-dxg"/>
-                                </constraints>
-                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R3f-TG-RLa">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="1HA-CK-eLd"/>
@@ -1098,6 +1098,12 @@
                                             <rect key="frame" x="0.0" y="0.0" width="80" height="90"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="back" translatesAutoresizingMaskIntoConstraints="NO" id="rSX-87-99p">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="63" id="tEM-LX-pOL"/>
+                                                        <constraint firstAttribute="height" constant="63" id="zMZ-0d-f54"/>
+                                                    </constraints>
+                                                </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="76B-wq-pIa">
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="58" id="J9P-55-dS5"/>
@@ -1114,15 +1120,21 @@
                                                 </label>
                                             </subviews>
                                         </view>
-                                        <color key="backgroundColor" red="0.3665678879" green="0.93437499999999996" blue="0.44027478450000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstItem="76B-wq-pIa" firstAttribute="centerX" secondItem="3Kz-PS-Eiy" secondAttribute="centerX" id="0h1-zR-bmG"/>
                                             <constraint firstAttribute="bottomMargin" secondItem="cjF-eT-VCc" secondAttribute="bottom" constant="-4" id="3g1-ex-cH1"/>
+                                            <constraint firstItem="rSX-87-99p" firstAttribute="centerX" secondItem="76B-wq-pIa" secondAttribute="centerX" id="Jtc-g7-LYY"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="cjF-eT-VCc" secondAttribute="trailing" constant="-8" id="RJu-zF-zpi"/>
+                                            <constraint firstItem="rSX-87-99p" firstAttribute="centerY" secondItem="76B-wq-pIa" secondAttribute="centerY" id="Z5A-Ne-NdZ"/>
                                             <constraint firstItem="cjF-eT-VCc" firstAttribute="leading" secondItem="3Kz-PS-Eiy" secondAttribute="leadingMargin" constant="-8" id="dnS-dl-RhE"/>
                                             <constraint firstAttribute="topMargin" secondItem="76B-wq-pIa" secondAttribute="top" id="g8C-VH-44B"/>
                                         </constraints>
                                         <size key="customSize" width="80" height="90"/>
+                                        <connections>
+                                            <outlet property="interestImageView" destination="76B-wq-pIa" id="tBg-Op-YF8"/>
+                                            <outlet property="interestLabel" destination="cjF-eT-VCc" id="XAE-Kr-6a4"/>
+                                            <outlet property="interestSelectedImageView" destination="rSX-87-99p" id="xm8-En-JFV"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
@@ -1179,6 +1191,7 @@
     </scenes>
     <resources>
         <image name="avatarPlaceholder" width="107" height="107"/>
+        <image name="back" width="63" height="62"/>
         <image name="correctSign" width="91" height="91"/>
         <image name="introBackground" width="375" height="667"/>
         <image name="introBackground2" width="330" height="587"/>
