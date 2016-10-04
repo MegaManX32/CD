@@ -34,6 +34,8 @@ class SignupYourInterestsViewController: UIViewController, UICollectionViewDataS
         ("Music", false),
         ("Travel", false)
     ]
+    
+    // MARK: - View Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()

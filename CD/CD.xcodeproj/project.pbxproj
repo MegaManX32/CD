@@ -46,6 +46,7 @@
 		154A549C1D9FD8A20021A803 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154A54921D9FD8A20021A803 /* SignupViewController.swift */; };
 		154A549D1D9FD8A20021A803 /* SignupYouLookGoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154A54931D9FD8A20021A803 /* SignupYouLookGoodViewController.swift */; };
 		154A549E1D9FD8A20021A803 /* SignupYourInterestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154A54941D9FD8A20021A803 /* SignupYourInterestsViewController.swift */; };
+		15AE073B1DA3042200BB42FC /* SignupCongratulationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15AE073A1DA3042200BB42FC /* SignupCongratulationsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,6 +91,7 @@
 		154A54921D9FD8A20021A803 /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		154A54931D9FD8A20021A803 /* SignupYouLookGoodViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupYouLookGoodViewController.swift; sourceTree = "<group>"; };
 		154A54941D9FD8A20021A803 /* SignupYourInterestsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupYourInterestsViewController.swift; sourceTree = "<group>"; };
+		15AE073A1DA3042200BB42FC /* SignupCongratulationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupCongratulationsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,6 +204,7 @@
 				154A548D1D9FD8A20021A803 /* SignupCountryViewController.swift */,
 				154A54941D9FD8A20021A803 /* SignupYourInterestsViewController.swift */,
 				154A54911D9FD8A20021A803 /* SignupInterestsCollectionViewCell.swift */,
+				15AE073A1DA3042200BB42FC /* SignupCongratulationsViewController.swift */,
 			);
 			path = Registration;
 			sourceTree = "<group>";
@@ -302,6 +305,7 @@
 				154A54951D9FD8A20021A803 /* SignupAddYourPhotoViewController.swift in Sources */,
 				154A54481D9FD11D0021A803 /* IntroButton.swift in Sources */,
 				154A549B1D9FD8A20021A803 /* SignupInterestsCollectionViewCell.swift in Sources */,
+				15AE073B1DA3042200BB42FC /* SignupCongratulationsViewController.swift in Sources */,
 				154A54981D9FD8A20021A803 /* SignupFinishedViewController.swift in Sources */,
 				154A54991D9FD8A20021A803 /* SignupFourDigitCodeViewController.swift in Sources */,
 				154A549E1D9FD8A20021A803 /* SignupYourInterestsViewController.swift in Sources */,
@@ -476,6 +480,7 @@
 				154A54411D9FD0750021A803 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

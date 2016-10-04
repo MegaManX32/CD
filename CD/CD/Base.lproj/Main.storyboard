@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="b0q-Ll-AS5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="GSb-nh-SIU">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -1188,10 +1188,87 @@
             </objects>
             <point key="canvasLocation" x="6821.6000000000004" y="419.64017991004499"/>
         </scene>
+        <!--Signup Congratulations View Controller-->
+        <scene sceneID="ScI-J6-VkP">
+            <objects>
+                <viewController storyboardIdentifier="SignupCongratulationsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="GSb-nh-SIU" customClass="SignupCongratulationsViewController" customModule="CD" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="RtE-fB-0gm"/>
+                        <viewControllerLayoutGuide type="bottom" id="3dN-8p-3dj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="LHS-be-gbJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="congratsBackground" translatesAutoresizingMaskIntoConstraints="NO" id="LAk-OH-hTW"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Branko, your profile is awsome." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w37-Nd-CeQ">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="CUr-Yr-TeH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J66-Ia-cQo" customClass="IntroButtonWhite" customModule="CD" customModuleProvider="target">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="4sa-63-IHt"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
+                                <state key="normal" title="Home">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yk1-dS-HEd" customClass="IntroButtonWhite" customModule="CD" customModuleProvider="target">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="4jB-xQ-SC4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
+                                <state key="normal" title="Profile">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Congratulations!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZuR-Zu-f8V">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="274" id="b8d-ME-XBM"/>
+                                    <constraint firstAttribute="height" constant="30" id="jXn-Wz-3QI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="J66-Ia-cQo" secondAttribute="trailing" id="8dZ-8f-kmo"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="LAk-OH-hTW" secondAttribute="trailing" constant="-16" id="9CC-9o-DNr"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="J66-Ia-cQo" secondAttribute="leading" id="D4Z-bN-g9i"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="w37-Nd-CeQ" secondAttribute="leading" id="D7L-8F-J29"/>
+                            <constraint firstItem="3dN-8p-3dj" firstAttribute="top" secondItem="Yk1-dS-HEd" secondAttribute="bottom" constant="44" id="DHb-Po-9JP"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="Yk1-dS-HEd" secondAttribute="leading" id="IeE-b6-Onh"/>
+                            <constraint firstItem="ZuR-Zu-f8V" firstAttribute="centerX" secondItem="LAk-OH-hTW" secondAttribute="centerX" id="NHM-td-k8l"/>
+                            <constraint firstItem="ZuR-Zu-f8V" firstAttribute="top" secondItem="RtE-fB-0gm" secondAttribute="bottom" constant="47" id="NTt-oM-7kx"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="w37-Nd-CeQ" secondAttribute="trailing" id="OiZ-FV-0Cv"/>
+                            <constraint firstItem="3dN-8p-3dj" firstAttribute="top" secondItem="J66-Ia-cQo" secondAttribute="bottom" constant="94" id="QXJ-C8-Tpm"/>
+                            <constraint firstItem="LAk-OH-hTW" firstAttribute="leading" secondItem="LHS-be-gbJ" secondAttribute="leadingMargin" constant="-16" id="UOd-qY-qqk"/>
+                            <constraint firstItem="w37-Nd-CeQ" firstAttribute="top" secondItem="RtE-fB-0gm" secondAttribute="bottom" constant="85" id="eo8-W4-Vl1"/>
+                            <constraint firstItem="LAk-OH-hTW" firstAttribute="top" secondItem="RtE-fB-0gm" secondAttribute="bottom" constant="-20" id="ieL-2a-ZMO"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Yk1-dS-HEd" secondAttribute="trailing" id="rRj-Tx-t69"/>
+                            <constraint firstItem="3dN-8p-3dj" firstAttribute="top" secondItem="LAk-OH-hTW" secondAttribute="bottom" id="vnC-F7-3Qd"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="subtitleLabel" destination="w37-Nd-CeQ" id="UPB-XB-6AE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LNL-WO-eyy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7592.8000000000002" y="419.64017991004499"/>
+        </scene>
     </scenes>
     <resources>
         <image name="avatarPlaceholder" width="107" height="107"/>
         <image name="back" width="63" height="62"/>
+        <image name="congratsBackground" width="375" height="667"/>
         <image name="correctSign" width="91" height="91"/>
         <image name="introBackground" width="375" height="667"/>
         <image name="introBackground2" width="330" height="587"/>

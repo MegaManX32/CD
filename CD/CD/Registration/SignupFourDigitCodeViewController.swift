@@ -35,7 +35,7 @@ class SignupFourDigitCodeViewController: UIViewController, UITextFieldDelegate {
         self.codeLabelsArray = [code1Label, code2Label, code3Label, code4Label]
         
         // prepare notice label
-        self.noticeLabel?.text = String.localizedStringWithFormat(NSLocalizedString("We sent a code to %@. Enter the code in that message.", comment: "Enter code message"), "064112233")
+        self.noticeLabel.text = String.localizedStringWithFormat(NSLocalizedString("We sent a code to %@. Enter the code in that message.", comment: "Enter code message"), "064112233")
     }
     
     override func viewDidAppear(_ animated: Bool) {
