@@ -124,6 +124,7 @@
 		154A542C1D9FD0750021A803 /* CD */ = {
 			isa = PBXGroup;
 			children = (
+				159548E71DA678E700243ACB /* Home */,
 				154A544B1D9FD12C0021A803 /* Custom Fonts */,
 				154A54421D9FD11D0021A803 /* Custom UI */,
 				154A54731D9FD1380021A803 /* Login */,
@@ -207,6 +208,13 @@
 				15AE073A1DA3042200BB42FC /* SignupCongratulationsViewController.swift */,
 			);
 			path = Registration;
+			sourceTree = "<group>";
+		};
+		159548E71DA678E700243ACB /* Home */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

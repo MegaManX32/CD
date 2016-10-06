@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="GSb-nh-SIU">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="PTd-Wg-Xfc">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -1264,14 +1264,117 @@
             </objects>
             <point key="canvasLocation" x="7592.8000000000002" y="419.64017991004499"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="zII-RU-reN">
+            <objects>
+                <viewController id="PTd-Wg-Xfc" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="sTh-XY-3qR"/>
+                        <viewControllerLayoutGuide type="bottom" id="pMS-WH-7Ih"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="p3c-7V-Yrn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="homeBackground" translatesAutoresizingMaskIntoConstraints="NO" id="Y32-NJ-dvp"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kMI-0v-lbH">
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NQ3-QB-8dZ">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="Upj-EN-MCA"/>
+                                            <constraint firstAttribute="height" constant="30" id="wQe-5a-XOf"/>
+                                        </constraints>
+                                        <state key="normal" image="menuIcon"/>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="flg-CP-QrM">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="130" id="1V7-tw-77T"/>
+                                            <constraint firstAttribute="height" constant="30" id="BFS-t7-zUs"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="18"/>
+                                        <color key="textColor" red="0.33725490196078434" green="0.3529411764705882" blue="0.36078431372549019" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="NQ3-QB-8dZ" firstAttribute="leading" secondItem="kMI-0v-lbH" secondAttribute="leading" constant="10" id="1b9-gt-BbI"/>
+                                    <constraint firstItem="NQ3-QB-8dZ" firstAttribute="centerY" secondItem="kMI-0v-lbH" secondAttribute="centerY" constant="10" id="B5j-Ev-yf5"/>
+                                    <constraint firstItem="flg-CP-QrM" firstAttribute="centerY" secondItem="kMI-0v-lbH" secondAttribute="centerY" constant="10" id="HPy-me-NYB"/>
+                                    <constraint firstAttribute="height" constant="70" id="PBA-so-C9T"/>
+                                    <constraint firstItem="flg-CP-QrM" firstAttribute="leading" secondItem="NQ3-QB-8dZ" secondAttribute="trailing" constant="2" id="acM-Rw-7yC"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vlm-3I-w6D">
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uKC-9u-BEG">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="78" id="4aJ-Pn-iGN"/>
+                                            <constraint firstAttribute="height" constant="78" id="97I-rd-Suv"/>
+                                        </constraints>
+                                        <state key="normal" image="createRaiderListIcon"/>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hi, Branko." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oAK-zM-fOL">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="SmH-2Z-NPh"/>
+                                            <constraint firstAttribute="width" constant="237" id="cty-1T-lnr"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="24"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Be a celebrity and create your own rider list" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Glp-Ah-1NL">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="237" id="VAg-N9-ovo"/>
+                                            <constraint firstAttribute="height" constant="50" id="gwG-FB-Lnt"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="oAK-zM-fOL" firstAttribute="leading" secondItem="vlm-3I-w6D" secondAttribute="leading" constant="16" id="FOC-Ez-HnR"/>
+                                    <constraint firstAttribute="trailing" secondItem="uKC-9u-BEG" secondAttribute="trailing" constant="8" id="NMb-z2-adS"/>
+                                    <constraint firstAttribute="height" constant="124" id="R9a-aV-o78"/>
+                                    <constraint firstItem="Glp-Ah-1NL" firstAttribute="top" secondItem="vlm-3I-w6D" secondAttribute="top" constant="46" id="iwS-6b-R6k"/>
+                                    <constraint firstItem="oAK-zM-fOL" firstAttribute="top" secondItem="vlm-3I-w6D" secondAttribute="top" constant="14" id="kAE-H3-gme"/>
+                                    <constraint firstItem="Glp-Ah-1NL" firstAttribute="leading" secondItem="vlm-3I-w6D" secondAttribute="leading" constant="16" id="khh-a1-7yZ"/>
+                                    <constraint firstItem="uKC-9u-BEG" firstAttribute="centerY" secondItem="vlm-3I-w6D" secondAttribute="centerY" id="njp-lV-FAI"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Y32-NJ-dvp" firstAttribute="top" secondItem="sTh-XY-3qR" secondAttribute="bottom" constant="-20" id="5Fh-4q-gHp"/>
+                            <constraint firstItem="vlm-3I-w6D" firstAttribute="leading" secondItem="p3c-7V-Yrn" secondAttribute="leadingMargin" constant="-16" id="Lkh-WM-bIh"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="kMI-0v-lbH" secondAttribute="trailing" constant="-16" id="NlO-Dl-cCh"/>
+                            <constraint firstItem="kMI-0v-lbH" firstAttribute="leading" secondItem="p3c-7V-Yrn" secondAttribute="leadingMargin" constant="-16" id="UK0-dy-czt"/>
+                            <constraint firstItem="pMS-WH-7Ih" firstAttribute="top" secondItem="Y32-NJ-dvp" secondAttribute="bottom" id="YGk-NV-CTX"/>
+                            <constraint firstItem="Y32-NJ-dvp" firstAttribute="leading" secondItem="p3c-7V-Yrn" secondAttribute="leadingMargin" constant="-16" id="ep8-wH-1Io"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="vlm-3I-w6D" secondAttribute="trailing" constant="-16" id="f7a-QV-EjU"/>
+                            <constraint firstItem="pMS-WH-7Ih" firstAttribute="top" secondItem="vlm-3I-w6D" secondAttribute="bottom" id="imZ-Io-H0n"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Y32-NJ-dvp" secondAttribute="trailing" constant="-16" id="smw-wk-PxS"/>
+                            <constraint firstItem="kMI-0v-lbH" firstAttribute="top" secondItem="sTh-XY-3qR" secondAttribute="bottom" constant="-20" id="ujy-1T-Xlc"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9uT-AH-hDE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8346.3999999999996" y="419.64017991004499"/>
+        </scene>
     </scenes>
     <resources>
         <image name="avatarPlaceholder" width="107" height="107"/>
         <image name="back" width="63" height="62"/>
         <image name="congratsBackground" width="375" height="667"/>
         <image name="correctSign" width="91" height="91"/>
+        <image name="createRaiderListIcon" width="78" height="78"/>
+        <image name="homeBackground" width="375" height="667"/>
         <image name="introBackground" width="375" height="667"/>
         <image name="introBackground2" width="330" height="587"/>
+        <image name="menuIcon" width="20" height="15"/>
         <image name="signupBackground" width="375" height="647"/>
     </resources>
 </document>
