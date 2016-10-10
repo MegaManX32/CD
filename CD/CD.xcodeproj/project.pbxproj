@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		153C80D21DABB57000DBEDCD /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 153C80D11DABB57000DBEDCD /* ButtonView.swift */; };
+		1543C7771DABCA4300E30FAF /* CreateRiderListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1543C7761DABCA4300E30FAF /* CreateRiderListViewController.swift */; };
 		154A542E1D9FD0750021A803 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154A542D1D9FD0750021A803 /* AppDelegate.swift */; };
 		154A54331D9FD0750021A803 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 154A54311D9FD0750021A803 /* Main.storyboard */; };
 		154A54361D9FD0750021A803 /* CD.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 154A54341D9FD0750021A803 /* CD.xcdatamodeld */; };
@@ -50,6 +52,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		153C80D11DABB57000DBEDCD /* ButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
+		1543C7761DABCA4300E30FAF /* CreateRiderListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateRiderListViewController.swift; sourceTree = "<group>"; };
 		154A542A1D9FD0750021A803 /* CD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CD.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		154A542D1D9FD0750021A803 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		154A54321D9FD0750021A803 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -146,6 +150,7 @@
 				154A54441D9FD11D0021A803 /* IntroButton.swift */,
 				154A54451D9FD11D0021A803 /* IntroButtonWhite.swift */,
 				154A54461D9FD11D0021A803 /* IntroTextField.swift */,
+				153C80D11DABB57000DBEDCD /* ButtonView.swift */,
 			);
 			path = "Custom UI";
 			sourceTree = "<group>";
@@ -213,6 +218,7 @@
 		159548E71DA678E700243ACB /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				1543C7761DABCA4300E30FAF /* CreateRiderListViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -312,6 +318,7 @@
 				154A549D1D9FD8A20021A803 /* SignupYouLookGoodViewController.swift in Sources */,
 				154A54951D9FD8A20021A803 /* SignupAddYourPhotoViewController.swift in Sources */,
 				154A54481D9FD11D0021A803 /* IntroButton.swift in Sources */,
+				1543C7771DABCA4300E30FAF /* CreateRiderListViewController.swift in Sources */,
 				154A549B1D9FD8A20021A803 /* SignupInterestsCollectionViewCell.swift in Sources */,
 				15AE073B1DA3042200BB42FC /* SignupCongratulationsViewController.swift in Sources */,
 				154A54981D9FD8A20021A803 /* SignupFinishedViewController.swift in Sources */,
@@ -325,6 +332,7 @@
 				154A542E1D9FD0750021A803 /* AppDelegate.swift in Sources */,
 				154A54491D9FD11D0021A803 /* IntroButtonWhite.swift in Sources */,
 				154A549C1D9FD8A20021A803 /* SignupViewController.swift in Sources */,
+				153C80D21DABB57000DBEDCD /* ButtonView.swift in Sources */,
 				154A54891D9FD1380021A803 /* StartViewController.swift in Sources */,
 				154A54471D9FD11D0021A803 /* DotView.swift in Sources */,
 			);
