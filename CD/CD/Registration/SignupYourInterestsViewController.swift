@@ -46,7 +46,7 @@ class SignupYourInterestsViewController: UIViewController, UICollectionViewDataS
         // Dispose of any resources that can be recreated.
     }
     
-    // MARK: UICollectionViewDelegate methods
+    // MARK: - UICollectionViewDelegate methods
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1

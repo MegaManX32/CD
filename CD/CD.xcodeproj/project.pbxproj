@@ -128,11 +128,11 @@
 		154A542C1D9FD0750021A803 /* CD */ = {
 			isa = PBXGroup;
 			children = (
-				159548E71DA678E700243ACB /* Home */,
 				154A544B1D9FD12C0021A803 /* Custom Fonts */,
 				154A54421D9FD11D0021A803 /* Custom UI */,
 				154A54731D9FD1380021A803 /* Login */,
 				154A548A1D9FD8490021A803 /* Registration */,
+				159548E71DA678E700243ACB /* Home */,
 				154A542D1D9FD0750021A803 /* AppDelegate.swift */,
 				154A54311D9FD0750021A803 /* Main.storyboard */,
 				154A54371D9FD0750021A803 /* Assets.xcassets */,
@@ -208,8 +208,8 @@
 				154A54931D9FD8A20021A803 /* SignupYouLookGoodViewController.swift */,
 				154A54901D9FD8A20021A803 /* SignupGreatViewController.swift */,
 				154A548D1D9FD8A20021A803 /* SignupCountryViewController.swift */,
-				154A54941D9FD8A20021A803 /* SignupYourInterestsViewController.swift */,
 				154A54911D9FD8A20021A803 /* SignupInterestsCollectionViewCell.swift */,
+				154A54941D9FD8A20021A803 /* SignupYourInterestsViewController.swift */,
 				15AE073A1DA3042200BB42FC /* SignupCongratulationsViewController.swift */,
 			);
 			path = Registration;
