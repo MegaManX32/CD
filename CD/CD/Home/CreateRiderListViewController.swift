@@ -8,7 +8,7 @@
 
 import UIKit
 
-fileprivate let sectionInsets = UIEdgeInsets(top: 10.0, left: 20.0, bottom: 10.0, right: 20.0)
+fileprivate let sectionInsets = UIEdgeInsets(top: 0.0, left: 20.0, bottom: 10.0, right: 20.0)
 fileprivate let itemsPerRow: CGFloat = 3
 
 class CreateRiderListViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
@@ -28,6 +28,8 @@ class CreateRiderListViewController: UIViewController, UICollectionViewDataSourc
     @IBOutlet weak var genderButtonView: ButtonView!
     @IBOutlet weak var ageButtonView: ButtonView!
     @IBOutlet weak var languageButtonView: ButtonView!
+    
+    @IBOutlet weak var riderListTextView: UITextView!
     
     var interestsArray : [(name : String, checked : Bool)] = [
         ("Sport", false),
@@ -66,6 +68,10 @@ class CreateRiderListViewController: UIViewController, UICollectionViewDataSourc
         self.genderButtonView.title = NSLocalizedString("Gender", comment: "")
         self.ageButtonView.title = NSLocalizedString("Age", comment: "")
         self.languageButtonView.title = NSLocalizedString("Language", comment: "")
+        
+        // update text view
+        self.riderListTextView.layer.masksToBounds = true
+        self.riderListTextView.layer.cornerRadius = 4
     }
 
     override func didReceiveMemoryWarning() {
@@ -104,7 +110,7 @@ class CreateRiderListViewController: UIViewController, UICollectionViewDataSourc
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,  minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return sectionInsets.left
+        return sectionInsets.top
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
