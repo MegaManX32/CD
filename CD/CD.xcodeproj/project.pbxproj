@@ -50,6 +50,7 @@
 		154A549E1D9FD8A20021A803 /* SignupYourInterestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154A54941D9FD8A20021A803 /* SignupYourInterestsViewController.swift */; };
 		155F47C51DB2964C0063D090 /* ReviewRiderLIstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155F47C41DB2964C0063D090 /* ReviewRiderLIstViewController.swift */; };
 		15AE073B1DA3042200BB42FC /* SignupCongratulationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15AE073A1DA3042200BB42FC /* SignupCongratulationsViewController.swift */; };
+		15B3D21B1DBFA2FB00F9A509 /* AccomodationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B3D21A1DBFA2FB00F9A509 /* AccomodationViewController.swift */; };
 		15FC62FB1DB4F8A900F223AC /* HostFeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FC62FA1DB4F8A900F223AC /* HostFeedbackViewController.swift */; };
 		DA8406CBF1A476662911D7E8 /* Pods_CD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12641929306E4C88E2053DC2 /* Pods_CD.framework */; };
 /* End PBXBuildFile section */
@@ -102,6 +103,7 @@
 		154A54941D9FD8A20021A803 /* SignupYourInterestsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupYourInterestsViewController.swift; sourceTree = "<group>"; };
 		155F47C41DB2964C0063D090 /* ReviewRiderLIstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewRiderLIstViewController.swift; sourceTree = "<group>"; };
 		15AE073A1DA3042200BB42FC /* SignupCongratulationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupCongratulationsViewController.swift; sourceTree = "<group>"; };
+		15B3D21A1DBFA2FB00F9A509 /* AccomodationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccomodationViewController.swift; sourceTree = "<group>"; };
 		15FC62FA1DB4F8A900F223AC /* HostFeedbackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HostFeedbackViewController.swift; sourceTree = "<group>"; };
 		DB6497397822CCBF6D246A17 /* Pods-CD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CD.release.xcconfig"; path = "Pods/Target Support Files/Pods-CD/Pods-CD.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -232,6 +234,7 @@
 				1543C7761DABCA4300E30FAF /* CreateRiderListViewController.swift */,
 				155F47C41DB2964C0063D090 /* ReviewRiderLIstViewController.swift */,
 				15FC62FA1DB4F8A900F223AC /* HostFeedbackViewController.swift */,
+				15B3D21A1DBFA2FB00F9A509 /* AccomodationViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -406,6 +409,7 @@
 				154A54991D9FD8A20021A803 /* SignupFourDigitCodeViewController.swift in Sources */,
 				154A549E1D9FD8A20021A803 /* SignupYourInterestsViewController.swift in Sources */,
 				154A54361D9FD0750021A803 /* CD.xcdatamodeld in Sources */,
+				15B3D21B1DBFA2FB00F9A509 /* AccomodationViewController.swift in Sources */,
 				154A54971D9FD8A20021A803 /* SignupCountryViewController.swift in Sources */,
 				154A544A1D9FD11D0021A803 /* IntroTextField.swift in Sources */,
 				154A549A1D9FD8A20021A803 /* SignupGreatViewController.swift in Sources */,

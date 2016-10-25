@@ -9,18 +9,21 @@
 import UIKit
 import CoreData
 import IQKeyboardManagerSwift
+import GoogleMaps
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         // keyboard helper
         IQKeyboardManager.sharedManager().enable = true
 //        IQKeyboardManager.sharedManager().enableAutoToolbar = false
+        
+        // google maps
+        GMSServices.provideAPIKey("AIzaSyAZLtYP7-2ehSUUYT5Ml4lRK3yXOdvABho")
         
         return true
     }
