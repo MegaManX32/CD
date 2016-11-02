@@ -24,6 +24,7 @@
 		15327BCF1DC63A62000411F7 /* SignupYourInterestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15327BBF1DC63A62000411F7 /* SignupYourInterestsViewController.swift */; };
 		15327BD01DC63A62000411F7 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15327BC01DC63A62000411F7 /* StartViewController.swift */; };
 		153C80D21DABB57000DBEDCD /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 153C80D11DABB57000DBEDCD /* ButtonView.swift */; };
+		1547F1F41DC8FE3F00A04106 /* User+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1547F1F31DC8FE3F00A04106 /* User+Additions.swift */; };
 		154A542E1D9FD0750021A803 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154A542D1D9FD0750021A803 /* AppDelegate.swift */; };
 		154A54331D9FD0750021A803 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 154A54311D9FD0750021A803 /* Main.storyboard */; };
 		154A54361D9FD0750021A803 /* CD.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 154A54341D9FD0750021A803 /* CD.xcdatamodeld */; };
@@ -52,6 +53,9 @@
 		154A54701D9FD12C0021A803 /* RobotoCondensed-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 154A545D1D9FD12C0021A803 /* RobotoCondensed-Light.ttf */; };
 		154A54711D9FD12C0021A803 /* RobotoCondensed-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 154A545E1D9FD12C0021A803 /* RobotoCondensed-LightItalic.ttf */; };
 		154A54721D9FD12C0021A803 /* RobotoCondensed-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 154A545F1D9FD12C0021A803 /* RobotoCondensed-Regular.ttf */; };
+		15EE96061DCA0F600003FB51 /* ServiceOffer+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15EE96051DCA0F600003FB51 /* ServiceOffer+Additions.swift */; };
+		15EE96081DCA144A0003FB51 /* Interest+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15EE96071DCA144A0003FB51 /* Interest+Additions.swift */; };
+		15EE960A1DCA14B50003FB51 /* Language+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15EE96091DCA14B50003FB51 /* Language+Additions.swift */; };
 		DA8406CBF1A476662911D7E8 /* Pods_CD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12641929306E4C88E2053DC2 /* Pods_CD.framework */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +79,7 @@
 		15327BBF1DC63A62000411F7 /* SignupYourInterestsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupYourInterestsViewController.swift; sourceTree = "<group>"; };
 		15327BC01DC63A62000411F7 /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		153C80D11DABB57000DBEDCD /* ButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
+		1547F1F31DC8FE3F00A04106 /* User+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "User+Additions.swift"; sourceTree = "<group>"; };
 		154A542A1D9FD0750021A803 /* CD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CD.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		154A542D1D9FD0750021A803 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		154A54321D9FD0750021A803 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -105,6 +110,9 @@
 		154A545D1D9FD12C0021A803 /* RobotoCondensed-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-Light.ttf"; sourceTree = "<group>"; };
 		154A545E1D9FD12C0021A803 /* RobotoCondensed-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-LightItalic.ttf"; sourceTree = "<group>"; };
 		154A545F1D9FD12C0021A803 /* RobotoCondensed-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-Regular.ttf"; sourceTree = "<group>"; };
+		15EE96051DCA0F600003FB51 /* ServiceOffer+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ServiceOffer+Additions.swift"; sourceTree = "<group>"; };
+		15EE96071DCA144A0003FB51 /* Interest+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Interest+Additions.swift"; sourceTree = "<group>"; };
+		15EE96091DCA14B50003FB51 /* Language+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Language+Additions.swift"; sourceTree = "<group>"; };
 		DB6497397822CCBF6D246A17 /* Pods-CD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CD.release.xcconfig"; path = "Pods/Target Support Files/Pods-CD/Pods-CD.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -120,6 +128,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		152A84261DC8E79F00949324 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1547F1F31DC8FE3F00A04106 /* User+Additions.swift */,
+				15EE96051DCA0F600003FB51 /* ServiceOffer+Additions.swift */,
+				15EE96071DCA144A0003FB51 /* Interest+Additions.swift */,
+				15EE96091DCA14B50003FB51 /* Language+Additions.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		15327BAF1DC639D6000411F7 /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -173,6 +192,7 @@
 			children = (
 				154A544B1D9FD12C0021A803 /* Custom Fonts */,
 				154A54421D9FD11D0021A803 /* Custom UI */,
+				152A84261DC8E79F00949324 /* Model */,
 				15327BAF1DC639D6000411F7 /* Network */,
 				15327BB01DC639D6000411F7 /* View Controllers */,
 				154A542D1D9FD0750021A803 /* AppDelegate.swift */,
@@ -278,7 +298,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = CustomDeal;
 				TargetAttributes = {
 					154A54291D9FD0750021A803 = {
@@ -398,8 +418,11 @@
 				15327BC61DC63A62000411F7 /* SignupConfirmPhoneViewController.swift in Sources */,
 				15327BC41DC63A62000411F7 /* ReviewRiderLIstViewController.swift in Sources */,
 				15327BCF1DC63A62000411F7 /* SignupYourInterestsViewController.swift in Sources */,
+				15EE96061DCA0F600003FB51 /* ServiceOffer+Additions.swift in Sources */,
 				15327BCE1DC63A62000411F7 /* SignupYouLookGoodViewController.swift in Sources */,
+				1547F1F41DC8FE3F00A04106 /* User+Additions.swift in Sources */,
 				154A54361D9FD0750021A803 /* CD.xcdatamodeld in Sources */,
+				15EE960A1DCA14B50003FB51 /* Language+Additions.swift in Sources */,
 				154A544A1D9FD11D0021A803 /* IntroTextField.swift in Sources */,
 				15327BC71DC63A62000411F7 /* SignupCongratulationsViewController.swift in Sources */,
 				15327BC21DC63A62000411F7 /* CreateRiderListViewController.swift in Sources */,
@@ -414,6 +437,7 @@
 				15327BCB1DC63A62000411F7 /* SignupGreatViewController.swift in Sources */,
 				15327BCC1DC63A62000411F7 /* SignupInterestsCollectionViewCell.swift in Sources */,
 				154A54471D9FD11D0021A803 /* DotView.swift in Sources */,
+				15EE96081DCA144A0003FB51 /* Interest+Additions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -457,6 +481,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -506,6 +531,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -534,6 +560,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0A2AF6023080F9C14214C781 /* Pods-CD.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = E56KMPQH4M;
 				INFOPLIST_FILE = CD/Info.plist;
@@ -548,6 +575,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DB6497397822CCBF6D246A17 /* Pods-CD.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = E56KMPQH4M;
 				INFOPLIST_FILE = CD/Info.plist;
