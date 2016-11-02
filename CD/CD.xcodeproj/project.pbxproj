@@ -56,6 +56,7 @@
 		15EE96061DCA0F600003FB51 /* ServiceOffer+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15EE96051DCA0F600003FB51 /* ServiceOffer+Additions.swift */; };
 		15EE96081DCA144A0003FB51 /* Interest+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15EE96071DCA144A0003FB51 /* Interest+Additions.swift */; };
 		15EE960A1DCA14B50003FB51 /* Language+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15EE96091DCA14B50003FB51 /* Language+Additions.swift */; };
+		15EE960D1DCA2CD10003FB51 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15EE960C1DCA2CD10003FB51 /* NetworkManager.swift */; };
 		DA8406CBF1A476662911D7E8 /* Pods_CD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12641929306E4C88E2053DC2 /* Pods_CD.framework */; };
 /* End PBXBuildFile section */
 
@@ -113,6 +114,7 @@
 		15EE96051DCA0F600003FB51 /* ServiceOffer+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ServiceOffer+Additions.swift"; sourceTree = "<group>"; };
 		15EE96071DCA144A0003FB51 /* Interest+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Interest+Additions.swift"; sourceTree = "<group>"; };
 		15EE96091DCA14B50003FB51 /* Language+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Language+Additions.swift"; sourceTree = "<group>"; };
+		15EE960C1DCA2CD10003FB51 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		DB6497397822CCBF6D246A17 /* Pods-CD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CD.release.xcconfig"; path = "Pods/Target Support Files/Pods-CD/Pods-CD.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -137,13 +139,6 @@
 				15EE96091DCA14B50003FB51 /* Language+Additions.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		15327BAF1DC639D6000411F7 /* Network */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Network;
 			sourceTree = "<group>";
 		};
 		15327BB01DC639D6000411F7 /* View Controllers */ = {
@@ -193,7 +188,7 @@
 				154A544B1D9FD12C0021A803 /* Custom Fonts */,
 				154A54421D9FD11D0021A803 /* Custom UI */,
 				152A84261DC8E79F00949324 /* Model */,
-				15327BAF1DC639D6000411F7 /* Network */,
+				15EE960B1DCA2CBB0003FB51 /* Network */,
 				15327BB01DC639D6000411F7 /* View Controllers */,
 				154A542D1D9FD0750021A803 /* AppDelegate.swift */,
 				154A54311D9FD0750021A803 /* Main.storyboard */,
@@ -249,6 +244,14 @@
 				154A545F1D9FD12C0021A803 /* RobotoCondensed-Regular.ttf */,
 			);
 			path = Roboto;
+			sourceTree = "<group>";
+		};
+		15EE960B1DCA2CBB0003FB51 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				15EE960C1DCA2CD10003FB51 /* NetworkManager.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		34B248700B5775622CA85CFB /* Frameworks */ = {
@@ -435,6 +438,7 @@
 				153C80D21DABB57000DBEDCD /* ButtonView.swift in Sources */,
 				15327BC11DC63A62000411F7 /* AccomodationViewController.swift in Sources */,
 				15327BCB1DC63A62000411F7 /* SignupGreatViewController.swift in Sources */,
+				15EE960D1DCA2CD10003FB51 /* NetworkManager.swift in Sources */,
 				15327BCC1DC63A62000411F7 /* SignupInterestsCollectionViewCell.swift in Sources */,
 				154A54471D9FD11D0021A803 /* DotView.swift in Sources */,
 				15EE96081DCA144A0003FB51 /* Interest+Additions.swift in Sources */,

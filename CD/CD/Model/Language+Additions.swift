@@ -27,7 +27,7 @@ extension Language {
     
     func asJSON() -> [String : String] {
         
-        var JSON = [String : Any]()
+        var JSON = [String : String]()
         JSON["name"] = self.name! as String
         JSON["id"] = self.id! as String
         

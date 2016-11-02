@@ -88,29 +88,4 @@ extension User {
         
         return JSON
     }
-    
-    /*
-     @nonobjc public class func fetchRequest() -> NSFetchRequest<User> {
-     return NSFetchRequest<User>(entityName: "User");
-     }
-     
-     @NSManaged public var birthDate: NSDate?
-     @NSManaged public var country: String?
-     @NSManaged public var email: String?
-     @NSManaged public var firstName: String?
-     @NSManaged public var hostOption: Bool
-     @NSManaged public var lastName: String?
-     @NSManaged public var location: String?
-     @NSManaged public var notification: Bool
-     @NSManaged public var password: String?
-     @NSManaged public var phoneNumber: String?
-     @NSManaged public var photoId: String?
-     @NSManaged public var proffesion: String?
-     @NSManaged public var school: String?
-     @NSManaged public var sendFeedback: Bool
-     @NSManaged public var uid: String?
-     @NSManaged public var work: String?
-     @NSManaged public var zipcode: String?
-
-     */
 }
