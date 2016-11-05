@@ -12,11 +12,11 @@ class StartViewController: UIViewController {
     
     // MARK: - Properties
     
-    @IBOutlet weak var titleLabel: UILabel?
-    @IBOutlet weak var facebookButton: UIButton?
-    @IBOutlet weak var signUpButton: UIButton?
-    @IBOutlet weak var logInButton: UIButton?
-    @IBOutlet weak var disclaimerLabel: UILabel?
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var facebookButton: UIButton!
+    @IBOutlet weak var signUpButton: UIButton!
+    @IBOutlet weak var logInButton: UIButton!
+    @IBOutlet weak var disclaimerLabel: UILabel!
 
     // MARK: - View Lifecycle
     

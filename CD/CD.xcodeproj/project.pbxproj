@@ -53,6 +53,7 @@
 		154A54701D9FD12C0021A803 /* RobotoCondensed-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 154A545D1D9FD12C0021A803 /* RobotoCondensed-Light.ttf */; };
 		154A54711D9FD12C0021A803 /* RobotoCondensed-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 154A545E1D9FD12C0021A803 /* RobotoCondensed-LightItalic.ttf */; };
 		154A54721D9FD12C0021A803 /* RobotoCondensed-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 154A545F1D9FD12C0021A803 /* RobotoCondensed-Regular.ttf */; };
+		158E240A1DCE0A5D000FE262 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158E24091DCE0A5D000FE262 /* CoreDataManager.swift */; };
 		15EE96061DCA0F600003FB51 /* ServiceOffer+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15EE96051DCA0F600003FB51 /* ServiceOffer+Additions.swift */; };
 		15EE96081DCA144A0003FB51 /* Interest+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15EE96071DCA144A0003FB51 /* Interest+Additions.swift */; };
 		15EE960A1DCA14B50003FB51 /* Language+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15EE96091DCA14B50003FB51 /* Language+Additions.swift */; };
@@ -111,6 +112,7 @@
 		154A545D1D9FD12C0021A803 /* RobotoCondensed-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-Light.ttf"; sourceTree = "<group>"; };
 		154A545E1D9FD12C0021A803 /* RobotoCondensed-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-LightItalic.ttf"; sourceTree = "<group>"; };
 		154A545F1D9FD12C0021A803 /* RobotoCondensed-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-Regular.ttf"; sourceTree = "<group>"; };
+		158E24091DCE0A5D000FE262 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		15EE96051DCA0F600003FB51 /* ServiceOffer+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ServiceOffer+Additions.swift"; sourceTree = "<group>"; };
 		15EE96071DCA144A0003FB51 /* Interest+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Interest+Additions.swift"; sourceTree = "<group>"; };
 		15EE96091DCA14B50003FB51 /* Language+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Language+Additions.swift"; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 		152A84261DC8E79F00949324 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				158E24091DCE0A5D000FE262 /* CoreDataManager.swift */,
 				1547F1F31DC8FE3F00A04106 /* User+Additions.swift */,
 				15EE96051DCA0F600003FB51 /* ServiceOffer+Additions.swift */,
 				15EE96071DCA144A0003FB51 /* Interest+Additions.swift */,
@@ -144,6 +147,8 @@
 		15327BB01DC639D6000411F7 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				15327BC01DC63A62000411F7 /* StartViewController.swift */,
+				158E24081DCE081C000FE262 /* Signup */,
 				15327BB11DC63A62000411F7 /* AccomodationViewController.swift */,
 				15327BB21DC63A62000411F7 /* CreateRiderListViewController.swift */,
 				15327BB31DC63A62000411F7 /* HostFeedbackViewController.swift */,
@@ -152,14 +157,11 @@
 				15327BB61DC63A62000411F7 /* SignupConfirmPhoneViewController.swift */,
 				15327BB71DC63A62000411F7 /* SignupCongratulationsViewController.swift */,
 				15327BB81DC63A62000411F7 /* SignupCountryViewController.swift */,
-				15327BB91DC63A62000411F7 /* SignupFinishedViewController.swift */,
 				15327BBA1DC63A62000411F7 /* SignupFourDigitCodeViewController.swift */,
 				15327BBB1DC63A62000411F7 /* SignupGreatViewController.swift */,
 				15327BBC1DC63A62000411F7 /* SignupInterestsCollectionViewCell.swift */,
-				15327BBD1DC63A62000411F7 /* SignupViewController.swift */,
 				15327BBE1DC63A62000411F7 /* SignupYouLookGoodViewController.swift */,
 				15327BBF1DC63A62000411F7 /* SignupYourInterestsViewController.swift */,
-				15327BC01DC63A62000411F7 /* StartViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -244,6 +246,15 @@
 				154A545F1D9FD12C0021A803 /* RobotoCondensed-Regular.ttf */,
 			);
 			path = Roboto;
+			sourceTree = "<group>";
+		};
+		158E24081DCE081C000FE262 /* Signup */ = {
+			isa = PBXGroup;
+			children = (
+				15327BBD1DC63A62000411F7 /* SignupViewController.swift */,
+				15327BB91DC63A62000411F7 /* SignupFinishedViewController.swift */,
+			);
+			name = Signup;
 			sourceTree = "<group>";
 		};
 		15EE960B1DCA2CBB0003FB51 /* Network */ = {
@@ -439,6 +450,7 @@
 				15327BC11DC63A62000411F7 /* AccomodationViewController.swift in Sources */,
 				15327BCB1DC63A62000411F7 /* SignupGreatViewController.swift in Sources */,
 				15EE960D1DCA2CD10003FB51 /* NetworkManager.swift in Sources */,
+				158E240A1DCE0A5D000FE262 /* CoreDataManager.swift in Sources */,
 				15327BCC1DC63A62000411F7 /* SignupInterestsCollectionViewCell.swift in Sources */,
 				154A54471D9FD11D0021A803 /* DotView.swift in Sources */,
 				15EE96081DCA144A0003FB51 /* Interest+Additions.swift in Sources */,

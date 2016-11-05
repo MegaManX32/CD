@@ -40,11 +40,43 @@ class SignupViewController: UIViewController {
         self.emailTextField.placeholder = NSLocalizedString("Email Address", comment: "Email Address")
         self.passwordTextField.placeholder = NSLocalizedString("Password", comment: "Password")
         self.confirmPasswordTextField.placeholder = NSLocalizedString("Confirm Password", comment: "Confirm Password")
+        
+        self.firstNameTextField.placeholder = "Vlado"
+        self.lastNameTextField.placeholder = "Simovic"
+        self.emailTextField.placeholder = "vlado@gmail.com"
+        self.passwordTextField.placeholder = "123456"
+        self.confirmPasswordTextField.placeholder = "123456"
     }
     
     // MARK: - User Actions
     
-    @IBAction func signupPressed() {
+    @IBAction func signupAction() {
+        
+        // try to create new User
+        let context = CoreDataManager.sharedInstance.createScratchpadContext(onMainThread: false)
+        context.perform {
+            [unowned self] in
+            
+            // create new user and populate it with data
+            let newUser = User(context: context)
+            newUser.firstName = self.firstNameTextField.text
+            newUser.lastName = self.lastNameTextField.text
+            newUser.email = self.emailTextField.text
+            newUser.password = self.passwordTextField.text
+            
+            NetworkManager.sharedInstance.createOrUpdate(user: newUser, success: { (user) in
+                DispatchQueue.main.async {
+                    self.performSegue(withIdentifier: "SignupFinishedSegue", sender: self)
+                }
+            }, failure: { (errorMessage) in
+                DispatchQueue.main.async {
+                    print("some error")
+                }
+            })
+        }
+    }
+    
+    @IBAction func backAction() {
         _ = self.navigationController?.popViewController(animated: true)
     }
 }
