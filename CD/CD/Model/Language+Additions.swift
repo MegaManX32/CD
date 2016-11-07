@@ -7,17 +7,34 @@
 //
 
 import Foundation
+import CoreData
 
 extension Language {
     
+    // MARK: - Language CRUD
+    
+    static func createOrUpdateLanguageWith(JSON:[String : Any], context:NSManagedObjectContext) -> Language {
+        
+        // fetch ServiceOffer or create new one
+        var language = Language.findLanguageWith(id: JSON["id"] as! String)
+        language = language ?? Language(context: context)
+        language!.initWith(JSON: JSON)
+        return language!
+    }
+    
+    static func findLanguageWith(id: String) -> Language? {
+        let fetchRequest: NSFetchRequest<Language> = Language.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "id == %@", id)
+        return try! fetchRequest.execute().first
+    }
+
+    
     // MARK: - JSON serialization
     
-    func initWith(JSON:[String : Any]) -> Language {
+    func initWith(JSON:[String : Any]) {
         
         self.name = JSON["name"] as? String
         self.id = JSON["id"] as? String
-        
-        return self
     }
     
     func asJSON() -> [String : Any] {

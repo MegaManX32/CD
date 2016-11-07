@@ -15,7 +15,7 @@ extension Interest {
     
     static func createOrUpdateInterestWith(JSON:[String : Any], context:NSManagedObjectContext) -> Interest {
         
-        // fetch user or create new one
+        // fetch Interest or create new one
         var interest = Interest.findInterestWith(id: JSON["id"] as! String)
         interest = interest ?? Interest(context: context)
         interest!.initWith(JSON: JSON)

@@ -58,6 +58,18 @@ extension User {
                 self.addToInterests(Interest.createOrUpdateInterestWith(JSON: interestJSON, context: context))
             }
         }
+        
+        if let serviceOffers = JSON["serviceOffers"] as? [[String : Any]] {
+            for serviceOfferJSON in serviceOffers {
+                self.addToServiceOffers(ServiceOffer.createOrUpdateServiceOfferWith(JSON: serviceOfferJSON, context: context))
+            }
+        }
+        
+        if let languages = JSON["languages"] as? [[String : Any]] {
+            for languageJSON in languages {
+                self.addToLanguages(Language.createOrUpdateLanguageWith(JSON: languageJSON, context: context))
+            }
+        }
     }
     
     func asJSON() -> [String : Any] {
