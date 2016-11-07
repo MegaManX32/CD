@@ -30,10 +30,10 @@ extension ServiceOffer {
     func asJSON() -> [String : Any] {
         
         var JSON = [String : Any]()
-        JSON["name"] = self.name! as String
-        JSON["description"] = self.desc! as String
-        JSON["id"] = self.id! as String
-        JSON["photoUrlList"] = self.photoUrlList! as [String]
+        JSON["name"] = self.name
+        JSON["description"] = self.desc
+        JSON["id"] = self.id
+        JSON["photoUrlList"] = self.photoUrlList
         
         return JSON;
     }

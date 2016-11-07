@@ -43,27 +43,27 @@ extension User {
         
         // create JSON from properties
         var JSON = [String : Any]()
-        JSON["birthDate"] = self.birthDate! as NSDate
-        JSON["country"] = self.country! as String
-        JSON["email"] = self.email! as String
-        JSON["firstName"] = self.firstName! as String
-        JSON["hostOption"] = self.hostOption as Bool
-        JSON["lastName"] = self.lastName! as String
-        JSON["location"] = self.location! as String
-        JSON["notification"] = self.notification as Bool
-        JSON["password"] = self.password! as String
-        JSON["phoneNumber"] = self.phoneNumber! as String
-        JSON["photoId"] = self.photoId! as String
-        JSON["proffesion"] = self.proffesion! as String
-        JSON["school"] = self.school! as String
-        JSON["sendFeedback"] = self.sendFeedback as Bool
-        JSON["uid"] = self.uid! as String
-        JSON["work"] = self.work! as String
-        JSON["zipcode"] = self.zipcode! as String
+        JSON["birthDate"] = self.birthDate
+        JSON["country"] = self.country
+        JSON["email"] = self.email
+        JSON["firstName"] = self.firstName
+        JSON["hostOption"] = self.hostOption
+        JSON["lastName"] = self.lastName
+        JSON["location"] = self.location
+        JSON["notification"] = self.notification
+        JSON["password"] = self.password
+        JSON["phoneNumber"] = self.phoneNumber
+        JSON["photoId"] = self.photoId
+        JSON["proffesion"] = self.proffesion
+        JSON["school"] = self.school
+        JSON["sendFeedback"] = self.sendFeedback
+        JSON["uid"] = self.uid
+        JSON["work"] = self.work
+        JSON["zipcode"] = self.zipcode
         
         // create relationships
         if let interests = self.interests {
-            var interestsArray = [[String : String]]()
+            var interestsArray = [[String : Any]]()
             for interest in interests {
                 interestsArray.append((interest as! Interest).asJSON())
             }
@@ -79,7 +79,7 @@ extension User {
         }
         
         if let languages = self.languages {
-            var languagesArray = [[String : String]]()
+            var languagesArray = [[String : Any]]()
             for language in languages {
                 languagesArray.append((language as! Language).asJSON())
             }

@@ -18,7 +18,7 @@ class NetworkManager {
     // MARK: - User
     
     func createOrUpdate(user: User, success:@escaping (User?) -> Void, failure:@escaping (String) -> Void) {
-        Alamofire.request(baseURL + "User", method: .post, parameters: user.asJSON(), encoding: JSONEncoding.default, headers: nil).validate().responseJSON { (response) in
+        Alamofire.request(baseURL + "Users", method: .post, parameters: user.asJSON(), encoding: JSONEncoding.default, headers: nil).validate().responseJSON { (response) in
             switch response.result {
             case .success:
                 print ("Validation Success: \(response)")

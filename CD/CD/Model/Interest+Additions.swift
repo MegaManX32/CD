@@ -27,13 +27,13 @@ extension Interest {
         return self
     }
     
-    func asJSON() -> [String : String] {
+    func asJSON() -> [String : Any] {
         
-        var JSON = [String : String]()
-        JSON["name"] = self.name! as String
-        JSON["description"] = self.desc! as String
-        JSON["id"] = self.id! as String
-        JSON["iconUrl"] = self.iconUrl! as String
+        var JSON = [String : Any]()
+        JSON["name"] = self.name
+        JSON["description"] = self.desc
+        JSON["id"] = self.id
+        JSON["iconUrl"] = self.iconUrl
         
         return JSON;
     }

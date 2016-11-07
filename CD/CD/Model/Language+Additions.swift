@@ -25,11 +25,11 @@ extension Language {
         return self
     }
     
-    func asJSON() -> [String : String] {
+    func asJSON() -> [String : Any] {
         
-        var JSON = [String : String]()
-        JSON["name"] = self.name! as String
-        JSON["id"] = self.id! as String
+        var JSON = [String : Any]()
+        JSON["name"] = self.name
+        JSON["id"] = self.id
         
         return JSON;
     }
