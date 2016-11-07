@@ -79,7 +79,7 @@ class SignupViewController: UIViewController {
                 }
             }, failure: { (errorMessage) in
                 DispatchQueue.main.async {
-                    print("some error")
+                    print("Some error" + errorMessage)
                 }
             })
         }

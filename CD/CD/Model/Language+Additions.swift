@@ -12,15 +12,10 @@ extension Language {
     
     // MARK: - JSON serialization
     
-    func initWith(JSON:Any) -> Language {
+    func initWith(JSON:[String : Any]) -> Language {
         
-        guard let dictionary = JSON as? [String : Any]
-            else {
-                return self
-        }
-        
-        self.name = dictionary["name"] as? String
-        self.id = dictionary["id"] as? String
+        self.name = JSON["name"] as? String
+        self.id = JSON["id"] as? String
         
         return self
     }

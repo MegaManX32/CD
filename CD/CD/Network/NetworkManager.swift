@@ -18,20 +18,34 @@ class NetworkManager {
     // MARK: - User
     
     func createOrUpdate(user: User, success:@escaping (User?) -> Void, failure:@escaping (String) -> Void) {
-        Alamofire.request(baseURL + "Users", method: .post, parameters: user.asJSON(), encoding: JSONEncoding.default, headers: nil).validate().responseJSON { (response) in
+        Alamofire.request(baseURL + "Users", method: .post, parameters: user.asJSON(), encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
             switch response.result {
             case .success:
                 print ("Validation Success: \(response)")
-                success(nil)
+                
+                let context = CoreDataManager.sharedInstance.createScratchpadContext(onMainThread: false)
+                context.performAndWait {
+                    
+                    // create new user or update existing
+                    guard let JSON = response.result.value as? [String: Any]
+                        else {
+                            success(nil)
+                            return
+                    }
+                    
+                    let newUser = User.createOrUpdateUserWith(JSON: JSON, context: context)
+                    CoreDataManager.sharedInstance.save(scratchpadContext: context)
+                    success(newUser)
+                }
             case .failure:
                 print ("Validation Failure \(response)")
-                failure("some error")
+                failure((response.result.error?.localizedDescription)!)
             }
         }
     }
     
-//    func getUser(id: String) -> User {
-//        
-//        return nil;
-//    }
+    func getUser(id: String) -> User? {
+        
+        return nil;
+    }
 }

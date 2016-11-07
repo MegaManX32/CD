@@ -7,36 +7,57 @@
 //
 
 import Foundation
+import CoreData
 
 extension User {
     
+    // MARK: - User CRUD
+    
+    static func createOrUpdateUserWith(JSON:[String : Any], context:NSManagedObjectContext) -> User {
+        
+        // fetch user or create new one
+        var user = User.findUserWith(uid: JSON["uid"] as! String)
+        user = user ?? User(context: context)
+        user!.initWith(JSON: JSON, context: context)
+        return user!
+    }
+    
+    static func findUserWith(uid: String) -> User? {
+        let fetchRequest: NSFetchRequest<User> = User.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "uid == %@", uid)
+        return try! fetchRequest.execute().first
+    }
+    
+    
     // MARK: - JSON serialization
     
-    func initWith(JSON:Any) {
-        
-        guard let dictionary = JSON as? [String : Any]
-            else {
-                return
-        }
+    func initWith(JSON:[String : Any], context: NSManagedObjectContext) {
         
         // update simple properties from JSON
-        self.birthDate = dictionary["birthDate"] as? NSDate
-        self.country = dictionary["country"] as? String
-        self.email = dictionary["email"] as? String
-        self.firstName = dictionary["firstName"] as? String
-        self.hostOption = dictionary["hostOption"] as! Bool
-        self.lastName = dictionary["lastName"] as? String
-        self.location = dictionary["location"] as? String
-        self.notification = dictionary["notification"] as! Bool
-        self.password = dictionary["password"] as? String
-        self.phoneNumber = dictionary["phoneNumber"] as? String
-        self.photoId = dictionary["photoId"] as? String
-        self.proffesion = dictionary["proffesion"] as? String
-        self.school = dictionary["school"] as? String
-        self.sendFeedback = dictionary["sendFeedback"] as! Bool
-        self.uid = dictionary["uid"] as? String
-        self.work = dictionary["work"] as? String
-        self.zipcode = dictionary["zipcode"] as? String
+        self.birthDate = JSON["birthDate"] as? NSDate
+        self.country = JSON["country"] as? String
+        self.email = JSON["email"] as? String
+        self.firstName = JSON["firstName"] as? String
+        self.hostOption = JSON["hostOption"] as! Bool
+        self.lastName = JSON["lastName"] as? String
+        self.location = JSON["location"] as? String
+        self.notification = JSON["notification"] as! Bool
+        self.password = JSON["password"] as? String
+        self.phoneNumber = JSON["phoneNumber"] as? String
+        self.photoId = JSON["photoId"] as? String
+        self.proffesion = JSON["proffesion"] as? String
+        self.school = JSON["school"] as? String
+        self.sendFeedback = JSON["sendFeedback"] as! Bool
+        self.uid = JSON["uid"] as? String
+        self.work = JSON["work"] as? String
+        self.zipcode = JSON["zipcode"] as? String
+        
+        // create relationships
+        if let interests = JSON["interests"] as? [[String : Any]] {
+            for interestJSON in interests {
+                self.addToInterests(Interest.createOrUpdateInterestWith(JSON: interestJSON, context: context))
+            }
+        }
     }
     
     func asJSON() -> [String : Any] {

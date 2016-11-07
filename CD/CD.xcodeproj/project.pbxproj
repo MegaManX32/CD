@@ -137,8 +137,8 @@
 			children = (
 				158E24091DCE0A5D000FE262 /* CoreDataManager.swift */,
 				1547F1F31DC8FE3F00A04106 /* User+Additions.swift */,
-				15EE96051DCA0F600003FB51 /* ServiceOffer+Additions.swift */,
 				15EE96071DCA144A0003FB51 /* Interest+Additions.swift */,
+				15EE96051DCA0F600003FB51 /* ServiceOffer+Additions.swift */,
 				15EE96091DCA14B50003FB51 /* Language+Additions.swift */,
 			);
 			path = Model;

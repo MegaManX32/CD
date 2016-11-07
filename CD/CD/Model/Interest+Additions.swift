@@ -7,24 +7,35 @@
 //
 
 import Foundation
+import CoreData
 
 extension Interest {
     
+    // MARK: - Interest CRUD
+    
+    static func createOrUpdateInterestWith(JSON:[String : Any], context:NSManagedObjectContext) -> Interest {
+        
+        // fetch user or create new one
+        var interest = Interest.findInterestWith(id: JSON["id"] as! String)
+        interest = interest ?? Interest(context: context)
+        interest!.initWith(JSON: JSON)
+        return interest!
+    }
+    
+    static func findInterestWith(id: String) -> Interest? {
+        let fetchRequest: NSFetchRequest<Interest> = Interest.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "id == %@", id)
+        return try! fetchRequest.execute().first
+    }
+    
     // MARK: - JSON serialization
     
-    func initWith(JSON:Any) -> Interest {
+    func initWith(JSON:[String : Any]) {
         
-        guard let dictionary = JSON as? [String : Any]
-            else {
-                return self
-        }
-        
-        self.name = dictionary["name"] as? String
-        self.desc = dictionary["description"] as? String
-        self.id = dictionary["id"] as? String
-        self.iconUrl = dictionary["iconUrl"] as? String
-        
-        return self
+        self.name = JSON["name"] as? String
+        self.desc = JSON["description"] as? String
+        self.id = JSON["id"] as? String
+        self.iconUrl = JSON["iconUrl"] as? String
     }
     
     func asJSON() -> [String : Any] {

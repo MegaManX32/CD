@@ -12,17 +12,12 @@ extension ServiceOffer {
     
     // MARK: - JSON serialization
     
-    func initWith(JSON:Any) -> ServiceOffer {
+    func initWith(JSON:[String : Any]) -> ServiceOffer {
         
-        guard let dictionary = JSON as? [String : Any]
-            else {
-                return self
-        }
-        
-        self.name = dictionary["name"] as? String
-        self.desc = dictionary["description"] as? String
-        self.id = dictionary["id"] as? String
-        self.photoUrlList = dictionary["photoUrlList"] as? [String]
+        self.name = JSON["name"] as? String
+        self.desc = JSON["description"] as? String
+        self.id = JSON["id"] as? String
+        self.photoUrlList = JSON["photoUrlList"] as? [String]
         
         return self
     }
