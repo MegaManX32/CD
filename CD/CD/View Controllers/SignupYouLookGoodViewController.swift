@@ -9,6 +9,14 @@
 import UIKit
 
 class SignupYouLookGoodViewController: UIViewController {
+    
+    // MARK: - Properties
+    
+    var avatarImage : UIImage!
+    
+    @IBOutlet weak var avatarImageView : UIImageView!
+    
+    // MARK: - View Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,15 +29,13 @@ class SignupYouLookGoodViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // MARK: - User Actions
+    
+    @IBAction func nextAction(sender: UIButton) {
+        
     }
-    */
-
+    
+    @IBAction func chnagePhotoAction(sender: UIButton) {
+        
+    }
 }

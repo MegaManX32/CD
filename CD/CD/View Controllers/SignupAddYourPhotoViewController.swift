@@ -8,8 +8,10 @@
 
 import UIKit
 
-class SignupAddYourPhotoViewController: UIViewController {
-
+class SignupAddYourPhotoViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    // MARK: - View Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,15 +23,28 @@ class SignupAddYourPhotoViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // MARK: - User Actions
+    
+    @IBAction func takePhoto(sender: UIButton) {
+        let imagePickerControleller = UIImagePickerController()
+        imagePickerControleller.sourceType = .photoLibrary
+        imagePickerControleller.delegate = self
+        self.present(imagePickerControleller, animated: true, completion: nil)
     }
-    */
-
+    
+    // MARK: - UINavigationControllerDelegate methods
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        let image = info[UIImagePickerControllerOriginalImage] as! UIImage
+        self.dismiss(animated: true, completion: nil)
+        
+        // present SignupYouLookGoodViewController
+        let controller = self.storyboard?.instantiateViewController(withIdentifier: "SignupYouLookGoodViewController") as! SignupYouLookGoodViewController
+        controller.avatarImage = image
+        self.present(controller, animated: true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        self.dismiss(animated: true, completion: nil)
+    }
 }

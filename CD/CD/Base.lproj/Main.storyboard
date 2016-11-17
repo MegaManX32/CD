@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="5f1-Mz-Wsz">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="b0q-Ll-AS5">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -29,7 +29,7 @@
         <scene sceneID="8FV-Vi-8xK">
             <objects>
                 <navigationController navigationBarHidden="YES" id="5f1-Mz-Wsz" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="yJV-oC-Rt2">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="yJV-oC-Rt2">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -333,11 +333,6 @@
                                 <state key="normal" title="Get Started">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
-                                <connections>
-                                    <segue destination="cu3-fX-L1V" kind="show" id="YkB-nG-x4h">
-                                        <nil key="action"/>
-                                    </segue>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -471,7 +466,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="koI-wz-401" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2356" y="421"/>
+            <point key="canvasLocation" x="2327" y="-294"/>
         </scene>
         <!--Signup Four Digit Code View Controller-->
         <scene sceneID="AAt-ge-hYU">
@@ -617,7 +612,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ucY-JN-G7Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3146" y="420"/>
+            <point key="canvasLocation" x="3116" y="-295"/>
         </scene>
         <!--Signup Great View Controller-->
         <scene sceneID="m94-Ab-m92">
@@ -669,11 +664,6 @@
                                 <state key="normal" title="Next">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
-                                <connections>
-                                    <segue destination="mzx-k3-kEm" kind="show" id="zVL-li-RB5">
-                                        <nil key="action"/>
-                                    </segue>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -697,7 +687,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qbP-q2-Ug6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3908" y="419.64017991004499"/>
+            <point key="canvasLocation" x="3879" y="-295"/>
         </scene>
         <!--Signup Add Your Photo View Controller-->
         <scene sceneID="eWO-wa-tat">
@@ -784,9 +774,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="G3N-Eb-I7a" kind="show" id="yUk-7s-PSI">
-                                        <nil key="action"/>
-                                    </segue>
+                                    <action selector="takePhotoWithSender:" destination="mzx-k3-kEm" eventType="touchUpInside" id="U1h-5y-2fq"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ER0-UA-3xr">
@@ -833,7 +821,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="duT-B3-Gos" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4636" y="420"/>
+            <point key="canvasLocation" x="2327" y="421"/>
         </scene>
         <!--Signup You Look Good View Controller-->
         <scene sceneID="CwH-kM-3fg">
@@ -909,6 +897,9 @@
                                 <state key="normal" title="Change photo">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="chnagePhotoActionWithSender:" destination="G3N-Eb-I7a" eventType="touchUpInside" id="qm1-aO-7ry"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pD8-3T-yti" customClass="IntroButton" customModule="CD" customModuleProvider="target">
                                 <rect key="frame" x="16" y="381" width="343" height="40"/>
@@ -920,6 +911,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
+                                    <action selector="nextActionWithSender:" destination="G3N-Eb-I7a" eventType="touchUpInside" id="2sJ-Vo-a48"/>
                                     <segue destination="tBH-wb-ULj" kind="show" id="Bq4-MU-uKm">
                                         <nil key="action"/>
                                     </segue>
@@ -966,10 +958,13 @@
                             <constraint firstItem="a36-iY-Yp2" firstAttribute="top" secondItem="XBz-gE-H9C" secondAttribute="bottom" id="zyn-CW-N7O"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="avatarImageView" destination="xDa-3R-ktA" id="hqa-Yp-zwr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Eg-9p-YOx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5382" y="421"/>
+            <point key="canvasLocation" x="3116" y="420"/>
         </scene>
         <!--Signup Country View Controller-->
         <scene sceneID="6c6-nc-5bx">
@@ -1111,7 +1106,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="76P-gW-acG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6104.8000000000002" y="419.64017991004499"/>
+            <point key="canvasLocation" x="3878" y="421"/>
         </scene>
         <!--Signup Your Interests View Controller-->
         <scene sceneID="mRo-dP-Kon">
@@ -1291,7 +1286,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kvy-BO-GW5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6821.6000000000004" y="419.64017991004499"/>
+            <point key="canvasLocation" x="4761" y="420"/>
         </scene>
         <!--Signup Congratulations View Controller-->
         <scene sceneID="ScI-J6-VkP">
@@ -1373,7 +1368,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LNL-WO-eyy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7592.8000000000002" y="419.64017991004499"/>
+            <point key="canvasLocation" x="5577" y="421"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="zII-RU-reN">
@@ -1482,7 +1477,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9uT-AH-hDE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8346.3999999999996" y="419.64017991004499"/>
+            <point key="canvasLocation" x="6398" y="421"/>
         </scene>
         <!--Create Rider List View Controller-->
         <scene sceneID="hyi-1v-62l">
@@ -1910,7 +1905,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BRb-dh-DLO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="9093.6000000000004" y="419.64017991004499"/>
+            <point key="canvasLocation" x="7124" y="420"/>
         </scene>
         <!--Review RiderL Ist View Controller-->
         <scene sceneID="p4W-xB-HMo">

@@ -4,6 +4,8 @@
 <dict>
 	<key>GoogleMapsAPIKey</key>
 	<string> AIzaSyAZLtYP7-2ehSUUYT5Ml4lRK3yXOdvABho </string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string></string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>

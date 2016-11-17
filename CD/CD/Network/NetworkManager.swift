@@ -28,7 +28,9 @@ class NetworkManager {
                     // check if valid JSON
                     guard let JSON = response.result.value as? [String: Any]
                         else {
-                            failure("JSON not valid")
+                            DispatchQueue.main.async {
+                                failure("JSON not valid")
+                            }
                             return
                     }
                     
@@ -51,7 +53,7 @@ class NetworkManager {
                         errorString = json?.first
                     }
                 }
-                failure(errorString ?? "Failure without error")
+                failure(errorString ?? "Failure without error description")
             }
         }
     }
@@ -61,5 +63,46 @@ class NetworkManager {
     func getUser(id: String) -> User? {
         
         return nil;
+    }
+    
+    // MARK: - Interest
+    
+    func getAllInterests(success:@escaping ([Interest]) -> Void, failure:@escaping (String) -> Void) {
+        Alamofire.request(baseURL + "Interests", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).validate().responseJSON { (response) in
+            switch response.result {
+            case .success:
+                
+                let context = CoreDataManager.sharedInstance.createScratchpadContext(onMainThread: true)
+                context.perform {
+                    
+                    // check if valid JSON
+                    guard let JSON = response.result.value as? [[String: Any]]
+                        else {
+                            DispatchQueue.main.async {
+                                failure("JSON not valid")
+                            }
+                            return
+                    }
+                    
+                    // update user with JSON
+                    var interestsArray = [Interest]()
+                    for interestJSON : [String : Any] in JSON {
+                        interestsArray.append(Interest.createOrUpdateInterestWith(JSON: interestJSON, context: context))
+                    }
+                    CoreDataManager.sharedInstance.save(scratchpadContext: context)
+                    success(interestsArray)
+                }
+            case .failure:
+                
+                // error handling
+                var errorString: String?
+                if let data = response.data {
+                    if let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String] {
+                        errorString = json?.first
+                    }
+                }
+                failure(errorString ?? "Failure without error description")
+            }
+        }
     }
 }

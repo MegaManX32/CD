@@ -16,13 +16,13 @@ extension Interest {
     static func createOrUpdateInterestWith(JSON:[String : Any], context:NSManagedObjectContext) -> Interest {
         
         // fetch Interest or create new one
-        var interest = Interest.findInterestWith(id: JSON["id"] as! String)
+        var interest = Interest.findInterestWith(id: JSON["id"] as! NSNumber)
         interest = interest ?? Interest(context: context)
         interest!.initWith(JSON: JSON)
         return interest!
     }
     
-    static func findInterestWith(id: String) -> Interest? {
+    static func findInterestWith(id: NSNumber) -> Interest? {
         let fetchRequest: NSFetchRequest<Interest> = Interest.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "id == %@", id)
         return try! fetchRequest.execute().first
@@ -34,7 +34,7 @@ extension Interest {
         
         self.name = JSON["name"] as? String
         self.desc = JSON["description"] as? String
-        self.id = JSON["id"] as? String
+        self.id = JSON["id"] as? NSNumber
         self.iconUrl = JSON["iconUrl"] as? String
     }
     

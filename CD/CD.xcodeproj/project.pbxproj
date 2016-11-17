@@ -149,19 +149,17 @@
 			children = (
 				15327BC01DC63A62000411F7 /* StartViewController.swift */,
 				158E24081DCE081C000FE262 /* Signup */,
+				156C226B1DDE0DA600ACE919 /* Signup Complete Profile */,
 				15327BB11DC63A62000411F7 /* AccomodationViewController.swift */,
 				15327BB21DC63A62000411F7 /* CreateRiderListViewController.swift */,
 				15327BB31DC63A62000411F7 /* HostFeedbackViewController.swift */,
 				15327BB41DC63A62000411F7 /* ReviewRiderLIstViewController.swift */,
-				15327BB51DC63A62000411F7 /* SignupAddYourPhotoViewController.swift */,
 				15327BB61DC63A62000411F7 /* SignupConfirmPhoneViewController.swift */,
 				15327BB71DC63A62000411F7 /* SignupCongratulationsViewController.swift */,
 				15327BB81DC63A62000411F7 /* SignupCountryViewController.swift */,
 				15327BBA1DC63A62000411F7 /* SignupFourDigitCodeViewController.swift */,
 				15327BBB1DC63A62000411F7 /* SignupGreatViewController.swift */,
 				15327BBC1DC63A62000411F7 /* SignupInterestsCollectionViewCell.swift */,
-				15327BBE1DC63A62000411F7 /* SignupYouLookGoodViewController.swift */,
-				15327BBF1DC63A62000411F7 /* SignupYourInterestsViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -246,6 +244,16 @@
 				154A545F1D9FD12C0021A803 /* RobotoCondensed-Regular.ttf */,
 			);
 			path = Roboto;
+			sourceTree = "<group>";
+		};
+		156C226B1DDE0DA600ACE919 /* Signup Complete Profile */ = {
+			isa = PBXGroup;
+			children = (
+				15327BB51DC63A62000411F7 /* SignupAddYourPhotoViewController.swift */,
+				15327BBE1DC63A62000411F7 /* SignupYouLookGoodViewController.swift */,
+				15327BBF1DC63A62000411F7 /* SignupYourInterestsViewController.swift */,
+			);
+			name = "Signup Complete Profile";
 			sourceTree = "<group>";
 		};
 		158E24081DCE081C000FE262 /* Signup */ = {
