@@ -16,16 +16,16 @@ extension User {
     static func createOrUpdateUserWith(JSON:[String : Any], context:NSManagedObjectContext) -> User {
         
         // fetch user or create new one
-        var user = User.findUserWith(uid: JSON["uid"] as! String)
+        var user = User.findUserWith(uid: JSON["uid"] as! String, context: context)
         user = user ?? User(context: context)
         user!.initWith(JSON: JSON, context: context)
         return user!
     }
     
-    static func findUserWith(uid: String) -> User? {
+    static func findUserWith(uid: String, context: NSManagedObjectContext) -> User? {
         let fetchRequest: NSFetchRequest<User> = User.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "uid == %@", uid)
-        return try! fetchRequest.execute().first
+        return try! context.fetch(fetchRequest).first
     }
     
     
@@ -34,23 +34,23 @@ extension User {
     func initWith(JSON:[String : Any], context: NSManagedObjectContext) {
         
         // update simple properties from JSON
-        self.birthDate = JSON["birthDate"] as? NSDate
-        self.country = JSON["country"] as? String
-        self.email = JSON["email"] as? String
-        self.firstName = JSON["firstName"] as? String
-        self.hostOption = JSON["hostOption"] as! Bool
-        self.lastName = JSON["lastName"] as? String
-        self.location = JSON["location"] as? String
-        self.notification = JSON["notification"] as! Bool
-        self.password = JSON["password"] as? String
-        self.phoneNumber = JSON["phoneNumber"] as? String
-        self.photoId = JSON["photoId"] as? String
-        self.proffesion = JSON["proffesion"] as? String
-        self.school = JSON["school"] as? String
-        self.sendFeedback = JSON["sendFeedback"] as! Bool
-        self.uid = JSON["uid"] as? String
-        self.work = JSON["work"] as? String
-        self.zipcode = JSON["zipcode"] as? String
+        self.birthDate = JSON["birthDate"] as? NSDate ?? self.birthDate
+        self.country = JSON["country"] as? String ?? self.country
+        self.email = JSON["email"] as? String ?? self.email
+        self.firstName = JSON["firstName"] as? String ?? self.firstName
+        self.hostOption = JSON["hostOption"] as? Bool ?? self.hostOption
+        self.lastName = JSON["lastName"] as? String ?? self.lastName
+        self.location = JSON["location"] as? String ?? self.location
+        self.notification = JSON["notification"] as? Bool ?? self.notification
+        self.password = JSON["password"] as? String ?? self.password
+        self.phoneNumber = JSON["phoneNumber"] as? String ?? self.phoneNumber
+        self.photoId = JSON["photoId"] as? String ?? self.photoId
+        self.proffesion = JSON["proffesion"] as? String ?? self.proffesion
+        self.school = JSON["school"] as? String ?? self.school
+        self.sendFeedback = JSON["sendFeedback"] as? Bool ?? self.sendFeedback
+        self.uid = JSON["uid"] as? String ?? self.uid
+        self.work = JSON["work"] as? String ?? self.work
+        self.zipcode = JSON["zipcode"] as? String ?? self.zipcode
         
         // create relationships
         if let interests = JSON["interests"] as? [[String : Any]] {

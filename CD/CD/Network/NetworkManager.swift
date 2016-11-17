@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import CoreData
 
 fileprivate let baseURL = "http://customdeal.tkn.rs/api/"
 
@@ -17,32 +18,45 @@ class NetworkManager {
     
     // MARK: - User
     
-    func createOrUpdate(user: User, success:@escaping (User?) -> Void, failure:@escaping (String) -> Void) {
-        Alamofire.request(baseURL + "Users", method: .post, parameters: user.asJSON(), encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
+    func createOrUpdate(user: User, context: NSManagedObjectContext, success:@escaping (String?) -> Void, failure:@escaping (String) -> Void) {
+        Alamofire.request(baseURL + "Users", method: .post, parameters: user.asJSON(), encoding: JSONEncoding.default, headers: nil).validate().responseJSON { (response) in
             switch response.result {
             case .success:
-                print ("Validation Success: \(response)")
                 
-                let context = CoreDataManager.sharedInstance.createScratchpadContext(onMainThread: false)
-                context.performAndWait {
+                context.perform {
                     
-                    // create new user or update existing
+                    // check if valid JSON
                     guard let JSON = response.result.value as? [String: Any]
                         else {
-                            success(nil)
+                            failure("JSON not valid")
                             return
                     }
                     
-                    let newUser = User.createOrUpdateUserWith(JSON: JSON, context: context)
+                    // update user with JSON
+                    user.initWith(JSON: JSON, context: context)
                     CoreDataManager.sharedInstance.save(scratchpadContext: context)
-                    success(newUser)
+                    
+                    // always return on main queue
+                    let userID = user.uid
+                    DispatchQueue.main.async {
+                        success(userID)
+                    }
                 }
             case .failure:
-                print ("Validation Failure \(response)")
-                failure((response.result.error?.localizedDescription)!)
+                
+                // error handling
+                var errorString: String?
+                if let data = response.data {
+                    if let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String] {
+                        errorString = json?.first
+                    }
+                }
+                failure(errorString ?? "Failure without error")
             }
         }
     }
+    
+//    func getAllUsers()
     
     func getUser(id: String) -> User? {
         

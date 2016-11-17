@@ -10,7 +10,17 @@ import CoreData
 
 class CoreDataManager : NSPersistentContainer {
     
+    // MARK: - Properties
+    
+    // get static variable
     static let sharedInstance = CoreDataManager(name:"CD")
+    
+    // get main context
+    var mainContext : NSManagedObjectContext {
+        get {
+            return self.viewContext
+        }
+    }
     
     // MARK: - Initialization
     
@@ -46,7 +56,7 @@ class CoreDataManager : NSPersistentContainer {
     
     func createScratchpadContext(onMainThread: Bool) -> NSManagedObjectContext {
         let childContext = NSManagedObjectContext(concurrencyType: onMainThread ? .mainQueueConcurrencyType : .privateQueueConcurrencyType)
-        childContext.parent = self.viewContext
+        childContext.parent = self.mainContext
         return childContext
     }
     
@@ -61,22 +71,23 @@ class CoreDataManager : NSPersistentContainer {
             }
         }
         
-        // save main context
-        self.saveContext()
+        // save changes to main context
+        self.saveMainContext()
     }
     
     // MARK: - Core Data Saving support
     
-    func saveContext () {
-        let context = self.viewContext
-        if context.hasChanges {
-            do {
-                try context.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nserror = error as NSError
-                fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+    func saveMainContext () {
+        if self.mainContext.hasChanges {
+            self.mainContext.perform {
+                do {
+                    try self.mainContext.save()
+                } catch {
+                    // Replace this implementation with code to handle the error appropriately.
+                    // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+                    let nserror = error as NSError
+                    fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+                }
             }
         }
     }

@@ -43,7 +43,7 @@ class SignupViewController: UIViewController {
         
         self.firstNameTextField.text = "Vlado"
         self.lastNameTextField.text = "Simovic"
-        self.emailTextField.text = "vlado@gmail.com"
+        self.emailTextField.text = "vladislav12.simovic@gmail.com"
         self.passwordTextField.text = "123456"
         self.confirmPasswordTextField.text = "123456"
     }
@@ -64,23 +64,14 @@ class SignupViewController: UIViewController {
             newUser.email = self.emailTextField.text
             newUser.password = self.passwordTextField.text
             
-            do {
-                let jsonData = try JSONSerialization.data(withJSONObject: newUser.asJSON(), options: .prettyPrinted)
-                print("\(String(bytes: jsonData, encoding: String.Encoding.utf8))")
-                NSLog("%@", String(bytes: jsonData, encoding: String.Encoding.utf8)!)
-            } catch {
-                
-            }
-            
-                
-            NetworkManager.sharedInstance.createOrUpdate(user: newUser, success: { (user) in
-                DispatchQueue.main.async {
-                    self.performSegue(withIdentifier: "SignupFinishedSegue", sender: self)
-                }
+            // create of or update user
+            NetworkManager.sharedInstance.createOrUpdate(user: newUser, context: context, success: { [weak self] (userID) in
+                guard let weakSelf = self else { return }
+                let controller = weakSelf.storyboard?.instantiateViewController(withIdentifier: "SignupFinishedViewController") as! SignupFinishedViewController
+                controller.userID = userID
+                weakSelf.show(controller, sender: weakSelf)
             }, failure: { (errorMessage) in
-                DispatchQueue.main.async {
-                    print("Some error" + errorMessage)
-                }
+                print(errorMessage)
             })
         }
     }

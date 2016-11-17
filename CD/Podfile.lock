@@ -6,17 +6,20 @@ PODS:
   - GoogleMaps/Maps (2.1.0):
     - GoogleMaps/Base (= 2.1.0)
   - IQKeyboardManagerSwift (4.0.6)
+  - MBProgressHUD (1.0.0)
 
 DEPENDENCIES:
   - Alamofire (= 4.0)
   - GoogleMaps (= 2.1.0)
   - IQKeyboardManagerSwift (= 4.0.6)
+  - MBProgressHUD (= 1.0.0)
 
 SPEC CHECKSUMS:
   Alamofire: fef59f00388f267e52d9b432aa5d93dc97190f14
   GoogleMaps: 06589b9a38097bce0cd6e90f0fd9b5e4b4a9344c
   IQKeyboardManagerSwift: b3015e819559ca76381f87a0833f44d178564603
+  MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
 
-PODFILE CHECKSUM: 7fb3d3a61918c34a8fd14289c212173db9636a0f
+PODFILE CHECKSUM: 6e0c4b4ce99429019abffc6467d5296a5e81f843
 
 COCOAPODS: 1.1.1
