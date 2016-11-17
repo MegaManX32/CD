@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MBProgressHUD
 
 class SignupViewController: UIViewController {
     
@@ -43,7 +44,7 @@ class SignupViewController: UIViewController {
         
         self.firstNameTextField.text = "Vlado"
         self.lastNameTextField.text = "Simovic"
-        self.emailTextField.text = "vladislav12.simovic@gmail.com"
+        self.emailTextField.text = "vladislav123.simovic@gmail.com"
         self.passwordTextField.text = "123456"
         self.confirmPasswordTextField.text = "123456"
     }
@@ -53,6 +54,7 @@ class SignupViewController: UIViewController {
     @IBAction func signupAction() {
         
         // try to create new User
+        MBProgressHUD.showAdded(to: self.view, animated: true)
         let context = CoreDataManager.sharedInstance.createScratchpadContext(onMainThread: false)
         context.perform {
             [unowned self] in
@@ -65,13 +67,14 @@ class SignupViewController: UIViewController {
             newUser.password = self.passwordTextField.text
             
             // create of or update user
-            NetworkManager.sharedInstance.createOrUpdate(user: newUser, context: context, success: { [weak self] (userID) in
-                guard let weakSelf = self else { return }
-                let controller = weakSelf.storyboard?.instantiateViewController(withIdentifier: "SignupFinishedViewController") as! SignupFinishedViewController
+            NetworkManager.sharedInstance.createOrUpdate(user: newUser, context: context, success: { [unowned self] (userID) in
+                let controller = self.storyboard?.instantiateViewController(withIdentifier: "SignupFinishedViewController") as! SignupFinishedViewController
                 controller.userID = userID
-                weakSelf.show(controller, sender: weakSelf)
-            }, failure: { (errorMessage) in
+                self.show(controller, sender: self)
+                MBProgressHUD.hide(for: self.view, animated: true)
+            }, failure: { [unowned self] (errorMessage) in
                 print(errorMessage)
+                MBProgressHUD.hide(for: self.view, animated: true)
             })
         }
     }
