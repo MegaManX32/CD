@@ -16,10 +16,24 @@ class NetworkManager {
     
     static let sharedInstance = NetworkManager()
     
+    // MARK: - Helper methods
+    
+    func generalizedFailure(data: Data?, defaultErrorMessage : String = "Failure without error description", failure:(String) -> Void) -> Void {
+        
+        // error handling
+        var errorString: String?
+        if let data = data {
+            if let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String] {
+                errorString = json?.first
+            }
+        }
+        failure(errorString ?? defaultErrorMessage)
+    }
+    
     // MARK: - User
     
     func createOrUpdate(user: User, context: NSManagedObjectContext, success:@escaping (String?) -> Void, failure:@escaping (String) -> Void) {
-        Alamofire.request(baseURL + "Users", method: .post, parameters: user.asJSON(), encoding: JSONEncoding.default, headers: nil).validate().responseJSON { (response) in
+        Alamofire.request(baseURL + "Users", method: .post, parameters: user.asJSON(), encoding: JSONEncoding.default, headers: nil).validate().responseJSON {[unowned self] (response) in
             switch response.result {
             case .success:
                 
@@ -47,28 +61,57 @@ class NetworkManager {
             case .failure:
                 
                 // error handling
-                var errorString: String?
-                if let data = response.data {
-                    if let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String] {
-                        errorString = json?.first
-                    }
-                }
-                failure(errorString ?? "Failure without error description")
+                self.generalizedFailure(data: response.data, defaultErrorMessage: "Could not update user", failure: failure)
             }
         }
     }
-    
-//    func getAllUsers()
     
     func getUser(id: String) -> User? {
         
         return nil;
     }
     
+    // MARK: - Photo
+    
+    func upload(photo: UIImage, success:@escaping (String) -> Void, failure:@escaping (String) -> Void) {
+        Alamofire.upload(multipartFormData: { (multipartData) in
+            multipartData.append(UIImageJPEGRepresentation(photo, 1)!, withName: "photo", fileName: "photo.jpg", mimeType: "image/jpeg")
+        }, to: baseURL + "Upload/photo",
+           encodingCompletion: { (result) in
+            switch result {
+            case .success(let upload, _, _):
+                upload.validate().responseJSON(completionHandler: { (response) in
+                    switch response.result {
+                    case .success(let value):
+                        
+                        // check if valid JSON
+                        guard let JSON = value as? [String: Any]
+                            else {
+                                DispatchQueue.main.async {
+                                    failure("JSON not valid")
+                                }
+                                return
+                        }
+                        
+                        let photoID = JSON["id"] as! String
+                        success(photoID)
+                    case .failure:
+                        
+                        // error handling
+                        self.generalizedFailure(data: response.data, defaultErrorMessage: "Could not upload photo", failure: failure)
+                    }
+                })
+                
+            case .failure(let encodingError):
+                failure(encodingError.localizedDescription)
+            }
+        })
+    }
+    
     // MARK: - Interest
     
     func getAllInterests(success:@escaping () -> Void, failure:@escaping (String) -> Void) {
-        Alamofire.request(baseURL + "Interests", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).validate().responseJSON { (response) in
+        Alamofire.request(baseURL + "Interests", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).validate().responseJSON {[unowned self] (response) in
             switch response.result {
             case .success:
                 
@@ -99,13 +142,7 @@ class NetworkManager {
             case .failure:
                 
                 // error handling
-                var errorString: String?
-                if let data = response.data {
-                    if let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String] {
-                        errorString = json?.first
-                    }
-                }
-                failure(errorString ?? "Failure without error description")
+                self.generalizedFailure(data: response.data, defaultErrorMessage: "Could not get interests", failure: failure)
             }
         }
     }

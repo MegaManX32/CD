@@ -10,6 +10,10 @@ import UIKit
 
 class SignupAddYourPhotoViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
+    // MARK: - Properties
+    
+    var userID : String!
+    
     // MARK: - View Lifecycle
     
     override func viewDidLoad() {

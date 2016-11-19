@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import MBProgressHUD
 
 class SignupYouLookGoodViewController: UIViewController {
     
     // MARK: - Properties
     
+    var userID : String!
     var avatarImage : UIImage!
     
     @IBOutlet weak var avatarImageView : UIImageView!
@@ -21,7 +23,8 @@ class SignupYouLookGoodViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        // test it with test image
+        avatarImage = #imageLiteral(resourceName: "testImage")
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,6 +36,35 @@ class SignupYouLookGoodViewController: UIViewController {
     
     @IBAction func nextAction(sender: UIButton) {
         
+        // try to upload photo on user
+        MBProgressHUD.showAdded(to: self.view, animated: true)
+        NetworkManager.sharedInstance.upload(photo: avatarImage, success: {(photoID) in
+            
+            let context = CoreDataManager.sharedInstance.createScratchpadContext(onMainThread: false)
+            context.perform {
+                [unowned self] in
+                
+                // find user
+                let user = User.findUserWith(uid: self.userID, context: context)!
+                user.photoId = photoID
+                
+                // create of or update user
+                NetworkManager.sharedInstance.createOrUpdate(user: user, context: context, success: { [unowned self] (userID) in
+                    let controller = self.storyboard?.instantiateViewController(withIdentifier: "SignupFinishedViewController") as! SignupFinishedViewController
+                    controller.userID = userID
+                    self.show(controller, sender: self)
+                    MBProgressHUD.hide(for: self.view, animated: true)
+                    }, failure: { [unowned self] (errorMessage) in
+                        print(errorMessage)
+                        MBProgressHUD.hide(for: self.view, animated: true)
+                })
+            }
+            
+            
+        }) { (errorMessage) in
+            print(errorMessage)
+            MBProgressHUD.hide(for: self.view, animated: true)
+        }
     }
     
     @IBAction func chnagePhotoAction(sender: UIButton) {

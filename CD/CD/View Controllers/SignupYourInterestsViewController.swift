@@ -66,7 +66,7 @@ class SignupYourInterestsViewController: UIViewController, UICollectionViewDataS
         context.perform {
             [unowned self] in
             
-            // create new user and populate it with data
+            // find user
             let user = User.findUserWith(uid: self.userID, context: context)!
             
             // update user with interests
