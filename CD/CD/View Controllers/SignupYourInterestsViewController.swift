@@ -46,7 +46,9 @@ class SignupYourInterestsViewController: UIViewController, UICollectionViewDataS
         // fetch interests
         MBProgressHUD.showAdded(to: self.view, animated: true)
         NetworkManager.sharedInstance.getAllInterests(
-            success: { [unowned self] (interests) in
+            success: { [unowned self] in
+                let context = CoreDataManager.sharedInstance.mainContext
+                let interests = Interest.findAllInterests(context: context)
                 for interest in interests {
                     self.interestsArray.append((interest, false))
                 }

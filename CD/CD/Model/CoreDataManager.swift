@@ -78,8 +78,8 @@ class CoreDataManager : NSPersistentContainer {
     // MARK: - Core Data Saving support
     
     func saveMainContext () {
-        if self.mainContext.hasChanges {
-            self.mainContext.perform {
+        self.mainContext.perform {
+            if self.mainContext.hasChanges {
                 do {
                     try self.mainContext.save()
                 } catch {

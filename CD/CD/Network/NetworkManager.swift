@@ -67,12 +67,12 @@ class NetworkManager {
     
     // MARK: - Interest
     
-    func getAllInterests(success:@escaping ([Interest]) -> Void, failure:@escaping (String) -> Void) {
+    func getAllInterests(success:@escaping () -> Void, failure:@escaping (String) -> Void) {
         Alamofire.request(baseURL + "Interests", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).validate().responseJSON { (response) in
             switch response.result {
             case .success:
                 
-                let context = CoreDataManager.sharedInstance.createScratchpadContext(onMainThread: true)
+                let context = CoreDataManager.sharedInstance.createScratchpadContext(onMainThread: false)
                 context.perform {
                     
                     // check if valid JSON
@@ -90,7 +90,11 @@ class NetworkManager {
                         interestsArray.append(Interest.createOrUpdateInterestWith(JSON: interestJSON, context: context))
                     }
                     CoreDataManager.sharedInstance.save(scratchpadContext: context)
-                    success(interestsArray)
+                    
+                    // always return on main queue
+                    DispatchQueue.main.async {
+                        success()
+                    }
                 }
             case .failure:
                 
