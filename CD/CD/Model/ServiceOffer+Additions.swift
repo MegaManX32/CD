@@ -16,18 +16,17 @@ extension ServiceOffer {
     static func createOrUpdateServiceOfferWith(JSON:[String : Any], context:NSManagedObjectContext) -> ServiceOffer {
         
         // fetch ServiceOffer or create new one
-        var serviceOffer = ServiceOffer.findServiceOfferWith(id: JSON["id"] as! String)
+        var serviceOffer = ServiceOffer.findServiceOfferWith(id: JSON["id"] as! String, context: context)
         serviceOffer = serviceOffer ?? ServiceOffer(context: context)
         serviceOffer!.initWith(JSON: JSON)
         return serviceOffer!
     }
     
-    static func findServiceOfferWith(id: String) -> ServiceOffer? {
+    static func findServiceOfferWith(id: String, context:NSManagedObjectContext) -> ServiceOffer? {
         let fetchRequest: NSFetchRequest<ServiceOffer> = ServiceOffer.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "id == %@", id)
-        return try! fetchRequest.execute().first
+        return try! context.fetch(fetchRequest).first
     }
-
     
     // MARK: - JSON serialization
     

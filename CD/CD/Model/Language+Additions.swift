@@ -16,18 +16,17 @@ extension Language {
     static func createOrUpdateLanguageWith(JSON:[String : Any], context:NSManagedObjectContext) -> Language {
         
         // fetch ServiceOffer or create new one
-        var language = Language.findLanguageWith(id: JSON["id"] as! String)
+        var language = Language.findLanguageWith(id: JSON["id"] as! String, context: context)
         language = language ?? Language(context: context)
         language!.initWith(JSON: JSON)
         return language!
     }
     
-    static func findLanguageWith(id: String) -> Language? {
+    static func findLanguageWith(id: String, context:NSManagedObjectContext) -> Language? {
         let fetchRequest: NSFetchRequest<Language> = Language.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "id == %@", id)
-        return try! fetchRequest.execute().first
+        return try! context.fetch(fetchRequest).first
     }
-
     
     // MARK: - JSON serialization
     

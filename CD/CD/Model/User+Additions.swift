@@ -28,7 +28,6 @@ extension User {
         return try! context.fetch(fetchRequest).first
     }
     
-    
     // MARK: - JSON serialization
     
     func initWith(JSON:[String : Any], context: NSManagedObjectContext) {
