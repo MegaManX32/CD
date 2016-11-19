@@ -20,17 +20,21 @@ class SignupFinishedViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        let context = CoreDataManager.sharedInstance.mainContext
-        context.perform {
-            let user = User.findUserWith(uid: self.userID, context: context)
-            NSLog("%@", user!)
-        }
+        
+//        userID = "26a8d1c4-22e8-4f9b-b88a-351976faba69"
+//        let user = User.findUserWith(uid: userID, context: CoreDataManager.sharedInstance.mainContext)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    // MARK: - User Actions
+    
+    @IBAction func getStarted(sender:UIButton) {
+        let controller = self.storyboard?.instantiateViewController(withIdentifier: "SignupYourInterestsViewController") as! SignupYourInterestsViewController
+        controller.userID = self.userID
+        self.present(controller, animated: true, completion: nil)
+    }
 }

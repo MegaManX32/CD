@@ -18,24 +18,7 @@ class SignupYourInterestsViewController: UIViewController, UICollectionViewDataS
     
     @IBOutlet weak var collectionView : UICollectionView!
     
-//    var interestsArray : [(name : String, checked : Bool)] = [
-//        ("Sport", false),
-//        ("Food", false),
-//        ("Fashion", false),
-//        ("Environment", false),
-//        ("Business", false),
-//        ("Shopping", false),
-//        ("IT", false),
-//        ("Art", false),
-//        ("Health", false),
-//        ("Party", false),
-//        ("Science", false),
-//        ("Cars", false),
-//        ("History", false),
-//        ("Music", false),
-//        ("Travel", false)
-//    ]
-    
+    var userID : String!
     var interestsArray : [(interest : Interest, checked : Bool)] = [(Interest, Bool)]()
     
     // MARK: - View Lifecycle
@@ -64,6 +47,45 @@ class SignupYourInterestsViewController: UIViewController, UICollectionViewDataS
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    // MARK: - User Actions
+    
+    @IBAction func nextAction(sender: UIButton) {
+        
+        // try to update interests on user
+        MBProgressHUD.showAdded(to: self.view, animated: true)
+        var selectedInterestsIDArray = [String]()
+        for interestOption in self.interestsArray {
+            if interestOption.checked {
+                selectedInterestsIDArray.append(interestOption.interest.id!)
+            }
+        }
+        
+        let context = CoreDataManager.sharedInstance.createScratchpadContext(onMainThread: false)
+        context.perform {
+            [unowned self] in
+            
+            // create new user and populate it with data
+            let user = User.findUserWith(uid: self.userID, context: context)!
+            
+            // update user with interests
+            for interestID in selectedInterestsIDArray {
+                 user.addToInterests(Interest.findInterestWith(id: interestID, context: context)!)
+            }
+            
+            // create of or update user
+            NetworkManager.sharedInstance.createOrUpdate(user: user, context: context, success: { [unowned self] (userID) in
+                let controller = self.storyboard?.instantiateViewController(withIdentifier: "SignupFinishedViewController") as! SignupFinishedViewController
+                controller.userID = userID
+                self.show(controller, sender: self)
+                MBProgressHUD.hide(for: self.view, animated: true)
+                }, failure: { [unowned self] (errorMessage) in
+                    print(errorMessage)
+                    MBProgressHUD.hide(for: self.view, animated: true)
+            })
+        }
+
     }
     
     // MARK: - UICollectionViewDelegate methods
