@@ -16,7 +16,7 @@ extension ServiceOffer {
     static func createOrUpdateServiceOfferWith(JSON:[String : Any], context:NSManagedObjectContext) -> ServiceOffer {
         
         // fetch ServiceOffer or create new one
-        var serviceOffer = ServiceOffer.findServiceOfferWith(id: JSON["id"] as! String, context: context)
+        var serviceOffer = ServiceOffer.findServiceOfferWith(id: JSON["uid"] as! String, context: context)
         serviceOffer = serviceOffer ?? ServiceOffer(context: context)
         serviceOffer!.initWith(JSON: JSON)
         return serviceOffer!
@@ -24,7 +24,7 @@ extension ServiceOffer {
     
     static func findServiceOfferWith(id: String, context:NSManagedObjectContext) -> ServiceOffer? {
         let fetchRequest: NSFetchRequest<ServiceOffer> = ServiceOffer.fetchRequest()
-        fetchRequest.predicate = NSPredicate(format: "id == %@", id)
+        fetchRequest.predicate = NSPredicate(format: "uid == %@", id)
         return try! context.fetch(fetchRequest).first
     }
     
@@ -34,7 +34,7 @@ extension ServiceOffer {
         
         self.name = JSON["name"] as? String
         self.desc = JSON["description"] as? String
-        self.id = JSON["id"] as? String
+        self.uid = JSON["uid"] as? String
         self.photoUrlList = JSON["photoUrlList"] as? [String]
     }
     
@@ -43,7 +43,7 @@ extension ServiceOffer {
         var JSON = [String : Any]()
         JSON["name"] = self.name
         JSON["description"] = self.desc
-        JSON["id"] = self.id
+        JSON["uid"] = self.uid
         JSON["photoUrlList"] = self.photoUrlList
         
         return JSON;

@@ -16,7 +16,7 @@ extension Interest {
     static func createOrUpdateInterestWith(JSON:[String : Any], context:NSManagedObjectContext) -> Interest {
         
         // fetch Interest or create new one
-        var interest = Interest.findInterestWith(id: JSON["id"] as! String, context: context)
+        var interest = Interest.findInterestWith(id: JSON["uid"] as! String, context: context)
         interest = interest ?? Interest(context: context)
         interest!.initWith(JSON: JSON)
         return interest!
@@ -24,7 +24,7 @@ extension Interest {
     
     static func findInterestWith(id: String, context: NSManagedObjectContext) -> Interest? {
         let fetchRequest: NSFetchRequest<Interest> = Interest.fetchRequest()
-        fetchRequest.predicate = NSPredicate(format: "id == %@", id)
+        fetchRequest.predicate = NSPredicate(format: "uid == %@", id)
         return try! context.fetch(fetchRequest).first
     }
     
@@ -39,7 +39,7 @@ extension Interest {
         
         self.name = JSON["name"] as? String
         self.desc = JSON["description"] as? String
-        self.id = JSON["id"] as? String
+        self.uid = JSON["uid"] as? String
         self.iconUrl = JSON["iconUrl"] as? String
     }
     
@@ -48,7 +48,7 @@ extension Interest {
         var JSON = [String : Any]()
         JSON["name"] = self.name
         JSON["description"] = self.desc
-        JSON["id"] = self.id
+        JSON["uid"] = self.uid
         JSON["iconUrl"] = self.iconUrl
         
         return JSON;

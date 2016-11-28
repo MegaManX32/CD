@@ -19,6 +19,7 @@ class ButtonView: UIView {
     var action:(() -> ())?
     var title: String?
     var hasImage: Bool?
+    var isWhite = false
     
     private let titleLabel = UILabel.init()
     private let imageView = UIImageView.init(image: UIImage.init(named: "forwardIcon"))
@@ -33,6 +34,7 @@ class ButtonView: UIView {
         self.addSubview(self.titleLabel)
         
         self.imageView.contentMode = .center
+        self.imageView.tintColor = UIColor(colorLiteralRed: 86 / 255.0, green: 90 / 255.0, blue: 92 / 255.0, alpha: 1)
         self.addSubview(self.imageView)
         
         self.backgroundColor = .white
@@ -47,6 +49,15 @@ class ButtonView: UIView {
         
         self.titleLabel.text = self.title
         self.imageView.isHidden = false
+        
+        // update for white version
+        if isWhite {
+            self.backgroundColor = .clear
+            self.layer.borderColor = UIColor.white.cgColor
+            self.layer.borderWidth = 1
+            self.imageView.tintColor = .white
+            self.titleLabel.textColor = .white
+        }
         
         // update frames
         self.titleLabel.frame = CGRect.init(x: leftTextPadding, y: 0, width: self.frame.width - self.frame.height, height: self.frame.height)

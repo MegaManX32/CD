@@ -1,0 +1,43 @@
+//
+//  Country+Additions.swift
+//  CD
+//
+//  Created by Vladislav Simovic on 11/28/16.
+//  Copyright © 2016 CustomDeal. All rights reserved.
+//
+
+import Foundation
+import CoreData
+
+extension Country {
+    
+    // MARK: - Country CRUD
+    
+    static func findAllCountries(context: NSManagedObjectContext) -> [Country] {
+        let fetchRequest: NSFetchRequest<Country> = Country.fetchRequest()
+        return try! context.fetch(fetchRequest)
+    }
+    
+    static func findCountryWith(id: String, context:NSManagedObjectContext) -> Country? {
+        let fetchRequest: NSFetchRequest<Country> = Country.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "uid == %@", id)
+        return try! context.fetch(fetchRequest).first
+    }
+
+    // MARK: - JSON serialization
+    
+    func initWith(JSON:[String : Any]) {
+        
+        self.name = JSON["name"] as? String
+        self.uid = JSON["uid"] as? String
+    }
+    
+    func asJSON() -> [String : Any] {
+        
+        var JSON = [String : Any]()
+        JSON["name"] = self.name
+        JSON["uid"] = self.uid
+        
+        return JSON;
+    }
+}

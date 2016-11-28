@@ -54,10 +54,14 @@
 		154A54711D9FD12C0021A803 /* RobotoCondensed-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 154A545E1D9FD12C0021A803 /* RobotoCondensed-LightItalic.ttf */; };
 		154A54721D9FD12C0021A803 /* RobotoCondensed-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 154A545F1D9FD12C0021A803 /* RobotoCondensed-Regular.ttf */; };
 		158E240A1DCE0A5D000FE262 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158E24091DCE0A5D000FE262 /* CoreDataManager.swift */; };
+		15CAE37E1DEC86A000DED25C /* Country+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CAE37D1DEC86A000DED25C /* Country+Additions.swift */; };
+		15CAE3801DEC86AF00DED25C /* City+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CAE37F1DEC86AF00DED25C /* City+Additions.swift */; };
+		15CAE3821DEC8D7400DED25C /* SignupChooseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CAE3811DEC8D7400DED25C /* SignupChooseTableViewCell.swift */; };
 		15EE96061DCA0F600003FB51 /* ServiceOffer+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15EE96051DCA0F600003FB51 /* ServiceOffer+Additions.swift */; };
 		15EE96081DCA144A0003FB51 /* Interest+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15EE96071DCA144A0003FB51 /* Interest+Additions.swift */; };
 		15EE960A1DCA14B50003FB51 /* Language+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15EE96091DCA14B50003FB51 /* Language+Additions.swift */; };
 		15EE960D1DCA2CD10003FB51 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15EE960C1DCA2CD10003FB51 /* NetworkManager.swift */; };
+		15EF8EDA1DE8A4D30086C4D5 /* SignupChooseFromListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15EF8ED91DE8A4D30086C4D5 /* SignupChooseFromListViewController.swift */; };
 		DA8406CBF1A476662911D7E8 /* Pods_CD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12641929306E4C88E2053DC2 /* Pods_CD.framework */; };
 /* End PBXBuildFile section */
 
@@ -113,10 +117,14 @@
 		154A545E1D9FD12C0021A803 /* RobotoCondensed-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-LightItalic.ttf"; sourceTree = "<group>"; };
 		154A545F1D9FD12C0021A803 /* RobotoCondensed-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-Regular.ttf"; sourceTree = "<group>"; };
 		158E24091DCE0A5D000FE262 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		15CAE37D1DEC86A000DED25C /* Country+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Country+Additions.swift"; sourceTree = "<group>"; };
+		15CAE37F1DEC86AF00DED25C /* City+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "City+Additions.swift"; sourceTree = "<group>"; };
+		15CAE3811DEC8D7400DED25C /* SignupChooseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupChooseTableViewCell.swift; sourceTree = "<group>"; };
 		15EE96051DCA0F600003FB51 /* ServiceOffer+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ServiceOffer+Additions.swift"; sourceTree = "<group>"; };
 		15EE96071DCA144A0003FB51 /* Interest+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Interest+Additions.swift"; sourceTree = "<group>"; };
 		15EE96091DCA14B50003FB51 /* Language+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Language+Additions.swift"; sourceTree = "<group>"; };
 		15EE960C1DCA2CD10003FB51 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		15EF8ED91DE8A4D30086C4D5 /* SignupChooseFromListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupChooseFromListViewController.swift; sourceTree = "<group>"; };
 		DB6497397822CCBF6D246A17 /* Pods-CD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CD.release.xcconfig"; path = "Pods/Target Support Files/Pods-CD/Pods-CD.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -140,6 +148,8 @@
 				15EE96071DCA144A0003FB51 /* Interest+Additions.swift */,
 				15EE96051DCA0F600003FB51 /* ServiceOffer+Additions.swift */,
 				15EE96091DCA14B50003FB51 /* Language+Additions.swift */,
+				15CAE37D1DEC86A000DED25C /* Country+Additions.swift */,
+				15CAE37F1DEC86AF00DED25C /* City+Additions.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -156,7 +166,6 @@
 				15327BB41DC63A62000411F7 /* ReviewRiderLIstViewController.swift */,
 				15327BB61DC63A62000411F7 /* SignupConfirmPhoneViewController.swift */,
 				15327BB71DC63A62000411F7 /* SignupCongratulationsViewController.swift */,
-				15327BB81DC63A62000411F7 /* SignupCountryViewController.swift */,
 				15327BBA1DC63A62000411F7 /* SignupFourDigitCodeViewController.swift */,
 				15327BBB1DC63A62000411F7 /* SignupGreatViewController.swift */,
 				15327BBC1DC63A62000411F7 /* SignupInterestsCollectionViewCell.swift */,
@@ -251,7 +260,10 @@
 			children = (
 				15327BB51DC63A62000411F7 /* SignupAddYourPhotoViewController.swift */,
 				15327BBE1DC63A62000411F7 /* SignupYouLookGoodViewController.swift */,
+				15327BB81DC63A62000411F7 /* SignupCountryViewController.swift */,
 				15327BBF1DC63A62000411F7 /* SignupYourInterestsViewController.swift */,
+				15EF8ED91DE8A4D30086C4D5 /* SignupChooseFromListViewController.swift */,
+				15CAE3811DEC8D7400DED25C /* SignupChooseTableViewCell.swift */,
 			);
 			name = "Signup Complete Profile";
 			sourceTree = "<group>";
@@ -437,6 +449,7 @@
 				154A54481D9FD11D0021A803 /* IntroButton.swift in Sources */,
 				15327BD01DC63A62000411F7 /* StartViewController.swift in Sources */,
 				15327BCD1DC63A62000411F7 /* SignupViewController.swift in Sources */,
+				15CAE3821DEC8D7400DED25C /* SignupChooseTableViewCell.swift in Sources */,
 				15327BC61DC63A62000411F7 /* SignupConfirmPhoneViewController.swift in Sources */,
 				15327BC41DC63A62000411F7 /* ReviewRiderLIstViewController.swift in Sources */,
 				15327BCF1DC63A62000411F7 /* SignupYourInterestsViewController.swift in Sources */,
@@ -450,9 +463,12 @@
 				15327BC21DC63A62000411F7 /* CreateRiderListViewController.swift in Sources */,
 				15327BC81DC63A62000411F7 /* SignupCountryViewController.swift in Sources */,
 				154A542E1D9FD0750021A803 /* AppDelegate.swift in Sources */,
+				15EF8EDA1DE8A4D30086C4D5 /* SignupChooseFromListViewController.swift in Sources */,
+				15CAE3801DEC86AF00DED25C /* City+Additions.swift in Sources */,
 				154A54491D9FD11D0021A803 /* IntroButtonWhite.swift in Sources */,
 				15327BC51DC63A62000411F7 /* SignupAddYourPhotoViewController.swift in Sources */,
 				15327BCA1DC63A62000411F7 /* SignupFourDigitCodeViewController.swift in Sources */,
+				15CAE37E1DEC86A000DED25C /* Country+Additions.swift in Sources */,
 				15327BC91DC63A62000411F7 /* SignupFinishedViewController.swift in Sources */,
 				153C80D21DABB57000DBEDCD /* ButtonView.swift in Sources */,
 				15327BC11DC63A62000411F7 /* AccomodationViewController.swift in Sources */,

@@ -71,6 +71,45 @@ class NetworkManager {
         return nil;
     }
     
+    // MARK: - Country and City
+    
+    func getAllCountries(success:@escaping () -> Void, failure:@escaping (String) -> Void) {
+        Alamofire.request(baseURL + "Settings/country", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).validate().responseJSON {[unowned self] (response) in
+            switch response.result {
+            case .success:
+                
+                let context = CoreDataManager.sharedInstance.createScratchpadContext(onMainThread: false)
+                context.perform {
+                    
+                    // check if valid JSON
+                    guard let JSON = response.result.value as? [[String: Any]]
+                        else {
+                            DispatchQueue.main.async {
+                                failure("JSON not valid")
+                            }
+                            return
+                    }
+                    
+                    // update user with JSON
+                    var interestsArray = [Interest]()
+                    for interestJSON : [String : Any] in JSON {
+                        interestsArray.append(Interest.createOrUpdateInterestWith(JSON: interestJSON, context: context))
+                    }
+                    CoreDataManager.sharedInstance.save(scratchpadContext: context)
+                    
+                    // always return on main queue
+                    DispatchQueue.main.async {
+                        success()
+                    }
+                }
+            case .failure:
+                
+                // error handling
+                self.generalizedFailure(data: response.data, defaultErrorMessage: "Could not get countries", failure: failure)
+            }
+        }
+    }
+    
     // MARK: - Photo
     
     func upload(photo: UIImage, success:@escaping (String) -> Void, failure:@escaping (String) -> Void) {
@@ -102,8 +141,8 @@ class NetworkManager {
                     }
                 })
                 
-            case .failure(let encodingError):
-                failure(encodingError.localizedDescription)
+            case .failure:
+                failure("Could not encode params")
             }
         })
     }
@@ -131,6 +170,45 @@ class NetworkManager {
                     var interestsArray = [Interest]()
                     for interestJSON : [String : Any] in JSON {
                         interestsArray.append(Interest.createOrUpdateInterestWith(JSON: interestJSON, context: context))
+                    }
+                    CoreDataManager.sharedInstance.save(scratchpadContext: context)
+                    
+                    // always return on main queue
+                    DispatchQueue.main.async {
+                        success()
+                    }
+                }
+            case .failure:
+                
+                // error handling
+                self.generalizedFailure(data: response.data, defaultErrorMessage: "Could not get interests", failure: failure)
+            }
+        }
+    }
+    
+    // MARK: - Language
+    
+    func getAllLanguages(success:@escaping () -> Void, failure:@escaping (String) -> Void) {
+        Alamofire.request(baseURL + "Languages", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).validate().responseJSON {[unowned self] (response) in
+            switch response.result {
+            case .success:
+                
+                let context = CoreDataManager.sharedInstance.createScratchpadContext(onMainThread: false)
+                context.perform {
+                    
+                    // check if valid JSON
+                    guard let JSON = response.result.value as? [[String: Any]]
+                        else {
+                            DispatchQueue.main.async {
+                                failure("JSON not valid")
+                            }
+                            return
+                    }
+                    
+                    // update user with JSON
+                    var languageArray = [Language]()
+                    for languageJSON : [String : Any] in JSON {
+                        languageArray.append(Language.createOrUpdateLanguageWith(JSON: languageJSON, context: context))
                     }
                     CoreDataManager.sharedInstance.save(scratchpadContext: context)
                     

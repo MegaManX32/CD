@@ -12,11 +12,11 @@ class SignupCountryViewController: UIViewController {
     
     // MARK: - Properties
     
-    @IBOutlet weak var countryTextField: IntroTextField!
-    @IBOutlet weak var cityTextField: IntroTextField!
-    @IBOutlet weak var zipCodeField: IntroTextField!
-    @IBOutlet weak var professionTextField: IntroTextField!
-    @IBOutlet weak var languageTextField: IntroTextField!
+    @IBOutlet weak var countryButtonView: ButtonView!
+    @IBOutlet weak var cityButtonView: ButtonView!
+    @IBOutlet weak var zipCodeButtonView: ButtonView!
+    @IBOutlet weak var professionButtonView: ButtonView!
+    @IBOutlet weak var languageButtonView: ButtonView!
     
     // MARK: - View Lifecycle
 
@@ -36,11 +36,15 @@ class SignupCountryViewController: UIViewController {
     // MARK: - View Preparation
     
     func prepareTextFields() {
-        self.countryTextField.placeholder = NSLocalizedString("Country", comment: "country")
-        self.cityTextField.placeholder = NSLocalizedString("City", comment: "city")
-        self.zipCodeField.placeholder = NSLocalizedString("Zip code", comment: "zip code")
-        self.professionTextField.placeholder = NSLocalizedString("Profession", comment: "profession")
-        self.languageTextField.placeholder = NSLocalizedString("Language", comment: "language")
+        self.countryButtonView.title = NSLocalizedString("Country", comment: "country")
+        self.countryButtonView.isWhite = true
+        self.cityButtonView.title = NSLocalizedString("City", comment: "city")
+        self.cityButtonView.isWhite = true
+//        self.zipCodeField.placeholder = NSLocalizedString("Zip code", comment: "zip code")
+        self.professionButtonView.title = NSLocalizedString("Profession", comment: "profession")
+        self.professionButtonView.isWhite = true
+        self.languageButtonView.title = NSLocalizedString("Language", comment: "language")
+        self.languageButtonView.isWhite = true
     }
 
 }
