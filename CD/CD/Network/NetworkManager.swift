@@ -66,9 +66,38 @@ class NetworkManager {
         }
     }
     
-    func getUser(id: String) -> User? {
-        
-        return nil;
+    func getUser(userID: String, success:@escaping () -> Void, failure:@escaping (String) -> Void) {
+        Alamofire.request(baseURL + "Users/" + userID, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).validate().responseJSON {[unowned self] (response) in
+            switch response.result {
+            case .success:
+                
+                let context = CoreDataManager.sharedInstance.createScratchpadContext(onMainThread: false)
+                context.perform {
+                    
+                    // check if valid JSON
+                    guard let JSON = response.result.value as? [String: Any]
+                        else {
+                            DispatchQueue.main.async {
+                                failure("JSON not valid")
+                            }
+                            return
+                    }
+                    
+                    // update user with JSON
+                    _ = User.createOrUpdateUserWith(JSON: JSON, context: context)
+                    CoreDataManager.sharedInstance.save(scratchpadContext: context)
+                    
+                    // always return on main queue
+                    DispatchQueue.main.async {
+                        success()
+                    }
+                }
+            case .failure:
+                
+                // error handling
+                self.generalizedFailure(data: response.data, defaultErrorMessage: "Could not get countries", failure: failure)
+            }
+        }
     }
     
     // MARK: - Country and City

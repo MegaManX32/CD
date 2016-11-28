@@ -38,7 +38,7 @@ extension City {
     
     func initWith(JSON:[String : Any]) {
         
-        self.name = JSON["name"] as? String
+        self.cityName = JSON["cityName"] as? String
         self.uid = JSON["uid"] as? String
         self.countryUid = JSON["countryUid"] as? String
     }
@@ -46,7 +46,7 @@ extension City {
     func asJSON() -> [String : Any] {
         
         var JSON = [String : Any]()
-        JSON["name"] = self.name
+        JSON["cityName"] = self.cityName
         JSON["uid"] = self.uid
         JSON["countryUid"] = self.countryUid
         

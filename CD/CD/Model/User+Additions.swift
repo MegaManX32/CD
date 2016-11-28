@@ -50,6 +50,7 @@ extension User {
         self.uid = JSON["uid"] as? String ?? self.uid
         self.work = JSON["work"] as? String ?? self.work
         self.zipcode = JSON["zipcode"] as? String ?? self.zipcode
+        self.city = JSON["city"] as? String ?? self.city
         
         // create relationships
         if let interests = JSON["interests"] as? [[String : Any]] {
@@ -92,6 +93,7 @@ extension User {
         JSON["uid"] = self.uid
         JSON["work"] = self.work
         JSON["zipcode"] = self.zipcode
+        JSON["city"] = self.city
         
         // create relationships
         if let interests = self.interests {
@@ -115,7 +117,7 @@ extension User {
             for language in languages {
                 languagesArray.append((language as! Language).asJSON())
             }
-            JSON["language"] = languagesArray
+            JSON["languages"] = languagesArray
         }
         
         return JSON

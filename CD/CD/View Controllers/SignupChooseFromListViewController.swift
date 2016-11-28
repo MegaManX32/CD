@@ -113,11 +113,11 @@ class SignupChooseFromListViewController: UIViewController, UITableViewDataSourc
         
         switch self.selectionType {
         case .city:
-            cell.populateCellWithName(name: (self.optionsArray[indexPath.row] as! City).name!)
+            cell.populateCellWithName(name: (self.optionsArray[indexPath.row] as! City).cityName!)
         case .country:
             cell.populateCellWithName(name: (self.optionsArray[indexPath.row] as! Country).countryName!)
         case .language:
-            cell.populateCellWithName(name: (self.optionsArray[indexPath.row] as! Language).name!)
+            cell.populateCellWithName(name: (self.optionsArray[indexPath.row] as! Language).language!)
         case .profession:
             cell.populateCellWithName(name: (self.optionsArray[indexPath.row] as! Profession).profession!)
         }

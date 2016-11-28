@@ -37,14 +37,14 @@ extension Language {
     
     func initWith(JSON:[String : Any]) {
         
-        self.name = JSON["name"] as? String
+        self.language = JSON["language"] as? String
         self.uid = JSON["uid"] as? String
     }
     
     func asJSON() -> [String : Any] {
         
         var JSON = [String : Any]()
-        JSON["name"] = self.name
+        JSON["language"] = self.language
         JSON["uid"] = self.uid
         
         return JSON;

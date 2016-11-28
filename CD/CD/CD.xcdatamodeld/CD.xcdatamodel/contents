@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11542" systemVersion="16B2555" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="City" representedClassName="City" syncable="YES" codeGenerationType="class">
+        <attribute name="cityName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="countryUid" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="uid" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="Country" representedClassName="Country" syncable="YES" codeGenerationType="class">
@@ -17,7 +17,7 @@
         <relationship name="users" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="User" inverseName="interests" inverseEntity="User" syncable="YES"/>
     </entity>
     <entity name="Language" representedClassName="Language" syncable="YES" codeGenerationType="class">
-        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="language" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="uid" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="users" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="User" inverseName="languages" inverseEntity="User" syncable="YES"/>
     </entity>
@@ -34,6 +34,7 @@
     </entity>
     <entity name="User" representedClassName="User" syncable="YES" codeGenerationType="class">
         <attribute name="birthDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="city" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="country" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
@@ -58,7 +59,7 @@
         <element name="Interest" positionX="-63" positionY="108" width="128" height="120"/>
         <element name="Language" positionX="-36" positionY="126" width="128" height="90"/>
         <element name="ServiceOffer" positionX="-54" positionY="117" width="128" height="120"/>
-        <element name="User" positionX="-63" positionY="-18" width="128" height="345"/>
+        <element name="User" positionX="-63" positionY="-18" width="128" height="360"/>
         <element name="Country" positionX="-54" positionY="135" width="128" height="75"/>
         <element name="City" positionX="-45" positionY="144" width="128" height="90"/>
         <element name="Profession" positionX="-36" positionY="153" width="128" height="75"/>

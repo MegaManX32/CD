@@ -17,7 +17,11 @@ class ButtonView: UIView {
     // MARK: - Properties
     
     var action:(() -> ())?
-    var title: String?
+    var title: String? {
+        didSet {
+            titleLabel.text = title
+        }
+    }
     var hasImage: Bool?
     var isWhite = false
     
@@ -47,7 +51,6 @@ class ButtonView: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        self.titleLabel.text = self.title
         self.imageView.isHidden = false
         
         // update for white version
