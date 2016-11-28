@@ -19,6 +19,15 @@ extension City {
         return try! context.fetch(fetchRequest)
     }
     
+    static func createOrUpdateCityWith(JSON:[String : Any], context:NSManagedObjectContext) -> City {
+        
+        // fetch ServiceOffer or create new one
+        var city = City.findCityWith(id: JSON["uid"] as! String, context: context)
+        city = city ?? City(context: context)
+        city!.initWith(JSON: JSON)
+        return city!
+    }
+    
     static func findCityWith(id: String, context:NSManagedObjectContext) -> City? {
         let fetchRequest: NSFetchRequest<City> = City.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "uid == %@", id)

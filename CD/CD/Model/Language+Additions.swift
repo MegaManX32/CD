@@ -13,9 +13,14 @@ extension Language {
     
     // MARK: - Language CRUD
     
+    static func findAllLanguages(context: NSManagedObjectContext) -> [Language] {
+        let fetchRequest: NSFetchRequest<Language> = Language.fetchRequest()
+        return try! context.fetch(fetchRequest)
+    }
+    
     static func createOrUpdateLanguageWith(JSON:[String : Any], context:NSManagedObjectContext) -> Language {
         
-        // fetch ServiceOffer or create new one
+        // fetch Language or create new one
         var language = Language.findLanguageWith(id: JSON["uid"] as! String, context: context)
         language = language ?? Language(context: context)
         language!.initWith(JSON: JSON)

@@ -21,6 +21,10 @@
         <attribute name="uid" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="users" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="User" inverseName="languages" inverseEntity="User" syncable="YES"/>
     </entity>
+    <entity name="Profession" representedClassName="Profession" syncable="YES" codeGenerationType="class">
+        <attribute name="profession" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="uid" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <entity name="ServiceOffer" representedClassName="ServiceOffer" syncable="YES" codeGenerationType="class">
         <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
@@ -57,5 +61,6 @@
         <element name="User" positionX="-63" positionY="-18" width="128" height="345"/>
         <element name="Country" positionX="-54" positionY="135" width="128" height="75"/>
         <element name="City" positionX="-45" positionY="144" width="128" height="90"/>
+        <element name="Profession" positionX="-36" positionY="153" width="128" height="75"/>
     </elements>
 </model>

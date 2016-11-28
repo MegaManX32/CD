@@ -58,7 +58,7 @@ class SignupYourInterestsViewController: UIViewController, UICollectionViewDataS
         var selectedInterestsIDArray = [String]()
         for interestOption in self.interestsArray {
             if interestOption.checked {
-                selectedInterestsIDArray.append(interestOption.interest.id!)
+                selectedInterestsIDArray.append(interestOption.interest.uid!)
             }
         }
         

@@ -24,7 +24,7 @@ class SignupCountryViewController: UIViewController {
         super.viewDidLoad()
 
         // prepare text fields
-        self.prepareTextFields()
+        self.prepareButtonViews()
     }
 
     override func didReceiveMemoryWarning() {
@@ -35,7 +35,7 @@ class SignupCountryViewController: UIViewController {
 
     // MARK: - View Preparation
     
-    func prepareTextFields() {
+    func prepareButtonViews() {
         self.countryButtonView.title = NSLocalizedString("Country", comment: "country")
         self.countryButtonView.isWhite = true
         self.cityButtonView.title = NSLocalizedString("City", comment: "city")
@@ -46,5 +46,4 @@ class SignupCountryViewController: UIViewController {
         self.languageButtonView.title = NSLocalizedString("Language", comment: "language")
         self.languageButtonView.isWhite = true
     }
-
 }

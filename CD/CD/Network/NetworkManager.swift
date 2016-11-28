@@ -91,9 +91,9 @@ class NetworkManager {
                     }
                     
                     // update user with JSON
-                    var interestsArray = [Interest]()
-                    for interestJSON : [String : Any] in JSON {
-                        interestsArray.append(Interest.createOrUpdateInterestWith(JSON: interestJSON, context: context))
+                    var countriesArray = [Country]()
+                    for countryJSON : [String : Any] in JSON {
+                        countriesArray.append(Country.createOrUpdateCountryWith(JSON: countryJSON, context: context))
                     }
                     CoreDataManager.sharedInstance.save(scratchpadContext: context)
                     
@@ -106,6 +106,43 @@ class NetworkManager {
                 
                 // error handling
                 self.generalizedFailure(data: response.data, defaultErrorMessage: "Could not get countries", failure: failure)
+            }
+        }
+    }
+    
+    func getAllCities(country: Country, success:@escaping () -> Void, failure:@escaping (String) -> Void) {
+        Alamofire.request(baseURL + "Settings/city/" + country.uid!, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).validate().responseJSON {[unowned self] (response) in
+            switch response.result {
+            case .success:
+                
+                let context = CoreDataManager.sharedInstance.createScratchpadContext(onMainThread: false)
+                context.perform {
+                    
+                    // check if valid JSON
+                    guard let JSON = response.result.value as? [[String: Any]]
+                        else {
+                            DispatchQueue.main.async {
+                                failure("JSON not valid")
+                            }
+                            return
+                    }
+                    
+                    // update user with JSON
+                    var citiesArray = [City]()
+                    for cityJSON : [String : Any] in JSON {
+                        citiesArray.append(City.createOrUpdateCityWith(JSON: cityJSON, context: context))
+                    }
+                    CoreDataManager.sharedInstance.save(scratchpadContext: context)
+                    
+                    // always return on main queue
+                    DispatchQueue.main.async {
+                        success()
+                    }
+                }
+            case .failure:
+                
+                // error handling
+                self.generalizedFailure(data: response.data, defaultErrorMessage: "Could not get cities", failure: failure)
             }
         }
     }
@@ -221,6 +258,45 @@ class NetworkManager {
                 
                 // error handling
                 self.generalizedFailure(data: response.data, defaultErrorMessage: "Could not get interests", failure: failure)
+            }
+        }
+    }
+    
+    // MARK: - Profession
+    
+    func getAllProfessions(success:@escaping () -> Void, failure:@escaping (String) -> Void) {
+        Alamofire.request(baseURL + "Professions", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).validate().responseJSON {[unowned self] (response) in
+            switch response.result {
+            case .success:
+                
+                let context = CoreDataManager.sharedInstance.createScratchpadContext(onMainThread: false)
+                context.perform {
+                    
+                    // check if valid JSON
+                    guard let JSON = response.result.value as? [[String: Any]]
+                        else {
+                            DispatchQueue.main.async {
+                                failure("JSON not valid")
+                            }
+                            return
+                    }
+                    
+                    // update user with JSON
+                    var professionArray = [Profession]()
+                    for professionJSON : [String : Any] in JSON {
+                        professionArray.append(Profession.createOrUpdateProfessionWith(JSON: professionJSON, context: context))
+                    }
+                    CoreDataManager.sharedInstance.save(scratchpadContext: context)
+                    
+                    // always return on main queue
+                    DispatchQueue.main.async {
+                        success()
+                    }
+                }
+            case .failure:
+                
+                // error handling
+                self.generalizedFailure(data: response.data, defaultErrorMessage: "Could not get professions", failure: failure)
             }
         }
     }

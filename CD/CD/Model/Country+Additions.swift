@@ -18,6 +18,15 @@ extension Country {
         return try! context.fetch(fetchRequest)
     }
     
+    static func createOrUpdateCountryWith(JSON:[String : Any], context:NSManagedObjectContext) -> Country {
+        
+        // fetch ServiceOffer or create new one
+        var country = Country.findCountryWith(id: JSON["uid"] as! String, context: context)
+        country = country ?? Country(context: context)
+        country!.initWith(JSON: JSON)
+        return country!
+    }
+    
     static func findCountryWith(id: String, context:NSManagedObjectContext) -> Country? {
         let fetchRequest: NSFetchRequest<Country> = Country.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "uid == %@", id)
