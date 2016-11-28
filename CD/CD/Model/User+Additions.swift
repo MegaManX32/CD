@@ -53,18 +53,21 @@ extension User {
         self.city = JSON["city"] as? String ?? self.city
         
         // create relationships
+        self.interests = NSSet.init()
         if let interests = JSON["interests"] as? [[String : Any]] {
             for interestJSON in interests {
                 self.addToInterests(Interest.createOrUpdateInterestWith(JSON: interestJSON, context: context))
             }
         }
         
+        self.serviceOffers = NSSet.init()
         if let serviceOffers = JSON["serviceOffers"] as? [[String : Any]] {
             for serviceOfferJSON in serviceOffers {
                 self.addToServiceOffers(ServiceOffer.createOrUpdateServiceOfferWith(JSON: serviceOfferJSON, context: context))
             }
         }
         
+        self.languages = NSSet.init()
         if let languages = JSON["languages"] as? [[String : Any]] {
             for languageJSON in languages {
                 self.addToLanguages(Language.createOrUpdateLanguageWith(JSON: languageJSON, context: context))

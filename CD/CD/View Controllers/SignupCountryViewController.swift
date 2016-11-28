@@ -41,11 +41,6 @@ class SignupCountryViewController: UIViewController, SignupChooseFromListViewCon
         // prepare text fields
         self.prepareButtonViews()
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.view.setNeedsDisplay()
-    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -152,7 +147,5 @@ class SignupCountryViewController: UIViewController, SignupChooseFromListViewCon
             self.profession = object as? Profession
             self.professionButtonView.title = self.profession?.profession
         }
-        
-        self.view.setNeedsDisplay()
     }
 }
