@@ -6,7 +6,7 @@
         <attribute name="uid" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="Country" representedClassName="Country" syncable="YES" codeGenerationType="class">
-        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="countryName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="uid" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="Interest" representedClassName="Interest" syncable="YES" codeGenerationType="class">

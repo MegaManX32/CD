@@ -17,11 +17,16 @@ enum SelectionType {
     case profession
 }
 
+protocol SignupChooseFromListViewControllerDelegate {
+    func signupChooseFromListViewControllerDidSelect(object: AnyObject, selectionType: SelectionType, controller: UIViewController);
+}
+
 class SignupChooseFromListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     // MARK: - Properties
     
-    var optionsArray : [AnyObject]!
+    var delegate : SignupChooseFromListViewControllerDelegate?
+    var optionsArray = [AnyObject]()
     var selectionType : SelectionType = .country
     var country : Country!
     
@@ -110,7 +115,7 @@ class SignupChooseFromListViewController: UIViewController, UITableViewDataSourc
         case .city:
             cell.populateCellWithName(name: (self.optionsArray[indexPath.row] as! City).name!)
         case .country:
-            cell.populateCellWithName(name: (self.optionsArray[indexPath.row] as! Country).name!)
+            cell.populateCellWithName(name: (self.optionsArray[indexPath.row] as! Country).countryName!)
         case .language:
             cell.populateCellWithName(name: (self.optionsArray[indexPath.row] as! Language).name!)
         case .profession:
@@ -121,6 +126,7 @@ class SignupChooseFromListViewController: UIViewController, UITableViewDataSourc
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        self.delegate?.signupChooseFromListViewControllerDidSelect(object: self.optionsArray[indexPath.row], selectionType: self.selectionType, controller: self)
+        self.dismiss(animated: true, completion: nil)
     }
 }

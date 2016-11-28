@@ -37,14 +37,14 @@ extension Country {
     
     func initWith(JSON:[String : Any]) {
         
-        self.name = JSON["name"] as? String
+        self.countryName = JSON["countryName"] as? String
         self.uid = JSON["uid"] as? String
     }
     
     func asJSON() -> [String : Any] {
         
         var JSON = [String : Any]()
-        JSON["name"] = self.name
+        JSON["countryName"] = self.countryName
         JSON["uid"] = self.uid
         
         return JSON;

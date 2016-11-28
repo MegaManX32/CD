@@ -708,10 +708,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VZS-RW-P0h">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="SignupChooseTableViewCell" selectionStyle="none" indentationWidth="10" rowHeight="44" id="VH1-bQ-fJ8" customClass="SignupChooseTableViewCell" customModule="CD" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="SignupChooseTableViewCell" selectionStyle="none" indentationWidth="10" reuseIdentifier="SignupChooseTableViewCell" rowHeight="44" id="VH1-bQ-fJ8" customClass="SignupChooseTableViewCell" customModule="CD" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VH1-bQ-fJ8" id="dQO-fE-1is">
@@ -734,6 +734,7 @@
                                                 <constraint firstAttribute="trailingMargin" secondItem="Pct-eJ-VLG" secondAttribute="trailing" id="Vvj-OR-cGs"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <outlet property="titleLabel" destination="Pct-eJ-VLG" id="k0X-6F-7FK"/>
                                         </connections>
@@ -753,10 +754,13 @@
                             <constraint firstAttribute="trailingMargin" secondItem="VZS-RW-P0h" secondAttribute="trailing" constant="-16" id="U7e-u9-mzr"/>
                             <constraint firstItem="skW-9A-zeY" firstAttribute="top" secondItem="8kf-UY-2yt" secondAttribute="bottom" id="cMY-i3-qgO"/>
                             <constraint firstItem="VZS-RW-P0h" firstAttribute="leading" secondItem="tz4-fX-rFO" secondAttribute="leadingMargin" constant="-16" id="gEd-qC-1T9"/>
-                            <constraint firstItem="VZS-RW-P0h" firstAttribute="top" secondItem="uzB-k0-mVt" secondAttribute="bottom" constant="-20" id="jcb-mv-2em"/>
+                            <constraint firstItem="VZS-RW-P0h" firstAttribute="top" secondItem="uzB-k0-mVt" secondAttribute="bottom" id="jcb-mv-2em"/>
                             <constraint firstAttribute="trailingMargin" secondItem="8kf-UY-2yt" secondAttribute="trailing" constant="-16" id="l88-06-GWz"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="VZS-RW-P0h" id="Fjj-9f-r9Q"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lrX-R5-WeL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
