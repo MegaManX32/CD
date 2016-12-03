@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import CoreData
+import MBProgressHUD
 
 fileprivate let sectionInsets = UIEdgeInsets(top: 0.0, left: 20.0, bottom: 10.0, right: 20.0)
 fileprivate let itemsPerRow: CGFloat = 3
@@ -31,23 +33,26 @@ class CreateRiderListViewController: UIViewController, UICollectionViewDataSourc
     
     @IBOutlet weak var riderListTextView: UITextView!
     
-    var interestsArray : [(name : String, checked : Bool)] = [
-        ("Sport", false),
-        ("Food", false),
-        ("Fashion", false),
-        ("Environment", false),
-        ("Business", false),
-        ("Shopping", false),
-        ("IT", false),
-        ("Art", false),
-        ("Health", false),
-        ("Party", false),
-        ("Science", false),
-        ("Cars", false),
-        ("History", false),
-        ("Music", false),
-        ("Travel", false)
-    ]
+//    var interestsArray : [(name : String, checked : Bool)] = [
+//        ("Sport", false),
+//        ("Food", false),
+//        ("Fashion", false),
+//        ("Environment", false),
+//        ("Business", false),
+//        ("Shopping", false),
+//        ("IT", false),
+//        ("Art", false),
+//        ("Health", false),
+//        ("Party", false),
+//        ("Science", false),
+//        ("Cars", false),
+//        ("History", false),
+//        ("Music", false),
+//        ("Travel", false)
+//    ]
+    
+    var userID : String!
+    var interestsArray : [(interest : Interest, checked : Bool)] = [(Interest, Bool)]()
     
     // MARK: - View Lifecycle
 
@@ -72,11 +77,67 @@ class CreateRiderListViewController: UIViewController, UICollectionViewDataSourc
         // update text view
         self.riderListTextView.layer.masksToBounds = true
         self.riderListTextView.layer.cornerRadius = 4
+        
+        // fetch interests
+        MBProgressHUD.showAdded(to: self.view, animated: true)
+        NetworkManager.sharedInstance.getAllInterests(
+            success: { [unowned self] in
+                let context = CoreDataManager.sharedInstance.mainContext
+                let interests = Interest.findAllInterests(context: context)
+                for interest in interests {
+                    self.interestsArray.append((interest, false))
+                }
+                self.collectionView.reloadData()
+                MBProgressHUD.hide(for: self.view, animated: true)
+            },
+            failure: { [unowned self] (errorMessage) in
+                print(errorMessage)
+                MBProgressHUD.hide(for: self.view, animated: true)
+        })
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    // MARK: - User Actions
+    
+    @IBAction func nextAction(sender: UIButton) {
+        
+        // try to update interests on user
+        MBProgressHUD.showAdded(to: self.view, animated: true)
+        var selectedInterestsIDArray = [String]()
+        for interestOption in self.interestsArray {
+            if interestOption.checked {
+                selectedInterestsIDArray.append(interestOption.interest.uid!)
+            }
+        }
+        
+        let context = CoreDataManager.sharedInstance.createScratchpadContext(onMainThread: false)
+        context.perform {
+            [unowned self] in
+            
+            // find user
+            let user = User.findUserWith(uid: self.userID, context: context)!
+            
+            // update user with interests
+            for interestID in selectedInterestsIDArray {
+                user.addToInterests(Interest.findInterestWith(id: interestID, context: context)!)
+            }
+            
+            // create of or update user
+            NetworkManager.sharedInstance.createOrUpdate(user: user, context: context, success: { [unowned self] (userID) in
+                let controller = self.storyboard?.instantiateViewController(withIdentifier: "SignupFinishedViewController") as! SignupFinishedViewController
+                controller.userID = userID
+                self.show(controller, sender: self)
+                MBProgressHUD.hide(for: self.view, animated: true)
+                }, failure: { [unowned self] (errorMessage) in
+                    print(errorMessage)
+                    MBProgressHUD.hide(for: self.view, animated: true)
+            })
+        }
+        
     }
     
     // MARK: - UICollectionViewDelegate methods
@@ -91,8 +152,8 @@ class CreateRiderListViewController: UIViewController, UICollectionViewDataSourc
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SignupInterestsCollectionViewCell.cellIdentifier(), for: indexPath) as! SignupInterestsCollectionViewCell
-        cell.populateCellWithInterest(name: self.interestsArray[indexPath.item].name,
-                                      imageName: (self.interestsArray[indexPath.item].name).lowercased(),
+        cell.populateCellWithInterest(name: self.interestsArray[indexPath.item].interest.name!,
+                                      imageName: (self.interestsArray[indexPath.item].interest.name!).lowercased(),
                                       checked: self.interestsArray[indexPath.item].checked
         )
         return cell

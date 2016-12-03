@@ -148,6 +148,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		152080EB1DF36470005687C1 /* Guest Menu */ = {
+			isa = PBXGroup;
+			children = (
+				15327BB21DC63A62000411F7 /* CreateRiderListViewController.swift */,
+			);
+			name = "Guest Menu";
+			sourceTree = "<group>";
+		};
 		152A84261DC8E79F00949324 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -171,8 +179,8 @@
 				15327BC01DC63A62000411F7 /* StartViewController.swift */,
 				158E24081DCE081C000FE262 /* Signup */,
 				156C226B1DDE0DA600ACE919 /* Signup Complete Profile */,
+				152080EB1DF36470005687C1 /* Guest Menu */,
 				15327BB11DC63A62000411F7 /* AccomodationViewController.swift */,
-				15327BB21DC63A62000411F7 /* CreateRiderListViewController.swift */,
 				15327BB31DC63A62000411F7 /* HostFeedbackViewController.swift */,
 				15327BB41DC63A62000411F7 /* ReviewRiderLIstViewController.swift */,
 				15327BB61DC63A62000411F7 /* SignupConfirmPhoneViewController.swift */,
