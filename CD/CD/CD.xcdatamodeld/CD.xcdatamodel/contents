@@ -14,16 +14,42 @@
         <attribute name="iconUrl" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="uid" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="riderList" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="RiderList" inverseName="interests" inverseEntity="RiderList" syncable="YES"/>
         <relationship name="users" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="User" inverseName="interests" inverseEntity="User" syncable="YES"/>
     </entity>
     <entity name="Language" representedClassName="Language" syncable="YES" codeGenerationType="class">
         <attribute name="language" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="uid" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="riderList" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="RiderList" inverseName="languages" inverseEntity="RiderList" syncable="YES"/>
         <relationship name="users" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="User" inverseName="languages" inverseEntity="User" syncable="YES"/>
     </entity>
     <entity name="Profession" representedClassName="Profession" syncable="YES" codeGenerationType="class">
         <attribute name="profession" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="uid" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="RiderList" representedClassName="RiderList" syncable="YES" codeGenerationType="class">
+        <attribute name="age" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="checkIn" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="checkOut" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="city" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="country" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="details" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="gender" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="uid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userUid" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="interests" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Interest" inverseName="riderList" inverseEntity="Interest" syncable="YES"/>
+        <relationship name="languages" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Language" inverseName="riderList" inverseEntity="Language" syncable="YES"/>
+        <relationship name="riderListOffers" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="RiderListOffer" inverseName="riderList" inverseEntity="RiderListOffer" syncable="YES"/>
+        <relationship name="selectedRiderListOffer" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="RiderListOffer" inverseName="riderListSelected" inverseEntity="RiderListOffer" syncable="YES"/>
+    </entity>
+    <entity name="RiderListOffer" representedClassName="RiderListOffer" syncable="YES" codeGenerationType="class">
+        <attribute name="message" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="offerorUid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="price" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="riderListId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="uid" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="riderList" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="RiderList" inverseName="riderListOffers" inverseEntity="RiderList" syncable="YES"/>
+        <relationship name="riderListSelected" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="RiderList" inverseName="selectedRiderListOffer" inverseEntity="RiderList" syncable="YES"/>
     </entity>
     <entity name="ServiceOffer" representedClassName="ServiceOffer" syncable="YES" codeGenerationType="class">
         <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
@@ -56,12 +82,14 @@
         <relationship name="serviceOffers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ServiceOffer" inverseName="user" inverseEntity="ServiceOffer" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Interest" positionX="-63" positionY="108" width="128" height="120"/>
-        <element name="Language" positionX="-36" positionY="126" width="128" height="90"/>
+        <element name="City" positionX="-45" positionY="144" width="128" height="90"/>
+        <element name="Country" positionX="-54" positionY="135" width="128" height="75"/>
+        <element name="Interest" positionX="-63" positionY="108" width="128" height="135"/>
+        <element name="Language" positionX="-36" positionY="126" width="128" height="105"/>
+        <element name="Profession" positionX="-36" positionY="153" width="128" height="75"/>
+        <element name="RiderList" positionX="-54" positionY="135" width="128" height="240"/>
+        <element name="RiderListOffer" positionX="-45" positionY="144" width="128" height="150"/>
         <element name="ServiceOffer" positionX="-54" positionY="117" width="128" height="120"/>
         <element name="User" positionX="-63" positionY="-18" width="128" height="360"/>
-        <element name="Country" positionX="-54" positionY="135" width="128" height="75"/>
-        <element name="City" positionX="-45" positionY="144" width="128" height="90"/>
-        <element name="Profession" positionX="-36" positionY="153" width="128" height="75"/>
     </elements>
 </model>
