@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		152080E81DF35953005687C1 /* RiderList+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152080E71DF35953005687C1 /* RiderList+Additions.swift */; };
 		152080EA1DF35B8E005687C1 /* RiderListOffer+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152080E91DF35B8E005687C1 /* RiderListOffer+Additions.swift */; };
+		152080EE1DF36E60005687C1 /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152080ED1DF36E60005687C1 /* DatePickerViewController.swift */; };
+		152080F01DF37586005687C1 /* GeneralPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152080EF1DF37586005687C1 /* GeneralPickerViewController.swift */; };
+		152080F21DF375A1005687C1 /* GeneralPickerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152080F11DF375A1005687C1 /* GeneralPickerTableViewCell.swift */; };
 		15327BC11DC63A62000411F7 /* AccomodationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15327BB11DC63A62000411F7 /* AccomodationViewController.swift */; };
 		15327BC21DC63A62000411F7 /* CreateRiderListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15327BB21DC63A62000411F7 /* CreateRiderListViewController.swift */; };
 		15327BC31DC63A62000411F7 /* HostFeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15327BB31DC63A62000411F7 /* HostFeedbackViewController.swift */; };
@@ -58,14 +61,12 @@
 		158E240A1DCE0A5D000FE262 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158E24091DCE0A5D000FE262 /* CoreDataManager.swift */; };
 		15CAE37E1DEC86A000DED25C /* Country+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CAE37D1DEC86A000DED25C /* Country+Additions.swift */; };
 		15CAE3801DEC86AF00DED25C /* City+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CAE37F1DEC86AF00DED25C /* City+Additions.swift */; };
-		15CAE3821DEC8D7400DED25C /* SignupChooseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CAE3811DEC8D7400DED25C /* SignupChooseTableViewCell.swift */; };
 		15CAE3841DEC9B7400DED25C /* Profession+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CAE3831DEC9B7400DED25C /* Profession+Additions.swift */; };
 		15CAE3861DECAD8D00DED25C /* CustomAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CAE3851DECAD8D00DED25C /* CustomAlert.swift */; };
 		15EE96061DCA0F600003FB51 /* ServiceOffer+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15EE96051DCA0F600003FB51 /* ServiceOffer+Additions.swift */; };
 		15EE96081DCA144A0003FB51 /* Interest+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15EE96071DCA144A0003FB51 /* Interest+Additions.swift */; };
 		15EE960A1DCA14B50003FB51 /* Language+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15EE96091DCA14B50003FB51 /* Language+Additions.swift */; };
 		15EE960D1DCA2CD10003FB51 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15EE960C1DCA2CD10003FB51 /* NetworkManager.swift */; };
-		15EF8EDA1DE8A4D30086C4D5 /* SignupChooseFromListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15EF8ED91DE8A4D30086C4D5 /* SignupChooseFromListViewController.swift */; };
 		DA8406CBF1A476662911D7E8 /* Pods_CD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12641929306E4C88E2053DC2 /* Pods_CD.framework */; };
 /* End PBXBuildFile section */
 
@@ -74,6 +75,9 @@
 		12641929306E4C88E2053DC2 /* Pods_CD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		152080E71DF35953005687C1 /* RiderList+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RiderList+Additions.swift"; sourceTree = "<group>"; };
 		152080E91DF35B8E005687C1 /* RiderListOffer+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RiderListOffer+Additions.swift"; sourceTree = "<group>"; };
+		152080ED1DF36E60005687C1 /* DatePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
+		152080EF1DF37586005687C1 /* GeneralPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralPickerViewController.swift; sourceTree = "<group>"; };
+		152080F11DF375A1005687C1 /* GeneralPickerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralPickerTableViewCell.swift; sourceTree = "<group>"; };
 		15327BB11DC63A62000411F7 /* AccomodationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccomodationViewController.swift; sourceTree = "<group>"; };
 		15327BB21DC63A62000411F7 /* CreateRiderListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateRiderListViewController.swift; sourceTree = "<group>"; };
 		15327BB31DC63A62000411F7 /* HostFeedbackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HostFeedbackViewController.swift; sourceTree = "<group>"; };
@@ -125,14 +129,12 @@
 		158E24091DCE0A5D000FE262 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		15CAE37D1DEC86A000DED25C /* Country+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Country+Additions.swift"; sourceTree = "<group>"; };
 		15CAE37F1DEC86AF00DED25C /* City+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "City+Additions.swift"; sourceTree = "<group>"; };
-		15CAE3811DEC8D7400DED25C /* SignupChooseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupChooseTableViewCell.swift; sourceTree = "<group>"; };
 		15CAE3831DEC9B7400DED25C /* Profession+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Profession+Additions.swift"; sourceTree = "<group>"; };
 		15CAE3851DECAD8D00DED25C /* CustomAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAlert.swift; sourceTree = "<group>"; };
 		15EE96051DCA0F600003FB51 /* ServiceOffer+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ServiceOffer+Additions.swift"; sourceTree = "<group>"; };
 		15EE96071DCA144A0003FB51 /* Interest+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Interest+Additions.swift"; sourceTree = "<group>"; };
 		15EE96091DCA14B50003FB51 /* Language+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Language+Additions.swift"; sourceTree = "<group>"; };
 		15EE960C1DCA2CD10003FB51 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		15EF8ED91DE8A4D30086C4D5 /* SignupChooseFromListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupChooseFromListViewController.swift; sourceTree = "<group>"; };
 		DB6497397822CCBF6D246A17 /* Pods-CD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CD.release.xcconfig"; path = "Pods/Target Support Files/Pods-CD/Pods-CD.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -156,6 +158,16 @@
 			name = "Guest Menu";
 			sourceTree = "<group>";
 		};
+		152080EC1DF36E48005687C1 /* Pickers */ = {
+			isa = PBXGroup;
+			children = (
+				152080ED1DF36E60005687C1 /* DatePickerViewController.swift */,
+				152080EF1DF37586005687C1 /* GeneralPickerViewController.swift */,
+				152080F11DF375A1005687C1 /* GeneralPickerTableViewCell.swift */,
+			);
+			name = Pickers;
+			sourceTree = "<group>";
+		};
 		152A84261DC8E79F00949324 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -177,6 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				15327BC01DC63A62000411F7 /* StartViewController.swift */,
+				152080EC1DF36E48005687C1 /* Pickers */,
 				158E24081DCE081C000FE262 /* Signup */,
 				156C226B1DDE0DA600ACE919 /* Signup Complete Profile */,
 				152080EB1DF36470005687C1 /* Guest Menu */,
@@ -281,8 +294,6 @@
 				15327BB51DC63A62000411F7 /* SignupAddYourPhotoViewController.swift */,
 				15327BBE1DC63A62000411F7 /* SignupYouLookGoodViewController.swift */,
 				15327BB81DC63A62000411F7 /* SignupCountryViewController.swift */,
-				15EF8ED91DE8A4D30086C4D5 /* SignupChooseFromListViewController.swift */,
-				15CAE3811DEC8D7400DED25C /* SignupChooseTableViewCell.swift */,
 				15327BBF1DC63A62000411F7 /* SignupYourInterestsViewController.swift */,
 			);
 			name = "Signup Complete Profile";
@@ -469,7 +480,6 @@
 				154A54481D9FD11D0021A803 /* IntroButton.swift in Sources */,
 				15327BD01DC63A62000411F7 /* StartViewController.swift in Sources */,
 				15327BCD1DC63A62000411F7 /* SignupViewController.swift in Sources */,
-				15CAE3821DEC8D7400DED25C /* SignupChooseTableViewCell.swift in Sources */,
 				15327BC61DC63A62000411F7 /* SignupConfirmPhoneViewController.swift in Sources */,
 				152080EA1DF35B8E005687C1 /* RiderListOffer+Additions.swift in Sources */,
 				15327BC41DC63A62000411F7 /* ReviewRiderLIstViewController.swift in Sources */,
@@ -477,6 +487,7 @@
 				15EE96061DCA0F600003FB51 /* ServiceOffer+Additions.swift in Sources */,
 				15327BCE1DC63A62000411F7 /* SignupYouLookGoodViewController.swift in Sources */,
 				1547F1F41DC8FE3F00A04106 /* User+Additions.swift in Sources */,
+				152080F01DF37586005687C1 /* GeneralPickerViewController.swift in Sources */,
 				154A54361D9FD0750021A803 /* CD.xcdatamodeld in Sources */,
 				152080E81DF35953005687C1 /* RiderList+Additions.swift in Sources */,
 				15EE960A1DCA14B50003FB51 /* Language+Additions.swift in Sources */,
@@ -484,11 +495,12 @@
 				15327BC71DC63A62000411F7 /* SignupCongratulationsViewController.swift in Sources */,
 				15327BC21DC63A62000411F7 /* CreateRiderListViewController.swift in Sources */,
 				15327BC81DC63A62000411F7 /* SignupCountryViewController.swift in Sources */,
+				152080F21DF375A1005687C1 /* GeneralPickerTableViewCell.swift in Sources */,
 				154A542E1D9FD0750021A803 /* AppDelegate.swift in Sources */,
-				15EF8EDA1DE8A4D30086C4D5 /* SignupChooseFromListViewController.swift in Sources */,
 				15CAE3801DEC86AF00DED25C /* City+Additions.swift in Sources */,
 				154A54491D9FD11D0021A803 /* IntroButtonWhite.swift in Sources */,
 				15327BC51DC63A62000411F7 /* SignupAddYourPhotoViewController.swift in Sources */,
+				152080EE1DF36E60005687C1 /* DatePickerViewController.swift in Sources */,
 				15327BCA1DC63A62000411F7 /* SignupFourDigitCodeViewController.swift in Sources */,
 				15CAE37E1DEC86A000DED25C /* Country+Additions.swift in Sources */,
 				15327BC91DC63A62000411F7 /* SignupFinishedViewController.swift in Sources */,

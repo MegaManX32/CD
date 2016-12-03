@@ -13,7 +13,7 @@ import MBProgressHUD
 fileprivate let sectionInsets = UIEdgeInsets(top: 0.0, left: 20.0, bottom: 10.0, right: 20.0)
 fileprivate let itemsPerRow: CGFloat = 3
 
-class CreateRiderListViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+class CreateRiderListViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, GeneralPickerViewControllerDelegate {
     
     // MARK: - Properties
     
@@ -33,25 +33,12 @@ class CreateRiderListViewController: UIViewController, UICollectionViewDataSourc
     
     @IBOutlet weak var riderListTextView: UITextView!
     
-//    var interestsArray : [(name : String, checked : Bool)] = [
-//        ("Sport", false),
-//        ("Food", false),
-//        ("Fashion", false),
-//        ("Environment", false),
-//        ("Business", false),
-//        ("Shopping", false),
-//        ("IT", false),
-//        ("Art", false),
-//        ("Health", false),
-//        ("Party", false),
-//        ("Science", false),
-//        ("Cars", false),
-//        ("History", false),
-//        ("Music", false),
-//        ("Travel", false)
-//    ]
-    
     var userID : String!
+    var country : Country?
+    var city : City?
+    var language : Language?
+    var gender : String?
+    var age : String?
     var interestsArray : [(interest : Interest, checked : Bool)] = [(Interest, Bool)]()
     
     // MARK: - View Lifecycle
@@ -65,14 +52,8 @@ class CreateRiderListViewController: UIViewController, UICollectionViewDataSourc
         self.ageViewWidthConstraint.constant = screenWidth / 3 - 12
         self.languageViewWidthConstraint.constant = screenWidth / 3 - 12
         
-        // update button views
-        self.countryButtonView.title = NSLocalizedString("Country", comment: "")
-        self.cityButtonView.title = NSLocalizedString("City", comment: "")
-        self.checkInButtonView.title = NSLocalizedString("Check In", comment: "")
-        self.checkOutButtonView.title = NSLocalizedString("Check Out", comment: "")
-        self.genderButtonView.title = NSLocalizedString("Gender", comment: "")
-        self.ageButtonView.title = NSLocalizedString("Age", comment: "")
-        self.languageButtonView.title = NSLocalizedString("Language", comment: "")
+        // prepare button views
+        self.prepareButtonViews()
         
         // update text view
         self.riderListTextView.layer.masksToBounds = true
@@ -99,6 +80,68 @@ class CreateRiderListViewController: UIViewController, UICollectionViewDataSourc
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func prepareButtonViews() {
+        self.countryButtonView.title = NSLocalizedString("Country", comment: "country")
+        self.countryButtonView.action = { [unowned self] in
+            let controller = self.storyboard?.instantiateViewController(withIdentifier: "GeneralPickerViewController") as! GeneralPickerViewController
+            controller.selectionType = .country
+            controller.delegate = self
+            self.present(controller, animated: true, completion: nil)
+        }
+        self.cityButtonView.title = NSLocalizedString("City", comment: "city")
+        self.cityButtonView.action = { [unowned self] in
+            
+            // first check if country
+            guard let country = self.country else {
+                CustomAlert.presentAlert(message: "You must choose country first", controller: self)
+                return
+            }
+            
+            let controller = self.storyboard?.instantiateViewController(withIdentifier: "GeneralPickerViewController") as! GeneralPickerViewController
+            controller.selectionType = .city
+            controller.country = country
+            controller.delegate = self
+            self.present(controller, animated: true, completion: nil)
+        }
+        self.languageButtonView.title = NSLocalizedString("Language", comment: "language")
+        self.languageButtonView.action = { [unowned self] in
+            let controller = self.storyboard?.instantiateViewController(withIdentifier: "GeneralPickerViewController") as! GeneralPickerViewController
+            controller.selectionType = .language
+            controller.delegate = self
+            self.present(controller, animated: true, completion: nil)
+        }
+        self.genderButtonView.title = NSLocalizedString("Gender", comment: "language")
+        self.genderButtonView.action = { [unowned self] in
+            let controller = self.storyboard?.instantiateViewController(withIdentifier: "GeneralPickerViewController") as! GeneralPickerViewController
+            controller.selectionType = .gender
+            controller.delegate = self
+            self.present(controller, animated: true, completion: nil)
+        }
+        self.ageButtonView.title = NSLocalizedString("Age", comment: "language")
+        self.ageButtonView.action = { [unowned self] in
+            let controller = self.storyboard?.instantiateViewController(withIdentifier: "GeneralPickerViewController") as! GeneralPickerViewController
+            controller.selectionType = .age
+            controller.delegate = self
+            self.present(controller, animated: true, completion: nil)
+        }
+        self.checkInButtonView.title = NSLocalizedString("Check In", comment: "")
+        self.checkInButtonView.action = { [unowned self] in
+            let controller = self.storyboard?.instantiateViewController(withIdentifier: "DatePickerViewController") as! DatePickerViewController
+            controller.datePickedAction = { [unowned self] (pickedDate) in
+                self.checkInButtonView.title = "\(pickedDate)"
+            }
+            self.present(controller, animated: true, completion: nil)
+        }
+        self.checkOutButtonView.title = NSLocalizedString("Check Out", comment: "")
+        self.checkOutButtonView.action = { [unowned self] in
+            let controller = self.storyboard?.instantiateViewController(withIdentifier: "DatePickerViewController") as! DatePickerViewController
+            controller.datePickedAction = { [unowned self] (pickedDate) in
+                self.checkOutButtonView.title = "\(pickedDate)"
+            }
+            self.present(controller, animated: true, completion: nil)
+        }
     }
     
     // MARK: - User Actions
@@ -179,4 +222,30 @@ class CreateRiderListViewController: UIViewController, UICollectionViewDataSourc
         self.collectionView.reloadItems(at: [indexPath])
     }
 
+    // MARK: - SignupChooseFromListViewControllerDelegate methods
+    
+    func generalPickerViewControllerDidSelect(object: Any, selectionType: SelectionType, controller: UIViewController) {
+        switch selectionType {
+        case .country:
+            self.country = object as? Country
+            self.countryButtonView.title = self.country?.countryName
+            self.city = nil
+            self.cityButtonView.title = "City"
+        case .city:
+            self.city = object as? City
+            self.cityButtonView.title = self.city?.cityName
+        case .language:
+            self.language = object as? Language
+            self.languageButtonView.title = self.language?.language
+        case .gender:
+            self.gender = object as? String
+            self.genderButtonView.title = self.gender
+        case .age:
+            self.age = object as? String
+            self.ageButtonView.title = self.age
+        default:
+            break
+            // do nothing, should never happen
+        }
+    }
 }

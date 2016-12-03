@@ -1,15 +1,15 @@
 //
-//  SignupChooseTableViewCell.swift
+//  GeneralPickerTableViewCell.swift
 //  CD
 //
-//  Created by Vladislav Simovic on 11/28/16.
+//  Created by Vladislav Simovic on 12/3/16.
 //  Copyright © 2016 CustomDeal. All rights reserved.
 //
 
 import UIKit
 
-class SignupChooseTableViewCell: UITableViewCell {
-
+class GeneralPickerTableViewCell: UITableViewCell {
+    
     // MARK: - Properties
     
     @IBOutlet weak var titleLabel: UILabel!
@@ -26,3 +26,4 @@ class SignupChooseTableViewCell: UITableViewCell {
         return String(describing:self)
     }
 }
+

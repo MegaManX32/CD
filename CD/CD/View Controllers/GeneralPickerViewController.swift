@@ -1,8 +1,8 @@
 //
-//  SignupChooseFromListViewController.swift
+//  GeneralPickerViewController.swift
 //  CD
 //
-//  Created by Vladislav Simovic on 11/25/16.
+//  Created by Vladislav Simovic on 12/3/16.
 //  Copyright © 2016 CustomDeal. All rights reserved.
 //
 
@@ -15,25 +15,27 @@ enum SelectionType {
     case city
     case language
     case profession
+    case gender
+    case age
 }
 
-protocol SignupChooseFromListViewControllerDelegate {
-    func signupChooseFromListViewControllerDidSelect(object: AnyObject, selectionType: SelectionType, controller: UIViewController);
+protocol GeneralPickerViewControllerDelegate {
+    func generalPickerViewControllerDidSelect(object: Any, selectionType: SelectionType, controller: UIViewController);
 }
 
-class SignupChooseFromListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class GeneralPickerViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     // MARK: - Properties
     
-    var delegate : SignupChooseFromListViewControllerDelegate?
-    var optionsArray = [AnyObject]()
+    var delegate : GeneralPickerViewControllerDelegate?
+    var optionsArray = [Any]()
     var selectionType : SelectionType = .country
     var country : Country!
     
     @IBOutlet weak var tableView: UITableView!
     
     // MARK: - View Lifecycle
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -90,9 +92,15 @@ class SignupChooseFromListViewController: UIViewController, UITableViewDataSourc
                     MBProgressHUD.hide(for: self.view, animated: true)
                 })
             }
+        case .gender:
+            self.optionsArray = ["Male", "Female"]
+        case .age:
+            for index in 18...100 {
+                self.optionsArray.append("\(index)")
+            }
         }
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -109,7 +117,7 @@ class SignupChooseFromListViewController: UIViewController, UITableViewDataSourc
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier:SignupChooseTableViewCell.cellIdentifier(), for: indexPath) as! SignupChooseTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier:GeneralPickerTableViewCell.cellIdentifier(), for: indexPath) as! GeneralPickerTableViewCell
         
         switch self.selectionType {
         case .city:
@@ -120,13 +128,17 @@ class SignupChooseFromListViewController: UIViewController, UITableViewDataSourc
             cell.populateCellWithName(name: (self.optionsArray[indexPath.row] as! Language).language!)
         case .profession:
             cell.populateCellWithName(name: (self.optionsArray[indexPath.row] as! Profession).profession!)
+        case .gender:
+            cell.populateCellWithName(name: self.optionsArray[indexPath.row] as! String)
+        case .age:
+            cell.populateCellWithName(name: self.optionsArray[indexPath.row] as! String)
         }
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.delegate?.signupChooseFromListViewControllerDidSelect(object: self.optionsArray[indexPath.row], selectionType: self.selectionType, controller: self)
+        self.delegate?.generalPickerViewControllerDidSelect(object: self.optionsArray[indexPath.row], selectionType: self.selectionType, controller: self)
         self.dismiss(animated: true, completion: nil)
     }
 }

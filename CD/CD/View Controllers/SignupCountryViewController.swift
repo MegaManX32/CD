@@ -9,7 +9,7 @@
 import UIKit
 import MBProgressHUD
 
-class SignupCountryViewController: UIViewController, SignupChooseFromListViewControllerDelegate {
+class SignupCountryViewController: UIViewController, GeneralPickerViewControllerDelegate {
     
     // MARK: - Properties
     
@@ -51,7 +51,7 @@ class SignupCountryViewController: UIViewController, SignupChooseFromListViewCon
         self.countryButtonView.title = NSLocalizedString("Country", comment: "country")
         self.countryButtonView.isWhite = true
         self.countryButtonView.action = { [unowned self] in
-            let controller = self.storyboard?.instantiateViewController(withIdentifier: "SignupChooseFromListViewController") as! SignupChooseFromListViewController
+            let controller = self.storyboard?.instantiateViewController(withIdentifier: "GeneralPickerViewController") as! GeneralPickerViewController
             controller.selectionType = .country
             controller.delegate = self
             self.present(controller, animated: true, completion: nil)
@@ -66,7 +66,7 @@ class SignupCountryViewController: UIViewController, SignupChooseFromListViewCon
                 return
             }
             
-            let controller = self.storyboard?.instantiateViewController(withIdentifier: "SignupChooseFromListViewController") as! SignupChooseFromListViewController
+            let controller = self.storyboard?.instantiateViewController(withIdentifier: "GeneralPickerViewController") as! GeneralPickerViewController
             controller.selectionType = .city
             controller.country = country
             controller.delegate = self
@@ -75,7 +75,7 @@ class SignupCountryViewController: UIViewController, SignupChooseFromListViewCon
         self.professionButtonView.title = NSLocalizedString("Profession", comment: "profession")
         self.professionButtonView.isWhite = true
         self.professionButtonView.action = { [unowned self] in
-            let controller = self.storyboard?.instantiateViewController(withIdentifier: "SignupChooseFromListViewController") as! SignupChooseFromListViewController
+            let controller = self.storyboard?.instantiateViewController(withIdentifier: "GeneralPickerViewController") as! GeneralPickerViewController
             controller.selectionType = .profession
             controller.delegate = self
             self.present(controller, animated: true, completion: nil)
@@ -83,7 +83,7 @@ class SignupCountryViewController: UIViewController, SignupChooseFromListViewCon
         self.languageButtonView.title = NSLocalizedString("Language", comment: "language")
         self.languageButtonView.isWhite = true
         self.languageButtonView.action = { [unowned self] in
-            let controller = self.storyboard?.instantiateViewController(withIdentifier: "SignupChooseFromListViewController") as! SignupChooseFromListViewController
+            let controller = self.storyboard?.instantiateViewController(withIdentifier: "GeneralPickerViewController") as! GeneralPickerViewController
             controller.selectionType = .language
             controller.delegate = self
             self.present(controller, animated: true, completion: nil)
@@ -130,7 +130,7 @@ class SignupCountryViewController: UIViewController, SignupChooseFromListViewCon
     
     // MARK: - SignupChooseFromListViewControllerDelegate methods
     
-    func signupChooseFromListViewControllerDidSelect(object: AnyObject, selectionType: SelectionType, controller: UIViewController) {
+    func generalPickerViewControllerDidSelect(object: Any, selectionType: SelectionType, controller: UIViewController) {
         switch selectionType {
         case .country:
             self.country = object as? Country
@@ -146,6 +146,9 @@ class SignupCountryViewController: UIViewController, SignupChooseFromListViewCon
         case .profession:
             self.profession = object as? Profession
             self.professionButtonView.title = self.profession?.profession
+        default:
+            break
+            // do nothing, should never happen
         }
     }
 }
