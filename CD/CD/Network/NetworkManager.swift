@@ -329,4 +329,76 @@ class NetworkManager {
             }
         }
     }
+    
+    // MARK: - RiderList
+    
+    func createOrUpdate(riderList: RiderList, context: NSManagedObjectContext, success:@escaping (String?) -> Void, failure:@escaping (String) -> Void) {
+        Alamofire.request(baseURL + "RiderList", method: .post, parameters: riderList.asJSON(), encoding: JSONEncoding.default, headers: nil).validate().responseJSON {[unowned self] (response) in
+            switch response.result {
+            case .success:
+                
+                context.perform {
+                    
+                    // check if valid JSON
+                    guard let JSON = response.result.value as? [String: Any]
+                        else {
+                            DispatchQueue.main.async {
+                                failure("JSON not valid")
+                            }
+                            return
+                    }
+                    
+                    // update riderList with JSON
+                    riderList.initWith(JSON: JSON, context: context)
+                    CoreDataManager.sharedInstance.save(scratchpadContext: context)
+                    
+                    // always return on main queue
+                    let riderListID = riderList.uid
+                    DispatchQueue.main.async {
+                        success(riderListID)
+                    }
+                }
+            case .failure:
+                
+                // error handling
+                self.generalizedFailure(data: response.data, defaultErrorMessage: "Could not update rider list", failure: failure)
+            }
+        }
+    }
+    
+    // MARK: - RiderListOffer
+    
+    func createOrUpdate(riderListOffer: RiderListOffer, context: NSManagedObjectContext, success:@escaping (String?) -> Void, failure:@escaping (String) -> Void) {
+        Alamofire.request(baseURL + "RiderListOffer/send", method: .post, parameters: riderListOffer.asJSON(), encoding: JSONEncoding.default, headers: nil).validate().responseJSON {[unowned self] (response) in
+            switch response.result {
+            case .success:
+                
+                context.perform {
+                    
+                    // check if valid JSON
+                    guard let JSON = response.result.value as? [String: Any]
+                        else {
+                            DispatchQueue.main.async {
+                                failure("JSON not valid")
+                            }
+                            return
+                    }
+                    
+                    // update riderList with JSON
+                    riderListOffer.initWith(JSON: JSON)
+                    CoreDataManager.sharedInstance.save(scratchpadContext: context)
+                    
+                    // always return on main queue
+                    let riderListOfferID = riderListOffer.uid
+                    DispatchQueue.main.async {
+                        success(riderListOfferID)
+                    }
+                }
+            case .failure:
+                
+                // error handling
+                self.generalizedFailure(data: response.data, defaultErrorMessage: "Could not update rider list offer", failure: failure)
+            }
+        }
+    }
 }
