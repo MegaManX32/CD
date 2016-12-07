@@ -180,7 +180,7 @@ class NetworkManager {
     
     func upload(photo: UIImage, success:@escaping (String) -> Void, failure:@escaping (String) -> Void) {
         Alamofire.upload(multipartFormData: { (multipartData) in
-            multipartData.append(UIImageJPEGRepresentation(photo, 1)!, withName: "photo", fileName: "photo.jpg", mimeType: "image/jpeg")
+            multipartData.append(UIImageJPEGRepresentation(photo, 1)!, withName: "file", fileName: "photo.png", mimeType: "image/png")
         }, to: baseURL + "Upload/photo",
            encodingCompletion: { (result) in
             switch result {
@@ -198,7 +198,7 @@ class NetworkManager {
                                 return
                         }
                         
-                        let photoID = JSON["id"] as! String
+                        let photoID = JSON["uid"] as! String
                         success(photoID)
                     case .failure:
                         
