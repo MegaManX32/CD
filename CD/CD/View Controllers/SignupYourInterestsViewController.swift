@@ -76,7 +76,7 @@ class SignupYourInterestsViewController: UIViewController, UICollectionViewDataS
             
             // create of or update user
             NetworkManager.sharedInstance.createOrUpdate(user: user, context: context, success: { [unowned self] (userID) in
-                let controller = self.storyboard?.instantiateViewController(withIdentifier: "SignupFinishedViewController") as! SignupFinishedViewController
+                let controller = self.storyboard?.instantiateViewController(withIdentifier: "SignupCongratulationsViewController") as! SignupCongratulationsViewController
                 controller.userID = userID
                 self.show(controller, sender: self)
                 MBProgressHUD.hide(for: self.view, animated: true)

@@ -180,7 +180,7 @@ class NetworkManager {
     
     func upload(photo: UIImage, success:@escaping (String) -> Void, failure:@escaping (String) -> Void) {
         Alamofire.upload(multipartFormData: { (multipartData) in
-            multipartData.append(UIImageJPEGRepresentation(photo, 1)!, withName: "file", fileName: "photo.png", mimeType: "image/png")
+            multipartData.append(UIImageJPEGRepresentation(photo, 0.2)!, withName: "file", fileName: "photo.png", mimeType: "image/png")
         }, to: baseURL + "Upload/photo",
            encodingCompletion: { (result) in
             switch result {

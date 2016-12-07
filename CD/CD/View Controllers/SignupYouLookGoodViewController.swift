@@ -9,6 +9,8 @@
 import UIKit
 import MBProgressHUD
 
+fileprivate let imageWidth: CGFloat = 107
+
 class SignupYouLookGoodViewController: UIViewController {
     
     // MARK: - Properties
@@ -22,9 +24,11 @@ class SignupYouLookGoodViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // test it with test image
-        avatarImage = #imageLiteral(resourceName: "testImage")
+        
+        // add avatar
+        self.avatarImageView.layer.cornerRadius = imageWidth / 2.0
+        self.avatarImageView.layer.masksToBounds = true
+        self.avatarImageView.image = self.avatarImage
     }
 
     override func didReceiveMemoryWarning() {
@@ -50,7 +54,7 @@ class SignupYouLookGoodViewController: UIViewController {
                 
                 // create of or update user
                 NetworkManager.sharedInstance.createOrUpdate(user: user, context: context, success: { [unowned self] (userID) in
-                    let controller = self.storyboard?.instantiateViewController(withIdentifier: "SignupFinishedViewController") as! SignupFinishedViewController
+                    let controller = self.storyboard?.instantiateViewController(withIdentifier: "SignupCountryViewController") as! SignupCountryViewController
                     controller.userID = userID
                     self.show(controller, sender: self)
                     MBProgressHUD.hide(for: self.view, animated: true)
@@ -67,7 +71,7 @@ class SignupYouLookGoodViewController: UIViewController {
         }
     }
     
-    @IBAction func chnagePhotoAction(sender: UIButton) {
-        
+    @IBAction func changePhotoAction(sender: UIButton) {
+        _ = self.navigationController?.popViewController(animated: true)
     }
 }

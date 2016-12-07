@@ -30,10 +30,17 @@ class SignupAddYourPhotoViewController: UIViewController, UIImagePickerControlle
     // MARK: - User Actions
     
     @IBAction func takePhoto(sender: UIButton) {
-        let imagePickerControleller = UIImagePickerController()
-        imagePickerControleller.sourceType = .photoLibrary
-        imagePickerControleller.delegate = self
-        self.present(imagePickerControleller, animated: true, completion: nil)
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.sourceType = .camera
+        imagePickerController.delegate = self
+        self.present(imagePickerController, animated: true, completion: nil)
+    }
+    
+    @IBAction func chooseFromPhotoLibrary(sender: UIButton) {
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.sourceType = .photoLibrary
+        imagePickerController.delegate = self
+        self.present(imagePickerController, animated: true, completion: nil)
     }
     
     // MARK: - UINavigationControllerDelegate methods
@@ -44,8 +51,9 @@ class SignupAddYourPhotoViewController: UIViewController, UIImagePickerControlle
         
         // present SignupYouLookGoodViewController
         let controller = self.storyboard?.instantiateViewController(withIdentifier: "SignupYouLookGoodViewController") as! SignupYouLookGoodViewController
+        controller.userID = self.userID
         controller.avatarImage = image
-        self.present(controller, animated: true, completion: nil)
+        self.show(controller, sender: self)
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {

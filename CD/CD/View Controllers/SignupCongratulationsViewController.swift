@@ -11,7 +11,9 @@ import UIKit
 class SignupCongratulationsViewController: UIViewController {
     
     // MARK: - Properties
+    
     @IBOutlet weak var subtitleLabel : UILabel!
+    var userID : String!
     
     // MARK: - View Lifecycle
 

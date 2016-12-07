@@ -197,7 +197,6 @@
 				15327BB31DC63A62000411F7 /* HostFeedbackViewController.swift */,
 				15327BB41DC63A62000411F7 /* ReviewRiderLIstViewController.swift */,
 				15327BB61DC63A62000411F7 /* SignupConfirmPhoneViewController.swift */,
-				15327BB71DC63A62000411F7 /* SignupCongratulationsViewController.swift */,
 				15327BBA1DC63A62000411F7 /* SignupFourDigitCodeViewController.swift */,
 				15327BBB1DC63A62000411F7 /* SignupGreatViewController.swift */,
 				15327BBC1DC63A62000411F7 /* SignupInterestsCollectionViewCell.swift */,
@@ -295,6 +294,7 @@
 				15327BBE1DC63A62000411F7 /* SignupYouLookGoodViewController.swift */,
 				15327BB81DC63A62000411F7 /* SignupCountryViewController.swift */,
 				15327BBF1DC63A62000411F7 /* SignupYourInterestsViewController.swift */,
+				15327BB71DC63A62000411F7 /* SignupCongratulationsViewController.swift */,
 			);
 			name = "Signup Complete Profile";
 			sourceTree = "<group>";
@@ -368,7 +368,7 @@
 				TargetAttributes = {
 					154A54291D9FD0750021A803 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = E56KMPQH4M;
+						DevelopmentTeam = WDRE2F7JLT;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -638,7 +638,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = E56KMPQH4M;
+				DEVELOPMENT_TEAM = WDRE2F7JLT;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = "$(inherited)";
 				INFOPLIST_FILE = CD/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -654,7 +654,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = E56KMPQH4M;
+				DEVELOPMENT_TEAM = WDRE2F7JLT;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = "$(inherited)";
 				INFOPLIST_FILE = CD/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
