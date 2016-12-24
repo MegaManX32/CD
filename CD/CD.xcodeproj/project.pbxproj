@@ -60,6 +60,7 @@
 		154A54721D9FD12C0021A803 /* RobotoCondensed-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 154A545F1D9FD12C0021A803 /* RobotoCondensed-Regular.ttf */; };
 		1574A7501E0ED31400EDA4D0 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1574A74F1E0ED31400EDA4D0 /* SWRevealViewController.m */; };
 		1574A7521E0ED6B000EDA4D0 /* GuestHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1574A7511E0ED6B000EDA4D0 /* GuestHomeViewController.swift */; };
+		1574A7551E0EDE1500EDA4D0 /* HostHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1574A7541E0EDE1500EDA4D0 /* HostHomeViewController.swift */; };
 		158E240A1DCE0A5D000FE262 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158E24091DCE0A5D000FE262 /* CoreDataManager.swift */; };
 		15CAE37E1DEC86A000DED25C /* Country+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CAE37D1DEC86A000DED25C /* Country+Additions.swift */; };
 		15CAE3801DEC86AF00DED25C /* City+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CAE37F1DEC86AF00DED25C /* City+Additions.swift */; };
@@ -132,6 +133,7 @@
 		1574A74E1E0ED31400EDA4D0 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		1574A74F1E0ED31400EDA4D0 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		1574A7511E0ED6B000EDA4D0 /* GuestHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuestHomeViewController.swift; sourceTree = "<group>"; };
+		1574A7541E0EDE1500EDA4D0 /* HostHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HostHomeViewController.swift; sourceTree = "<group>"; };
 		158E24091DCE0A5D000FE262 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		15CAE37D1DEC86A000DED25C /* Country+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Country+Additions.swift"; sourceTree = "<group>"; };
 		15CAE37F1DEC86AF00DED25C /* City+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "City+Additions.swift"; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 				158E24081DCE081C000FE262 /* Signup */,
 				156C226B1DDE0DA600ACE919 /* Signup Complete Profile */,
 				152080EB1DF36470005687C1 /* Guest Menu */,
+				1574A7531E0EDD2E00EDA4D0 /* Host Menu */,
 				15327BB11DC63A62000411F7 /* AccomodationViewController.swift */,
 				15327BB31DC63A62000411F7 /* HostFeedbackViewController.swift */,
 				15327BB41DC63A62000411F7 /* ReviewRiderLIstViewController.swift */,
@@ -323,6 +326,14 @@
 				1574A74F1E0ED31400EDA4D0 /* SWRevealViewController.m */,
 			);
 			path = SWRevealViewController;
+			sourceTree = "<group>";
+		};
+		1574A7531E0EDD2E00EDA4D0 /* Host Menu */ = {
+			isa = PBXGroup;
+			children = (
+				1574A7541E0EDE1500EDA4D0 /* HostHomeViewController.swift */,
+			);
+			name = "Host Menu";
 			sourceTree = "<group>";
 		};
 		158E24081DCE081C000FE262 /* Signup */ = {
@@ -507,6 +518,7 @@
 				154A54481D9FD11D0021A803 /* IntroButton.swift in Sources */,
 				15327BD01DC63A62000411F7 /* StartViewController.swift in Sources */,
 				15327BCD1DC63A62000411F7 /* SignupViewController.swift in Sources */,
+				1574A7551E0EDE1500EDA4D0 /* HostHomeViewController.swift in Sources */,
 				15327BC61DC63A62000411F7 /* SignupConfirmPhoneViewController.swift in Sources */,
 				152080EA1DF35B8E005687C1 /* RiderListOffer+Additions.swift in Sources */,
 				15327BC41DC63A62000411F7 /* ReviewRiderLIstViewController.swift in Sources */,

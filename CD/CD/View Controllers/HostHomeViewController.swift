@@ -1,5 +1,5 @@
 //
-//  GuestHomeViewController.swift
+//  HostHomeViewController.swift
 //  CD
 //
 //  Created by Vladislav Simovic on 12/24/16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GuestHomeViewController: UIViewController {
+class HostHomeViewController: UIViewController {
     
     // MARK: - View Lifecycle
 
@@ -27,10 +27,5 @@ class GuestHomeViewController: UIViewController {
     
     @IBAction func openSideMenu(sender: UIButton) {
         self.revealViewController().revealToggle(sender)
-    }
-    
-    @IBAction func createNewRiderList(sender: UIButton) {
-        let controller = self.storyboard?.instantiateViewController(withIdentifier: "CreateRiderListViewController") as! CreateRiderListViewController
-        self.show(controller, sender: self)
     }
 }

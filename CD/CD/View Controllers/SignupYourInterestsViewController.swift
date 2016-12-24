@@ -11,6 +11,7 @@ import MBProgressHUD
 
 fileprivate let sectionInsets = UIEdgeInsets(top: 20.0, left: 20.0, bottom: 30.0, right: 20.0)
 fileprivate let itemsPerRow: CGFloat = 3
+fileprivate let heightOfRow: CGFloat = 100
 
 class SignupYourInterestsViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
@@ -111,7 +112,7 @@ class SignupYourInterestsViewController: UIViewController, UICollectionViewDataS
         let paddingSpace = sectionInsets.left * (itemsPerRow + 1)
         let availableWidth = view.frame.width - paddingSpace
         let widthPerItem = availableWidth / itemsPerRow
-        return CGSize(width: widthPerItem, height: widthPerItem)
+        return CGSize(width: widthPerItem, height: heightOfRow)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,  insetForSectionAt section: Int) -> UIEdgeInsets {

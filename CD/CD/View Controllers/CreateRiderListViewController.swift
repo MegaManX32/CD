@@ -10,8 +10,9 @@ import UIKit
 import CoreData
 import MBProgressHUD
 
-fileprivate let sectionInsets = UIEdgeInsets(top: 0.0, left: 20.0, bottom: 10.0, right: 20.0)
+fileprivate let sectionInsets = UIEdgeInsets(top: 0.0, left: 20.0, bottom: 0.0, right: 20.0)
 fileprivate let itemsPerRow: CGFloat = 3
+fileprivate let heightOfRow: CGFloat = 100
 
 class CreateRiderListViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, GeneralPickerViewControllerDelegate {
     
@@ -60,21 +61,30 @@ class CreateRiderListViewController: UIViewController, UICollectionViewDataSourc
         self.riderListTextView.layer.cornerRadius = 4
         
         // fetch interests
-        MBProgressHUD.showAdded(to: self.view, animated: true)
-        NetworkManager.sharedInstance.getAllInterests(
-            success: { [unowned self] in
-                let context = CoreDataManager.sharedInstance.mainContext
-                let interests = Interest.findAllInterests(context: context)
-                for interest in interests {
-                    self.interestsArray.append((interest, false))
-                }
-                self.collectionView.reloadData()
-                MBProgressHUD.hide(for: self.view, animated: true)
-            },
-            failure: { [unowned self] (errorMessage) in
-                print(errorMessage)
-                MBProgressHUD.hide(for: self.view, animated: true)
-        })
+        let interests = Interest.findAllInterests(context: CoreDataManager.sharedInstance.mainContext)
+        if (interests.isEmpty) {
+            MBProgressHUD.showAdded(to: self.view, animated: true)
+            NetworkManager.sharedInstance.getAllInterests(
+                success: { [unowned self] in
+                    let context = CoreDataManager.sharedInstance.mainContext
+                    let interests = Interest.findAllInterests(context: context)
+                    for interest in interests {
+                        self.interestsArray.append((interest, false))
+                    }
+                    self.collectionView.reloadData()
+                    MBProgressHUD.hide(for: self.view, animated: true)
+                },
+                failure: { [unowned self] (errorMessage) in
+                    print(errorMessage)
+                    MBProgressHUD.hide(for: self.view, animated: true)
+            })
+        }
+        else {
+            for interest in interests {
+                self.interestsArray.append((interest, false))
+            }
+            self.collectionView.reloadData()
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -183,6 +193,10 @@ class CreateRiderListViewController: UIViewController, UICollectionViewDataSourc
         
     }
     
+    @IBAction func backAction(sender: UIButton) {
+        _ = self.navigationController?.popViewController(animated: true)
+    }
+    
     // MARK: - UICollectionViewDelegate methods
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -206,7 +220,7 @@ class CreateRiderListViewController: UIViewController, UICollectionViewDataSourc
         let paddingSpace = sectionInsets.left * (itemsPerRow + 1)
         let availableWidth = view.frame.width - paddingSpace
         let widthPerItem = availableWidth / itemsPerRow
-        return CGSize(width: widthPerItem, height: widthPerItem)
+        return CGSize(width: widthPerItem, height: heightOfRow)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,  insetForSectionAt section: Int) -> UIEdgeInsets {
