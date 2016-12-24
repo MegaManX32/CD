@@ -58,6 +58,7 @@
 		154A54701D9FD12C0021A803 /* RobotoCondensed-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 154A545D1D9FD12C0021A803 /* RobotoCondensed-Light.ttf */; };
 		154A54711D9FD12C0021A803 /* RobotoCondensed-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 154A545E1D9FD12C0021A803 /* RobotoCondensed-LightItalic.ttf */; };
 		154A54721D9FD12C0021A803 /* RobotoCondensed-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 154A545F1D9FD12C0021A803 /* RobotoCondensed-Regular.ttf */; };
+		1574A7501E0ED31400EDA4D0 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1574A74F1E0ED31400EDA4D0 /* SWRevealViewController.m */; };
 		158E240A1DCE0A5D000FE262 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158E24091DCE0A5D000FE262 /* CoreDataManager.swift */; };
 		15CAE37E1DEC86A000DED25C /* Country+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CAE37D1DEC86A000DED25C /* Country+Additions.swift */; };
 		15CAE3801DEC86AF00DED25C /* City+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CAE37F1DEC86AF00DED25C /* City+Additions.swift */; };
@@ -126,6 +127,9 @@
 		154A545D1D9FD12C0021A803 /* RobotoCondensed-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-Light.ttf"; sourceTree = "<group>"; };
 		154A545E1D9FD12C0021A803 /* RobotoCondensed-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-LightItalic.ttf"; sourceTree = "<group>"; };
 		154A545F1D9FD12C0021A803 /* RobotoCondensed-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-Regular.ttf"; sourceTree = "<group>"; };
+		1574A74A1E0ED2AA00EDA4D0 /* CD-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CD-Bridging-Header.h"; sourceTree = "<group>"; };
+		1574A74E1E0ED31400EDA4D0 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		1574A74F1E0ED31400EDA4D0 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		158E24091DCE0A5D000FE262 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		15CAE37D1DEC86A000DED25C /* Country+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Country+Additions.swift"; sourceTree = "<group>"; };
 		15CAE37F1DEC86AF00DED25C /* City+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "City+Additions.swift"; sourceTree = "<group>"; };
@@ -225,6 +229,7 @@
 		154A542C1D9FD0750021A803 /* CD */ = {
 			isa = PBXGroup;
 			children = (
+				1574A7481E0ED29F00EDA4D0 /* External Libraries */,
 				154A544B1D9FD12C0021A803 /* Custom Fonts */,
 				154A54421D9FD11D0021A803 /* Custom UI */,
 				152A84261DC8E79F00949324 /* Model */,
@@ -299,6 +304,24 @@
 			name = "Signup Complete Profile";
 			sourceTree = "<group>";
 		};
+		1574A7481E0ED29F00EDA4D0 /* External Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				1574A74A1E0ED2AA00EDA4D0 /* CD-Bridging-Header.h */,
+				1574A7491E0ED29F00EDA4D0 /* SWRevealViewController */,
+			);
+			path = "External Libraries";
+			sourceTree = "<group>";
+		};
+		1574A7491E0ED29F00EDA4D0 /* SWRevealViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1574A74E1E0ED31400EDA4D0 /* SWRevealViewController.h */,
+				1574A74F1E0ED31400EDA4D0 /* SWRevealViewController.m */,
+			);
+			path = SWRevealViewController;
+			sourceTree = "<group>";
+		};
 		158E24081DCE081C000FE262 /* Signup */ = {
 			isa = PBXGroup;
 			children = (
@@ -369,6 +392,7 @@
 					154A54291D9FD0750021A803 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = WDRE2F7JLT;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -502,6 +526,7 @@
 				15327BC51DC63A62000411F7 /* SignupAddYourPhotoViewController.swift in Sources */,
 				152080EE1DF36E60005687C1 /* DatePickerViewController.swift in Sources */,
 				15327BCA1DC63A62000411F7 /* SignupFourDigitCodeViewController.swift in Sources */,
+				1574A7501E0ED31400EDA4D0 /* SWRevealViewController.m in Sources */,
 				15CAE37E1DEC86A000DED25C /* Country+Additions.swift in Sources */,
 				15327BC91DC63A62000411F7 /* SignupFinishedViewController.swift in Sources */,
 				153C80D21DABB57000DBEDCD /* ButtonView.swift in Sources */,
@@ -638,12 +663,15 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = WDRE2F7JLT;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = "$(inherited)";
 				INFOPLIST_FILE = CD/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.customdeal.CD;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CD/External Libraries/CD-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -654,12 +682,14 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = WDRE2F7JLT;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = "$(inherited)";
 				INFOPLIST_FILE = CD/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.customdeal.CD;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CD/External Libraries/CD-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
