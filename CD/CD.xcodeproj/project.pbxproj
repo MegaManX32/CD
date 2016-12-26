@@ -62,6 +62,7 @@
 		1574A7521E0ED6B000EDA4D0 /* GuestHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1574A7511E0ED6B000EDA4D0 /* GuestHomeViewController.swift */; };
 		1574A7551E0EDE1500EDA4D0 /* HostHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1574A7541E0EDE1500EDA4D0 /* HostHomeViewController.swift */; };
 		1588A6CD1E11369800FEA81F /* HostMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1588A6CC1E11369800FEA81F /* HostMenuTableViewCell.swift */; };
+		1588A6CF1E1154D200FEA81F /* GuestMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1588A6CE1E1154D200FEA81F /* GuestMenuTableViewCell.swift */; };
 		158E240A1DCE0A5D000FE262 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158E24091DCE0A5D000FE262 /* CoreDataManager.swift */; };
 		15CAE37E1DEC86A000DED25C /* Country+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CAE37D1DEC86A000DED25C /* Country+Additions.swift */; };
 		15CAE3801DEC86AF00DED25C /* City+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CAE37F1DEC86AF00DED25C /* City+Additions.swift */; };
@@ -136,6 +137,7 @@
 		1574A7511E0ED6B000EDA4D0 /* GuestHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuestHomeViewController.swift; sourceTree = "<group>"; };
 		1574A7541E0EDE1500EDA4D0 /* HostHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HostHomeViewController.swift; sourceTree = "<group>"; };
 		1588A6CC1E11369800FEA81F /* HostMenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HostMenuTableViewCell.swift; sourceTree = "<group>"; };
+		1588A6CE1E1154D200FEA81F /* GuestMenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuestMenuTableViewCell.swift; sourceTree = "<group>"; };
 		158E24091DCE0A5D000FE262 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		15CAE37D1DEC86A000DED25C /* Country+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Country+Additions.swift"; sourceTree = "<group>"; };
 		15CAE37F1DEC86AF00DED25C /* City+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "City+Additions.swift"; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				1574A7511E0ED6B000EDA4D0 /* GuestHomeViewController.swift */,
+				1588A6CE1E1154D200FEA81F /* GuestMenuTableViewCell.swift */,
 				15327BB21DC63A62000411F7 /* CreateRiderListViewController.swift */,
 			);
 			name = "Guest Menu";
@@ -531,6 +534,7 @@
 				15327BCE1DC63A62000411F7 /* SignupYouLookGoodViewController.swift in Sources */,
 				1547F1F41DC8FE3F00A04106 /* User+Additions.swift in Sources */,
 				152080F01DF37586005687C1 /* GeneralPickerViewController.swift in Sources */,
+				1588A6CF1E1154D200FEA81F /* GuestMenuTableViewCell.swift in Sources */,
 				154A54361D9FD0750021A803 /* CD.xcdatamodeld in Sources */,
 				152080E81DF35953005687C1 /* RiderList+Additions.swift in Sources */,
 				15EE960A1DCA14B50003FB51 /* Language+Additions.swift in Sources */,
