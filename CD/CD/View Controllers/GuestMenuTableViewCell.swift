@@ -24,7 +24,7 @@ class GuestMenuTableViewCell: UITableViewCell {
     @IBOutlet weak var star4ImageView : UIImageView!
     @IBOutlet weak var star5ImageView : UIImageView!
     
-    // MARK: - Cell lifecycle
+    // MARK: - Cell Lifecycle
     
     override func awakeFromNib() {
         super.awakeFromNib()

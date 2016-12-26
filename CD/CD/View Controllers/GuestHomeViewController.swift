@@ -47,7 +47,7 @@ class GuestHomeViewController: UIViewController, UITableViewDataSource, UITableV
             self.riderListOffersViewHeightConstraint.constant = CGFloat(self.riderListOffersArray.count) * GuestMenuTableViewCell.cellHeight() + someRequestsViewHeight
             
             let endString = (self.riderListOffersArray.count == 1) ? "!" : "s!"
-            self.numberOfRiderListOffersLabel.text = "You have \(self.riderListOffersArray.count) " + "offers" + endString
+            self.numberOfRiderListOffersLabel.text = "You have \(self.riderListOffersArray.count) " + "offer" + endString
         }
         else {
             self.overviewLabel.isHidden = true
