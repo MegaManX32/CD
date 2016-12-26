@@ -55,7 +55,6 @@ class GuestHomeViewController: UIViewController, UITableViewDataSource, UITableV
             self.riderListOffersView.isHidden = true
             self.createRiderListView.isHidden = false
         }
-
     }
 
     override func didReceiveMemoryWarning() {
