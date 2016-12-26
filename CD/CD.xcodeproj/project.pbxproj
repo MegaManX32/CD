@@ -61,6 +61,7 @@
 		1574A7501E0ED31400EDA4D0 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1574A74F1E0ED31400EDA4D0 /* SWRevealViewController.m */; };
 		1574A7521E0ED6B000EDA4D0 /* GuestHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1574A7511E0ED6B000EDA4D0 /* GuestHomeViewController.swift */; };
 		1574A7551E0EDE1500EDA4D0 /* HostHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1574A7541E0EDE1500EDA4D0 /* HostHomeViewController.swift */; };
+		1588A6CD1E11369800FEA81F /* HostMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1588A6CC1E11369800FEA81F /* HostMenuTableViewCell.swift */; };
 		158E240A1DCE0A5D000FE262 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158E24091DCE0A5D000FE262 /* CoreDataManager.swift */; };
 		15CAE37E1DEC86A000DED25C /* Country+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CAE37D1DEC86A000DED25C /* Country+Additions.swift */; };
 		15CAE3801DEC86AF00DED25C /* City+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CAE37F1DEC86AF00DED25C /* City+Additions.swift */; };
@@ -134,6 +135,7 @@
 		1574A74F1E0ED31400EDA4D0 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		1574A7511E0ED6B000EDA4D0 /* GuestHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuestHomeViewController.swift; sourceTree = "<group>"; };
 		1574A7541E0EDE1500EDA4D0 /* HostHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HostHomeViewController.swift; sourceTree = "<group>"; };
+		1588A6CC1E11369800FEA81F /* HostMenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HostMenuTableViewCell.swift; sourceTree = "<group>"; };
 		158E24091DCE0A5D000FE262 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		15CAE37D1DEC86A000DED25C /* Country+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Country+Additions.swift"; sourceTree = "<group>"; };
 		15CAE37F1DEC86AF00DED25C /* City+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "City+Additions.swift"; sourceTree = "<group>"; };
@@ -332,6 +334,7 @@
 			isa = PBXGroup;
 			children = (
 				1574A7541E0EDE1500EDA4D0 /* HostHomeViewController.swift */,
+				1588A6CC1E11369800FEA81F /* HostMenuTableViewCell.swift */,
 			);
 			name = "Host Menu";
 			sourceTree = "<group>";
@@ -522,6 +525,7 @@
 				15327BC61DC63A62000411F7 /* SignupConfirmPhoneViewController.swift in Sources */,
 				152080EA1DF35B8E005687C1 /* RiderListOffer+Additions.swift in Sources */,
 				15327BC41DC63A62000411F7 /* ReviewRiderLIstViewController.swift in Sources */,
+				1588A6CD1E11369800FEA81F /* HostMenuTableViewCell.swift in Sources */,
 				15327BCF1DC63A62000411F7 /* SignupYourInterestsViewController.swift in Sources */,
 				15EE96061DCA0F600003FB51 /* ServiceOffer+Additions.swift in Sources */,
 				15327BCE1DC63A62000411F7 /* SignupYouLookGoodViewController.swift in Sources */,
