@@ -66,6 +66,7 @@
 		1588A6D21E115FDD00FEA81F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1588A6D11E115FDD00FEA81F /* SettingsViewController.swift */; };
 		1588A6D41E11765F00FEA81F /* RiderListPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1588A6D31E11765F00FEA81F /* RiderListPreviewViewController.swift */; };
 		158E240A1DCE0A5D000FE262 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158E24091DCE0A5D000FE262 /* CoreDataManager.swift */; };
+		15ACE31B1E11C7FE00012B5B /* HostReviewRequestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15ACE31A1E11C7FE00012B5B /* HostReviewRequestsViewController.swift */; };
 		15CAE37E1DEC86A000DED25C /* Country+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CAE37D1DEC86A000DED25C /* Country+Additions.swift */; };
 		15CAE3801DEC86AF00DED25C /* City+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CAE37F1DEC86AF00DED25C /* City+Additions.swift */; };
 		15CAE3841DEC9B7400DED25C /* Profession+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CAE3831DEC9B7400DED25C /* Profession+Additions.swift */; };
@@ -143,6 +144,7 @@
 		1588A6D11E115FDD00FEA81F /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		1588A6D31E11765F00FEA81F /* RiderListPreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RiderListPreviewViewController.swift; sourceTree = "<group>"; };
 		158E24091DCE0A5D000FE262 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		15ACE31A1E11C7FE00012B5B /* HostReviewRequestsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HostReviewRequestsViewController.swift; sourceTree = "<group>"; };
 		15CAE37D1DEC86A000DED25C /* Country+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Country+Additions.swift"; sourceTree = "<group>"; };
 		15CAE37F1DEC86AF00DED25C /* City+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "City+Additions.swift"; sourceTree = "<group>"; };
 		15CAE3831DEC9B7400DED25C /* Profession+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Profession+Additions.swift"; sourceTree = "<group>"; };
@@ -344,6 +346,7 @@
 			children = (
 				1574A7541E0EDE1500EDA4D0 /* HostHomeViewController.swift */,
 				1588A6CC1E11369800FEA81F /* HostMenuTableViewCell.swift */,
+				15ACE31A1E11C7FE00012B5B /* HostReviewRequestsViewController.swift */,
 			);
 			name = "Host Menu";
 			sourceTree = "<group>";
@@ -572,6 +575,7 @@
 				15327BC11DC63A62000411F7 /* AccomodationViewController.swift in Sources */,
 				1588A6D21E115FDD00FEA81F /* SettingsViewController.swift in Sources */,
 				15327BCB1DC63A62000411F7 /* SignupGreatViewController.swift in Sources */,
+				15ACE31B1E11C7FE00012B5B /* HostReviewRequestsViewController.swift in Sources */,
 				15EE960D1DCA2CD10003FB51 /* NetworkManager.swift in Sources */,
 				15CAE3841DEC9B7400DED25C /* Profession+Additions.swift in Sources */,
 				158E240A1DCE0A5D000FE262 /* CoreDataManager.swift in Sources */,
