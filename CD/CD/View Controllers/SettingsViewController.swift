@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import Alamofire
 
 fileprivate let revealWidthOffset: CGFloat = 60
+fileprivate let avatarImageViewHeightAndWidth: CGFloat = 60
 
 class SettingsViewController: UIViewController {
     
@@ -28,6 +30,9 @@ class SettingsViewController: UIViewController {
         // set reveal width
         self.revealViewController().rearViewRevealWidth = UIScreen.main.bounds.width - revealWidthOffset
         
+        // set avatar
+        self.avatarImageView.layer.cornerRadius = avatarImageViewHeightAndWidth / 2.0
+        
         // set user data
         let mainContext = CoreDataManager.sharedInstance.mainContext
         mainContext.perform {
@@ -39,6 +44,11 @@ class SettingsViewController: UIViewController {
             // personalize message
             self.nameLabel.text = user.firstName!
             self.emailLabel.text = user.email!
+            Alamofire.download("http://userimages-akm.imvu.com/catalog/includes/modules/phpbb2/images/avatars/63567723_93122725652a2a8ebbabf4.png").responseData {[unowned self] response in
+                if let data = response.result.value {
+                    self.avatarImageView.image = UIImage(data: data)
+                }
+            }
         }
     }
 
