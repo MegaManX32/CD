@@ -58,6 +58,7 @@
 		154A54701D9FD12C0021A803 /* RobotoCondensed-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 154A545D1D9FD12C0021A803 /* RobotoCondensed-Light.ttf */; };
 		154A54711D9FD12C0021A803 /* RobotoCondensed-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 154A545E1D9FD12C0021A803 /* RobotoCondensed-LightItalic.ttf */; };
 		154A54721D9FD12C0021A803 /* RobotoCondensed-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 154A545F1D9FD12C0021A803 /* RobotoCondensed-Regular.ttf */; };
+		155BA89F1E12740000C7D6E4 /* GuestReviewOffersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155BA89E1E12740000C7D6E4 /* GuestReviewOffersViewController.swift */; };
 		1574A7501E0ED31400EDA4D0 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1574A74F1E0ED31400EDA4D0 /* SWRevealViewController.m */; };
 		1574A7521E0ED6B000EDA4D0 /* GuestHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1574A7511E0ED6B000EDA4D0 /* GuestHomeViewController.swift */; };
 		1574A7551E0EDE1500EDA4D0 /* HostHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1574A7541E0EDE1500EDA4D0 /* HostHomeViewController.swift */; };
@@ -134,6 +135,7 @@
 		154A545D1D9FD12C0021A803 /* RobotoCondensed-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-Light.ttf"; sourceTree = "<group>"; };
 		154A545E1D9FD12C0021A803 /* RobotoCondensed-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-LightItalic.ttf"; sourceTree = "<group>"; };
 		154A545F1D9FD12C0021A803 /* RobotoCondensed-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-Regular.ttf"; sourceTree = "<group>"; };
+		155BA89E1E12740000C7D6E4 /* GuestReviewOffersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuestReviewOffersViewController.swift; sourceTree = "<group>"; };
 		1574A74A1E0ED2AA00EDA4D0 /* CD-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CD-Bridging-Header.h"; sourceTree = "<group>"; };
 		1574A74E1E0ED31400EDA4D0 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		1574A74F1E0ED31400EDA4D0 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 				1588A6CE1E1154D200FEA81F /* GuestMenuTableViewCell.swift */,
 				15327BB21DC63A62000411F7 /* CreateRiderListViewController.swift */,
 				1588A6D31E11765F00FEA81F /* RiderListPreviewViewController.swift */,
+				155BA89E1E12740000C7D6E4 /* GuestReviewOffersViewController.swift */,
 			);
 			name = "Guest Menu";
 			sourceTree = "<group>";
@@ -574,6 +577,7 @@
 				153C80D21DABB57000DBEDCD /* ButtonView.swift in Sources */,
 				15327BC11DC63A62000411F7 /* AccomodationViewController.swift in Sources */,
 				1588A6D21E115FDD00FEA81F /* SettingsViewController.swift in Sources */,
+				155BA89F1E12740000C7D6E4 /* GuestReviewOffersViewController.swift in Sources */,
 				15327BCB1DC63A62000411F7 /* SignupGreatViewController.swift in Sources */,
 				15ACE31B1E11C7FE00012B5B /* HostReviewRequestsViewController.swift in Sources */,
 				15EE960D1DCA2CD10003FB51 /* NetworkManager.swift in Sources */,
