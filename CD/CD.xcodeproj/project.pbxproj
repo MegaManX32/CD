@@ -60,6 +60,8 @@
 		154A54721D9FD12C0021A803 /* RobotoCondensed-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 154A545F1D9FD12C0021A803 /* RobotoCondensed-Regular.ttf */; };
 		155BA89F1E12740000C7D6E4 /* GuestReviewOffersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155BA89E1E12740000C7D6E4 /* GuestReviewOffersViewController.swift */; };
 		155BA8A11E12774700C7D6E4 /* HostMakingOfferViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155BA8A01E12774700C7D6E4 /* HostMakingOfferViewController.swift */; };
+		155BA8A31E127ED900C7D6E4 /* GuestRiderListAcceptedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155BA8A21E127ED900C7D6E4 /* GuestRiderListAcceptedViewController.swift */; };
+		155BA8A51E127EEB00C7D6E4 /* HostRiderListAcceptedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155BA8A41E127EEB00C7D6E4 /* HostRiderListAcceptedViewController.swift */; };
 		1574A7501E0ED31400EDA4D0 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1574A74F1E0ED31400EDA4D0 /* SWRevealViewController.m */; };
 		1574A7521E0ED6B000EDA4D0 /* GuestHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1574A7511E0ED6B000EDA4D0 /* GuestHomeViewController.swift */; };
 		1574A7551E0EDE1500EDA4D0 /* HostHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1574A7541E0EDE1500EDA4D0 /* HostHomeViewController.swift */; };
@@ -138,6 +140,8 @@
 		154A545F1D9FD12C0021A803 /* RobotoCondensed-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-Regular.ttf"; sourceTree = "<group>"; };
 		155BA89E1E12740000C7D6E4 /* GuestReviewOffersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuestReviewOffersViewController.swift; sourceTree = "<group>"; };
 		155BA8A01E12774700C7D6E4 /* HostMakingOfferViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HostMakingOfferViewController.swift; sourceTree = "<group>"; };
+		155BA8A21E127ED900C7D6E4 /* GuestRiderListAcceptedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuestRiderListAcceptedViewController.swift; sourceTree = "<group>"; };
+		155BA8A41E127EEB00C7D6E4 /* HostRiderListAcceptedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HostRiderListAcceptedViewController.swift; sourceTree = "<group>"; };
 		1574A74A1E0ED2AA00EDA4D0 /* CD-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CD-Bridging-Header.h"; sourceTree = "<group>"; };
 		1574A74E1E0ED31400EDA4D0 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		1574A74F1E0ED31400EDA4D0 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
@@ -180,6 +184,7 @@
 				15327BB21DC63A62000411F7 /* CreateRiderListViewController.swift */,
 				1588A6D31E11765F00FEA81F /* RiderListPreviewViewController.swift */,
 				155BA89E1E12740000C7D6E4 /* GuestReviewOffersViewController.swift */,
+				155BA8A21E127ED900C7D6E4 /* GuestRiderListAcceptedViewController.swift */,
 			);
 			name = "Guest Menu";
 			sourceTree = "<group>";
@@ -353,6 +358,7 @@
 				1588A6CC1E11369800FEA81F /* HostMenuTableViewCell.swift */,
 				15ACE31A1E11C7FE00012B5B /* HostReviewRequestsViewController.swift */,
 				155BA8A01E12774700C7D6E4 /* HostMakingOfferViewController.swift */,
+				155BA8A41E127EEB00C7D6E4 /* HostRiderListAcceptedViewController.swift */,
 			);
 			name = "Host Menu";
 			sourceTree = "<group>";
@@ -561,6 +567,7 @@
 				154A54361D9FD0750021A803 /* CD.xcdatamodeld in Sources */,
 				152080E81DF35953005687C1 /* RiderList+Additions.swift in Sources */,
 				15EE960A1DCA14B50003FB51 /* Language+Additions.swift in Sources */,
+				155BA8A31E127ED900C7D6E4 /* GuestRiderListAcceptedViewController.swift in Sources */,
 				154A544A1D9FD11D0021A803 /* IntroTextField.swift in Sources */,
 				1574A7521E0ED6B000EDA4D0 /* GuestHomeViewController.swift in Sources */,
 				155BA8A11E12774700C7D6E4 /* HostMakingOfferViewController.swift in Sources */,
@@ -588,6 +595,7 @@
 				15CAE3841DEC9B7400DED25C /* Profession+Additions.swift in Sources */,
 				158E240A1DCE0A5D000FE262 /* CoreDataManager.swift in Sources */,
 				15327BCC1DC63A62000411F7 /* SignupInterestsCollectionViewCell.swift in Sources */,
+				155BA8A51E127EEB00C7D6E4 /* HostRiderListAcceptedViewController.swift in Sources */,
 				154A54471D9FD11D0021A803 /* DotView.swift in Sources */,
 				15EE96081DCA144A0003FB51 /* Interest+Additions.swift in Sources */,
 				15CAE3861DECAD8D00DED25C /* CustomAlert.swift in Sources */,
