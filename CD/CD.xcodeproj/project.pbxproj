@@ -79,6 +79,7 @@
 		15EE96081DCA144A0003FB51 /* Interest+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15EE96071DCA144A0003FB51 /* Interest+Additions.swift */; };
 		15EE960A1DCA14B50003FB51 /* Language+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15EE96091DCA14B50003FB51 /* Language+Additions.swift */; };
 		15EE960D1DCA2CD10003FB51 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15EE960C1DCA2CD10003FB51 /* NetworkManager.swift */; };
+		15F341801E12962B00E04083 /* StandardUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F3417F1E12962B00E04083 /* StandardUserDefaults.swift */; };
 		DA8406CBF1A476662911D7E8 /* Pods_CD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12641929306E4C88E2053DC2 /* Pods_CD.framework */; };
 /* End PBXBuildFile section */
 
@@ -161,6 +162,7 @@
 		15EE96071DCA144A0003FB51 /* Interest+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Interest+Additions.swift"; sourceTree = "<group>"; };
 		15EE96091DCA14B50003FB51 /* Language+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Language+Additions.swift"; sourceTree = "<group>"; };
 		15EE960C1DCA2CD10003FB51 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		15F3417F1E12962B00E04083 /* StandardUserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StandardUserDefaults.swift; sourceTree = "<group>"; };
 		DB6497397822CCBF6D246A17 /* Pods-CD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CD.release.xcconfig"; path = "Pods/Target Support Files/Pods-CD/Pods-CD.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -258,6 +260,7 @@
 		154A542C1D9FD0750021A803 /* CD */ = {
 			isa = PBXGroup;
 			children = (
+				15F3417E1E1295F700E04083 /* UserDefaults */,
 				1574A7481E0ED29F00EDA4D0 /* External Libraries */,
 				154A544B1D9FD12C0021A803 /* Custom Fonts */,
 				154A54421D9FD11D0021A803 /* Custom UI */,
@@ -386,6 +389,14 @@
 				15EE960C1DCA2CD10003FB51 /* NetworkManager.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		15F3417E1E1295F700E04083 /* UserDefaults */ = {
+			isa = PBXGroup;
+			children = (
+				15F3417F1E12962B00E04083 /* StandardUserDefaults.swift */,
+			);
+			path = UserDefaults;
 			sourceTree = "<group>";
 		};
 		34B248700B5775622CA85CFB /* Frameworks */ = {
@@ -570,6 +581,7 @@
 				155BA8A31E127ED900C7D6E4 /* GuestRiderListAcceptedViewController.swift in Sources */,
 				154A544A1D9FD11D0021A803 /* IntroTextField.swift in Sources */,
 				1574A7521E0ED6B000EDA4D0 /* GuestHomeViewController.swift in Sources */,
+				15F341801E12962B00E04083 /* StandardUserDefaults.swift in Sources */,
 				155BA8A11E12774700C7D6E4 /* HostMakingOfferViewController.swift in Sources */,
 				15327BC71DC63A62000411F7 /* SignupCongratulationsViewController.swift in Sources */,
 				15327BC21DC63A62000411F7 /* CreateRiderListViewController.swift in Sources */,

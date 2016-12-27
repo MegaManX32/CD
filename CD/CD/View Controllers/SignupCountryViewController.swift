@@ -29,14 +29,6 @@ class SignupCountryViewController: UIViewController, GeneralPickerViewController
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        self.userID = "41ac22d7-8f04-45e7-8290-334a9f32ce0c"
-//        NetworkManager.sharedInstance.getUser(userID: self.userID, success: {
-//            [unowned self] in
-//            // do nothing
-//        }) { (errorMesssage) in
-//            print(errorMesssage)
-//        }
 
         // prepare text fields
         self.prepareButtonViews()

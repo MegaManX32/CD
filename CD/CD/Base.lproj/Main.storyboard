@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="T9L-Sh-79b">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="5f1-Mz-Wsz">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -120,6 +120,9 @@
                                 <state key="normal" title="Log In">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="loginWithSender:" destination="MrJ-Cs-mAe" eventType="touchUpInside" id="ul9-dY-fYn"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By signing up, I agree to Custom Deal’s Terms of Service,  Payments Terms of Service and Privacy Policy." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qqi-yf-f2m">
                                 <rect key="frame" x="-4" y="549" width="383" height="50"/>
@@ -4695,7 +4698,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nemanja your Rider List is  accepted, Branko will be  your host" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ALb-A0-uUL">
-                                <rect key="frame" x="24" y="248.5" width="327" height="70"/>
+                                <rect key="frame" x="24" y="249" width="327" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="eaF-ib-Oj4"/>
                                 </constraints>
@@ -4704,7 +4707,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact information about your host  is in your email." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PsF-oe-Hed">
-                                <rect key="frame" x="24" y="318.5" width="327" height="60"/>
+                                <rect key="frame" x="24" y="319" width="327" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="mVd-YJ-CcG"/>
                                 </constraints>
@@ -4763,7 +4766,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8rL-kD-zia" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3838" y="1137"/>
+            <point key="canvasLocation" x="3878" y="1137"/>
         </scene>
         <!--Host Making Offer View Controller-->
         <scene sceneID="fOk-cQ-nyt">

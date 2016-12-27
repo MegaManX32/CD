@@ -30,10 +30,18 @@ class SignupAddYourPhotoViewController: UIViewController, UIImagePickerControlle
     // MARK: - User Actions
     
     @IBAction func takePhoto(sender: UIButton) {
-        let imagePickerController = UIImagePickerController()
-        imagePickerController.sourceType = .camera
-        imagePickerController.delegate = self
-        self.present(imagePickerController, animated: true, completion: nil)
+        
+        // present SignupYouLookGoodViewController
+        let controller = self.storyboard?.instantiateViewController(withIdentifier: "SignupYouLookGoodViewController") as! SignupYouLookGoodViewController
+        controller.userID = self.userID
+        controller.avatarImage = #imageLiteral(resourceName: "testImage")
+        self.show(controller, sender: self)
+        
+        
+//        let imagePickerController = UIImagePickerController()
+//        imagePickerController.sourceType = .camera
+//        imagePickerController.delegate = self
+//        self.present(imagePickerController, animated: true, completion: nil)
     }
     
     @IBAction func chooseFromPhotoLibrary(sender: UIButton) {

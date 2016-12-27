@@ -27,6 +27,19 @@ class SettingsViewController: UIViewController {
 
         // set reveal width
         self.revealViewController().rearViewRevealWidth = UIScreen.main.bounds.width - revealWidthOffset
+        
+        // set user data
+        let mainContext = CoreDataManager.sharedInstance.mainContext
+        mainContext.perform {
+            [unowned self] in
+            
+            // find user
+            let user = User.findUserWith(uid: StandardUserDefaults.userID(), context: mainContext)!
+            
+            // personalize message
+            self.nameLabel.text = user.firstName!
+            self.emailLabel.text = user.email!
+        }
     }
 
     override func didReceiveMemoryWarning() {
