@@ -11,9 +11,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Roboto-Bold.ttf">
-            <string>Roboto-Bold</string>
-        </array>
         <array key="Roboto-Light.ttf">
             <string>Roboto-Light</string>
         </array>
@@ -29,7 +26,7 @@
         <scene sceneID="8FV-Vi-8xK">
             <objects>
                 <navigationController navigationBarHidden="YES" id="5f1-Mz-Wsz" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="yJV-oC-Rt2">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="yJV-oC-Rt2">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -57,22 +54,12 @@
                                 <rect key="frame" x="-4" y="0.0" width="383" height="667"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="INCREASE YOUR INCOME BY OFFERING SERVICES OR JUST BE A CELEBRITY AND CREATE YOUR RIDER LIST" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9qd-bS-Tea">
-                                <rect key="frame" x="-92.5" y="196" width="560" height="227"/>
+                                <rect key="frame" x="-93" y="196" width="561" height="227"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="227" id="3n5-gr-9iz"/>
                                     <constraint firstAttribute="width" constant="560" id="UK0-cN-9z7"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="24"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LOGO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JAI-kG-xQm">
-                                <rect key="frame" x="123" y="129" width="129" height="37"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="129" id="CpN-go-1Gv"/>
-                                    <constraint firstAttribute="height" constant="37" id="XcU-vu-55g"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="24"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -133,6 +120,13 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="customDealLogoWhite" translatesAutoresizingMaskIntoConstraints="NO" id="KpS-89-qwT">
+                                <rect key="frame" x="142" y="98" width="90" height="90"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="ecL-kw-pRu"/>
+                                    <constraint firstAttribute="width" constant="90" id="sbp-mC-lDW"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -148,14 +142,14 @@
                             <constraint firstAttribute="leadingMargin" secondItem="gwQ-mM-Jri" secondAttribute="leading" id="OZC-vL-iXX"/>
                             <constraint firstItem="BxC-4Q-I2M" firstAttribute="top" secondItem="aBj-jA-m6l" secondAttribute="bottom" constant="8" id="T1h-KV-e9y"/>
                             <constraint firstAttribute="trailingMargin" secondItem="5Y1-0n-NFY" secondAttribute="trailing" constant="-20" id="UpG-MK-oue"/>
-                            <constraint firstItem="9qd-bS-Tea" firstAttribute="top" secondItem="JAI-kG-xQm" secondAttribute="bottom" constant="30" id="UqP-cm-7Bz"/>
                             <constraint firstItem="qqi-yf-f2m" firstAttribute="leading" secondItem="KTj-zq-gvA" secondAttribute="leadingMargin" constant="-20" id="WTk-bQ-rCs"/>
                             <constraint firstItem="9qd-bS-Tea" firstAttribute="centerY" secondItem="KTj-zq-gvA" secondAttribute="centerY" constant="-24.5" id="XTS-gG-XXx"/>
                             <constraint firstItem="9qd-bS-Tea" firstAttribute="centerX" secondItem="KTj-zq-gvA" secondAttribute="centerX" id="ZQo-J7-lhZ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="qqi-yf-f2m" secondAttribute="trailing" constant="-20" id="eXl-cG-l1l"/>
                             <constraint firstItem="BxC-4Q-I2M" firstAttribute="leading" secondItem="gwQ-mM-Jri" secondAttribute="trailing" constant="12" id="g4S-wR-YYr"/>
-                            <constraint firstItem="JAI-kG-xQm" firstAttribute="centerX" secondItem="KTj-zq-gvA" secondAttribute="centerX" id="k26-bb-Ey3"/>
+                            <constraint firstItem="9qd-bS-Tea" firstAttribute="top" secondItem="KpS-89-qwT" secondAttribute="bottom" constant="8" id="k4W-6X-Fgd"/>
                             <constraint firstItem="aBj-jA-m6l" firstAttribute="centerX" secondItem="gwQ-mM-Jri" secondAttribute="trailing" constant="6" id="nxl-lk-DH3"/>
+                            <constraint firstItem="KpS-89-qwT" firstAttribute="centerX" secondItem="KTj-zq-gvA" secondAttribute="centerX" id="r2r-tT-RAX"/>
                             <constraint firstAttribute="trailingMargin" secondItem="aBj-jA-m6l" secondAttribute="trailing" id="vcD-Md-53o"/>
                             <constraint firstAttribute="trailingMargin" secondItem="BxC-4Q-I2M" secondAttribute="trailing" id="xn5-my-TmV"/>
                         </constraints>
@@ -188,14 +182,21 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="introBackground" translatesAutoresizingMaskIntoConstraints="NO" id="Ad5-6c-vgo">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4QC-ON-dkr">
-                                <rect key="frame" x="16" y="28" width="110" height="40"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backArrowWhite" translatesAutoresizingMaskIntoConstraints="NO" id="YYY-8E-aCs">
+                                <rect key="frame" x="16" y="39" width="18" height="18"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="110" id="a8c-Zl-FZc"/>
+                                    <constraint firstAttribute="height" constant="18" id="Sn0-lY-uWu"/>
+                                    <constraint firstAttribute="width" constant="18" id="lAJ-7l-1gv"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4QC-ON-dkr">
+                                <rect key="frame" x="16" y="28" width="84" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="84" id="a8c-Zl-FZc"/>
                                     <constraint firstAttribute="height" constant="40" id="njX-Af-HTa"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="18"/>
-                                <state key="normal" title="&lt;- Sign Up">
+                                <state key="normal" title="Sign Up">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -273,11 +274,13 @@
                             <constraint firstItem="cJs-bb-7de" firstAttribute="leading" secondItem="7sm-9Z-dai" secondAttribute="leadingMargin" constant="-20" id="TBb-Q5-132"/>
                             <constraint firstItem="cJs-bb-7de" firstAttribute="top" secondItem="DJF-Pz-VmW" secondAttribute="bottom" constant="44" id="XBI-yX-cX9"/>
                             <constraint firstAttribute="trailingMargin" secondItem="cJs-bb-7de" secondAttribute="trailing" constant="-20" id="fus-4N-zoK"/>
+                            <constraint firstItem="YYY-8E-aCs" firstAttribute="leading" secondItem="4QC-ON-dkr" secondAttribute="leading" id="ijO-Tu-PV6"/>
                             <constraint firstAttribute="leadingMargin" secondItem="4QC-ON-dkr" secondAttribute="leading" id="lsH-Iz-zY8"/>
                             <constraint firstAttribute="trailing" secondItem="Ad5-6c-vgo" secondAttribute="trailing" id="o2i-HE-9Ak"/>
                             <constraint firstItem="bCB-ak-0WG" firstAttribute="top" secondItem="Ad5-6c-vgo" secondAttribute="bottom" id="sv1-nN-C6p"/>
                             <constraint firstItem="Ad5-6c-vgo" firstAttribute="top" secondItem="7sm-9Z-dai" secondAttribute="top" id="tT5-Hv-JWy"/>
                             <constraint firstItem="Ad5-6c-vgo" firstAttribute="leading" secondItem="7sm-9Z-dai" secondAttribute="leading" id="ub4-wR-idn"/>
+                            <constraint firstItem="YYY-8E-aCs" firstAttribute="centerY" secondItem="4QC-ON-dkr" secondAttribute="centerY" id="wwu-Ur-DF5"/>
                         </constraints>
                     </view>
                     <connections>
@@ -2218,7 +2221,7 @@
         <scene sceneID="Yow-Dy-8tN">
             <objects>
                 <navigationController storyboardIdentifier="HostNavigationController" useStoryboardIdentifierAsRestorationIdentifier="YES" navigationBarHidden="YES" id="hk6-Ed-NCd" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="bog-2b-cD5">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bog-2b-cD5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -2942,7 +2945,7 @@
         <scene sceneID="wSs-8a-5tp">
             <objects>
                 <navigationController storyboardIdentifier="GuestNavigationController" useStoryboardIdentifierAsRestorationIdentifier="YES" navigationBarHidden="YES" id="xRK-RD-Ybg" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="EgW-Da-Ag3">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="EgW-Da-Ag3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -5037,14 +5040,21 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="introBackground" translatesAutoresizingMaskIntoConstraints="NO" id="ndM-MJ-cPT">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Snr-zJ-c4a">
-                                <rect key="frame" x="16" y="28" width="110" height="40"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backArrowWhite" translatesAutoresizingMaskIntoConstraints="NO" id="8oV-VI-9sw">
+                                <rect key="frame" x="16" y="39" width="18" height="18"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="110" id="Ey5-cy-ZGs"/>
+                                    <constraint firstAttribute="width" constant="18" id="Eyz-Vx-Fwh"/>
+                                    <constraint firstAttribute="height" constant="18" id="aOH-WZ-QpO"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Snr-zJ-c4a">
+                                <rect key="frame" x="16" y="28" width="74" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="74" id="Ey5-cy-ZGs"/>
                                     <constraint firstAttribute="height" constant="40" id="xrc-HO-zi4"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="18"/>
-                                <state key="normal" title="&lt;- Log In">
+                                <state key="normal" title="Log In">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -5094,12 +5104,14 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="8oV-VI-9sw" firstAttribute="leading" secondItem="Snr-zJ-c4a" secondAttribute="leading" id="32R-bp-yab"/>
                             <constraint firstAttribute="trailing" secondItem="ndM-MJ-cPT" secondAttribute="trailing" id="3z4-ed-lCh"/>
                             <constraint firstAttribute="leadingMargin" secondItem="Snr-zJ-c4a" secondAttribute="leading" id="6SO-y1-Qso"/>
                             <constraint firstItem="nCM-Dv-qZu" firstAttribute="top" secondItem="ndM-MJ-cPT" secondAttribute="bottom" id="FJS-Xn-T1g"/>
                             <constraint firstItem="ndM-MJ-cPT" firstAttribute="top" secondItem="e2Y-Qa-KvG" secondAttribute="top" id="RKk-wR-DBK"/>
                             <constraint firstItem="4rP-Ha-Q5O" firstAttribute="leading" secondItem="e2Y-Qa-KvG" secondAttribute="leadingMargin" constant="-20" id="Ung-4B-LUi"/>
                             <constraint firstItem="Snr-zJ-c4a" firstAttribute="top" secondItem="UdL-Av-RSb" secondAttribute="bottom" constant="8" id="WHG-GG-uKf"/>
+                            <constraint firstItem="8oV-VI-9sw" firstAttribute="centerY" secondItem="Snr-zJ-c4a" secondAttribute="centerY" id="jbg-3d-48q"/>
                             <constraint firstAttribute="trailingMargin" secondItem="4rP-Ha-Q5O" secondAttribute="trailing" constant="-20" id="oym-rr-4HE"/>
                             <constraint firstItem="4rP-Ha-Q5O" firstAttribute="top" secondItem="UdL-Av-RSb" secondAttribute="bottom" constant="44" id="vsA-In-F1M"/>
                             <constraint firstItem="ndM-MJ-cPT" firstAttribute="leading" secondItem="e2Y-Qa-KvG" secondAttribute="leading" id="xK0-NL-e8s"/>
@@ -5118,6 +5130,7 @@
     <resources>
         <image name="avatarPlaceholder" width="107" height="107"/>
         <image name="back" width="63" height="62"/>
+        <image name="backArrowWhite" width="18" height="18"/>
         <image name="backIcon" width="18" height="18"/>
         <image name="clip" width="182" height="80"/>
         <image name="congratsBackground" width="375" height="667"/>
@@ -5125,6 +5138,7 @@
         <image name="createRaiderListIcon" width="78" height="78"/>
         <image name="customDealBackImage" width="237" height="237"/>
         <image name="customDealLogo1" width="85" height="85"/>
+        <image name="customDealLogoWhite" width="90" height="90"/>
         <image name="homeBackground" width="375" height="667"/>
         <image name="introBackground" width="375" height="667"/>
         <image name="introBackground2" width="330" height="587"/>

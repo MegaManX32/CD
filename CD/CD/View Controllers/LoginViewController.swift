@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MBProgressHUD
 
 class LoginViewController: UIViewController {
     
@@ -39,8 +40,17 @@ class LoginViewController: UIViewController {
     // MARK: - User Actions
     
     @IBAction func loginAction() {
-        let controller = self.storyboard?.instantiateViewController(withIdentifier: "SWRevealViewController") as! SWRevealViewController
-        self.present(controller, animated: true, completion: nil)
+        
+        // get all users first , we will need them
+        MBProgressHUD.showAdded(to: self.view, animated: true)
+        NetworkManager.sharedInstance.getAllUsers(success: {[unowned self] in
+            let controller = self.storyboard?.instantiateViewController(withIdentifier: "SWRevealViewController") as! SWRevealViewController
+            self.present(controller, animated: true, completion: nil)
+            MBProgressHUD.hide(for: self.view, animated: true)
+        }) {[unowned self] (errorMessage) in
+            print(errorMessage)
+            MBProgressHUD.hide(for: self.view, animated: true)
+        }
     }
     
     @IBAction func backAction() {

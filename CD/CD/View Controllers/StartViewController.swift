@@ -60,7 +60,7 @@ class StartViewController: UIViewController {
         
         // prepare fonts
         let normalFont = UIFont(name: "Roboto-Regular", size: 24)!
-        let boldFont = UIFont(name: "Roboto-Bold", size: 24)!
+        let boldFont = UIFont(name: "Roboto-Medium", size: 24)!
         
         // prepare title label text
         let titleLabelAttributedText = NSMutableAttributedString(string: "INCREASE YOUR ", attributes: [NSFontAttributeName : normalFont])
