@@ -34,9 +34,10 @@ class HostProfileViewController: UIViewController, UITableViewDataSource, UITabl
     @IBOutlet weak var aboutViewHeightConstraint : NSLayoutConstraint!
     
     @IBOutlet weak var tableView : UITableView!
+    @IBOutlet weak var seeMoreButton : UIButton!
+    @IBOutlet weak var seeMoreButtonHeightConstraint : NSLayoutConstraint!
     @IBOutlet weak var reviewViewHeightConstraint : NSLayoutConstraint!
-    var reviewArray = [1, 2]
-    var currentlyShownReviews : Int!
+    var reviewArray = [1, 2, 3, 4, 5]
     var reviewsExpanded : Bool = false
     
     @IBOutlet weak var accomodationCollectionView : UICollectionView!
@@ -68,8 +69,13 @@ class HostProfileViewController: UIViewController, UITableViewDataSource, UITabl
             self.reviewViewHeightConstraint.constant = 0
         }
         else {
-            self.currentlyShownReviews = self.reviewArray.count//min(defaultShownReviews, self.reviewArray.count)
-            self.reviewViewHeightConstraint.constant = reviewViewBaseHeight + CGFloat(self.currentlyShownReviews) * HostProfileTableViewCell.cellHeight()
+            let currentlyShownReviews = min(defaultShownReviews, self.reviewArray.count)
+            self.reviewViewHeightConstraint.constant = reviewViewBaseHeight + CGFloat(currentlyShownReviews) * HostProfileTableViewCell.cellHeight()
+            if self.reviewArray.count <= defaultShownReviews {
+                self.reviewViewHeightConstraint.constant -= self.seeMoreButtonHeightConstraint.constant
+                self.seeMoreButtonHeightConstraint.constant = 0
+                self.seeMoreButton.isHidden = true
+            }
         }
         
         // prepare accomodation review
@@ -104,7 +110,7 @@ class HostProfileViewController: UIViewController, UITableViewDataSource, UITabl
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.currentlyShownReviews
+        return self.reviewArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -156,7 +162,17 @@ class HostProfileViewController: UIViewController, UITableViewDataSource, UITabl
     // MARK: - User Actions
     
     @IBAction func seeMoreAction() {
-        // do something fun
+        let currentlyShownReviews = self.reviewsExpanded ? defaultShownReviews : self.reviewArray.count
+        
+        // update constraints
+        self.reviewViewHeightConstraint.constant = reviewViewBaseHeight + CGFloat(currentlyShownReviews) * HostProfileTableViewCell.cellHeight()
+        self.containerViewHeightConstraint.constant = self.aboutViewHeightConstraint.constant + self.reviewViewHeightConstraint.constant + self.accomodationViewHeightConstraint.constant + self.transportationViewHeight.constant
+        self.reviewsExpanded = !self.reviewsExpanded
+        
+        // animate change
+        UIView.animate(withDuration: 0.2) {
+            self.view.layoutIfNeeded()
+        }
     }
     
     @IBAction func backAction() {
