@@ -7,7 +7,8 @@
 //
 
 import UIKit
-import Alamofire
+import AlamofireImage
+import MBProgressHUD
 
 fileprivate let revealWidthOffset: CGFloat = 60
 fileprivate let avatarImageViewHeightAndWidth: CGFloat = 60
@@ -33,22 +34,17 @@ class SettingsViewController: UIViewController {
         // set avatar
         self.avatarImageView.layer.cornerRadius = avatarImageViewHeightAndWidth / 2.0
         
-        // set user data
-        let mainContext = CoreDataManager.sharedInstance.mainContext
-        mainContext.perform {
-            [unowned self] in
-            
-            // find user
-            let user = User.findUserWith(uid: StandardUserDefaults.userID(), context: mainContext)!
-            
-            // personalize message
+        let userID = StandardUserDefaults.userID()
+        MBProgressHUD.showAdded(to: self.view, animated: true)
+        NetworkManager.sharedInstance.getUser(userID: userID, success: { [unowned self] in
+            let context = CoreDataManager.sharedInstance.mainContext
+            let user = User.findUserWith(uid: userID, context: context)!
             self.nameLabel.text = user.firstName!
             self.emailLabel.text = user.email!
-            Alamofire.download("http://userimages-akm.imvu.com/catalog/includes/modules/phpbb2/images/avatars/63567723_93122725652a2a8ebbabf4.png").responseData {[unowned self] response in
-                if let data = response.result.value {
-                    self.avatarImageView.image = UIImage(data: data)
-                }
-            }
+            self.avatarImageView.af_setImage(withURL: URL(string: user.photoURL!)!)
+        }) { [unowned self] (errorMessage) in
+            print(errorMessage)
+            MBProgressHUD.hide(for: self.view, animated: true)
         }
     }
 

@@ -77,11 +77,4 @@ class StartViewController: UIViewController {
         // setup disclaimer label
         self.disclaimerLabel?.backgroundColor = UIColor(colorLiteralRed: 0, green: 0, blue: 0, alpha: 0.2)
     }
-    
-    // MARK: - User Actions
-    
-    @IBAction func login(sender: UIButton) {
-        let controller = self.storyboard?.instantiateViewController(withIdentifier: "SWRevealViewController") as! SWRevealViewController
-        self.present(controller, animated: true, completion: nil)
-    }
 }

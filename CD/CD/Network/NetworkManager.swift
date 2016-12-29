@@ -95,7 +95,7 @@ class NetworkManager {
             case .failure:
                 
                 // error handling
-                self.generalizedFailure(data: response.data, defaultErrorMessage: "Could not get countries", failure: failure)
+                self.generalizedFailure(data: response.data, defaultErrorMessage: "Could not get user", failure: failure)
             }
         }
     }

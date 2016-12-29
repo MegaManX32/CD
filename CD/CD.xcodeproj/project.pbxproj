@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1500414D1E1512D60097AC8B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1500414C1E1512D60097AC8B /* LoginViewController.swift */; };
 		152080E81DF35953005687C1 /* RiderList+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152080E71DF35953005687C1 /* RiderList+Additions.swift */; };
 		152080EA1DF35B8E005687C1 /* RiderListOffer+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152080E91DF35B8E005687C1 /* RiderListOffer+Additions.swift */; };
 		152080EE1DF36E60005687C1 /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152080ED1DF36E60005687C1 /* DatePickerViewController.swift */; };
@@ -86,6 +87,7 @@
 /* Begin PBXFileReference section */
 		0A2AF6023080F9C14214C781 /* Pods-CD.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CD.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CD/Pods-CD.debug.xcconfig"; sourceTree = "<group>"; };
 		12641929306E4C88E2053DC2 /* Pods_CD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1500414C1E1512D60097AC8B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		152080E71DF35953005687C1 /* RiderList+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RiderList+Additions.swift"; sourceTree = "<group>"; };
 		152080E91DF35B8E005687C1 /* RiderListOffer+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RiderListOffer+Additions.swift"; sourceTree = "<group>"; };
 		152080ED1DF36E60005687C1 /* DatePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
@@ -178,6 +180,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1500414B1E1512890097AC8B /* Start */ = {
+			isa = PBXGroup;
+			children = (
+				15327BC01DC63A62000411F7 /* StartViewController.swift */,
+				1500414C1E1512D60097AC8B /* LoginViewController.swift */,
+				15327BBD1DC63A62000411F7 /* SignupViewController.swift */,
+				15327BB91DC63A62000411F7 /* SignupFinishedViewController.swift */,
+			);
+			name = Start;
+			sourceTree = "<group>";
+		};
 		152080EB1DF36470005687C1 /* Guest Menu */ = {
 			isa = PBXGroup;
 			children = (
@@ -221,9 +234,8 @@
 		15327BB01DC639D6000411F7 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				15327BC01DC63A62000411F7 /* StartViewController.swift */,
+				1500414B1E1512890097AC8B /* Start */,
 				152080EC1DF36E48005687C1 /* Pickers */,
-				158E24081DCE081C000FE262 /* Signup */,
 				156C226B1DDE0DA600ACE919 /* Signup Complete Profile */,
 				1588A6D01E115FC300FEA81F /* Setting Menu */,
 				152080EB1DF36470005687C1 /* Guest Menu */,
@@ -372,15 +384,6 @@
 				1588A6D11E115FDD00FEA81F /* SettingsViewController.swift */,
 			);
 			name = "Setting Menu";
-			sourceTree = "<group>";
-		};
-		158E24081DCE081C000FE262 /* Signup */ = {
-			isa = PBXGroup;
-			children = (
-				15327BBD1DC63A62000411F7 /* SignupViewController.swift */,
-				15327BB91DC63A62000411F7 /* SignupFinishedViewController.swift */,
-			);
-			name = Signup;
 			sourceTree = "<group>";
 		};
 		15EE960B1DCA2CBB0003FB51 /* Network */ = {
@@ -584,6 +587,7 @@
 				15F341801E12962B00E04083 /* StandardUserDefaults.swift in Sources */,
 				155BA8A11E12774700C7D6E4 /* HostMakingOfferViewController.swift in Sources */,
 				15327BC71DC63A62000411F7 /* SignupCongratulationsViewController.swift in Sources */,
+				1500414D1E1512D60097AC8B /* LoginViewController.swift in Sources */,
 				15327BC21DC63A62000411F7 /* CreateRiderListViewController.swift in Sources */,
 				15327BC81DC63A62000411F7 /* SignupCountryViewController.swift in Sources */,
 				152080F21DF375A1005687C1 /* GeneralPickerTableViewCell.swift in Sources */,

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11542" systemVersion="16B2555" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11759" systemVersion="16C67" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="City" representedClassName="City" syncable="YES" codeGenerationType="class">
         <attribute name="cityName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="countryUid" optional="YES" attributeType="String" syncable="YES"/>
@@ -71,6 +71,7 @@
         <attribute name="password" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="phoneNumber" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="photoId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="photoURL" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="proffesion" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="school" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="sendFeedback" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
@@ -90,6 +91,6 @@
         <element name="RiderList" positionX="-54" positionY="135" width="128" height="240"/>
         <element name="RiderListOffer" positionX="-45" positionY="144" width="128" height="150"/>
         <element name="ServiceOffer" positionX="-54" positionY="117" width="128" height="120"/>
-        <element name="User" positionX="-63" positionY="-18" width="128" height="360"/>
+        <element name="User" positionX="-63" positionY="-18" width="128" height="375"/>
     </elements>
 </model>

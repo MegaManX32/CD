@@ -31,6 +31,8 @@ class GuestReviewOffersViewController: UIViewController {
     @IBOutlet weak var riderListTextView : UITextView!
     @IBOutlet weak var containerViewHeightConstraint : NSLayoutConstraint!
     
+    var riderListOffersArray : [RiderListOffer]! // there shoudld always be an offer, if we are on this creen
+    
     // MARK: - View Lifecycle
     
     override func viewDidLoad() {
@@ -63,6 +65,13 @@ class GuestReviewOffersViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    // MARK: - Helper Methods
+    
+    func setNewRiderListOffer(riderListOffer : RiderListOffer) {
+        let mainContext = CoreDataManager.sharedInstance.mainContext
+        let user = User.findUserWith(uid: riderListOffer.uid!, context: mainContext)!
+    }
+    
     // MARK: - User Actions
     
     @IBAction func backAction(sender: UIButton) {
@@ -71,7 +80,7 @@ class GuestReviewOffersViewController: UIViewController {
     
     @IBAction func ignoreOffer(sender: UIButton) {
         UIView.transition(from: self.pageView, to: self.pageView, duration: 0.5, options: [.transitionCurlUp, .showHideTransitionViews]) { (finished) in
-            // do nothing
+            
         }
     }
 }
