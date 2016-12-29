@@ -8,10 +8,17 @@
 
 import UIKit
 
-fileprivate let reviewViewBaseHeight: CGFloat = 66
 fileprivate let defaultShownReviews: Int = 2
 
-class HostProfileViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+fileprivate let sectionInsets = UIEdgeInsets(top: 0.0, left: 20.0, bottom: 0.0, right: 20.0)
+fileprivate let itemsPerRow: CGFloat = 3
+fileprivate let sizeOfItem = CGSize.init(width: 300, height: 220)
+
+fileprivate let aboutViewHeight: CGFloat = 116
+fileprivate let reviewViewBaseHeight: CGFloat = 66
+fileprivate let offerViewsHeight: CGFloat = 250
+
+class HostProfileViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     // MARK: - Properties
     
@@ -24,15 +31,24 @@ class HostProfileViewController: UIViewController, UITableViewDataSource, UITabl
     @IBOutlet weak var star4ImageView : UIImageView!
     @IBOutlet weak var star5ImageView : UIImageView!
     
+    @IBOutlet weak var containerViewHeightConstraint : NSLayoutConstraint!
+    
     @IBOutlet weak var aboutTextLabel : UILabel!
     @IBOutlet weak var aboutViewHeightConstraint : NSLayoutConstraint!
     
     @IBOutlet weak var tableView : UITableView!
     @IBOutlet weak var reviewViewHeightConstraint : NSLayoutConstraint!
-    
     var reviewArray = [1, 2]
     var currentlyShownReviews : Int!
     var reviewsExpanded : Bool = false
+    
+    @IBOutlet weak var accomodationCollectionView : UICollectionView!
+    @IBOutlet weak var accomodationViewHeightConstraint : NSLayoutConstraint!
+    var accomodationArray = [1, 2]
+    
+    @IBOutlet weak var transportationCollectionView : UICollectionView!
+    @IBOutlet weak var transportationViewHeight : NSLayoutConstraint!
+    var transportationArray = [1, 2]
     
     // MARK: - View Lifecycle
 
@@ -58,6 +74,25 @@ class HostProfileViewController: UIViewController, UITableViewDataSource, UITabl
             self.currentlyShownReviews = min(defaultShownReviews, self.reviewArray.count)
             self.reviewViewHeightConstraint.constant = reviewViewBaseHeight + CGFloat(self.currentlyShownReviews) * HostProfileTableViewCell.cellHeight()
         }
+        
+        // prepare accomodation review
+        if self.accomodationArray.count > 0 {
+            self.accomodationViewHeightConstraint.constant = offerViewsHeight
+        }
+        else {
+            self.accomodationViewHeightConstraint.constant = 0
+        }
+        
+        // prepare transportation review
+        if self.transportationArray.count > 0 {
+            self.transportationViewHeight.constant = offerViewsHeight
+        }
+        else {
+            self.transportationViewHeight.constant = 0
+        }
+        
+        // update container view height
+        self.containerViewHeightConstraint.constant = self.aboutViewHeightConstraint.constant + self.reviewViewHeightConstraint.constant + self.accomodationViewHeightConstraint.constant + self.transportationViewHeight.constant
     }
 
     override func didReceiveMemoryWarning() {
@@ -87,6 +122,38 @@ class HostProfileViewController: UIViewController, UITableViewDataSource, UITabl
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+    }
+    
+    // MARK: - UICollectionViewDelegate methods
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return self.accomodationCollectionView == collectionView ? self.accomodationArray.count : self.transportationArray.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HostProfileCollectionViewCell.cellIdentifier(), for: indexPath) as! HostProfileCollectionViewCell
+        cell.populateCellWith(serviceOffer: nil)
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return sizeOfItem
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,  insetForSectionAt section: Int) -> UIEdgeInsets {
+        return sectionInsets
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,  minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return sectionInsets.top
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        // right now, do nothing
     }
     
     // MARK: - User Actions

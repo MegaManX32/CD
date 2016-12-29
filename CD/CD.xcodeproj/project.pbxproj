@@ -10,6 +10,7 @@
 		1500414D1E1512D60097AC8B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1500414C1E1512D60097AC8B /* LoginViewController.swift */; };
 		1500414F1E15394B0097AC8B /* HostProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1500414E1E15394B0097AC8B /* HostProfileViewController.swift */; };
 		150041511E1548CA0097AC8B /* HostProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150041501E1548CA0097AC8B /* HostProfileTableViewCell.swift */; };
+		1505043F1E15815500C3EB9E /* HostProfileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1505043E1E15815500C3EB9E /* HostProfileCollectionViewCell.swift */; };
 		152080E81DF35953005687C1 /* RiderList+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152080E71DF35953005687C1 /* RiderList+Additions.swift */; };
 		152080EA1DF35B8E005687C1 /* RiderListOffer+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152080E91DF35B8E005687C1 /* RiderListOffer+Additions.swift */; };
 		152080EE1DF36E60005687C1 /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152080ED1DF36E60005687C1 /* DatePickerViewController.swift */; };
@@ -92,6 +93,7 @@
 		1500414C1E1512D60097AC8B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		1500414E1E15394B0097AC8B /* HostProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HostProfileViewController.swift; sourceTree = "<group>"; };
 		150041501E1548CA0097AC8B /* HostProfileTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HostProfileTableViewCell.swift; sourceTree = "<group>"; };
+		1505043E1E15815500C3EB9E /* HostProfileCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HostProfileCollectionViewCell.swift; sourceTree = "<group>"; };
 		152080E71DF35953005687C1 /* RiderList+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RiderList+Additions.swift"; sourceTree = "<group>"; };
 		152080E91DF35B8E005687C1 /* RiderListOffer+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RiderListOffer+Additions.swift"; sourceTree = "<group>"; };
 		152080ED1DF36E60005687C1 /* DatePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
@@ -380,6 +382,7 @@
 				155BA8A41E127EEB00C7D6E4 /* HostRiderListAcceptedViewController.swift */,
 				1500414E1E15394B0097AC8B /* HostProfileViewController.swift */,
 				150041501E1548CA0097AC8B /* HostProfileTableViewCell.swift */,
+				1505043E1E15815500C3EB9E /* HostProfileCollectionViewCell.swift */,
 			);
 			name = "Host Menu";
 			sourceTree = "<group>";
@@ -588,6 +591,7 @@
 				154A54361D9FD0750021A803 /* CD.xcdatamodeld in Sources */,
 				152080E81DF35953005687C1 /* RiderList+Additions.swift in Sources */,
 				15EE960A1DCA14B50003FB51 /* Language+Additions.swift in Sources */,
+				1505043F1E15815500C3EB9E /* HostProfileCollectionViewCell.swift in Sources */,
 				155BA8A31E127ED900C7D6E4 /* GuestRiderListAcceptedViewController.swift in Sources */,
 				154A544A1D9FD11D0021A803 /* IntroTextField.swift in Sources */,
 				1574A7521E0ED6B000EDA4D0 /* GuestHomeViewController.swift in Sources */,
