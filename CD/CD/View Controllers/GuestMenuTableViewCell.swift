@@ -42,6 +42,16 @@ class GuestMenuTableViewCell: UITableViewCell {
         self.countryLabel.text = "Serbia"
         self.avatarImageView.image = nil
         self.separatorView.isHidden = isLastCell
+        
+        self.setStarRating(rating: 4)
+    }
+    
+    func setStarRating(rating : Float) {
+        self.star1ImageView.image = UIImage.init(named: "smallStarFull")
+        self.star2ImageView.image = UIImage.init(named: "smallStarFull")
+        self.star3ImageView.image = UIImage.init(named: "smallStarFull")
+        self.star4ImageView.image = UIImage.init(named: "smallStarFull")
+        self.star5ImageView.image = UIImage.init(named: "smallStarHalf")
     }
     
     // MARK: - Type methods
