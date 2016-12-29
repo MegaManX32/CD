@@ -9,11 +9,8 @@
 import UIKit
 
 fileprivate let defaultShownReviews: Int = 2
-
 fileprivate let sectionInsets = UIEdgeInsets(top: 0.0, left: 20.0, bottom: 0.0, right: 20.0)
-fileprivate let itemsPerRow: CGFloat = 3
 fileprivate let sizeOfItem = CGSize.init(width: 300, height: 220)
-
 fileprivate let aboutViewHeight: CGFloat = 116
 fileprivate let reviewViewBaseHeight: CGFloat = 66
 fileprivate let offerViewsHeight: CGFloat = 250
@@ -71,7 +68,7 @@ class HostProfileViewController: UIViewController, UITableViewDataSource, UITabl
             self.reviewViewHeightConstraint.constant = 0
         }
         else {
-            self.currentlyShownReviews = min(defaultShownReviews, self.reviewArray.count)
+            self.currentlyShownReviews = self.reviewArray.count//min(defaultShownReviews, self.reviewArray.count)
             self.reviewViewHeightConstraint.constant = reviewViewBaseHeight + CGFloat(self.currentlyShownReviews) * HostProfileTableViewCell.cellHeight()
         }
         
