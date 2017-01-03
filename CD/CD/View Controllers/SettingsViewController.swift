@@ -41,7 +41,9 @@ class SettingsViewController: UIViewController {
             let user = User.findUserWith(uid: userID, context: context)!
             self.nameLabel.text = user.firstName!
             self.emailLabel.text = user.email!
-//            self.avatarImageView.af_setImage(withURL: URL(string: user.photoURL!)!)
+            if let photoURL = user.photoURL {
+                self.avatarImageView.af_setImage(withURL: URL(string: photoURL)!)
+            }
             MBProgressHUD.hide(for: self.view, animated: true)
         }) { [unowned self] (errorMessage) in
             print(errorMessage)

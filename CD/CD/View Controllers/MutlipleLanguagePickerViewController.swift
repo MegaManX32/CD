@@ -82,6 +82,5 @@ class MutlipleLanguagePickerViewController: UIViewController, UITableViewDataSou
             }
         }
         self.delegate?.mutlipleLanguagePickerViewControllerDidSelect(languages: resultLanguageArray, controller: self)
-        self.dismiss(animated: true, completion: nil)
     }
 }

@@ -39,10 +39,9 @@ class DatePickerViewController: UIViewController {
     
     @IBAction func ok(sender: UIButton) {
         self.datePickedAction?(self.datePicker.date)
-        self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func cancel(sender: UIButton) {
-        self.dismiss(animated: true, completion: nil)
+        
     }
 }

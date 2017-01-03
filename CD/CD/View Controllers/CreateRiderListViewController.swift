@@ -141,8 +141,11 @@ class CreateRiderListViewController: UIViewController, UICollectionViewDataSourc
         self.checkInButtonView.action = { [unowned self] in
             let controller = self.storyboard?.instantiateViewController(withIdentifier: "DatePickerViewController") as! DatePickerViewController
             controller.datePickedAction = { [unowned self] (pickedDate) in
-                self.checkInButtonView.title = "\(pickedDate)"
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "dd-MMM-yyyy"
+                self.checkInButtonView.title = "\(dateFormatter.string(from: pickedDate))"
                 self.checkInDate = pickedDate as NSDate?
+                _ = self.navigationController?.popViewController(animated: true)
             }
             self.show(controller, sender: self)
         }
@@ -150,8 +153,11 @@ class CreateRiderListViewController: UIViewController, UICollectionViewDataSourc
         self.checkOutButtonView.action = { [unowned self] in
             let controller = self.storyboard?.instantiateViewController(withIdentifier: "DatePickerViewController") as! DatePickerViewController
             controller.datePickedAction = { [unowned self] (pickedDate) in
-                self.checkOutButtonView.title = "\(pickedDate)"
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "dd-MMM-yyyy"
+                self.checkOutButtonView.title = "\(dateFormatter.string(from: pickedDate))"
                 self.checkOutDate = pickedDate as NSDate?
+                _ = self.navigationController?.popViewController(animated: true)
             }
             self.show(controller, sender: self)
         }
@@ -161,7 +167,7 @@ class CreateRiderListViewController: UIViewController, UICollectionViewDataSourc
     
     @IBAction func nextAction(sender: UIButton) {
         
-        guard let countryName = self.country?.countryName, let cityName = self.city?.cityName, let languages = self.languages, let checkInDate = self.checkInDate, let checkOutDate = self.checkOutDate, let gender = self.gender, let age = self.age  else {
+        guard let countryName = self.country?.countryName, let cityName = self.city?.cityName, let languages = self.languages, let checkInDate = self.checkInDate, let checkOutDate = self.checkOutDate, let gender = self.gender, let age = self.age, let details = self.riderListTextView.text  else {
             CustomAlert.presentAlert(message: "Please select country, city, gender, check in date, check out date and language", controller: self)
             return;
         }
@@ -196,6 +202,7 @@ class CreateRiderListViewController: UIViewController, UICollectionViewDataSourc
             newRiderList.checkOut = checkOutDate
             newRiderList.gender = gender
             newRiderList.age = Int(age) as NSNumber?
+            newRiderList.details = details
             
             // update rider list with interests
             for interestID in selectedInterestsIDArray {

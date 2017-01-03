@@ -379,6 +379,7 @@ class NetworkManager {
                     // check if valid JSON
                     guard let JSON = response.result.value as? [String: Any]
                         else {
+//                            let errorString = String(data: response.data!, encoding: .utf8)
                             DispatchQueue.main.async {
                                 failure("JSON not valid")
                             }
