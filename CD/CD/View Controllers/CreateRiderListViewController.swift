@@ -166,8 +166,10 @@ class CreateRiderListViewController: UIViewController, UICollectionViewDataSourc
             return;
         }
         
-        // get interests IDs
+        // present hud
         MBProgressHUD.showAdded(to: self.view, animated: true)
+        
+        // get interests IDs
         var selectedInterestsIDArray = [String]()
         for interestOption in self.interestsArray {
             if interestOption.checked {
@@ -208,6 +210,7 @@ class CreateRiderListViewController: UIViewController, UICollectionViewDataSourc
             // create new rider list
             NetworkManager.sharedInstance.createOrUpdate(riderList: newRiderList, context: context, success: { [unowned self] (riderListID) in
                 print("Ruder list : \(riderListID)")
+                MBProgressHUD.hide(for: self.view, animated: true)
             }, failure: {[unowned self] (errorMessage) in
                 print(errorMessage)
                 MBProgressHUD.hide(for: self.view, animated: true)

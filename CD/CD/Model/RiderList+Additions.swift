@@ -37,12 +37,16 @@ extension RiderList {
         self.age = JSON["age"] as? NSNumber ?? self.age
         self.country = JSON["country"] as? String ?? self.country
         self.city = JSON["city"] as? String ?? self.city
-        self.checkIn = JSON["checkIn"] as? NSDate ?? self.checkIn
-        self.checkOut = JSON["checkOut"] as? NSDate ?? self.checkOut
         self.details = JSON["details"] as? String ?? self.details
         self.gender = JSON["gender"] as? String ?? self.gender
         self.userUid = JSON["userUid"] as? String ?? self.userUid
         
+        // check in and check out
+        if let checkInDateString = JSON["checkIn"] as? String, let checkOutDateString = JSON["checkOut"] as? String {
+            self.checkIn = StandardUserDefaults.dateFrom(dateString: checkInDateString)
+            self.checkOut = StandardUserDefaults.dateFrom(dateString: checkOutDateString)
+        }
+
         // create relationships
         
         self.interests = NSSet.init()
@@ -85,6 +89,12 @@ extension RiderList {
         JSON["details"] = self.details
         JSON["gender"] = self.gender
         JSON["userUid"] = self.userUid
+        
+        // check in and check out
+        if let checkInDate = self.checkIn, let checkOutDate = self.checkOut {
+            JSON["checkIn"] = StandardUserDefaults.stringFrom(date: checkInDate)
+            JSON["checkOut"] = StandardUserDefaults.stringFrom(date: checkOutDate)
+        }
         
         // create relationships
         if let interests = self.interests {

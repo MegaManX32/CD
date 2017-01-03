@@ -8,6 +8,8 @@
 
 import UIKit
 
+fileprivate let dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZ"
+
 class StandardUserDefaults: NSObject {
     
     static func saveUserID(userID : String) {
@@ -16,6 +18,20 @@ class StandardUserDefaults: NSObject {
     
     static func userID() -> String {
         return UserDefaults.standard.value(forKey: "userIDKey") as! String
+    }
+    
+    //"yyyy-MM-dd'T'HH:mm:ssZZZ"
+    
+    static func dateFrom(dateString : String) -> NSDate? {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = dateFormat
+        return dateFormatter.date(from: dateString) as NSDate?
+    }
+    
+    static func stringFrom(date : NSDate) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = dateFormat
+        return dateFormatter.string(from: date as Date)
     }
 
 }
