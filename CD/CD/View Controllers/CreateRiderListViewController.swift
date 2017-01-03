@@ -293,7 +293,7 @@ class CreateRiderListViewController: UIViewController, UICollectionViewDataSourc
         self.collectionView.reloadItems(at: [indexPath])
     }
 
-    // MARK: - SignupChooseFromListViewControllerDelegate methods
+    // MARK: - GeneralPickerViewControllerDelegate methods
     
     func generalPickerViewControllerDidSelect(object: Any, selectionType: SelectionType, selectedIndex : Int, controller: UIViewController) {
         switch selectionType {
@@ -316,6 +316,13 @@ class CreateRiderListViewController: UIViewController, UICollectionViewDataSourc
             // do nothing, should never happen
         }
         
+        // pop view controller
+        _ = self.navigationController?.popViewController(animated: true)
+    }
+    
+    func generalPickerViewControllerDidCancel(controller: UIViewController) {
+        
+        // pop view controller
         _ = self.navigationController?.popViewController(animated: true)
     }
     
@@ -335,6 +342,12 @@ class CreateRiderListViewController: UIViewController, UICollectionViewDataSourc
         }
         
         self.languageButtonView.title = languagesTitle
+        _ = self.navigationController?.popViewController(animated: true)
+    }
+    
+    func mutlipleLanguagePickerViewControllerDidCancel(controller: MutlipleLanguagePickerViewController) {
+        
+        // pop view controller
         _ = self.navigationController?.popViewController(animated: true)
     }
 }

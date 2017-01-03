@@ -19,21 +19,22 @@ enum SelectionType {
 }
 
 protocol GeneralPickerViewControllerDelegate {
-    func generalPickerViewControllerDidSelect(object: Any, selectionType: SelectionType, selectedIndex : Int, controller: UIViewController);
+    func generalPickerViewControllerDidSelect(object: Any, selectionType: SelectionType, selectedIndex : Int, controller: UIViewController)
+    func generalPickerViewControllerDidCancel(controller: UIViewController)
 }
 
 class GeneralPickerViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     // MARK: - Properties
     
+    @IBOutlet weak var titleLabel : UILabel!
+    @IBOutlet weak var tableView: UITableView!
+    
     var topTitle: String?
     var delegate : GeneralPickerViewControllerDelegate?
     var optionsArray = [Any]()
     var selectionType : SelectionType = .country
     var country : Country!
-    
-    @IBOutlet weak var titleLabel : UILabel!
-    @IBOutlet weak var tableView: UITableView!
     
     // MARK: - View Lifecycle
     
@@ -104,7 +105,7 @@ class GeneralPickerViewController: UIViewController, UITableViewDataSource, UITa
     // MARK: - User Actions
     
     @IBAction func backAction(sender : UIButton) {
-        _ = self.navigationController?.popViewController(animated: true)
+        self.delegate?.generalPickerViewControllerDidCancel(controller: self)
     }
     
     // MARK: - Table view data source

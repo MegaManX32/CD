@@ -157,10 +157,22 @@ class SignupCountryViewController: UIViewController, GeneralPickerViewController
         _ = self.navigationController?.popViewController(animated: true)
     }
     
+    func generalPickerViewControllerDidCancel(controller: UIViewController) {
+        
+        // pop view controller
+        _ = self.navigationController?.popViewController(animated: true)
+    }
+    
     // MARK: - MutlipleLanguagePickerViewControllerDelegate methods
     
     func mutlipleLanguagePickerViewControllerDidSelect(languages: [Language], controller: MutlipleLanguagePickerViewController) {
         self.languages = languages
+        _ = self.navigationController?.popViewController(animated: true)
+    }
+    
+    func mutlipleLanguagePickerViewControllerDidCancel(controller: MutlipleLanguagePickerViewController) {
+        
+        // pop view controller
         _ = self.navigationController?.popViewController(animated: true)
     }
 }

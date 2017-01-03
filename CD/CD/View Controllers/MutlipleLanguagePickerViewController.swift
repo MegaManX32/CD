@@ -10,7 +10,8 @@ import UIKit
 import MBProgressHUD
 
 protocol MutlipleLanguagePickerViewControllerDelegate {
-    func mutlipleLanguagePickerViewControllerDidSelect(languages: [Language], controller: MutlipleLanguagePickerViewController);
+    func mutlipleLanguagePickerViewControllerDidSelect(languages: [Language], controller: MutlipleLanguagePickerViewController)
+    func mutlipleLanguagePickerViewControllerDidCancel(controller: MutlipleLanguagePickerViewController)
 }
 
 class MutlipleLanguagePickerViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
@@ -96,6 +97,6 @@ class MutlipleLanguagePickerViewController: UIViewController, UITableViewDataSou
     }
     
     @IBAction func backAction(sender : UIButton) {
-        _ = self.navigationController?.popViewController(animated: true)
+        self.delegate?.mutlipleLanguagePickerViewControllerDidCancel(controller: self)
     }
 }
