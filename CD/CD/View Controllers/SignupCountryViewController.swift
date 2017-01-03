@@ -9,7 +9,7 @@
 import UIKit
 import MBProgressHUD
 
-class SignupCountryViewController: UIViewController, GeneralPickerViewControllerDelegate {
+class SignupCountryViewController: UIViewController, GeneralPickerViewControllerDelegate, MutlipleLanguagePickerViewControllerDelegate {
     
     // MARK: - Properties
     
@@ -22,7 +22,7 @@ class SignupCountryViewController: UIViewController, GeneralPickerViewController
     var userID : String!
     var country : Country?
     var city : City?
-    var language : Language?
+    var languages : [Language]?
     var profession : Profession?
     
     // MARK: - View Lifecycle
@@ -46,7 +46,7 @@ class SignupCountryViewController: UIViewController, GeneralPickerViewController
             let controller = self.storyboard?.instantiateViewController(withIdentifier: "GeneralPickerViewController") as! GeneralPickerViewController
             controller.selectionType = .country
             controller.delegate = self
-            self.present(controller, animated: true, completion: nil)
+            self.show(controller, sender: self)
         }
         self.cityButtonView.title = NSLocalizedString("City", comment: "city")
         self.cityButtonView.isWhite = true
@@ -62,7 +62,7 @@ class SignupCountryViewController: UIViewController, GeneralPickerViewController
             controller.selectionType = .city
             controller.country = country
             controller.delegate = self
-            self.present(controller, animated: true, completion: nil)
+            self.show(controller, sender: self)
         }
         self.professionButtonView.title = NSLocalizedString("Profession", comment: "profession")
         self.professionButtonView.isWhite = true
@@ -70,24 +70,32 @@ class SignupCountryViewController: UIViewController, GeneralPickerViewController
             let controller = self.storyboard?.instantiateViewController(withIdentifier: "GeneralPickerViewController") as! GeneralPickerViewController
             controller.selectionType = .profession
             controller.delegate = self
-            self.present(controller, animated: true, completion: nil)
+            self.show(controller, sender: self)
         }
         self.languageButtonView.title = NSLocalizedString("Language", comment: "language")
         self.languageButtonView.isWhite = true
         self.languageButtonView.action = { [unowned self] in
-            let controller = self.storyboard?.instantiateViewController(withIdentifier: "GeneralPickerViewController") as! GeneralPickerViewController
-            controller.selectionType = .language
+            let controller = self.storyboard?.instantiateViewController(withIdentifier: "MutlipleLanguagePickerViewController") as! MutlipleLanguagePickerViewController
             controller.delegate = self
-            self.present(controller, animated: true, completion: nil)
+            self.show(controller, sender: self)
         }
     }
     
     // MARK: - User actions
     
     @IBAction func nextAction(sender: UIButton) {
-        guard let countryName = self.country?.countryName, let cityName = self.city?.cityName, let languageID = self.language?.uid, let professionName = self.profession?.profession else {
+        guard let countryName = self.country?.countryName, let cityName = self.city?.cityName, let languages = self.languages, let professionName = self.profession?.profession else {
             CustomAlert.presentAlert(message: "Please select country, city, language and profession", controller: self)
             return;
+        }
+        
+        // add progress hud
+        MBProgressHUD.showAdded(to: self.view, animated: true)
+        
+        // get language IDs
+        var languageIDArray = [String]()
+        for language in languages {
+            languageIDArray.append(language.uid!)
         }
         
         // update user
@@ -101,9 +109,11 @@ class SignupCountryViewController: UIViewController, GeneralPickerViewController
             user?.city = cityName
             user?.proffesion = professionName
             
-            // add language
-            let language = Language.findLanguageWith(id: languageID, context: context)
-            user?.addToLanguages(language!)
+            // add languages
+            for languageID in languageIDArray {
+                let language = Language.findLanguageWith(id: languageID, context: context)
+                user?.addToLanguages(language!)
+            }
             
             // update user
             NetworkManager.sharedInstance.createOrUpdate(user: user!, context: context, success: { [unowned self] (userID) in
@@ -132,9 +142,6 @@ class SignupCountryViewController: UIViewController, GeneralPickerViewController
         case .city:
             self.city = object as? City
             self.cityButtonView.title = self.city?.cityName
-        case .language:
-            self.language = object as? Language
-            self.languageButtonView.title = self.language?.language
         case .profession:
             self.profession = object as? Profession
             self.professionButtonView.title = self.profession?.profession
@@ -142,5 +149,15 @@ class SignupCountryViewController: UIViewController, GeneralPickerViewController
             break
             // do nothing, should never happen
         }
+        
+        // pop view controller
+        _ = self.navigationController?.popViewController(animated: true)
+    }
+    
+    // MARK: - MutlipleLanguagePickerViewControllerDelegate methods
+    
+    func mutlipleLanguagePickerViewControllerDidSelect(languages: [Language], controller: MutlipleLanguagePickerViewController) {
+        self.languages = languages
+        _ = self.navigationController?.popViewController(animated: true)
     }
 }

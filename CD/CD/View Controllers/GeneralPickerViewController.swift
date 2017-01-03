@@ -13,7 +13,6 @@ import MBProgressHUD
 enum SelectionType {
     case country
     case city
-    case language
     case profession
     case gender
     case age
@@ -66,19 +65,6 @@ class GeneralPickerViewController: UIViewController, UITableViewDataSource, UITa
                     MBProgressHUD.hide(for: self.view, animated: true)
                 })
             }
-        case .language:
-            self.optionsArray = Language.findAllLanguages(context:  CoreDataManager.sharedInstance.mainContext)
-            if self.optionsArray.isEmpty {
-                MBProgressHUD.showAdded(to: self.view, animated: true)
-                NetworkManager.sharedInstance.getAllLanguages(success: {
-                    self.optionsArray = Language.findAllLanguages(context:  CoreDataManager.sharedInstance.mainContext)
-                    self.tableView.reloadData()
-                    MBProgressHUD.hide(for: self.view, animated: true)
-                }, failure: { (errorMessage) in
-                    print(errorMessage)
-                    MBProgressHUD.hide(for: self.view, animated: true)
-                })
-            }
         case .profession:
             self.optionsArray = Profession.findAllProfessions(context: CoreDataManager.sharedInstance.mainContext)
             if self.optionsArray.isEmpty {
@@ -124,8 +110,6 @@ class GeneralPickerViewController: UIViewController, UITableViewDataSource, UITa
             cell.populateCellWithName(name: (self.optionsArray[indexPath.row] as! City).cityName!)
         case .country:
             cell.populateCellWithName(name: (self.optionsArray[indexPath.row] as! Country).countryName!)
-        case .language:
-            cell.populateCellWithName(name: (self.optionsArray[indexPath.row] as! Language).language!)
         case .profession:
             cell.populateCellWithName(name: (self.optionsArray[indexPath.row] as! Profession).profession!)
         case .gender:
@@ -139,6 +123,5 @@ class GeneralPickerViewController: UIViewController, UITableViewDataSource, UITa
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.delegate?.generalPickerViewControllerDidSelect(object: self.optionsArray[indexPath.row], selectionType: self.selectionType, controller: self)
-        self.dismiss(animated: true, completion: nil)
     }
 }

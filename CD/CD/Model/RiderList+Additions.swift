@@ -28,25 +28,6 @@ extension RiderList {
         return try! context.fetch(fetchRequest).first
     }
     
-    /*
-     
-     @NSManaged public var age: NSNumber?
-     @NSManaged public var checkIn: NSDate?
-     @NSManaged public var checkOut: NSDate?
-     @NSManaged public var city: String?
-     @NSManaged public var country: String?
-     @NSManaged public var details: String?
-     @NSManaged public var gender: String?
-     @NSManaged public var uid: String?
-     @NSManaged public var userUid: String?
-     @NSManaged public var interests: NSSet?
-     @NSManaged public var languages: NSSet?
-     @NSManaged public var riderListOffers: NSSet?
-     @NSManaged public var selectedRiderLIstOffer: RiderListOffer?
-
-     
-    */
-    
     // MARK: - JSON serialization
     
     func initWith(JSON:[String : Any], context: NSManagedObjectContext) {

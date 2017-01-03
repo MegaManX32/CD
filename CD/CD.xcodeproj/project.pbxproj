@@ -66,6 +66,7 @@
 		155BA8A11E12774700C7D6E4 /* HostMakingOfferViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155BA8A01E12774700C7D6E4 /* HostMakingOfferViewController.swift */; };
 		155BA8A31E127ED900C7D6E4 /* GuestRiderListAcceptedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155BA8A21E127ED900C7D6E4 /* GuestRiderListAcceptedViewController.swift */; };
 		155BA8A51E127EEB00C7D6E4 /* HostRiderListAcceptedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155BA8A41E127EEB00C7D6E4 /* HostRiderListAcceptedViewController.swift */; };
+		155E0E761E1BF10500D3F72B /* MutlipleLanguagePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155E0E751E1BF10500D3F72B /* MutlipleLanguagePickerViewController.swift */; };
 		1574A7501E0ED31400EDA4D0 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1574A74F1E0ED31400EDA4D0 /* SWRevealViewController.m */; };
 		1574A7521E0ED6B000EDA4D0 /* GuestHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1574A7511E0ED6B000EDA4D0 /* GuestHomeViewController.swift */; };
 		1574A7551E0EDE1500EDA4D0 /* HostHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1574A7541E0EDE1500EDA4D0 /* HostHomeViewController.swift */; };
@@ -151,6 +152,7 @@
 		155BA8A01E12774700C7D6E4 /* HostMakingOfferViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HostMakingOfferViewController.swift; sourceTree = "<group>"; };
 		155BA8A21E127ED900C7D6E4 /* GuestRiderListAcceptedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuestRiderListAcceptedViewController.swift; sourceTree = "<group>"; };
 		155BA8A41E127EEB00C7D6E4 /* HostRiderListAcceptedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HostRiderListAcceptedViewController.swift; sourceTree = "<group>"; };
+		155E0E751E1BF10500D3F72B /* MutlipleLanguagePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MutlipleLanguagePickerViewController.swift; sourceTree = "<group>"; };
 		1574A74A1E0ED2AA00EDA4D0 /* CD-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CD-Bridging-Header.h"; sourceTree = "<group>"; };
 		1574A74E1E0ED31400EDA4D0 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		1574A74F1E0ED31400EDA4D0 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
@@ -216,6 +218,7 @@
 				152080ED1DF36E60005687C1 /* DatePickerViewController.swift */,
 				152080EF1DF37586005687C1 /* GeneralPickerViewController.swift */,
 				152080F11DF375A1005687C1 /* GeneralPickerTableViewCell.swift */,
+				155E0E751E1BF10500D3F72B /* MutlipleLanguagePickerViewController.swift */,
 			);
 			name = Pickers;
 			sourceTree = "<group>";
@@ -614,6 +617,7 @@
 				15CAE37E1DEC86A000DED25C /* Country+Additions.swift in Sources */,
 				15327BC91DC63A62000411F7 /* SignupFinishedViewController.swift in Sources */,
 				153C80D21DABB57000DBEDCD /* ButtonView.swift in Sources */,
+				155E0E761E1BF10500D3F72B /* MutlipleLanguagePickerViewController.swift in Sources */,
 				15327BC11DC63A62000411F7 /* AccomodationViewController.swift in Sources */,
 				1588A6D21E115FDD00FEA81F /* SettingsViewController.swift in Sources */,
 				155BA89F1E12740000C7D6E4 /* GuestReviewOffersViewController.swift in Sources */,

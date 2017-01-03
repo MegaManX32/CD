@@ -14,7 +14,7 @@ fileprivate let sectionInsets = UIEdgeInsets(top: 0.0, left: 20.0, bottom: 0.0, 
 fileprivate let itemsPerRow: CGFloat = 3
 fileprivate let heightOfRow: CGFloat = 100
 
-class CreateRiderListViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, GeneralPickerViewControllerDelegate {
+class CreateRiderListViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, GeneralPickerViewControllerDelegate, MutlipleLanguagePickerViewControllerDelegate {
     
     // MARK: - Properties
     
@@ -37,9 +37,11 @@ class CreateRiderListViewController: UIViewController, UICollectionViewDataSourc
     var userID : String!
     var country : Country?
     var city : City?
-    var language : Language?
+    var languages : [Language]?
     var gender : String?
     var age : String?
+    var checkInDate : NSDate?
+    var checkOutDate : NSDate?
     var interestsArray : [(interest : Interest, checked : Bool)] = [(Interest, Bool)]()
     
     // MARK: - View Lifecycle
@@ -98,7 +100,7 @@ class CreateRiderListViewController: UIViewController, UICollectionViewDataSourc
             let controller = self.storyboard?.instantiateViewController(withIdentifier: "GeneralPickerViewController") as! GeneralPickerViewController
             controller.selectionType = .country
             controller.delegate = self
-            self.present(controller, animated: true, completion: nil)
+            self.show(controller, sender: self)
         }
         self.cityButtonView.title = NSLocalizedString("City", comment: "city")
         self.cityButtonView.action = { [unowned self] in
@@ -113,44 +115,45 @@ class CreateRiderListViewController: UIViewController, UICollectionViewDataSourc
             controller.selectionType = .city
             controller.country = country
             controller.delegate = self
-            self.present(controller, animated: true, completion: nil)
+            self.show(controller, sender: self)
         }
         self.languageButtonView.title = NSLocalizedString("Language", comment: "language")
         self.languageButtonView.action = { [unowned self] in
-            let controller = self.storyboard?.instantiateViewController(withIdentifier: "GeneralPickerViewController") as! GeneralPickerViewController
-            controller.selectionType = .language
+            let controller = self.storyboard?.instantiateViewController(withIdentifier: "MutlipleLanguagePickerViewController") as! MutlipleLanguagePickerViewController
             controller.delegate = self
-            self.present(controller, animated: true, completion: nil)
+            self.show(controller, sender: self)
         }
         self.genderButtonView.title = NSLocalizedString("Gender", comment: "language")
         self.genderButtonView.action = { [unowned self] in
             let controller = self.storyboard?.instantiateViewController(withIdentifier: "GeneralPickerViewController") as! GeneralPickerViewController
             controller.selectionType = .gender
             controller.delegate = self
-            self.present(controller, animated: true, completion: nil)
+            self.show(controller, sender: self)
         }
         self.ageButtonView.title = NSLocalizedString("Age", comment: "language")
         self.ageButtonView.action = { [unowned self] in
             let controller = self.storyboard?.instantiateViewController(withIdentifier: "GeneralPickerViewController") as! GeneralPickerViewController
             controller.selectionType = .age
             controller.delegate = self
-            self.present(controller, animated: true, completion: nil)
+            self.show(controller, sender: self)
         }
         self.checkInButtonView.title = NSLocalizedString("Check In", comment: "")
         self.checkInButtonView.action = { [unowned self] in
             let controller = self.storyboard?.instantiateViewController(withIdentifier: "DatePickerViewController") as! DatePickerViewController
             controller.datePickedAction = { [unowned self] (pickedDate) in
                 self.checkInButtonView.title = "\(pickedDate)"
+                self.checkInDate = pickedDate as NSDate?
             }
-            self.present(controller, animated: true, completion: nil)
+            self.show(controller, sender: self)
         }
         self.checkOutButtonView.title = NSLocalizedString("Check Out", comment: "")
         self.checkOutButtonView.action = { [unowned self] in
             let controller = self.storyboard?.instantiateViewController(withIdentifier: "DatePickerViewController") as! DatePickerViewController
             controller.datePickedAction = { [unowned self] (pickedDate) in
                 self.checkOutButtonView.title = "\(pickedDate)"
+                self.checkOutDate = pickedDate as NSDate?
             }
-            self.present(controller, animated: true, completion: nil)
+            self.show(controller, sender: self)
         }
     }
     
@@ -158,7 +161,12 @@ class CreateRiderListViewController: UIViewController, UICollectionViewDataSourc
     
     @IBAction func nextAction(sender: UIButton) {
         
-        // try to update interests on user
+        guard let countryName = self.country?.countryName, let cityName = self.city?.cityName, let languages = self.languages, let checkInDate = self.checkInDate, let checkOutDate = self.checkOutDate, let gender = self.gender, let age = self.age  else {
+            CustomAlert.presentAlert(message: "Please select country, city, gender, check in date, check out date and language", controller: self)
+            return;
+        }
+        
+        // get interests IDs
         MBProgressHUD.showAdded(to: self.view, animated: true)
         var selectedInterestsIDArray = [String]()
         for interestOption in self.interestsArray {
@@ -167,27 +175,42 @@ class CreateRiderListViewController: UIViewController, UICollectionViewDataSourc
             }
         }
         
+        // get language IDs
+        var languageIDArray = [String]()
+        for language in languages {
+            languageIDArray.append(language.uid!)
+        }
+
         let context = CoreDataManager.sharedInstance.createScratchpadContext(onMainThread: false)
         context.perform {
             [unowned self] in
             
             // find user
-            let user = User.findUserWith(uid: self.userID, context: context)!
+            let newRiderList = RiderList(context: context)
+            newRiderList.userUid = self.userID
+            newRiderList.country = countryName
+            newRiderList.city = cityName
+            newRiderList.checkIn = checkInDate
+            newRiderList.checkOut = checkOutDate
+            newRiderList.gender = gender
+            newRiderList.age = Int(age) as NSNumber?
             
-            // update user with interests
+            // update rider list with interests
             for interestID in selectedInterestsIDArray {
-                user.addToInterests(Interest.findInterestWith(id: interestID, context: context)!)
+                newRiderList.addToInterests(Interest.findInterestWith(id: interestID, context: context)!)
             }
             
-            // create of or update user
-            NetworkManager.sharedInstance.createOrUpdate(user: user, context: context, success: { [unowned self] (userID) in
-                let controller = self.storyboard?.instantiateViewController(withIdentifier: "SignupFinishedViewController") as! SignupFinishedViewController
-                controller.userID = userID
-                self.show(controller, sender: self)
+            // update rider list with languages
+            for languageID in languageIDArray {
+                newRiderList.addToLanguages(Language.findLanguageWith(id: languageID, context: context)!)
+            }
+            
+            // create new rider list
+            NetworkManager.sharedInstance.createOrUpdate(riderList: newRiderList, context: context, success: { [unowned self] (riderListID) in
+                print("Ruder list : \(riderListID)")
+            }, failure: {[unowned self] (errorMessage) in
+                print(errorMessage)
                 MBProgressHUD.hide(for: self.view, animated: true)
-                }, failure: { [unowned self] (errorMessage) in
-                    print(errorMessage)
-                    MBProgressHUD.hide(for: self.view, animated: true)
             })
         }
         
@@ -248,9 +271,6 @@ class CreateRiderListViewController: UIViewController, UICollectionViewDataSourc
         case .city:
             self.city = object as? City
             self.cityButtonView.title = self.city?.cityName
-        case .language:
-            self.language = object as? Language
-            self.languageButtonView.title = self.language?.language
         case .gender:
             self.gender = object as? String
             self.genderButtonView.title = self.gender
@@ -261,5 +281,14 @@ class CreateRiderListViewController: UIViewController, UICollectionViewDataSourc
             break
             // do nothing, should never happen
         }
+        
+        _ = self.navigationController?.popViewController(animated: true)
+    }
+    
+    // MARK: - MutlipleLanguagePickerViewControllerDelegate methods
+    
+    func mutlipleLanguagePickerViewControllerDidSelect(languages: [Language], controller: MutlipleLanguagePickerViewController) {
+        self.languages = languages
+        _ = self.navigationController?.popViewController(animated: true)
     }
 }
