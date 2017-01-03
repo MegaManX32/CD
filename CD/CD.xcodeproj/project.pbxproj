@@ -67,6 +67,7 @@
 		155BA8A31E127ED900C7D6E4 /* GuestRiderListAcceptedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155BA8A21E127ED900C7D6E4 /* GuestRiderListAcceptedViewController.swift */; };
 		155BA8A51E127EEB00C7D6E4 /* HostRiderListAcceptedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155BA8A41E127EEB00C7D6E4 /* HostRiderListAcceptedViewController.swift */; };
 		155E0E761E1BF10500D3F72B /* MutlipleLanguagePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155E0E751E1BF10500D3F72B /* MutlipleLanguagePickerViewController.swift */; };
+		155E0E781E1C183A00D3F72B /* StandardDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155E0E771E1C183A00D3F72B /* StandardDateFormatter.swift */; };
 		1574A7501E0ED31400EDA4D0 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1574A74F1E0ED31400EDA4D0 /* SWRevealViewController.m */; };
 		1574A7521E0ED6B000EDA4D0 /* GuestHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1574A7511E0ED6B000EDA4D0 /* GuestHomeViewController.swift */; };
 		1574A7551E0EDE1500EDA4D0 /* HostHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1574A7541E0EDE1500EDA4D0 /* HostHomeViewController.swift */; };
@@ -153,6 +154,7 @@
 		155BA8A21E127ED900C7D6E4 /* GuestRiderListAcceptedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuestRiderListAcceptedViewController.swift; sourceTree = "<group>"; };
 		155BA8A41E127EEB00C7D6E4 /* HostRiderListAcceptedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HostRiderListAcceptedViewController.swift; sourceTree = "<group>"; };
 		155E0E751E1BF10500D3F72B /* MutlipleLanguagePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MutlipleLanguagePickerViewController.swift; sourceTree = "<group>"; };
+		155E0E771E1C183A00D3F72B /* StandardDateFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StandardDateFormatter.swift; sourceTree = "<group>"; };
 		1574A74A1E0ED2AA00EDA4D0 /* CD-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CD-Bridging-Header.h"; sourceTree = "<group>"; };
 		1574A74E1E0ED31400EDA4D0 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		1574A74F1E0ED31400EDA4D0 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
@@ -217,8 +219,8 @@
 			children = (
 				152080ED1DF36E60005687C1 /* DatePickerViewController.swift */,
 				152080EF1DF37586005687C1 /* GeneralPickerViewController.swift */,
-				152080F11DF375A1005687C1 /* GeneralPickerTableViewCell.swift */,
 				155E0E751E1BF10500D3F72B /* MutlipleLanguagePickerViewController.swift */,
+				152080F11DF375A1005687C1 /* GeneralPickerTableViewCell.swift */,
 			);
 			name = Pickers;
 			sourceTree = "<group>";
@@ -410,6 +412,7 @@
 			isa = PBXGroup;
 			children = (
 				15F3417F1E12962B00E04083 /* StandardUserDefaults.swift */,
+				155E0E771E1C183A00D3F72B /* StandardDateFormatter.swift */,
 			);
 			path = UserDefaults;
 			sourceTree = "<group>";
@@ -590,6 +593,7 @@
 				1547F1F41DC8FE3F00A04106 /* User+Additions.swift in Sources */,
 				1500414F1E15394B0097AC8B /* HostProfileViewController.swift in Sources */,
 				152080F01DF37586005687C1 /* GeneralPickerViewController.swift in Sources */,
+				155E0E781E1C183A00D3F72B /* StandardDateFormatter.swift in Sources */,
 				1588A6CF1E1154D200FEA81F /* GuestMenuTableViewCell.swift in Sources */,
 				154A54361D9FD0750021A803 /* CD.xcdatamodeld in Sources */,
 				152080E81DF35953005687C1 /* RiderList+Additions.swift in Sources */,

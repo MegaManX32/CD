@@ -15,6 +15,7 @@ class DatePickerViewController: UIViewController {
     @IBOutlet weak var datePicker : UIDatePicker!
     var pickedDate : Date?
     var datePickedAction : ((Date) -> ())?
+    var dateCancelledAction : (() -> ())?
     
     // MARK: - View Lifecycle
     
@@ -42,6 +43,6 @@ class DatePickerViewController: UIViewController {
     }
     
     @IBAction func cancel(sender: UIButton) {
-        
+        self.dateCancelledAction?()
     }
 }

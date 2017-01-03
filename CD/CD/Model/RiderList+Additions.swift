@@ -43,8 +43,8 @@ extension RiderList {
         
         // check in and check out
         if let checkInDateString = JSON["checkIn"] as? String, let checkOutDateString = JSON["checkOut"] as? String {
-            self.checkIn = StandardUserDefaults.dateFrom(dateString: checkInDateString)
-            self.checkOut = StandardUserDefaults.dateFrom(dateString: checkOutDateString)
+            self.checkIn = StandardDateFormatter.dateFrom(dateString: checkInDateString)
+            self.checkOut = StandardDateFormatter.dateFrom(dateString: checkOutDateString)
         }
 
         // create relationships
@@ -92,8 +92,8 @@ extension RiderList {
         
         // check in and check out
         if let checkInDate = self.checkIn, let checkOutDate = self.checkOut {
-            JSON["checkIn"] = StandardUserDefaults.stringFrom(date: checkInDate)
-            JSON["checkOut"] = StandardUserDefaults.stringFrom(date: checkOutDate)
+            JSON["checkIn"] = StandardDateFormatter.stringFrom(date: checkInDate)
+            JSON["checkOut"] = StandardDateFormatter.stringFrom(date: checkOutDate)
         }
         
         // create relationships

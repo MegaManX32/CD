@@ -27,6 +27,9 @@ class MutlipleLanguagePickerViewController: UIViewController, UITableViewDataSou
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // prepare table view
+        self.tableView.tableFooterView = UIView.init(frame: .zero)
+        
         // fetch languages
         MBProgressHUD.showAdded(to: self.view, animated: true)
         NetworkManager.sharedInstance.getAllLanguages(

@@ -38,6 +38,9 @@ class GeneralPickerViewController: UIViewController, UITableViewDataSource, UITa
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // prepare table view
+        self.tableView.tableFooterView = UIView.init(frame: .zero)
+        
         switch self.selectionType {
         case .country:
             self.optionsArray = Country.findAllCountries(context: CoreDataManager.sharedInstance.mainContext)
