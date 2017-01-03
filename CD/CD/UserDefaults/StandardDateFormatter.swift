@@ -27,4 +27,9 @@ class StandardDateFormatter {
         dateFormatter.dateFormat = "dd-MMM-yyyy"
         return dateFormatter.string(from: date)
     }
+    
+    static func stripTimeFrom(date: Date) -> Date {
+        let newDateComponents = Calendar.current.dateComponents([.year, .month, .day], from: date)
+        return Calendar.current.date(from: newDateComponents)!
+    }
 }

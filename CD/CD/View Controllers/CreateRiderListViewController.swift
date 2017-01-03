@@ -40,8 +40,8 @@ class CreateRiderListViewController: UIViewController, UICollectionViewDataSourc
     var languages : [Language]?
     var gender : String?
     var age : String?
-    var checkInDate : NSDate?
-    var checkOutDate : NSDate?
+    var checkInDate : Date?
+    var checkOutDate : Date?
     var interestsArray : [(interest : Interest, checked : Bool)] = [(Interest, Bool)]()
     
     // MARK: - View Lifecycle
@@ -141,9 +141,14 @@ class CreateRiderListViewController: UIViewController, UICollectionViewDataSourc
         self.checkInButtonView.action = { [unowned self] in
             let controller = self.storyboard?.instantiateViewController(withIdentifier: "DatePickerViewController") as! DatePickerViewController
             controller.datePickedAction = { [unowned self] (pickedDate) in
-                self.checkInButtonView.title = StandardDateFormatter.presentationStringFrom(date: pickedDate)
-                self.checkInDate = pickedDate as NSDate?
-                _ = self.navigationController?.popViewController(animated: true)
+                if (!self.areDatesValid(checkInDate: pickedDate, checkOutDate: self.checkOutDate)) {
+                    CustomAlert.presentAlert(message: "Check out date must be later than check in date", controller: controller)
+                }
+                else {
+                    self.checkInButtonView.title = StandardDateFormatter.presentationStringFrom(date: pickedDate)
+                    self.checkInDate = pickedDate
+                    _ = self.navigationController?.popViewController(animated: true)
+                }
             }
             controller.dateCancelledAction = { [unowned self] in
                 _ = self.navigationController?.popViewController(animated: true)
@@ -154,9 +159,14 @@ class CreateRiderListViewController: UIViewController, UICollectionViewDataSourc
         self.checkOutButtonView.action = { [unowned self] in
             let controller = self.storyboard?.instantiateViewController(withIdentifier: "DatePickerViewController") as! DatePickerViewController
             controller.datePickedAction = { [unowned self] (pickedDate) in
-                self.checkOutButtonView.title = StandardDateFormatter.presentationStringFrom(date: pickedDate)
-                self.checkOutDate = pickedDate as NSDate?
-                _ = self.navigationController?.popViewController(animated: true)
+                if (!self.areDatesValid(checkInDate: self.checkInDate, checkOutDate: pickedDate)) {
+                    CustomAlert.presentAlert(message: "Check out date must be later than check in date", controller: controller)
+                }
+                else {
+                    self.checkOutButtonView.title = StandardDateFormatter.presentationStringFrom(date: pickedDate)
+                    self.checkOutDate = pickedDate
+                    _ = self.navigationController?.popViewController(animated: true)
+                }
             }
             controller.dateCancelledAction = { [unowned self] in
                 _ = self.navigationController?.popViewController(animated: true)
@@ -165,11 +175,20 @@ class CreateRiderListViewController: UIViewController, UICollectionViewDataSourc
         }
     }
     
+    // MARK: - Helper methods
+    
+    func areDatesValid(checkInDate : Date?, checkOutDate : Date?) -> Bool {
+        if let checkInDate = checkInDate, let checkOutDate = checkOutDate {
+            return checkInDate < checkOutDate
+        }
+        return true
+    }
+    
     // MARK: - User Actions
     
     @IBAction func nextAction(sender: UIButton) {
         
-        guard let countryName = self.country?.countryName, let cityName = self.city?.cityName, let languages = self.languages, let checkInDate = self.checkInDate, let checkOutDate = self.checkOutDate, let gender = self.gender, let age = self.age, let details = self.riderListTextView.text  else {
+        guard let countryName = self.country?.countryName, let cityName = self.city?.cityName, let languages = self.languages, let checkInDate = self.checkInDate as NSDate?, let checkOutDate = self.checkOutDate as NSDate?, let gender = self.gender, let age = self.age, let details = self.riderListTextView.text  else {
             CustomAlert.presentAlert(message: "Please select country, city, check in date, check out date, gender, age and language", controller: self)
             return;
         }

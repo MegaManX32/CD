@@ -39,7 +39,7 @@ class DatePickerViewController: UIViewController {
     // MARK: - User Actions
     
     @IBAction func ok(sender: UIButton) {
-        self.datePickedAction?(self.datePicker.date)
+        self.datePickedAction?(StandardDateFormatter.stripTimeFrom(date: self.datePicker.date))
     }
     
     @IBAction func cancel(sender: UIButton) {

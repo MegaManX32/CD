@@ -821,7 +821,7 @@
                                     <constraint firstItem="H7P-L0-Hte" firstAttribute="leading" secondItem="l7I-34-ekR" secondAttribute="trailing" constant="2" id="t0g-9Q-hxL"/>
                                 </constraints>
                             </view>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="4vZ-G0-0sx">
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="4vZ-G0-0sx">
                                 <rect key="frame" x="0.0" y="78" width="375" height="272"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="272" id="Sjp-Zf-1OA"/>
