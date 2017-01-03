@@ -70,9 +70,6 @@ class ButtonView: UIView {
     // MARK: - User actions
     
     func actionOnPress() {
-        if let newAction = self.action {
-            newAction()
-        }
+        self.action?()
     }
-    
 }

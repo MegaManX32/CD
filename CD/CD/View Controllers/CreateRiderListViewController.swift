@@ -39,7 +39,7 @@ class CreateRiderListViewController: UIViewController, UICollectionViewDataSourc
     var city : City?
     var languages : [Language]?
     var gender : String?
-    var age : String?
+    var age : Int?
     var checkInDate : Date?
     var checkOutDate : Date?
     var interestsArray : [(interest : Interest, checked : Bool)] = [(Interest, Bool)]()
@@ -98,6 +98,7 @@ class CreateRiderListViewController: UIViewController, UICollectionViewDataSourc
         self.countryButtonView.title = NSLocalizedString("Country", comment: "country")
         self.countryButtonView.action = { [unowned self] in
             let controller = self.storyboard?.instantiateViewController(withIdentifier: "GeneralPickerViewController") as! GeneralPickerViewController
+            controller.topTitle =  self.countryButtonView.title
             controller.selectionType = .country
             controller.delegate = self
             self.show(controller, sender: self)
@@ -112,6 +113,7 @@ class CreateRiderListViewController: UIViewController, UICollectionViewDataSourc
             }
             
             let controller = self.storyboard?.instantiateViewController(withIdentifier: "GeneralPickerViewController") as! GeneralPickerViewController
+            controller.topTitle =  self.cityButtonView.title
             controller.selectionType = .city
             controller.country = country
             controller.delegate = self
@@ -123,16 +125,18 @@ class CreateRiderListViewController: UIViewController, UICollectionViewDataSourc
             controller.delegate = self
             self.show(controller, sender: self)
         }
-        self.genderButtonView.title = NSLocalizedString("Gender", comment: "language")
+        self.genderButtonView.title = NSLocalizedString("Gender", comment: "gender")
         self.genderButtonView.action = { [unowned self] in
             let controller = self.storyboard?.instantiateViewController(withIdentifier: "GeneralPickerViewController") as! GeneralPickerViewController
+            controller.topTitle =  self.genderButtonView.title
             controller.selectionType = .gender
             controller.delegate = self
             self.show(controller, sender: self)
         }
-        self.ageButtonView.title = NSLocalizedString("Age", comment: "language")
+        self.ageButtonView.title = NSLocalizedString("Age", comment: "age")
         self.ageButtonView.action = { [unowned self] in
             let controller = self.storyboard?.instantiateViewController(withIdentifier: "GeneralPickerViewController") as! GeneralPickerViewController
+            controller.topTitle =  self.ageButtonView.title
             controller.selectionType = .age
             controller.delegate = self
             self.show(controller, sender: self)
@@ -188,7 +192,7 @@ class CreateRiderListViewController: UIViewController, UICollectionViewDataSourc
     
     @IBAction func nextAction(sender: UIButton) {
         
-        guard let countryName = self.country?.countryName, let cityName = self.city?.cityName, let languages = self.languages, let checkInDate = self.checkInDate as NSDate?, let checkOutDate = self.checkOutDate as NSDate?, let gender = self.gender, let age = self.age, let details = self.riderListTextView.text  else {
+        guard let countryName = self.country?.countryName, let cityName = self.city?.cityName, let languages = self.languages, let checkInDate = self.checkInDate as NSDate?, let checkOutDate = self.checkOutDate as NSDate?, let gender = self.gender, let age = self.age as NSNumber?, let details = self.riderListTextView.text  else {
             CustomAlert.presentAlert(message: "Please select country, city, check in date, check out date, gender, age and language", controller: self)
             return;
         }
@@ -222,7 +226,7 @@ class CreateRiderListViewController: UIViewController, UICollectionViewDataSourc
             newRiderList.checkIn = checkInDate
             newRiderList.checkOut = checkOutDate
             newRiderList.gender = gender
-            newRiderList.age = Int(age) as NSNumber?
+            newRiderList.age = age
             newRiderList.details = details
             
             // update rider list with interests
@@ -291,7 +295,7 @@ class CreateRiderListViewController: UIViewController, UICollectionViewDataSourc
 
     // MARK: - SignupChooseFromListViewControllerDelegate methods
     
-    func generalPickerViewControllerDidSelect(object: Any, selectionType: SelectionType, controller: UIViewController) {
+    func generalPickerViewControllerDidSelect(object: Any, selectionType: SelectionType, selectedIndex : Int, controller: UIViewController) {
         switch selectionType {
         case .country:
             self.country = object as? Country
@@ -305,8 +309,8 @@ class CreateRiderListViewController: UIViewController, UICollectionViewDataSourc
             self.gender = object as? String
             self.genderButtonView.title = self.gender
         case .age:
-            self.age = object as? String
-            self.ageButtonView.title = self.age
+            self.age = selectedIndex
+            self.ageButtonView.title = object as? String
         default:
             break
             // do nothing, should never happen

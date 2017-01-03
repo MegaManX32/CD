@@ -19,24 +19,29 @@ enum SelectionType {
 }
 
 protocol GeneralPickerViewControllerDelegate {
-    func generalPickerViewControllerDidSelect(object: Any, selectionType: SelectionType, controller: UIViewController);
+    func generalPickerViewControllerDidSelect(object: Any, selectionType: SelectionType, selectedIndex : Int, controller: UIViewController);
 }
 
 class GeneralPickerViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     // MARK: - Properties
     
+    var topTitle: String?
     var delegate : GeneralPickerViewControllerDelegate?
     var optionsArray = [Any]()
     var selectionType : SelectionType = .country
     var country : Country!
     
+    @IBOutlet weak var titleLabel : UILabel!
     @IBOutlet weak var tableView: UITableView!
     
     // MARK: - View Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // prepare title
+        self.titleLabel.text = self.topTitle
         
         // prepare table view
         self.tableView.tableFooterView = UIView.init(frame: .zero)
@@ -84,8 +89,9 @@ class GeneralPickerViewController: UIViewController, UITableViewDataSource, UITa
         case .gender:
             self.optionsArray = ["Male", "Female"]
         case .age:
-            for index in 18...100 {
-                self.optionsArray.append("\(index)")
+            self.optionsArray.append("18 - 25")
+            for index in stride(from: 25, to: 65, by: 5) {
+                self.optionsArray.append("\(index) - \(index + 5)")
             }
         }
     }
@@ -93,6 +99,12 @@ class GeneralPickerViewController: UIViewController, UITableViewDataSource, UITa
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    // MARK: - User Actions
+    
+    @IBAction func backAction(sender : UIButton) {
+        _ = self.navigationController?.popViewController(animated: true)
     }
     
     // MARK: - Table view data source
@@ -125,6 +137,6 @@ class GeneralPickerViewController: UIViewController, UITableViewDataSource, UITa
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.delegate?.generalPickerViewControllerDidSelect(object: self.optionsArray[indexPath.row], selectionType: self.selectionType, controller: self)
+        self.delegate?.generalPickerViewControllerDidSelect(object: self.optionsArray[indexPath.row], selectionType: self.selectionType, selectedIndex: indexPath.row, controller: self)
     }
 }

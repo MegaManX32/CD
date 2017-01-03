@@ -44,6 +44,7 @@ class SignupCountryViewController: UIViewController, GeneralPickerViewController
         self.countryButtonView.isWhite = true
         self.countryButtonView.action = { [unowned self] in
             let controller = self.storyboard?.instantiateViewController(withIdentifier: "GeneralPickerViewController") as! GeneralPickerViewController
+            controller.topTitle = self.countryButtonView.title
             controller.selectionType = .country
             controller.delegate = self
             self.show(controller, sender: self)
@@ -59,6 +60,7 @@ class SignupCountryViewController: UIViewController, GeneralPickerViewController
             }
             
             let controller = self.storyboard?.instantiateViewController(withIdentifier: "GeneralPickerViewController") as! GeneralPickerViewController
+            controller.topTitle = self.cityButtonView.title
             controller.selectionType = .city
             controller.country = country
             controller.delegate = self
@@ -68,6 +70,7 @@ class SignupCountryViewController: UIViewController, GeneralPickerViewController
         self.professionButtonView.isWhite = true
         self.professionButtonView.action = { [unowned self] in
             let controller = self.storyboard?.instantiateViewController(withIdentifier: "GeneralPickerViewController") as! GeneralPickerViewController
+            controller.topTitle = self.professionButtonView.title
             controller.selectionType = .profession
             controller.delegate = self
             self.show(controller, sender: self)
@@ -132,7 +135,7 @@ class SignupCountryViewController: UIViewController, GeneralPickerViewController
     
     // MARK: - SignupChooseFromListViewControllerDelegate methods
     
-    func generalPickerViewControllerDidSelect(object: Any, selectionType: SelectionType, controller: UIViewController) {
+    func generalPickerViewControllerDidSelect(object: Any, selectionType: SelectionType, selectedIndex : Int, controller: UIViewController) {
         switch selectionType {
         case .country:
             self.country = object as? Country

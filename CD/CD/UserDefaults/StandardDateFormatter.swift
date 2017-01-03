@@ -6,19 +6,19 @@
 //  Copyright © 2017 CustomDeal. All rights reserved.
 //
 
-fileprivate let dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZ"
+fileprivate let serverDateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZ"
 
 class StandardDateFormatter {
     
     static func dateFrom(dateString : String) -> NSDate? {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = dateFormat
+        dateFormatter.dateFormat = serverDateFormat
         return dateFormatter.date(from: dateString) as NSDate?
     }
     
     static func stringFrom(date : NSDate) -> String {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = dateFormat
+        dateFormatter.dateFormat = serverDateFormat
         return dateFormatter.string(from: date as Date)
     }
     
