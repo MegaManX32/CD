@@ -41,6 +41,9 @@ class LoginViewController: UIViewController {
     
     @IBAction func loginAction() {
         
+        // set user
+        StandardUserDefaults.saveUserID(userID: "84cea67a-050c-4397-b9b1-bdf39c35ed6a")
+        
         // get all users first , we will need them
         MBProgressHUD.showAdded(to: self.view, animated: true)
         NetworkManager.sharedInstance.getAllUsers(success: {[unowned self] in

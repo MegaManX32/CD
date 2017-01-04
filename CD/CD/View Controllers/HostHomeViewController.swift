@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MBProgressHUD
 
 fileprivate let someRequestsViewHeight: CGFloat = 122
 
@@ -27,6 +28,16 @@ class HostHomeViewController: UIViewController, UITableViewDataSource, UITableVi
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        // get all users first , we will need them
+//        MBProgressHUD.showAdded(to: self.view, animated: true)
+//        NetworkManager.sharedInstance.getAllRaiderListsForHost(hostID: StandardUserDefaults.userID(), success: {[unowned self] in
+//            MBProgressHUD.hide(for: self.view, animated: true)
+//        }) {[unowned self] (errorMessage) in
+//            print(errorMessage)
+//            MBProgressHUD.hide(for: self.view, animated: true)
+//        }
+
         
         self.requestsArray = [1, 2, 3, 4, 5]
         if self.requestsArray.count == 0 {

@@ -17,8 +17,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        StandardUserDefaults.saveUserID(userID: "84cea67a-050c-4397-b9b1-bdf39c35ed6a")
-        
         // keyboard helper
         IQKeyboardManager.sharedManager().enable = true
 //        IQKeyboardManager.sharedManager().enableAutoToolbar = false

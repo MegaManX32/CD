@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MBProgressHUD
 
 fileprivate let someRequestsViewHeight: CGFloat = 122
 
