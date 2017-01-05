@@ -87,4 +87,8 @@ class SettingsViewController: UIViewController {
         controller.userID = StandardUserDefaults.userID()
         self.revealViewController().pushFrontViewController(controller, animated: true)
     }
+    
+    @IBAction func logOut(sender : UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
 }
