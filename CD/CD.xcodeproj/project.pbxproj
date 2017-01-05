@@ -260,7 +260,6 @@
 				15327BB61DC63A62000411F7 /* SignupConfirmPhoneViewController.swift */,
 				15327BBA1DC63A62000411F7 /* SignupFourDigitCodeViewController.swift */,
 				15327BBB1DC63A62000411F7 /* SignupGreatViewController.swift */,
-				15327BBC1DC63A62000411F7 /* SignupInterestsCollectionViewCell.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -357,6 +356,7 @@
 				15327BBE1DC63A62000411F7 /* SignupYouLookGoodViewController.swift */,
 				15327BB81DC63A62000411F7 /* SignupCountryViewController.swift */,
 				15327BBF1DC63A62000411F7 /* SignupYourInterestsViewController.swift */,
+				15327BBC1DC63A62000411F7 /* SignupInterestsCollectionViewCell.swift */,
 				15327BB71DC63A62000411F7 /* SignupCongratulationsViewController.swift */,
 			);
 			name = "Signup Complete Profile";

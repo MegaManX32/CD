@@ -17,9 +17,11 @@ class HostProfileCollectionViewCell: UICollectionViewCell {
     
     // MARK: - Helper methods
     
-    func populateCellWith(serviceOffer : ServiceOffer?) {
-        self.photoImageView.image = #imageLiteral(resourceName: "testImage")
-        self.nameLabel.text = "Villa"
+    func populateCellWith(photoURL : String?) {
+        if let photoURL = photoURL {
+            self.photoImageView.af_setImage(withURL: URL(string: photoURL)!)
+        }
+        self.nameLabel.text = ""
     }
     
     // MARK: - Type methods

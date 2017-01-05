@@ -107,6 +107,7 @@ class HostProfileViewController: UIViewController, UITableViewDataSource, UITabl
             }
         }
         
+        // prepare service offers
         if let serviceOffers = user.serviceOffers {
             var index = 0
             for serviceOffer in serviceOffers {
@@ -172,7 +173,7 @@ class HostProfileViewController: UIViewController, UITableViewDataSource, UITabl
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HostProfileCollectionViewCell.cellIdentifier(), for: indexPath) as! HostProfileCollectionViewCell
-        cell.populateCellWith(serviceOffer: nil)
+        cell.populateCellWith(photoURL: nil)
         return cell
     }
     
