@@ -18,6 +18,12 @@ class HostRiderListAcceptedViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // prepare end message
+        let mainContext = CoreDataManager.sharedInstance.mainContext
+        let meUser = User.findUserWith(uid: StandardUserDefaults.userID(), context: mainContext)!
+
+        self.titleLabel.text = "Thanks " + meUser.firstName! + ", you've successfully become a host."
     }
     
     override func didReceiveMemoryWarning() {
