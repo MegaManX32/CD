@@ -24,31 +24,41 @@ class GuestHomeViewController: UIViewController, UITableViewDataSource, UITableV
     @IBOutlet weak var numberOfRiderListOffersLabel : UILabel!
     
     var yourRiderList : RiderList?
-    var riderListOffersArray = [1, 2, 4, 4 ,5]
+    var riderListOffersArray = [RiderListOffer]()
     
     // MARK: - View Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let riderListOffersSet = self.yourRiderList?.riderListOffers {
+            self.riderListOffersArray = Array(riderListOffersSet) as! [RiderListOffer]
 
-        if self.riderListOffersArray.count != 0 {
-            self.overviewLabel.isHidden = false
-            self.yourRiderListView.isHidden = false
-            self.riderListOffersView.isHidden = false
-            self.createRiderListView.isHidden = true
-            
-            // prepare views for rider list and offers
-            self.yourRiderListView.layer.cornerRadius = 4.0
-            self.yourRiderListView.layer.borderColor = UIColor.white.cgColor
-            self.yourRiderListView.layer.borderWidth = 2.0
-            
-            self.riderListOffersView.layer.cornerRadius = 4.0
-            self.riderListOffersView.layer.borderColor = UIColor.white.cgColor
-            self.riderListOffersView.layer.borderWidth = 2.0
-            self.riderListOffersViewHeightConstraint.constant = CGFloat(self.riderListOffersArray.count) * GuestMenuTableViewCell.cellHeight() + someRequestsViewHeight
-            
-            let endString = (self.riderListOffersArray.count == 1) ? "!" : "s!"
-            self.numberOfRiderListOffersLabel.text = "You have \(self.riderListOffersArray.count) " + "offer" + endString
+            if self.riderListOffersArray.count != 0 {
+                self.overviewLabel.isHidden = false
+                self.yourRiderListView.isHidden = false
+                self.riderListOffersView.isHidden = false
+                self.createRiderListView.isHidden = true
+                
+                // prepare views for rider list and offers
+                self.yourRiderListView.layer.cornerRadius = 4.0
+                self.yourRiderListView.layer.borderColor = UIColor.white.cgColor
+                self.yourRiderListView.layer.borderWidth = 2.0
+                
+                self.riderListOffersView.layer.cornerRadius = 4.0
+                self.riderListOffersView.layer.borderColor = UIColor.white.cgColor
+                self.riderListOffersView.layer.borderWidth = 2.0
+                self.riderListOffersViewHeightConstraint.constant = CGFloat(self.riderListOffersArray.count) * GuestMenuTableViewCell.cellHeight() + someRequestsViewHeight
+                
+                let endString = (self.riderListOffersArray.count == 1) ? "!" : "s!"
+                self.numberOfRiderListOffersLabel.text = "You have \(self.riderListOffersArray.count) " + "offer" + endString
+            }
+            else {
+                self.overviewLabel.isHidden = true
+                self.yourRiderListView.isHidden = true
+                self.riderListOffersView.isHidden = true
+                self.createRiderListView.isHidden = false
+            }
         }
         else {
             self.overviewLabel.isHidden = true
