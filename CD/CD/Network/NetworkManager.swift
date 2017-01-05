@@ -103,7 +103,7 @@ class NetworkManager {
         }
     }
     
-    func getUser(userID: String, success:@escaping () -> Void, failure:@escaping (String) -> Void) {
+    func getUser(userID: String, success:@escaping (String) -> Void, failure:@escaping (String) -> Void) {
         Alamofire.request(baseURL + "Users/" + userID, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).validate().responseJSON {[unowned self] (response) in
             switch response.result {
             case .success:
@@ -121,12 +121,13 @@ class NetworkManager {
                     }
                     
                     // update user with JSON
-                    _ = User.createOrUpdateUserWith(JSON: JSON, context: context)
+                    let user = User.createOrUpdateUserWith(JSON: JSON, context: context)
                     CoreDataManager.sharedInstance.save(scratchpadContext: context)
                     
                     // always return on main queue
+                    let userID = user.uid
                     DispatchQueue.main.async {
-                        success()
+                        success(userID!)
                     }
                 }
             case .failure:
@@ -404,7 +405,42 @@ class NetworkManager {
         }
     }
     
-    func getAllRaiderListsForHost(hostID: String, success:@escaping () -> Void, failure:@escaping (String) -> Void) {
+    func getRiderListForLoggedUser(success:@escaping (String) -> Void, failure:@escaping (String) -> Void) {
+        Alamofire.request(baseURL + "RiderList", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).validate().responseJSON {[unowned self] (response) in
+            switch response.result {
+            case .success:
+                
+                let context = CoreDataManager.sharedInstance.createScratchpadContext(onMainThread: false)
+                context.perform {
+                    
+                    // check if valid JSON
+                    guard let JSON = response.result.value as? [String: Any]
+                        else {
+                            DispatchQueue.main.async {
+                                failure("JSON not valid")
+                            }
+                            return
+                    }
+                    
+                    // update user with JSON
+                    let riderList = RiderList.createOrUpdateRiderListWith(JSON: JSON, context: context)
+                    CoreDataManager.sharedInstance.save(scratchpadContext: context)
+                    
+                    // always return on main queue
+                    let riderListID = riderList.uid
+                    DispatchQueue.main.async {
+                        success(riderListID!)
+                    }
+                }
+            case .failure:
+                
+                // error handling
+                self.generalizedFailure(data: response.data, defaultErrorMessage: "Could not get rider list for logged user", failure: failure)
+            }
+        }
+    }
+    
+    func getAllRiderListsForHost(hostID: String, success:@escaping () -> Void, failure:@escaping (String) -> Void) {
         Alamofire.request(baseURL + "HostRiderList/" + hostID, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).validate().responseJSON {[unowned self] (response) in
             switch response.result {
             case .success:

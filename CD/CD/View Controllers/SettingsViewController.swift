@@ -36,7 +36,7 @@ class SettingsViewController: UIViewController {
         
         let userID = StandardUserDefaults.userID()
         MBProgressHUD.showAdded(to: self.view, animated: true)
-        NetworkManager.sharedInstance.getUser(userID: userID, success: { [unowned self] in
+        NetworkManager.sharedInstance.getUser(userID: userID, success: { [unowned self] (userID) in
             let context = CoreDataManager.sharedInstance.mainContext
             let user = User.findUserWith(uid: userID, context: context)!
             self.nameLabel.text = user.firstName!
@@ -45,10 +45,10 @@ class SettingsViewController: UIViewController {
                 self.avatarImageView.af_setImage(withURL: URL(string: photoURL)!)
             }
             MBProgressHUD.hide(for: self.view, animated: true)
-        }) { [unowned self] (errorMessage) in
+        }, failure: { [unowned self] (errorMessage) in
             print(errorMessage)
             MBProgressHUD.hide(for: self.view, animated: true)
-        }
+        })
     }
 
     override func didReceiveMemoryWarning() {

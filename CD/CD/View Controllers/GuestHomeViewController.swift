@@ -30,10 +30,39 @@ class GuestHomeViewController: UIViewController, UITableViewDataSource, UITableV
 
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
+        // add start data
+        self.overviewLabel.isHidden = true
+        self.yourRiderListView.isHidden = true
+        self.riderListOffersView.isHidden = true
+        self.createRiderListView.isHidden = false
+        
+        // get rider list for user
+        MBProgressHUD.showAdded(to: self.view, animated: true)
+        NetworkManager.sharedInstance.getRiderListForLoggedUser(success: { [unowned self] (riderListID) in
+            let context = CoreDataManager.sharedInstance.mainContext
+            self.yourRiderList = RiderList.findRiderListWith(uid: riderListID, context: context)
+            self.prepareDataForPresentation()
+            MBProgressHUD.hide(for: self.view, animated: true)
+            }, failure: { [unowned self] (errorMessage) in
+            print(errorMessage)
+            MBProgressHUD.hide(for: self.view, animated: true)
+        })
+    }
+    
+    func prepareDataForPresentation() {
         if let riderListOffersSet = self.yourRiderList?.riderListOffers {
             self.riderListOffersArray = Array(riderListOffersSet) as! [RiderListOffer]
-
+            
             if self.riderListOffersArray.count != 0 {
                 self.overviewLabel.isHidden = false
                 self.yourRiderListView.isHidden = false
@@ -53,24 +82,7 @@ class GuestHomeViewController: UIViewController, UITableViewDataSource, UITableV
                 let endString = (self.riderListOffersArray.count == 1) ? "!" : "s!"
                 self.numberOfRiderListOffersLabel.text = "You have \(self.riderListOffersArray.count) " + "offer" + endString
             }
-            else {
-                self.overviewLabel.isHidden = true
-                self.yourRiderListView.isHidden = true
-                self.riderListOffersView.isHidden = true
-                self.createRiderListView.isHidden = false
-            }
         }
-        else {
-            self.overviewLabel.isHidden = true
-            self.yourRiderListView.isHidden = true
-            self.riderListOffersView.isHidden = true
-            self.createRiderListView.isHidden = false
-        }
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     // MARK: - User Actions

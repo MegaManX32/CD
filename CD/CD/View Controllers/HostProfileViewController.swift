@@ -58,15 +58,15 @@ class HostProfileViewController: UIViewController, UITableViewDataSource, UITabl
         
         // get user based on ID
         MBProgressHUD.showAdded(to: self.view, animated: true)
-        NetworkManager.sharedInstance.getUser(userID: self.userID, success: {[unowned self] in
+        NetworkManager.sharedInstance.getUser(userID: self.userID, success: {[unowned self] (userID) in
             let context = CoreDataManager.sharedInstance.mainContext
-            let user = User.findUserWith(uid: self.userID, context: context)!
+            let user = User.findUserWith(uid: userID, context: context)!
             self.populateViewsWithUser(user: user)
             MBProgressHUD.hide(for: self.view, animated: true)
-        }) {[unowned self] (errorMessage) in
+        }, failure: { [unowned self] (errorMessage) in
             print(errorMessage)
             MBProgressHUD.hide(for: self.view, animated: true)
-        }
+        })
     }
 
     override func didReceiveMemoryWarning() {
