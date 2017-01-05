@@ -40,22 +40,10 @@ class HostReviewRequestsViewController: UIViewController {
         self.avatarImageView.layer.borderColor = UIColor.white.cgColor
         self.avatarImageView.layer.borderWidth = 2.0
         
-        self.interest1ImageView.layer.cornerRadius = avatarImageViewHeightAndWidth / 2.0
-        self.interest1ImageView.layer.borderColor = UIColor.white.cgColor
-        self.interest1ImageView.layer.borderWidth = 2.0
-        
-        self.interest2ImageView.layer.cornerRadius = avatarImageViewHeightAndWidth / 2.0
-        self.interest2ImageView.layer.borderColor = UIColor.white.cgColor
-        self.interest2ImageView.layer.borderWidth = 2.0
-        
-        self.interest3ImageView.layer.cornerRadius = avatarImageViewHeightAndWidth / 2.0
-        self.interest3ImageView.layer.borderColor = UIColor.white.cgColor
-        self.interest3ImageView.layer.borderWidth = 2.0
-        
-        // update container view height
-        self.view.layoutIfNeeded()
-        let sizeThatFits = self.riderListTextView.sizeThatFits(CGSize(width: self.riderListTextView.frame.width, height: CGFloat.greatestFiniteMagnitude))
-        self.containerViewHeightConstraint.constant = max(containerViewMinimumHeight, containerViewMinimumHeight + sizeThatFits.height - riderListTextViewViewMinimumHeight)
+//        // update container view height
+//        self.view.layoutIfNeeded()
+//        let sizeThatFits = self.riderListTextView.sizeThatFits(CGSize(width: self.riderListTextView.frame.width, height: CGFloat.greatestFiniteMagnitude))
+//        self.containerViewHeightConstraint.constant = max(containerViewMinimumHeight, containerViewMinimumHeight + sizeThatFits.height - riderListTextViewViewMinimumHeight)
     }
 
     override func didReceiveMemoryWarning() {

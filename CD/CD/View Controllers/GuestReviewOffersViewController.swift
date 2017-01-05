@@ -31,7 +31,7 @@ class GuestReviewOffersViewController: UIViewController {
     @IBOutlet weak var riderListTextView : UITextView!
     @IBOutlet weak var containerViewHeightConstraint : NSLayoutConstraint!
     
-    var riderListOffersArray : [RiderListOffer]! // there shoudld always be an offer, if we are on this creen
+    var riderListOffersArray : [RiderListOffer]! // there should always be an offer, if we are on this creen
     
     // MARK: - View Lifecycle
     
@@ -41,18 +41,6 @@ class GuestReviewOffersViewController: UIViewController {
         self.avatarImageView.layer.cornerRadius = avatarImageViewHeightAndWidth / 2.0
         self.avatarImageView.layer.borderColor = UIColor.white.cgColor
         self.avatarImageView.layer.borderWidth = 2.0
-        
-        self.interest1ImageView.layer.cornerRadius = avatarImageViewHeightAndWidth / 2.0
-        self.interest1ImageView.layer.borderColor = UIColor.white.cgColor
-        self.interest1ImageView.layer.borderWidth = 2.0
-        
-        self.interest2ImageView.layer.cornerRadius = avatarImageViewHeightAndWidth / 2.0
-        self.interest2ImageView.layer.borderColor = UIColor.white.cgColor
-        self.interest2ImageView.layer.borderWidth = 2.0
-        
-        self.interest3ImageView.layer.cornerRadius = avatarImageViewHeightAndWidth / 2.0
-        self.interest3ImageView.layer.borderColor = UIColor.white.cgColor
-        self.interest3ImageView.layer.borderWidth = 2.0
         
         // update container view height
 //        self.view.layoutIfNeeded()
