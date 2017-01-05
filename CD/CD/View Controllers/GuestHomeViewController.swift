@@ -44,16 +44,16 @@ class GuestHomeViewController: UIViewController, UITableViewDataSource, UITableV
         self.prepareDataForPresentation()
         
         // get rider list for user
-//        MBProgressHUD.showAdded(to: self.view, animated: true)
-//        NetworkManager.sharedInstance.getRiderListForLoggedUser(success: { [unowned self] (riderListID) in
-//            let context = CoreDataManager.sharedInstance.mainContext
-//            self.yourRiderList = RiderList.findRiderListWith(uid: riderListID, context: context)
-//            self.prepareDataForPresentation()
-//            MBProgressHUD.hide(for: self.view, animated: true)
-//            }, failure: { [unowned self] (errorMessage) in
-//            print(errorMessage)
-//            MBProgressHUD.hide(for: self.view, animated: true)
-//        })
+        MBProgressHUD.showAdded(to: self.view, animated: true)
+        NetworkManager.sharedInstance.getRiderListForLoggedUser(success: { [unowned self] (riderListID) in
+            let context = CoreDataManager.sharedInstance.mainContext
+            self.yourRiderList = RiderList.findRiderListWith(uid: riderListID, context: context)
+            self.prepareDataForPresentation()
+            MBProgressHUD.hide(for: self.view, animated: true)
+            }, failure: { [unowned self] (errorMessage) in
+            print(errorMessage)
+            MBProgressHUD.hide(for: self.view, animated: true)
+        })
     }
     
     func prepareDataForPresentation() {

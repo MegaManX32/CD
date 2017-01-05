@@ -370,7 +370,7 @@ class NetworkManager {
     
     // MARK: - RiderList
     
-    func createOrUpdate(riderList: RiderList, context: NSManagedObjectContext, success:@escaping (String?) -> Void, failure:@escaping (String) -> Void) {
+    func createOrUpdate(riderList: RiderList, context: NSManagedObjectContext, success:@escaping (String) -> Void, failure:@escaping (String) -> Void) {
         Alamofire.request(baseURL + "RiderList", method: .post, parameters: riderList.asJSON(), encoding: JSONEncoding.default, headers: nil).validate().responseJSON {[unowned self] (response) in
             switch response.result {
             case .success:
@@ -393,7 +393,7 @@ class NetworkManager {
                     CoreDataManager.sharedInstance.save(scratchpadContext: context)
                     
                     // always return on main queue
-                    let riderListID = riderList.uid
+                    let riderListID = riderList.uid!
                     DispatchQueue.main.async {
                         success(riderListID)
                     }
