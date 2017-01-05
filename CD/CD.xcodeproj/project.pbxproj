@@ -248,7 +248,7 @@
 				1500414B1E1512890097AC8B /* Start */,
 				152080EC1DF36E48005687C1 /* Pickers */,
 				156C226B1DDE0DA600ACE919 /* Signup Complete Profile */,
-				1588A6D01E115FC300FEA81F /* Setting Menu */,
+				1588A6D01E115FC300FEA81F /* Settings Menu */,
 				152080EB1DF36470005687C1 /* Guest Menu */,
 				1574A7531E0EDD2E00EDA4D0 /* Host Menu */,
 				15327BB11DC63A62000411F7 /* AccomodationViewController.swift */,
@@ -392,12 +392,12 @@
 			name = "Host Menu";
 			sourceTree = "<group>";
 		};
-		1588A6D01E115FC300FEA81F /* Setting Menu */ = {
+		1588A6D01E115FC300FEA81F /* Settings Menu */ = {
 			isa = PBXGroup;
 			children = (
 				1588A6D11E115FDD00FEA81F /* SettingsViewController.swift */,
 			);
-			name = "Setting Menu";
+			name = "Settings Menu";
 			sourceTree = "<group>";
 		};
 		15EE960B1DCA2CBB0003FB51 /* Network */ = {

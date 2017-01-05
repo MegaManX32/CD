@@ -81,4 +81,10 @@ class SettingsViewController: UIViewController {
             
         }
     }
+    
+    @IBAction func profileAction(sender: UIButton) {
+        let controller = self.storyboard?.instantiateViewController(withIdentifier: "HostProfileViewController") as! HostProfileViewController
+        controller.userID = StandardUserDefaults.userID()
+        self.revealViewController().pushFrontViewController(controller, animated: true)
+    }
 }

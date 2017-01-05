@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MBProgressHUD
 
 fileprivate let defaultShownReviews: Int = 2
 fileprivate let sectionInsets = UIEdgeInsets(top: 0.0, left: 20.0, bottom: 0.0, right: 20.0)
@@ -18,6 +19,8 @@ fileprivate let offerViewsHeight: CGFloat = 250
 class HostProfileViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     // MARK: - Properties
+    
+    var userID : String!
     
     @IBOutlet weak var avatarImageView : UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
@@ -42,22 +45,48 @@ class HostProfileViewController: UIViewController, UITableViewDataSource, UITabl
     
     @IBOutlet weak var accomodationCollectionView : UICollectionView!
     @IBOutlet weak var accomodationViewHeightConstraint : NSLayoutConstraint!
-    var accomodationArray = [1, 2]
+    var accomodationArray = [String]()
     
     @IBOutlet weak var transportationCollectionView : UICollectionView!
     @IBOutlet weak var transportationViewHeight : NSLayoutConstraint!
-    var transportationArray = [1, 2]
+    var transportationArray = [String]()
     
     // MARK: - View Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // get user based on ID
+        MBProgressHUD.showAdded(to: self.view, animated: true)
+        NetworkManager.sharedInstance.getUser(userID: self.userID, success: {[unowned self] in
+            let context = CoreDataManager.sharedInstance.mainContext
+            let user = User.findUserWith(uid: self.userID, context: context)!
+            self.populateViewsWithUser(user: user)
+            MBProgressHUD.hide(for: self.view, animated: true)
+        }) {[unowned self] (errorMessage) in
+            print(errorMessage)
+            MBProgressHUD.hide(for: self.view, animated: true)
+        }
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    func populateViewsWithUser(user : User) {
+        
+        // prepare text
+        self.nameLabel.text = user.firstName! + user.lastName!
+        self.addressLabel.text = user.city! + ", " + user.country!
+        
         // prepare avatar
         self.avatarImageView.layer.cornerRadius = 130 / 2.0
         self.avatarImageView.layer.borderWidth = 2.0;
         self.avatarImageView.layer.borderColor = UIColor.white.cgColor
-        self.avatarImageView.image = #imageLiteral(resourceName: "testImage")
+        if let photoURL = user.photoURL {
+            self.avatarImageView.af_setImage(withURL: URL(string: photoURL)!)
+        }
         
         // prepare about view
         if (self.aboutTextLabel.text == nil) {
@@ -78,29 +107,33 @@ class HostProfileViewController: UIViewController, UITableViewDataSource, UITabl
             }
         }
         
-        // prepare accomodation review
-        if self.accomodationArray.count > 0 {
-            self.accomodationViewHeightConstraint.constant = offerViewsHeight
+        if let serviceOffers = user.serviceOffers {
+            var index = 0
+            for serviceOffer in serviceOffers {
+                if let singleServiceOffer = serviceOffer as? ServiceOffer {
+                    if (index == 0) {
+                        if let photoArray = singleServiceOffer.photoUrlList {
+                            self.accomodationArray = photoArray
+                            self.accomodationViewHeightConstraint.constant = offerViewsHeight
+                        }
+                    }
+                    else {
+                        if let photoArray = singleServiceOffer.photoUrlList {
+                            self.transportationArray = photoArray
+                            self.transportationViewHeight.constant = offerViewsHeight
+                        }
+                    }
+                    index += 1
+                }
+            }
         }
         else {
             self.accomodationViewHeightConstraint.constant = 0
-        }
-        
-        // prepare transportation review
-        if self.transportationArray.count > 0 {
-            self.transportationViewHeight.constant = offerViewsHeight
-        }
-        else {
             self.transportationViewHeight.constant = 0
         }
         
         // update container view height
         self.containerViewHeightConstraint.constant = self.aboutViewHeightConstraint.constant + self.reviewViewHeightConstraint.constant + self.accomodationViewHeightConstraint.constant + self.transportationViewHeight.constant
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     // MARK: - Table view data source

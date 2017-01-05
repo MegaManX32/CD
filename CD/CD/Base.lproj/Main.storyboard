@@ -1729,6 +1729,9 @@
                                 <state key="normal" title="Profile">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="profileActionWithSender:" destination="v7N-DX-OI1" eventType="touchUpInside" id="nTb-wx-0vw"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W1N-cQ-qof">
                                 <rect key="frame" x="50" y="348" width="309" height="30"/>
