@@ -34,7 +34,7 @@ class HostMenuTableViewCell: UITableViewCell {
     func populateCellWithRaiderList(hostRiderList: HostRiderList, isLastCell: Bool) {
         self.nameLabel.text = hostRiderList.travelerFullName
         self.countryLabel.text = hostRiderList.travelerCountry
-        self.descriptionLabel.text = hostRiderList.RiderListDetails
+        self.descriptionLabel.text = hostRiderList.riderListDetails
         
         // set avatar
         if let photoURL = hostRiderList.travelerPictureUrl {

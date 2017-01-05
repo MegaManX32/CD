@@ -26,7 +26,8 @@ class HostRiderList {
     var travelerFullName : String?
     var travelerCountry : String?
     var travelerPictureUrl : String?
-    var RiderListDetails : String?
+    var riderListDetails : String?
+    var riderListUid : String?
     
     // MARK: - HostRiderList CRUD
     
@@ -48,7 +49,8 @@ class HostRiderList {
         self.travelerFullName = JSON["TravelerFullName"] as? String
         self.travelerCountry = JSON["TravelerCountry"] as? String
         self.travelerPictureUrl = JSON["TravelerPictureUrl"] as? String
-        self.RiderListDetails = JSON["RiderListDetails"] as? String
+        self.riderListDetails = JSON["RiderListDetails"] as? String
+        self.riderListUid = "4c584051-ba04-4e13-a68f-85a3f014b3e9"//JSON["RiderListUid"] as? String
     }
     
     func asJSON() -> [String : Any] {
@@ -59,7 +61,8 @@ class HostRiderList {
         JSON["TravelerFullName"] = self.travelerFullName
         JSON["TravelerCountry"] =  self.travelerCountry
         JSON["TravelerPictureUrl"] = self.travelerPictureUrl
-        JSON["RiderListDetails"] = self.RiderListDetails
+        JSON["RiderListDetails"] = self.riderListDetails
+        JSON["RiderListUid"] = "4c584051-ba04-4e13-a68f-85a3f014b3e9"//self.riderListUid
         
         return JSON;
     }

@@ -2717,7 +2717,7 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="338" height="371"/>
                                                                 <subviews>
                                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="customDealBackImage" translatesAutoresizingMaskIntoConstraints="NO" id="qxH-rT-uOt">
-                                                                        <rect key="frame" x="50" y="66.5" width="237" height="237"/>
+                                                                        <rect key="frame" x="50" y="67" width="237" height="237"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="237" id="3hb-i7-Bnr"/>
                                                                             <constraint firstAttribute="height" constant="237" id="gMj-dV-uQj"/>

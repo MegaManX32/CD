@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MBProgressHUD
 
 fileprivate let avatarImageViewHeightAndWidth: CGFloat = 80
 fileprivate let interestImageViewHeightAndWidth: CGFloat = 30
@@ -16,6 +17,9 @@ fileprivate let containerViewMinimumHeight: CGFloat = 530
 class HostReviewRequestsViewController: UIViewController {
     
     // MARK: - Properties
+    
+    var currentOfferIndex : Int!
+    var hostRiderListArray : [HostRiderList]!
     
     @IBOutlet weak var numberOfRequestsLabel : UILabel!
     @IBOutlet weak var avatarImageView: UIImageView!
@@ -38,11 +42,66 @@ class HostReviewRequestsViewController: UIViewController {
         self.avatarImageView.layer.cornerRadius = avatarImageViewHeightAndWidth / 2.0
         self.avatarImageView.layer.borderColor = UIColor.white.cgColor
         self.avatarImageView.layer.borderWidth = 2.0
+        
+        self.setNewHostRiderList()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    // MARK: - Helper Methods
+    
+    func setNewHostRiderList() {
+        
+        let hostRiderList = self.hostRiderListArray[self.currentOfferIndex]
+        
+        let riderList = RiderList.findRiderListWith(uid: hostRiderList.riderListUid!, context: CoreDataManager.sharedInstance.mainContext)
+        if let riderList = riderList {
+            self.presentData(riderList: riderList)
+        }
+        else {
+            MBProgressHUD.showAdded(to: self.view, animated: true)
+            NetworkManager.sharedInstance.getRiderList(riderListID: hostRiderList.riderListUid!, success: { [unowned self] (riderListID) in
+                let riderList = RiderList.findRiderListWith(uid: hostRiderList.riderListUid!, context: CoreDataManager.sharedInstance.mainContext)!
+                self.presentData(riderList: riderList)
+                MBProgressHUD.hide(for: self.view, animated: true)
+            }, failure: { [unowned self] (errorMessage) in
+                print(errorMessage)
+                MBProgressHUD.hide(for: self.view, animated: true)
+            })
+        }
+    }
+    
+    func presentData(riderList : RiderList) {
+        let context = CoreDataManager.sharedInstance.mainContext
+        let user = User.findUserWith(uid: riderList.userUid!, context: context)!
+        let meUser = User.findUserWith(uid: StandardUserDefaults.userID(), context: context)!
+
+        // prepare text for guest
+        let hasMutipleOffersEnding = self.hostRiderListArray.count > 1 ? "s!" : "!"
+        self.numberOfRequestsLabel.text = "Hi " + meUser.firstName! + ", you have " + "\(self.hostRiderListArray.count) " + "request" + hasMutipleOffersEnding
+
+        // set data
+        self.titleLabel.text = user.firstName!
+        self.subtitelLabel.text = user.city!
+        self.subtitleLabel2.text = user.country!
+        self.riderListTextView.text = riderList.details
+
+        // set photo
+        if let photoURL = user.photoURL {
+            self.avatarImageView.af_setImage(withURL: URL(string: photoURL)!)
+        }
+
+        // set interests, there should always be 3 interests
+        let interestArray = Array(riderList.interests!)
+        var interest = interestArray[0] as! Interest
+        self.interest1ImageView.image = UIImage.init(named:interest.name!.lowercased())
+        interest = interestArray[1] as! Interest
+        self.interest2ImageView.image = UIImage.init(named:interest.name!.lowercased())
+        interest = interestArray[2] as! Interest
+        self.interest3ImageView.image = UIImage.init(named:interest.name!.lowercased())
     }
     
     // MARK: - User Actions
