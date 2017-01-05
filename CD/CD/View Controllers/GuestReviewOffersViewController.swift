@@ -55,9 +55,9 @@ class GuestReviewOffersViewController: UIViewController {
         self.interest3ImageView.layer.borderWidth = 2.0
         
         // update container view height
-        self.view.layoutIfNeeded()
-        let sizeThatFits = self.riderListTextView.sizeThatFits(CGSize(width: self.riderListTextView.frame.width, height: CGFloat.greatestFiniteMagnitude))
-        self.containerViewHeightConstraint.constant = max(containerViewMinimumHeight, containerViewMinimumHeight + sizeThatFits.height - riderListTextViewViewMinimumHeight)
+//        self.view.layoutIfNeeded()
+//        let sizeThatFits = self.riderListTextView.sizeThatFits(CGSize(width: self.riderListTextView.frame.width, height: CGFloat.greatestFiniteMagnitude))
+//        self.containerViewHeightConstraint.constant = max(containerViewMinimumHeight, containerViewMinimumHeight + sizeThatFits.height - riderListTextViewViewMinimumHeight)
     }
     
     override func didReceiveMemoryWarning() {
@@ -73,6 +73,11 @@ class GuestReviewOffersViewController: UIViewController {
     }
     
     // MARK: - User Actions
+    
+    @IBAction func acceptOffer(sender: UIButton) {
+        let controller = self.storyboard?.instantiateViewController(withIdentifier: "GuestRiderListAcceptedViewController") as! GuestRiderListAcceptedViewController
+        self.show(controller, sender: self)
+    }
     
     @IBAction func backAction(sender: UIButton) {
         _ = self.navigationController?.popViewController(animated: true)
