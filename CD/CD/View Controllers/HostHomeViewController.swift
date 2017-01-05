@@ -22,34 +22,41 @@ class HostHomeViewController: UIViewController, UITableViewDataSource, UITableVi
     @IBOutlet weak var someRequestsNumberLabel : UILabel!
     @IBOutlet weak var someRequestsViewHeightConstraint : NSLayoutConstraint!
     
-    var requestsArray = [Any]()
+    var hostRiderListArray = [HostRiderList]()
     
     // MARK: - View Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        // get all users first , we will need them
-//        MBProgressHUD.showAdded(to: self.view, animated: true)
-//        NetworkManager.sharedInstance.getAllRaiderListsForHost(hostID: StandardUserDefaults.userID(), success: {[unowned self] in
-//            MBProgressHUD.hide(for: self.view, animated: true)
-//        }) {[unowned self] (errorMessage) in
-//            print(errorMessage)
-//            MBProgressHUD.hide(for: self.view, animated: true)
-//        }
+    }
 
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        // prepare presentation
+        self.prepareDataForPresentation()
         
-        self.requestsArray = [1, 2, 3, 4, 5]
-        if self.requestsArray.count == 0 {
-            self.noRequestsView.isHidden = false
-            self.someRequestsView.isHidden = true
-            
-            // prepare view for no requests
-            self.noRequestsView.layer.cornerRadius = 4.0
-            self.noRequestsView.layer.borderColor = UIColor.white.cgColor
-            self.noRequestsView.layer.borderWidth = 2.0
-        }
-        else {
+        MBProgressHUD.showAdded(to: self.view, animated: true)
+        let userID = StandardUserDefaults.userID()
+        NetworkManager.sharedInstance.getAllRiderListsForHost(hostID: userID, success: { [unowned self] (hostRiderListArray) in
+            self.hostRiderListArray = hostRiderListArray
+            self.prepareDataForPresentation()
+            MBProgressHUD.hide(for: self.view, animated: true)
+        }, failure: {[unowned self] (errorMessage) in
+            print(errorMessage)
+            MBProgressHUD.hide(for: self.view, animated: true)
+        })
+    }
+    
+    func prepareDataForPresentation() {
+        
+        if (self.hostRiderListArray.count > 0) {
+        
             self.noRequestsView.isHidden = true
             self.someRequestsView.isHidden = false
             
@@ -57,16 +64,22 @@ class HostHomeViewController: UIViewController, UITableViewDataSource, UITableVi
             self.someRequestsView.layer.cornerRadius = 4.0
             self.someRequestsView.layer.borderColor = UIColor.white.cgColor
             self.someRequestsView.layer.borderWidth = 2.0
-            self.someRequestsViewHeightConstraint.constant = CGFloat(self.requestsArray.count) * HostMenuTableViewCell.cellHeight() + someRequestsViewHeight
+            self.someRequestsViewHeightConstraint.constant = CGFloat(self.hostRiderListArray.count) * HostMenuTableViewCell.cellHeight() + someRequestsViewHeight
             
-            let endString = (self.requestsArray.count == 1) ? "!" : "s!"
-            self.someRequestsNumberLabel.text = "You have \(self.requestsArray.count) " + "request" + endString
+            let endString = (self.hostRiderListArray.count == 1) ? "!" : "s!"
+            self.someRequestsNumberLabel.text = "You have \(self.hostRiderListArray.count) " + "request" + endString
+            
+            // reload data
+            self.tableView.reloadData()
         }
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        else {
+            // prepare view for no requests
+            self.noRequestsView.isHidden = false
+            self.someRequestsView.isHidden = true
+            self.noRequestsView.layer.cornerRadius = 4.0
+            self.noRequestsView.layer.borderColor = UIColor.white.cgColor
+            self.noRequestsView.layer.borderWidth = 2.0
+        }
     }
     
     // MARK: - User Actions
@@ -82,12 +95,12 @@ class HostHomeViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.requestsArray.count
+        return self.hostRiderListArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier:HostMenuTableViewCell.cellIdentifier(), for: indexPath) as! HostMenuTableViewCell
-        cell.populateCellWithRaiderList(riderList: nil, isLastCell: indexPath.row == self.requestsArray.count - 1)
+        cell.populateCellWithRaiderList(hostRiderList: self.hostRiderListArray[indexPath.row], isLastCell: indexPath.row == self.hostRiderListArray.count - 1)
         return cell
     }
     

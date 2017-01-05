@@ -9,10 +9,6 @@
         <attribute name="countryName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="uid" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
-    <entity name="HostRiderList" representedClassName="HostRiderList" syncable="YES" codeGenerationType="class">
-        <attribute name="hostuid" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="uid" optional="YES" attributeType="String" syncable="YES"/>
-    </entity>
     <entity name="Interest" representedClassName="Interest" syncable="YES" codeGenerationType="class">
         <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="iconUrl" optional="YES" attributeType="String" syncable="YES"/>
@@ -96,6 +92,5 @@
         <element name="RiderListOffer" positionX="-45" positionY="144" width="128" height="150"/>
         <element name="ServiceOffer" positionX="-54" positionY="117" width="128" height="120"/>
         <element name="User" positionX="-63" positionY="-18" width="128" height="375"/>
-        <element name="HostRiderList" positionX="-54" positionY="135" width="128" height="75"/>
     </elements>
 </model>

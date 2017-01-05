@@ -31,10 +31,17 @@ class HostMenuTableViewCell: UITableViewCell {
     
     // MARK: - Helper methods
     
-    func populateCellWithRaiderList(riderList:RiderList?, isLastCell: Bool) {
-        self.nameLabel.text = "Vlado"
-        self.countryLabel.text = "Serbia"
-        self.avatarImageView.image = nil
+    func populateCellWithRaiderList(hostRiderList: HostRiderList, isLastCell: Bool) {
+        self.nameLabel.text = hostRiderList.travelerFullName
+        self.countryLabel.text = hostRiderList.travelerCountry
+        self.descriptionLabel.text = hostRiderList.RiderListDetails
+        
+        // set avatar
+        if let photoURL = hostRiderList.travelerPictureUrl {
+            self.avatarImageView.af_setImage(withURL: URL(string: photoURL)!)
+        }
+        
+        // set separator
         self.separatorView.isHidden = isLastCell
     }
     

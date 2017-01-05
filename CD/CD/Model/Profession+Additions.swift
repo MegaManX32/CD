@@ -49,5 +49,4 @@ extension Profession {
         
         return JSON;
     }
-
 }

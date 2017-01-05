@@ -7,11 +7,10 @@
 //
 
 import UIKit
+import MBProgressHUD
 
 fileprivate let avatarImageViewHeightAndWidth: CGFloat = 80
 fileprivate let interestImageViewHeightAndWidth: CGFloat = 30
-fileprivate let riderListTextViewViewMinimumHeight: CGFloat = 95
-fileprivate let containerViewMinimumHeight: CGFloat = 530
 
 class GuestReviewOffersViewController: UIViewController {
     
@@ -93,8 +92,33 @@ class GuestReviewOffersViewController: UIViewController {
     // MARK: - User Actions
     
     @IBAction func acceptOffer(sender: UIButton) {
-        let controller = self.storyboard?.instantiateViewController(withIdentifier: "GuestRiderListAcceptedViewController") as! GuestRiderListAcceptedViewController
-        self.show(controller, sender: self)
+        
+        MBProgressHUD .showAdded(to: self.view, animated: true)
+        let selectedOffer = self.riderListOffersArray[self.currentOfferIndex]
+        let selectedOfferID = selectedOffer.uid!
+        let context = CoreDataManager.sharedInstance.createScratchpadContext(onMainThread: false)
+        context.perform {
+            [unowned self] in
+            
+            // get rider list
+            let riderList = RiderList.findRiderListWith(uid: self.riderListID, context: context)!
+            
+            // get selected offer
+            let selectedOffer = RiderListOffer.findRiderListOfferWith(id: selectedOfferID, context: context)!
+            
+            // set selected offer
+            riderList.selectedRiderListOffer = selectedOffer
+            
+            // update rider list with selected offer
+            NetworkManager.sharedInstance.createOrUpdate(riderList: riderList, context: context, success: { [unowned self] (riderListID) in
+                let controller = self.storyboard?.instantiateViewController(withIdentifier: "GuestRiderListAcceptedViewController") as! GuestRiderListAcceptedViewController
+                self.show(controller, sender: self)
+                MBProgressHUD.hide(for: self.view, animated: true)
+            }, failure: {[unowned self] (errorMessage) in
+                print(errorMessage)
+                MBProgressHUD.hide(for: self.view, animated: true)
+            })
+        }
     }
     
     @IBAction func backAction(sender: UIButton) {
@@ -103,7 +127,7 @@ class GuestReviewOffersViewController: UIViewController {
     
     @IBAction func ignoreOffer(sender: UIButton) {
         UIView.transition(from: self.pageView, to: self.pageView, duration: 0.5, options: [.transitionCurlUp, .showHideTransitionViews]) { (finished) in
-            
+            // prepare for transitions
         }
     }
 }
