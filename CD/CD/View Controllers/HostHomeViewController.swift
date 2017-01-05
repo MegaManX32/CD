@@ -15,14 +15,14 @@ class HostHomeViewController: UIViewController, UITableViewDataSource, UITableVi
     
     // MARK: - Properties
     
+    var hostRiderListArray = [HostRiderList]()
+    
     @IBOutlet weak var tableView : UITableView!
     @IBOutlet weak var hiLabel : UILabel!
     @IBOutlet weak var noRequestsView : UIView!
     @IBOutlet weak var someRequestsView : UIView!
     @IBOutlet weak var someRequestsNumberLabel : UILabel!
     @IBOutlet weak var someRequestsViewHeightConstraint : NSLayoutConstraint!
-    
-    var hostRiderListArray = [HostRiderList]()
     
     // MARK: - View Lifecycle
 
@@ -57,8 +57,8 @@ class HostHomeViewController: UIViewController, UITableViewDataSource, UITableVi
         
         if (self.hostRiderListArray.count > 0) {
         
-            self.noRequestsView.isHidden = true
-            self.someRequestsView.isHidden = false
+            self.noRequestsView.alpha = 0
+            self.someRequestsView.alpha = 1
             
             // prepare view for some requests
             self.someRequestsView.layer.cornerRadius = 4.0
@@ -74,8 +74,8 @@ class HostHomeViewController: UIViewController, UITableViewDataSource, UITableVi
         }
         else {
             // prepare view for no requests
-            self.noRequestsView.isHidden = false
-            self.someRequestsView.isHidden = true
+            self.noRequestsView.alpha = 1
+            self.someRequestsView.alpha = 0
             self.noRequestsView.layer.cornerRadius = 4.0
             self.noRequestsView.layer.borderColor = UIColor.white.cgColor
             self.noRequestsView.layer.borderWidth = 2.0

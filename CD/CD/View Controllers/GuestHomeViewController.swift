@@ -40,34 +40,31 @@ class GuestHomeViewController: UIViewController, UITableViewDataSource, UITableV
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        // add start data
-        self.overviewLabel.isHidden = true
-        self.yourRiderListView.isHidden = true
-        self.riderListOffersView.isHidden = true
-        self.createRiderListView.isHidden = false
+        // prepare presentation
+        self.prepareDataForPresentation()
         
         // get rider list for user
-        MBProgressHUD.showAdded(to: self.view, animated: true)
-        NetworkManager.sharedInstance.getRiderListForLoggedUser(success: { [unowned self] (riderListID) in
-            let context = CoreDataManager.sharedInstance.mainContext
-            self.yourRiderList = RiderList.findRiderListWith(uid: riderListID, context: context)
-            self.prepareDataForPresentation()
-            MBProgressHUD.hide(for: self.view, animated: true)
-            }, failure: { [unowned self] (errorMessage) in
-            print(errorMessage)
-            MBProgressHUD.hide(for: self.view, animated: true)
-        })
+//        MBProgressHUD.showAdded(to: self.view, animated: true)
+//        NetworkManager.sharedInstance.getRiderListForLoggedUser(success: { [unowned self] (riderListID) in
+//            let context = CoreDataManager.sharedInstance.mainContext
+//            self.yourRiderList = RiderList.findRiderListWith(uid: riderListID, context: context)
+//            self.prepareDataForPresentation()
+//            MBProgressHUD.hide(for: self.view, animated: true)
+//            }, failure: { [unowned self] (errorMessage) in
+//            print(errorMessage)
+//            MBProgressHUD.hide(for: self.view, animated: true)
+//        })
     }
     
     func prepareDataForPresentation() {
         if let riderListOffersSet = self.yourRiderList?.riderListOffers {
             self.riderListOffersArray = Array(riderListOffersSet) as! [RiderListOffer]
             
-            if self.riderListOffersArray.count != 0 {
-                self.overviewLabel.isHidden = false
-                self.yourRiderListView.isHidden = false
-                self.riderListOffersView.isHidden = false
-                self.createRiderListView.isHidden = true
+            if self.riderListOffersArray.count > 0 {
+                self.overviewLabel.alpha = 1
+                self.yourRiderListView.alpha = 1
+                self.riderListOffersView.alpha = 1
+                self.createRiderListView.alpha = 0
                 
                 // prepare views for rider list and offers
                 self.yourRiderListView.layer.cornerRadius = 4.0
@@ -81,8 +78,16 @@ class GuestHomeViewController: UIViewController, UITableViewDataSource, UITableV
                 
                 let endString = (self.riderListOffersArray.count == 1) ? "!" : "s!"
                 self.numberOfRiderListOffersLabel.text = "You have \(self.riderListOffersArray.count) " + "offer" + endString
+                
+                return
             }
         }
+        
+        // show no requests view
+        self.overviewLabel.alpha = 0
+        self.yourRiderListView.alpha = 0
+        self.riderListOffersView.alpha = 0
+        self.createRiderListView.alpha = 1
     }
     
     // MARK: - User Actions
