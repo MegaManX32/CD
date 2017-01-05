@@ -26,12 +26,17 @@ class GuestReviewOffersViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subtitelLabel: UILabel!
     @IBOutlet weak var subtitleLabel2: UILabel!
+    @IBOutlet weak var star1ImageView : UIImageView!
+    @IBOutlet weak var star2ImageView : UIImageView!
+    @IBOutlet weak var star3ImageView : UIImageView!
+    @IBOutlet weak var star4ImageView : UIImageView!
+    @IBOutlet weak var star5ImageView : UIImageView!
     @IBOutlet weak var interest1ImageView : UIImageView!
     @IBOutlet weak var interest2ImageView : UIImageView!
     @IBOutlet weak var interest3ImageView : UIImageView!
     @IBOutlet weak var pageView: UIView!
     
-    @IBOutlet weak var bestTimeLabel : UILabel!
+    @IBOutlet weak var priceLabel : UILabel!
     @IBOutlet weak var riderListTextView : UITextView!
     
     // MARK: - View Lifecycle
@@ -66,6 +71,9 @@ class GuestReviewOffersViewController: UIViewController {
         self.subtitelLabel.text = user.city!
         self.subtitleLabel2.text = user.country!
         self.riderListTextView.text = riderListOffer.message
+        
+        // set price
+        self.priceLabel.text = "Price: " + "\(riderListOffer.price)"
         
         // set photo
         if let photoURL = user.photoURL {
