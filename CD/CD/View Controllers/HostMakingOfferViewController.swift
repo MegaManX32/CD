@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import MBProgressHUD
 
 class HostMakingOfferViewController: UIViewController {
     
     // MARK: - Properties
+    
+    var riderListID : String!
     
     @IBOutlet weak var priceTextField : UITextField!
     @IBOutlet weak var commentTextView: UITextView!
@@ -46,8 +49,30 @@ class HostMakingOfferViewController: UIViewController {
                 CustomAlert.presentAlert(message: "You must enter valid price", controller: self)
                 return
         }
-        print(price)
-        let controller = self.storyboard?.instantiateViewController(withIdentifier: "HostRiderListAcceptedViewController") as! HostRiderListAcceptedViewController
-        self.show(controller, sender: self)
+        
+        // get currently logged user
+        let userID = StandardUserDefaults.userID()
+        
+        // create offer
+        MBProgressHUD.showAdded(to: self.view, animated: true)
+        let context = CoreDataManager.sharedInstance.createScratchpadContext(onMainThread: false)
+        context.perform {
+            [unowned self] in
+            
+            let riderListOffer = RiderListOffer(context: context)
+            riderListOffer.message = self.commentTextView.text
+            riderListOffer.price = price as NSNumber?
+            riderListOffer.offerorUid = userID
+            riderListOffer.riderListId = self.riderListID
+            
+            NetworkManager.sharedInstance.createOrUpdate(riderListOffer: riderListOffer, context: context, success: { [unowned self] (riderListOfferID) in
+                let controller = self.storyboard?.instantiateViewController(withIdentifier: "HostRiderListAcceptedViewController") as! HostRiderListAcceptedViewController
+                self.show(controller, sender: self)
+                MBProgressHUD.hide(for: self.view, animated: true)
+            }, failure: { [unowned self] (errorMessage) in
+                print(errorMessage)
+                MBProgressHUD.hide(for: self.view, animated: true)
+            })
+        }
     }
 }
