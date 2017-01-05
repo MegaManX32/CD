@@ -96,7 +96,8 @@ class HostHomeViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        let controller = self.storyboard?.instantiateViewController(withIdentifier: "HostReviewRequestsViewController") as! HostReviewRequestsViewController
+        self.show(controller, sender: self)
     }
 
 }

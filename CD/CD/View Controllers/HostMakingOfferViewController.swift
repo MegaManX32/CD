@@ -40,5 +40,14 @@ class HostMakingOfferViewController: UIViewController {
     
     @IBAction func submit(sender: UIButton) {
         
+        // simple validation
+        guard let priceText = self.priceTextField?.text, let price = Int(priceText)
+            else {
+                CustomAlert.presentAlert(message: "You must enter valid price", controller: self)
+                return
+        }
+        print(price)
+        let controller = self.storyboard?.instantiateViewController(withIdentifier: "HostRiderListAcceptedViewController") as! HostRiderListAcceptedViewController
+        self.show(controller, sender: self)
     }
 }

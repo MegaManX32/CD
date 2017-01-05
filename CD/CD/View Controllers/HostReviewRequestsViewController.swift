@@ -69,6 +69,11 @@ class HostReviewRequestsViewController: UIViewController {
         _ = self.navigationController?.popViewController(animated: true)
     }
     
+    @IBAction func offer(sender: UIButton) {
+        let controller = self.storyboard?.instantiateViewController(withIdentifier: "HostMakingOfferViewController") as! HostMakingOfferViewController
+        self.show(controller, sender: self)
+    }
+    
     @IBAction func ignoreOffer(sender: UIButton) {
         UIView.transition(from: self.pageView, to: self.pageView, duration: 0.5, options: [.transitionCurlUp, .showHideTransitionViews]) { (finished) in
             // do nothing
