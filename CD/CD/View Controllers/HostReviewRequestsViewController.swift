@@ -55,8 +55,8 @@ class HostReviewRequestsViewController: UIViewController {
     
     func setNewHostRiderList() {
         
+        // get current host rider list
         let hostRiderList = self.hostRiderListArray[self.currentOfferIndex]
-        
         let riderList = RiderList.findRiderListWith(uid: hostRiderList.riderListUid!, context: CoreDataManager.sharedInstance.mainContext)
         if let riderList = riderList {
             self.presentData(riderList: riderList)
@@ -112,12 +112,16 @@ class HostReviewRequestsViewController: UIViewController {
     
     @IBAction func offer(sender: UIButton) {
         let controller = self.storyboard?.instantiateViewController(withIdentifier: "HostMakingOfferViewController") as! HostMakingOfferViewController
+        controller.riderListID = self.hostRiderListArray[self.currentOfferIndex].riderListUid
         self.show(controller, sender: self)
     }
     
     @IBAction func ignoreOffer(sender: UIButton) {
         UIView.transition(from: self.pageView, to: self.pageView, duration: 0.5, options: [.transitionCurlUp, .showHideTransitionViews]) { (finished) in
-            // do nothing
+            
+            // set new page
+            self.currentOfferIndex = (self.currentOfferIndex + 1) % self.hostRiderListArray.count
+            self.setNewHostRiderList()
         }
     }
 }

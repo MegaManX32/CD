@@ -46,6 +46,8 @@ class GuestReviewOffersViewController: UIViewController {
         self.avatarImageView.layer.cornerRadius = avatarImageViewHeightAndWidth / 2.0
         self.avatarImageView.layer.borderColor = UIColor.white.cgColor
         self.avatarImageView.layer.borderWidth = 2.0
+        
+        self.setNewRiderListOffer()
     }
     
     override func didReceiveMemoryWarning() {
@@ -55,11 +57,12 @@ class GuestReviewOffersViewController: UIViewController {
     
     // MARK: - Helper Methods
     
-    func setNewRiderListOffer(riderListOffer : RiderListOffer) {
+    func setNewRiderListOffer() {
+        
+        let riderListOffer = self.riderListOffersArray[self.currentOfferIndex]
         let context = CoreDataManager.sharedInstance.mainContext
         let user = User.findUserWith(uid: riderListOffer.offerorUid!, context: context)!
         let meUser = User.findUserWith(uid: StandardUserDefaults.userID(), context: context)!
-        let riderListOffer = self.riderListOffersArray[self.currentOfferIndex]
         
         // prepare text for guest
         let hasMutipleOffersEnding = self.riderListOffersArray.count > 1 ? "s!" : "!"
@@ -127,7 +130,10 @@ class GuestReviewOffersViewController: UIViewController {
     
     @IBAction func ignoreOffer(sender: UIButton) {
         UIView.transition(from: self.pageView, to: self.pageView, duration: 0.5, options: [.transitionCurlUp, .showHideTransitionViews]) { (finished) in
-            // prepare for transitions
+            
+            // set new page
+            self.currentOfferIndex = (self.currentOfferIndex + 1) % self.riderListOffersArray.count
+            self.setNewRiderListOffer()
         }
     }
 }
