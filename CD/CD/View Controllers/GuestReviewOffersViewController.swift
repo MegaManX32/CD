@@ -17,6 +17,10 @@ class GuestReviewOffersViewController: UIViewController {
     
     // MARK: - Properties
     
+    var riderListID : String!
+    var currentOfferIndex : Int!
+    var riderListOffersArray : [RiderListOffer]! // there should always be an offer, if we are on this screen
+    
     @IBOutlet weak var numberOfOffersLabel : UILabel!
     @IBOutlet weak var avatarImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
@@ -29,8 +33,6 @@ class GuestReviewOffersViewController: UIViewController {
     
     @IBOutlet weak var bestTimeLabel : UILabel!
     @IBOutlet weak var riderListTextView : UITextView!
-    
-    var riderListOffersArray : [RiderListOffer]! // there should always be an offer, if we are on this creen
     
     // MARK: - View Lifecycle
     
@@ -50,8 +52,34 @@ class GuestReviewOffersViewController: UIViewController {
     // MARK: - Helper Methods
     
     func setNewRiderListOffer(riderListOffer : RiderListOffer) {
-        let mainContext = CoreDataManager.sharedInstance.mainContext
-        let user = User.findUserWith(uid: riderListOffer.uid!, context: mainContext)!
+        let context = CoreDataManager.sharedInstance.mainContext
+        let user = User.findUserWith(uid: riderListOffer.offerorUid!, context: context)!
+        let meUser = User.findUserWith(uid: StandardUserDefaults.userID(), context: context)!
+        let riderListOffer = self.riderListOffersArray[self.currentOfferIndex]
+        
+        // prepare text for guest
+        let hasMutipleOffersEnding = self.riderListOffersArray.count > 1 ? "s!" : "!"
+        self.numberOfOffersLabel.text = meUser.firstName! + ", you have " + "\(self.riderListOffersArray.count) " + "offer" + hasMutipleOffersEnding
+        
+        // set data
+        self.titleLabel.text = user.firstName!
+        self.subtitelLabel.text = user.city!
+        self.subtitleLabel2.text = user.country!
+        self.riderListTextView.text = riderListOffer.message
+        
+        // set photo
+        if let photoURL = user.photoURL {
+            self.avatarImageView.af_setImage(withURL: URL(string: photoURL)!)
+        }
+        
+        // set interests, there should always be 3 interests
+        let interestArray = Array(user.interests!)
+        var interest = interestArray[0] as! Interest
+        self.interest1ImageView.image = UIImage.init(named:interest.name!.lowercased())
+        interest = interestArray[1] as! Interest
+        self.interest2ImageView.image = UIImage.init(named:interest.name!.lowercased())
+        interest = interestArray[2] as! Interest
+        self.interest3ImageView.image = UIImage.init(named:interest.name!.lowercased())
     }
     
     // MARK: - User Actions

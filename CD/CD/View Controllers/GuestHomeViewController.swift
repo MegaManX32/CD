@@ -123,6 +123,9 @@ class GuestHomeViewController: UIViewController, UITableViewDataSource, UITableV
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let controller = self.storyboard?.instantiateViewController(withIdentifier: "GuestReviewOffersViewController") as! GuestReviewOffersViewController
+        controller.riderListID = self.yourRiderList?.uid!
+        controller.currentOfferIndex = indexPath.row
+        controller.riderListOffersArray = self.riderListOffersArray
         self.show(controller, sender: self)
     }
 }
