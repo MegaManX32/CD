@@ -74,7 +74,7 @@
 		1588A6CD1E11369800FEA81F /* HostMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1588A6CC1E11369800FEA81F /* HostMenuTableViewCell.swift */; };
 		1588A6CF1E1154D200FEA81F /* GuestMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1588A6CE1E1154D200FEA81F /* GuestMenuTableViewCell.swift */; };
 		1588A6D21E115FDD00FEA81F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1588A6D11E115FDD00FEA81F /* SettingsViewController.swift */; };
-		1588A6D41E11765F00FEA81F /* RiderListPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1588A6D31E11765F00FEA81F /* RiderListPreviewViewController.swift */; };
+		1588AD0C1E1E825900B17956 /* GuestRiderListPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1588AD0B1E1E825900B17956 /* GuestRiderListPreviewViewController.swift */; };
 		158E240A1DCE0A5D000FE262 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158E24091DCE0A5D000FE262 /* CoreDataManager.swift */; };
 		15ACE31B1E11C7FE00012B5B /* HostReviewRequestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15ACE31A1E11C7FE00012B5B /* HostReviewRequestsViewController.swift */; };
 		15CAE37E1DEC86A000DED25C /* Country+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CAE37D1DEC86A000DED25C /* Country+Additions.swift */; };
@@ -163,7 +163,7 @@
 		1588A6CC1E11369800FEA81F /* HostMenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HostMenuTableViewCell.swift; sourceTree = "<group>"; };
 		1588A6CE1E1154D200FEA81F /* GuestMenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuestMenuTableViewCell.swift; sourceTree = "<group>"; };
 		1588A6D11E115FDD00FEA81F /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		1588A6D31E11765F00FEA81F /* RiderListPreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RiderListPreviewViewController.swift; sourceTree = "<group>"; };
+		1588AD0B1E1E825900B17956 /* GuestRiderListPreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuestRiderListPreviewViewController.swift; sourceTree = "<group>"; };
 		158E24091DCE0A5D000FE262 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		15ACE31A1E11C7FE00012B5B /* HostReviewRequestsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HostReviewRequestsViewController.swift; sourceTree = "<group>"; };
 		15CAE37D1DEC86A000DED25C /* Country+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Country+Additions.swift"; sourceTree = "<group>"; };
@@ -207,7 +207,7 @@
 				1574A7511E0ED6B000EDA4D0 /* GuestHomeViewController.swift */,
 				1588A6CE1E1154D200FEA81F /* GuestMenuTableViewCell.swift */,
 				15327BB21DC63A62000411F7 /* CreateRiderListViewController.swift */,
-				1588A6D31E11765F00FEA81F /* RiderListPreviewViewController.swift */,
+				1588AD0B1E1E825900B17956 /* GuestRiderListPreviewViewController.swift */,
 				155BA89E1E12740000C7D6E4 /* GuestReviewOffersViewController.swift */,
 				155BA8A21E127ED900C7D6E4 /* GuestRiderListAcceptedViewController.swift */,
 			);
@@ -579,6 +579,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				15327BC31DC63A62000411F7 /* HostFeedbackViewController.swift in Sources */,
+				1588AD0C1E1E825900B17956 /* GuestRiderListPreviewViewController.swift in Sources */,
 				154A54481D9FD11D0021A803 /* IntroButton.swift in Sources */,
 				15327BD01DC63A62000411F7 /* StartViewController.swift in Sources */,
 				15327BCD1DC63A62000411F7 /* SignupViewController.swift in Sources */,
@@ -617,7 +618,6 @@
 				152080EE1DF36E60005687C1 /* DatePickerViewController.swift in Sources */,
 				15327BCA1DC63A62000411F7 /* SignupFourDigitCodeViewController.swift in Sources */,
 				1574A7501E0ED31400EDA4D0 /* SWRevealViewController.m in Sources */,
-				1588A6D41E11765F00FEA81F /* RiderListPreviewViewController.swift in Sources */,
 				15CAE37E1DEC86A000DED25C /* Country+Additions.swift in Sources */,
 				15327BC91DC63A62000411F7 /* SignupFinishedViewController.swift in Sources */,
 				153C80D21DABB57000DBEDCD /* ButtonView.swift in Sources */,

@@ -74,6 +74,11 @@ class GuestHomeViewController: UIViewController, UITableViewDataSource, UITableV
         self.show(controller, sender: self)
     }
     
+    @IBAction func reviewRiderList(sender: UIButton) {
+        let controller = self.storyboard?.instantiateViewController(withIdentifier: "GuestRiderListPreviewViewController") as! GuestRiderListPreviewViewController
+        self.show(controller, sender: self)
+    }
+    
     // MARK: - Table view data source
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -95,6 +100,7 @@ class GuestHomeViewController: UIViewController, UITableViewDataSource, UITableV
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        let controller = self.storyboard?.instantiateViewController(withIdentifier: "GuestReviewOffersViewController") as! GuestReviewOffersViewController
+        self.show(controller, sender: self)
     }
 }

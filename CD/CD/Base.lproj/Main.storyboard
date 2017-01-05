@@ -1987,7 +1987,7 @@
                                         <rect key="frame" x="8" y="84" width="343" height="82"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <connections>
-                                            <segue destination="Cme-Gr-yXe" kind="show" id="H2G-2Y-kbK"/>
+                                            <action selector="reviewRiderListWithSender:" destination="PTd-Wg-Xfc" eventType="touchUpInside" id="9Og-UY-F8d"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -2032,11 +2032,11 @@
                                             <constraint firstAttribute="height" constant="2" id="tIM-1O-nPP"/>
                                         </constraints>
                                     </view>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="99" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uvJ-Rw-ekF">
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="99" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uvJ-Rw-ekF">
                                         <rect key="frame" x="8" y="68" width="343" height="252"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GuestMenuTableViewCell" rowHeight="110" id="zjw-es-ukm" customClass="GuestMenuTableViewCell" customModule="CD" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="GuestMenuTableViewCell" rowHeight="110" id="zjw-es-ukm" customClass="GuestMenuTableViewCell" customModule="CD" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="343" height="110"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zjw-es-ukm" id="f31-Dt-fBO">
@@ -3811,10 +3811,10 @@
             </objects>
             <point key="canvasLocation" x="7028" y="421"/>
         </scene>
-        <!--Rider List Preview View Controller-->
+        <!--Guest Rider List Preview View Controller-->
         <scene sceneID="LIX-24-qWd">
             <objects>
-                <viewController storyboardIdentifier="RiderListPreviewViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Cme-Gr-yXe" customClass="RiderListPreviewViewController" customModule="CD" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GuestRiderListPreviewViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Cme-Gr-yXe" customClass="GuestRiderListPreviewViewController" customModule="CD" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="yeR-0p-3jO"/>
                         <viewControllerLayoutGuide type="bottom" id="Jis-vT-7fi"/>
@@ -4080,7 +4080,7 @@
                             <constraint firstItem="3GM-ra-Bu1" firstAttribute="leading" secondItem="dSK-Od-UQD" secondAttribute="leading" id="DkE-KP-mBi"/>
                             <constraint firstItem="Jis-vT-7fi" firstAttribute="top" secondItem="Lka-1l-U4W" secondAttribute="bottom" constant="20" id="NII-w7-RVw"/>
                             <constraint firstItem="Jis-vT-7fi" firstAttribute="top" secondItem="udS-1M-qca" secondAttribute="bottom" constant="20" id="NKM-ID-MrU"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="64V-oq-M8C" secondAttribute="trailing" constant="-16" id="RUV-OF-z8B"/>
+                            <constraint firstAttribute="trailing" secondItem="64V-oq-M8C" secondAttribute="trailing" id="RUV-OF-z8B"/>
                             <constraint firstItem="Lka-1l-U4W" firstAttribute="top" secondItem="3GM-ra-Bu1" secondAttribute="bottom" constant="48" id="SP5-1N-CgU"/>
                             <constraint firstItem="64V-oq-M8C" firstAttribute="top" secondItem="yeR-0p-3jO" secondAttribute="bottom" constant="-20" id="UvG-i5-VsJ"/>
                             <constraint firstItem="udS-1M-qca" firstAttribute="centerX" secondItem="dSK-Od-UQD" secondAttribute="centerX" id="WqX-Z6-VAo"/>
@@ -4089,7 +4089,7 @@
                             <constraint firstItem="Jis-vT-7fi" firstAttribute="top" secondItem="64V-oq-M8C" secondAttribute="bottom" id="dW2-QI-jBu"/>
                             <constraint firstAttribute="trailing" secondItem="Lka-1l-U4W" secondAttribute="trailing" constant="8" id="poO-kN-Ubl"/>
                             <constraint firstItem="3GM-ra-Bu1" firstAttribute="top" secondItem="yeR-0p-3jO" secondAttribute="bottom" constant="-20" id="q7V-tr-s52"/>
-                            <constraint firstItem="64V-oq-M8C" firstAttribute="leading" secondItem="dSK-Od-UQD" secondAttribute="leadingMargin" constant="-16" id="sry-Uu-XGO"/>
+                            <constraint firstItem="64V-oq-M8C" firstAttribute="leading" secondItem="dSK-Od-UQD" secondAttribute="leading" id="sry-Uu-XGO"/>
                         </constraints>
                     </view>
                     <connections>

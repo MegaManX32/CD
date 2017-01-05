@@ -1,9 +1,9 @@
 //
-//  RiderListPreviewViewController.swift
+//  GuestRiderListPreviewViewController.swift
 //  CD
 //
-//  Created by Vladislav Simovic on 12/26/16.
-//  Copyright © 2016 CustomDeal. All rights reserved.
+//  Created by Vladislav Simovic on 1/5/17.
+//  Copyright © 2017 CustomDeal. All rights reserved.
 //
 
 import UIKit
@@ -11,7 +11,7 @@ import UIKit
 fileprivate let avatarImageViewHeightAndWidth: CGFloat = 80
 fileprivate let interestImageViewHeightAndWidth: CGFloat = 30
 
-class RiderListPreviewViewController: UIViewController {
+class GuestRiderListPreviewViewController: UIViewController {
     
     // MARK: - Properties
     
@@ -27,10 +27,10 @@ class RiderListPreviewViewController: UIViewController {
     @IBOutlet weak var riderListTextView : UITextView!
     
     // MARK: - View Lifecycle
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         self.avatarImageView.layer.cornerRadius = avatarImageViewHeightAndWidth / 2.0
         self.avatarImageView.layer.borderColor = UIColor.white.cgColor
         self.avatarImageView.layer.borderWidth = 2.0
@@ -47,7 +47,7 @@ class RiderListPreviewViewController: UIViewController {
         self.interest3ImageView.layer.borderColor = UIColor.white.cgColor
         self.interest3ImageView.layer.borderWidth = 2.0
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
