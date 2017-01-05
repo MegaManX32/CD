@@ -32,4 +32,11 @@ class StandardDateFormatter {
         let newDateComponents = Calendar.current.dateComponents([.year, .month, .day], from: date)
         return Calendar.current.date(from: newDateComponents)!
     }
+    
+    static func formatDate(fromDate: Date, toDate: Date) -> String {
+//        let fromDateComponents = Calendar.current.dateComponents([.year, .month, .day], from: fromDate)
+//        let toDateComponents = Calendar.current.dateComponents([.year, .month, .day], from: toDate)
+        
+        return "from" + self.presentationStringFrom(date: fromDate) + " until " + self.presentationStringFrom(date: toDate)
+    }
 }

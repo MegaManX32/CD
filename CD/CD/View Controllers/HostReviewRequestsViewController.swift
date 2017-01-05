@@ -29,7 +29,6 @@ class HostReviewRequestsViewController: UIViewController {
     
     @IBOutlet weak var bestTimeLabel : UILabel!
     @IBOutlet weak var riderListTextView : UITextView!
-    @IBOutlet weak var containerViewHeightConstraint : NSLayoutConstraint!
     
     // MARK: - View Lifecycle
 
@@ -39,11 +38,6 @@ class HostReviewRequestsViewController: UIViewController {
         self.avatarImageView.layer.cornerRadius = avatarImageViewHeightAndWidth / 2.0
         self.avatarImageView.layer.borderColor = UIColor.white.cgColor
         self.avatarImageView.layer.borderWidth = 2.0
-        
-//        // update container view height
-//        self.view.layoutIfNeeded()
-//        let sizeThatFits = self.riderListTextView.sizeThatFits(CGSize(width: self.riderListTextView.frame.width, height: CGFloat.greatestFiniteMagnitude))
-//        self.containerViewHeightConstraint.constant = max(containerViewMinimumHeight, containerViewMinimumHeight + sizeThatFits.height - riderListTextViewViewMinimumHeight)
     }
 
     override func didReceiveMemoryWarning() {
