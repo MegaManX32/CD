@@ -73,12 +73,14 @@ class SettingsViewController: UIViewController {
     
     @IBAction func createListOrProvideServiceAction(sender: UIButton) {
         if !self.hostSwitch.isOn {
-            let createRiderListController = self.storyboard?.instantiateViewController(withIdentifier: "CreateRiderListViewController")
-            self.revealViewController().frontViewController.show(createRiderListController!, sender: self)
+            let controller = self.storyboard?.instantiateViewController(withIdentifier: "CreateRiderListViewController") as! CreateRiderListViewController
+            self.revealViewController().frontViewController.show(controller, sender: self)
             self.revealViewController().revealToggle(self)
         }
         else {
-            
+            let controller = self.storyboard?.instantiateViewController(withIdentifier: "HostProvideServiceViewController") as! HostProvideServiceViewController
+            self.revealViewController().frontViewController.show(controller, sender: self)
+            self.revealViewController().revealToggle(self)
         }
     }
     

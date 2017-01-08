@@ -42,7 +42,7 @@ class SignupYouLookGoodViewController: UIViewController {
         
         // try to upload photo on user
         MBProgressHUD.showAdded(to: self.view, animated: true)
-        NetworkManager.sharedInstance.upload(photo: avatarImage, success: {(photoID) in
+        NetworkManager.sharedInstance.upload(photo: avatarImage, success: {[unowned self] (photoID) in
             
             let context = CoreDataManager.sharedInstance.createScratchpadContext(onMainThread: false)
             context.perform {
@@ -65,10 +65,10 @@ class SignupYouLookGoodViewController: UIViewController {
             }
             
             
-        }) { (errorMessage) in
+            }, failure: {[unowned self] (errorMessage) in
             print(errorMessage)
             MBProgressHUD.hide(for: self.view, animated: true)
-        }
+        })
     }
     
     @IBAction func changePhotoAction(sender: UIButton) {

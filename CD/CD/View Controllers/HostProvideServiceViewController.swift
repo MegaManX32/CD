@@ -26,15 +26,19 @@ class HostProvideServiceViewController: UIViewController {
     // MARK: - User Actions
     
     @IBAction func backAction(sender: UIButton) {
-        _ = self.navigationController?.popToRootViewController(animated: true)
+        _ = self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func transportationAction(sender: UIButton) {
-        _ = self.navigationController?.popToRootViewController(animated: true)
+        let controller = self.storyboard?.instantiateViewController(withIdentifier: "HostCreateServiceOfferViewController") as! HostCreateServiceOfferViewController
+        controller.navigationTitle = "Transportation"
+        self.show(controller, sender: self)
     }
     
     @IBAction func accomodationAction(sender: UIButton) {
-        _ = self.navigationController?.popToRootViewController(animated: true)
+        let controller = self.storyboard?.instantiateViewController(withIdentifier: "HostCreateServiceOfferViewController") as! HostCreateServiceOfferViewController
+        controller.navigationTitle = "Accomodation"
+        self.show(controller, sender: self)
     }
 
 }

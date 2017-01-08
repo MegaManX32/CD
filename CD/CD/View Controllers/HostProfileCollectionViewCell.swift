@@ -13,7 +13,7 @@ class HostProfileCollectionViewCell: UICollectionViewCell {
     // MARK: - Properties
     
     @IBOutlet weak var photoImageView: UIImageView!
-    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel?
     
     // MARK: - Helper methods
     
@@ -21,7 +21,7 @@ class HostProfileCollectionViewCell: UICollectionViewCell {
         if let photoURL = photoURL {
             self.photoImageView.af_setImage(withURL: URL(string: photoURL)!)
         }
-        self.nameLabel.text = ""
+        self.nameLabel?.text = ""
     }
     
     // MARK: - Type methods
