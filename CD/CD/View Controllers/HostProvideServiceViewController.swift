@@ -37,7 +37,7 @@ class HostProvideServiceViewController: UIViewController {
     
     @IBAction func accomodationAction(sender: UIButton) {
         let controller = self.storyboard?.instantiateViewController(withIdentifier: "HostCreateServiceOfferViewController") as! HostCreateServiceOfferViewController
-        controller.navigationTitle = "Accomodation"
+        controller.navigationTitle = "Accommodation"
         self.show(controller, sender: self)
     }
 
