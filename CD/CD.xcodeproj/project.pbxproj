@@ -76,6 +76,8 @@
 		1588A6D21E115FDD00FEA81F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1588A6D11E115FDD00FEA81F /* SettingsViewController.swift */; };
 		1588AD0C1E1E825900B17956 /* GuestRiderListPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1588AD0B1E1E825900B17956 /* GuestRiderListPreviewViewController.swift */; };
 		1588AD0E1E1ECF8500B17956 /* HostRiderList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1588AD0D1E1ECF8500B17956 /* HostRiderList.swift */; };
+		158A63B21E2262EE002D80A6 /* HostCreateServiceOfferViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158A63B11E2262EE002D80A6 /* HostCreateServiceOfferViewController.swift */; };
+		158A63B41E22661F002D80A6 /* HostProvideServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158A63B31E22661F002D80A6 /* HostProvideServiceViewController.swift */; };
 		158E240A1DCE0A5D000FE262 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158E24091DCE0A5D000FE262 /* CoreDataManager.swift */; };
 		15ACE31B1E11C7FE00012B5B /* HostReviewRequestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15ACE31A1E11C7FE00012B5B /* HostReviewRequestsViewController.swift */; };
 		15CAE37E1DEC86A000DED25C /* Country+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CAE37D1DEC86A000DED25C /* Country+Additions.swift */; };
@@ -166,6 +168,8 @@
 		1588A6D11E115FDD00FEA81F /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		1588AD0B1E1E825900B17956 /* GuestRiderListPreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuestRiderListPreviewViewController.swift; sourceTree = "<group>"; };
 		1588AD0D1E1ECF8500B17956 /* HostRiderList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HostRiderList.swift; sourceTree = "<group>"; };
+		158A63B11E2262EE002D80A6 /* HostCreateServiceOfferViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HostCreateServiceOfferViewController.swift; sourceTree = "<group>"; };
+		158A63B31E22661F002D80A6 /* HostProvideServiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HostProvideServiceViewController.swift; sourceTree = "<group>"; };
 		158E24091DCE0A5D000FE262 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		15ACE31A1E11C7FE00012B5B /* HostReviewRequestsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HostReviewRequestsViewController.swift; sourceTree = "<group>"; };
 		15CAE37D1DEC86A000DED25C /* Country+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Country+Additions.swift"; sourceTree = "<group>"; };
@@ -391,6 +395,8 @@
 				1500414E1E15394B0097AC8B /* HostProfileViewController.swift */,
 				150041501E1548CA0097AC8B /* HostProfileTableViewCell.swift */,
 				1505043E1E15815500C3EB9E /* HostProfileCollectionViewCell.swift */,
+				158A63B31E22661F002D80A6 /* HostProvideServiceViewController.swift */,
+				158A63B11E2262EE002D80A6 /* HostCreateServiceOfferViewController.swift */,
 			);
 			name = "Host Menu";
 			sourceTree = "<group>";
@@ -592,6 +598,7 @@
 				15327BC41DC63A62000411F7 /* ReviewRiderLIstViewController.swift in Sources */,
 				1588A6CD1E11369800FEA81F /* HostMenuTableViewCell.swift in Sources */,
 				15327BCF1DC63A62000411F7 /* SignupYourInterestsViewController.swift in Sources */,
+				158A63B21E2262EE002D80A6 /* HostCreateServiceOfferViewController.swift in Sources */,
 				15EE96061DCA0F600003FB51 /* ServiceOffer+Additions.swift in Sources */,
 				15327BCE1DC63A62000411F7 /* SignupYouLookGoodViewController.swift in Sources */,
 				1547F1F41DC8FE3F00A04106 /* User+Additions.swift in Sources */,
@@ -600,6 +607,7 @@
 				155E0E781E1C183A00D3F72B /* StandardDateFormatter.swift in Sources */,
 				1588A6CF1E1154D200FEA81F /* GuestMenuTableViewCell.swift in Sources */,
 				154A54361D9FD0750021A803 /* CD.xcdatamodeld in Sources */,
+				158A63B41E22661F002D80A6 /* HostProvideServiceViewController.swift in Sources */,
 				152080E81DF35953005687C1 /* RiderList+Additions.swift in Sources */,
 				1588AD0E1E1ECF8500B17956 /* HostRiderList.swift in Sources */,
 				15EE960A1DCA14B50003FB51 /* Language+Additions.swift in Sources */,
