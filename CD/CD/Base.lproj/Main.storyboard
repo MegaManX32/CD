@@ -26,7 +26,7 @@
         <scene sceneID="8FV-Vi-8xK">
             <objects>
                 <navigationController navigationBarHidden="YES" id="5f1-Mz-Wsz" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="yJV-oC-Rt2">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="yJV-oC-Rt2">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -54,7 +54,7 @@
                                 <rect key="frame" x="-4" y="0.0" width="383" height="667"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="INCREASE YOUR INCOME BY OFFERING SERVICES OR JUST BE A CELEBRITY AND CREATE YOUR RIDER LIST" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9qd-bS-Tea">
-                                <rect key="frame" x="-93" y="196" width="561" height="227"/>
+                                <rect key="frame" x="-92.5" y="196" width="560" height="227"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="227" id="3n5-gr-9iz"/>
                                     <constraint firstAttribute="width" constant="560" id="UK0-cN-9z7"/>
@@ -2278,7 +2278,7 @@
         <scene sceneID="Yow-Dy-8tN">
             <objects>
                 <navigationController storyboardIdentifier="HostNavigationController" useStoryboardIdentifierAsRestorationIdentifier="YES" navigationBarHidden="YES" id="hk6-Ed-NCd" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bog-2b-cD5">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="bog-2b-cD5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -3014,7 +3014,7 @@
         <scene sceneID="wSs-8a-5tp">
             <objects>
                 <navigationController storyboardIdentifier="GuestNavigationController" useStoryboardIdentifierAsRestorationIdentifier="YES" navigationBarHidden="YES" id="xRK-RD-Ybg" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="EgW-Da-Ag3">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="EgW-Da-Ag3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -3787,16 +3787,16 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Whq-cm-FQe">
-                                                            <rect key="frame" x="0.0" y="0.0" width="300" height="200"/>
+                                                            <rect key="frame" x="16" y="16" width="268" height="168"/>
                                                         </imageView>
                                                     </subviews>
                                                 </view>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="bottom" secondItem="Whq-cm-FQe" secondAttribute="bottom" id="0xj-Xd-0VU"/>
-                                                    <constraint firstItem="Whq-cm-FQe" firstAttribute="top" secondItem="cvm-EU-LrP" secondAttribute="top" id="5Be-ag-sLA"/>
-                                                    <constraint firstItem="Whq-cm-FQe" firstAttribute="leading" secondItem="cvm-EU-LrP" secondAttribute="leading" id="CoG-1x-CC8"/>
-                                                    <constraint firstItem="Whq-cm-FQe" firstAttribute="trailing" secondItem="cvm-EU-LrP" secondAttribute="trailing" id="w1q-xy-goZ"/>
+                                                    <constraint firstAttribute="bottom" secondItem="Whq-cm-FQe" secondAttribute="bottom" constant="16" id="0xj-Xd-0VU"/>
+                                                    <constraint firstItem="Whq-cm-FQe" firstAttribute="top" secondItem="cvm-EU-LrP" secondAttribute="top" constant="16" id="5Be-ag-sLA"/>
+                                                    <constraint firstItem="Whq-cm-FQe" firstAttribute="leading" secondItem="cvm-EU-LrP" secondAttribute="leading" constant="16" id="CoG-1x-CC8"/>
+                                                    <constraint firstItem="Whq-cm-FQe" firstAttribute="trailing" secondItem="cvm-EU-LrP" secondAttribute="trailing" constant="-16" id="w1q-xy-goZ"/>
                                                 </constraints>
                                                 <size key="customSize" width="300" height="200"/>
                                                 <connections>

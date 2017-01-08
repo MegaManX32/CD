@@ -9,7 +9,7 @@
 import UIKit
 import MBProgressHUD
 
-fileprivate let sectionInsets = UIEdgeInsets(top: 0.0, left: 20.0, bottom: 0.0, right: 20.0)
+fileprivate let sectionInsets = UIEdgeInsets(top: 0.0, left: 16.0, bottom: 0.0, right: 16.0)
 fileprivate let sizeOfItem = CGSize.init(width: 300, height: 200)
 
 class HostCreateServiceOfferViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
@@ -17,7 +17,7 @@ class HostCreateServiceOfferViewController: UIViewController, UIImagePickerContr
     // MARK: - Properties
     
     var navigationTitle : String!
-    var photoArray = [String]()
+    var photoArray = ["http://www.moibbk.com/images/bmw-6-series-red-11.jpg", "http://cdn.bmwblog.com/wp-content/uploads/2015-BMW-6-Series-Convertible-15-750x562.jpg"]
     
     @IBOutlet weak var titleLabel : UILabel!
     @IBOutlet weak var descriptionTextView : UITextView!
@@ -49,7 +49,7 @@ class HostCreateServiceOfferViewController: UIViewController, UIImagePickerContr
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HostProfileCollectionViewCell.cellIdentifier(), for: indexPath) as! HostProfileCollectionViewCell
-        cell.populateCellWith(photoURL: nil)
+        cell.populateCellWith(photoURL: self.photoArray[indexPath.item])
         return cell
     }
     
