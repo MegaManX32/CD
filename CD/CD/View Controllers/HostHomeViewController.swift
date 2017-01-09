@@ -114,5 +114,4 @@ class HostHomeViewController: UIViewController, UITableViewDataSource, UITableVi
         controller.hostRiderListArray = self.hostRiderListArray
         self.show(controller, sender: self)
     }
-
 }

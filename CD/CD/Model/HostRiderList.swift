@@ -44,25 +44,25 @@ class HostRiderList {
     
     func initWith(JSON:[String : Any]) {
         
-        self.uid = JSON["Uid"] as? String
-        self.hostUid = JSON["HostUid"] as? String
-        self.travelerFullName = JSON["TravelerFullName"] as? String
-        self.travelerCountry = JSON["TravelerCountry"] as? String
-        self.travelerPictureUrl = JSON["TravelerPictureUrl"] as? String
-        self.riderListDetails = JSON["RiderListDetails"] as? String
-        self.riderListUid = "4c584051-ba04-4e13-a68f-85a3f014b3e9"//JSON["RiderListUid"] as? String
+        self.uid = JSON["uid"] as? String
+        self.hostUid = JSON["hostUid"] as? String
+        self.travelerFullName = JSON["travelerFullName"] as? String
+        self.travelerCountry = JSON["travelerCountry"] as? String
+        self.travelerPictureUrl = JSON["travelerPictureUrl"] as? String
+        self.riderListDetails = JSON["riderListDetails"] as? String
+        self.riderListUid = JSON["riderListUid"] as? String
     }
     
     func asJSON() -> [String : Any] {
         
         var JSON = [String : Any]()
-        JSON["Uid"] = self.uid
-        JSON["HostUid"]  = self.hostUid
-        JSON["TravelerFullName"] = self.travelerFullName
-        JSON["TravelerCountry"] =  self.travelerCountry
-        JSON["TravelerPictureUrl"] = self.travelerPictureUrl
-        JSON["RiderListDetails"] = self.riderListDetails
-        JSON["RiderListUid"] = "4c584051-ba04-4e13-a68f-85a3f014b3e9"//self.riderListUid
+        JSON["uid"] = self.uid
+        JSON["hostUid"]  = self.hostUid
+        JSON["travelerFullName"] = self.travelerFullName
+        JSON["travelerCountry"] =  self.travelerCountry
+        JSON["travelerPictureUrl"] = self.travelerPictureUrl
+        JSON["riderListDetails"] = self.riderListDetails
+        JSON["riderListUid"] = self.riderListUid
         
         return JSON;
     }

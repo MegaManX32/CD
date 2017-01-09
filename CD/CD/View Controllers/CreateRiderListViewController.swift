@@ -197,9 +197,6 @@ class CreateRiderListViewController: UIViewController, UICollectionViewDataSourc
             return;
         }
         
-        // present hud
-        MBProgressHUD.showAdded(to: self.view, animated: true)
-        
         // get interests IDs
         var selectedInterestsIDArray = [String]()
         for interestOption in self.interestsArray {
@@ -208,12 +205,20 @@ class CreateRiderListViewController: UIViewController, UICollectionViewDataSourc
             }
         }
         
+        // at least 3 interests must be selected
+        if selectedInterestsIDArray.count < 3 {
+            CustomAlert.presentAlert(message: "At least 3 interests must be selected", controller: self)
+            return
+        }
+        
         // get language IDs
         var languageIDArray = [String]()
         for language in languages {
             languageIDArray.append(language.uid!)
         }
 
+        // present hud
+        MBProgressHUD.showAdded(to: self.view, animated: true)
         let context = CoreDataManager.sharedInstance.createScratchpadContext(onMainThread: false)
         context.perform {
             [unowned self] in
