@@ -246,7 +246,7 @@ class CreateRiderListViewController: UIViewController, UICollectionViewDataSourc
             
             // create new rider list
             NetworkManager.sharedInstance.createOrUpdate(riderList: newRiderList, context: context, success: { [unowned self] (riderListID) in
-                print("Rider list : \(riderListID)")
+                _ = self.navigationController?.popViewController(animated: true)
                 MBProgressHUD.hide(for: self.view, animated: true)
             }, failure: {[unowned self] (errorMessage) in
                 print(errorMessage)

@@ -111,6 +111,7 @@ class GuestHomeViewController: UIViewController, UITableViewDataSource, UITableV
     
     @IBAction func reviewRiderList(sender: UIButton) {
         let controller = self.storyboard?.instantiateViewController(withIdentifier: "GuestRiderListPreviewViewController") as! GuestRiderListPreviewViewController
+        controller.riderList = self.yourRiderList!
         self.show(controller, sender: self)
     }
     
