@@ -55,7 +55,6 @@ class SignupYourInterestsViewController: UIViewController, UICollectionViewDataS
     @IBAction func nextAction(sender: UIButton) {
         
         // try to update interests on user
-        MBProgressHUD.showAdded(to: self.view, animated: true)
         var selectedInterestsIDArray = [String]()
         for interestOption in self.interestsArray {
             if interestOption.checked {
@@ -63,6 +62,13 @@ class SignupYourInterestsViewController: UIViewController, UICollectionViewDataS
             }
         }
         
+        // at least 3 interests must be selected
+        if selectedInterestsIDArray.count < 3 {
+            CustomAlert.presentAlert(message: "At least 3 interests must be selected", controller: self)
+            return
+        }
+        
+        MBProgressHUD.showAdded(to: self.view, animated: true)
         let context = CoreDataManager.sharedInstance.createScratchpadContext(onMainThread: false)
         context.perform {
             [unowned self] in
