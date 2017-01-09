@@ -61,12 +61,12 @@ extension User {
             }
         }
         
-        self.serviceOffers = NSSet.init()
-        if let serviceOffers = JSON["serviceOffers"] as? [[String : Any]] {
-            for serviceOfferJSON in serviceOffers {
-                self.addToServiceOffers(ServiceOffer.createOrUpdateServiceOfferWith(JSON: serviceOfferJSON, context: context))
-            }
-        }
+//        self.serviceOffers = NSSet.init()
+//        if let serviceOffers = JSON["serviceOffers"] as? [[String : Any]] {
+//            for serviceOfferJSON in serviceOffers {
+//                self.addToServiceOffers(ServiceOffer.createOrUpdateServiceOfferWith(JSON: serviceOfferJSON, context: context))
+//            }
+//        }
         
         self.languages = NSSet.init()
         if let languages = JSON["languages"] as? [[String : Any]] {

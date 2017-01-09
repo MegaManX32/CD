@@ -57,30 +57,38 @@ class GuestHomeViewController: UIViewController, UITableViewDataSource, UITableV
     }
     
     func prepareDataForPresentation() {
-        if let riderListOffersSet = self.yourRiderList?.riderListOffers {
-            self.riderListOffersArray = Array(riderListOffersSet) as! [RiderListOffer]
+        
+        // present my rider list view
+        if let riderList = self.yourRiderList {
             
-            if self.riderListOffersArray.count > 0 {
-                self.overviewLabel.alpha = 1
-                self.yourRiderListView.alpha = 1
-                self.riderListOffersView.alpha = 1
-                self.createRiderListView.alpha = 0
+            // prepare views for rider list and offers
+            self.yourRiderListView.layer.cornerRadius = 4.0
+            self.yourRiderListView.layer.borderColor = UIColor.white.cgColor
+            self.yourRiderListView.layer.borderWidth = 2.0
+            
+            self.overviewLabel.alpha = 1
+            self.yourRiderListView.alpha = 1
+            self.createRiderListView.alpha = 0
+            
+            // present offers view
+            if let riderListOffersSet = riderList.riderListOffers {
+                self.riderListOffersArray = Array(riderListOffersSet) as! [RiderListOffer]
                 
-                // prepare views for rider list and offers
-                self.yourRiderListView.layer.cornerRadius = 4.0
-                self.yourRiderListView.layer.borderColor = UIColor.white.cgColor
-                self.yourRiderListView.layer.borderWidth = 2.0
-                
-                self.riderListOffersView.layer.cornerRadius = 4.0
-                self.riderListOffersView.layer.borderColor = UIColor.white.cgColor
-                self.riderListOffersView.layer.borderWidth = 2.0
-                self.riderListOffersViewHeightConstraint.constant = CGFloat(self.riderListOffersArray.count) * GuestMenuTableViewCell.cellHeight() + someRequestsViewHeight
-                
-                let endString = (self.riderListOffersArray.count == 1) ? "!" : "s!"
-                self.numberOfRiderListOffersLabel.text = "You have \(self.riderListOffersArray.count) " + "offer" + endString
-                
-                return
+                if self.riderListOffersArray.count > 0 {
+                    self.riderListOffersView.alpha = 1
+                    self.riderListOffersView.layer.cornerRadius = 4.0
+                    self.riderListOffersView.layer.borderColor = UIColor.white.cgColor
+                    self.riderListOffersView.layer.borderWidth = 2.0
+                    self.riderListOffersViewHeightConstraint.constant = CGFloat(self.riderListOffersArray.count) * GuestMenuTableViewCell.cellHeight() + someRequestsViewHeight
+                    
+                    let endString = (self.riderListOffersArray.count == 1) ? "!" : "s!"
+                    self.numberOfRiderListOffersLabel.text = "You have \(self.riderListOffersArray.count) " + "offer" + endString
+                }
+                else {
+                    self.riderListOffersView.alpha = 0
+                }
             }
+            return
         }
         
         // show no requests view

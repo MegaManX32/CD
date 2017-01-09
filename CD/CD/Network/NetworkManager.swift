@@ -415,7 +415,7 @@ class NetworkManager {
                 context.perform {
                     
                     // check if valid JSON
-                    guard let JSON = response.result.value as? [String: Any]
+                    guard let JSON = (response.result.value as? [[String: Any]])?.last
                         else {
                             DispatchQueue.main.async {
                                 failure("JSON not valid")
