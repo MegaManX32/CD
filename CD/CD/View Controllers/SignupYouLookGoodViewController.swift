@@ -42,7 +42,7 @@ class SignupYouLookGoodViewController: UIViewController {
         
         // try to upload photo on user
         MBProgressHUD.showAdded(to: self.view, animated: true)
-        NetworkManager.sharedInstance.upload(photo: avatarImage, success: {[unowned self] (photoID) in
+        NetworkManager.sharedInstance.upload(photo: avatarImage, success: {[unowned self] (photoID, photoURL) in
             
             let context = CoreDataManager.sharedInstance.createScratchpadContext(onMainThread: false)
             context.perform {
@@ -51,6 +51,7 @@ class SignupYouLookGoodViewController: UIViewController {
                 // find user
                 let user = User.findUserWith(uid: self.userID, context: context)!
                 user.photoId = photoID
+                user.photoURL = photoURL
                 
                 // create of or update user
                 NetworkManager.sharedInstance.createOrUpdate(user: user, context: context, success: { [unowned self] (userID) in

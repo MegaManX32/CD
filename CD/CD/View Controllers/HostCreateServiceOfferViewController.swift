@@ -97,10 +97,9 @@ class HostCreateServiceOfferViewController: UIViewController, UIImagePickerContr
         
         // upload image here
         MBProgressHUD.showAdded(to: self.view, animated: true)
-        NetworkManager.sharedInstance.upload(photo: image, success: { [unowned self] (photoID) in
+        NetworkManager.sharedInstance.upload(photo: image, success: { [unowned self] (photoID, photoURL) in
             
-            // now it is ID, but should be URL instead
-            self.photoArray.append(photoID)
+            self.photoArray.append(photoURL)
             self.collectionView.insertItems(at: [IndexPath.init(row: self.photoArray.count - 1, section: 0)])
             
         }, failure: {[unowned self] (errorMessage) in
