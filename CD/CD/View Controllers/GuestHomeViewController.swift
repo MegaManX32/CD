@@ -16,12 +16,19 @@ class GuestHomeViewController: UIViewController, UITableViewDataSource, UITableV
     // MARK: - Properties
     
     @IBOutlet weak var overviewLabel : UILabel!
+    
     @IBOutlet weak var yourRiderListView : UIView!
+    @IBOutlet weak var nameLabel : UILabel!
+    @IBOutlet weak var countryLabel : UILabel!
+    @IBOutlet weak var avatarImageView : UIImageView!
+    @IBOutlet weak var riderListDetailsLabel : UILabel!
+    
     @IBOutlet weak var riderListOffersView : UIView!
     @IBOutlet weak var riderListOffersViewHeightConstraint : NSLayoutConstraint!
     @IBOutlet weak var createRiderListView : UIView!
     @IBOutlet weak var tableView : UITableView!
     @IBOutlet weak var numberOfRiderListOffersLabel : UILabel!
+    @IBOutlet weak var hiLabel : UILabel!
     
     var yourRiderList : RiderList?
     var riderListOffersArray = [RiderListOffer]()
@@ -42,6 +49,11 @@ class GuestHomeViewController: UIViewController, UITableViewDataSource, UITableV
         
         // prepare presentation
         self.prepareDataForPresentation()
+        
+        // set hi label
+        let userID = StandardUserDefaults.userID()
+        let user = User.findUserWith(uid: userID, context: CoreDataManager.sharedInstance.mainContext)!
+        self.hiLabel.text = "Hi, " + user.firstName!
         
         // get rider list for user
         MBProgressHUD.showAdded(to: self.view, animated: true)
@@ -69,6 +81,16 @@ class GuestHomeViewController: UIViewController, UITableViewDataSource, UITableV
             self.overviewLabel.alpha = 1
             self.yourRiderListView.alpha = 1
             self.createRiderListView.alpha = 0
+            
+            // set data
+            let userID = StandardUserDefaults.userID()
+            let user = User.findUserWith(uid: userID, context: CoreDataManager.sharedInstance.mainContext)!
+            self.nameLabel.text = user.firstName
+            self.countryLabel.text = user.country
+            if let photoURL = user.photoURL {
+                self.avatarImageView.af_setImage(withURL: URL(string: photoURL)!)
+            }
+            self.riderListDetailsLabel.text = self.yourRiderList?.details
             
             // present offers view
             if let riderListOffersSet = riderList.riderListOffers {

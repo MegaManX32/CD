@@ -2261,9 +2261,14 @@
                     </view>
                     <navigationItem key="navigationItem" id="99s-1J-UWu"/>
                     <connections>
+                        <outlet property="avatarImageView" destination="sbo-Gb-Gph" id="gHm-3j-CwL"/>
+                        <outlet property="countryLabel" destination="hkY-ad-fLO" id="FgR-ED-PST"/>
                         <outlet property="createRiderListView" destination="vlm-3I-w6D" id="CX2-QN-v1h"/>
+                        <outlet property="hiLabel" destination="oAK-zM-fOL" id="1ey-fk-RHF"/>
+                        <outlet property="nameLabel" destination="OiD-oM-NVD" id="mwu-H9-Td0"/>
                         <outlet property="numberOfRiderListOffersLabel" destination="FYX-d8-O9R" id="ci8-GE-BfS"/>
                         <outlet property="overviewLabel" destination="llQ-O4-mxt" id="bkX-34-53m"/>
+                        <outlet property="riderListDetailsLabel" destination="Xkd-Xc-46Q" id="1Uw-Aa-GNH"/>
                         <outlet property="riderListOffersView" destination="Tdc-fS-voM" id="PaT-VZ-C03"/>
                         <outlet property="riderListOffersViewHeightConstraint" destination="t2f-WY-vPR" id="oKM-6d-6eI"/>
                         <outlet property="tableView" destination="uvJ-Rw-ekF" id="cwY-YD-Xoh"/>

@@ -41,8 +41,12 @@ class HostHomeViewController: UIViewController, UITableViewDataSource, UITableVi
         // prepare presentation
         self.prepareDataForPresentation()
         
-        MBProgressHUD.showAdded(to: self.view, animated: true)
+        // prepare hi label
         let userID = StandardUserDefaults.userID()
+        let user = User.findUserWith(uid: userID, context: CoreDataManager.sharedInstance.mainContext)!
+        self.hiLabel.text = "Hi, " + user.firstName!
+        
+        MBProgressHUD.showAdded(to: self.view, animated: true)
         NetworkManager.sharedInstance.getAllRiderListsForHost(hostID: userID, success: { [unowned self] (hostRiderListArray) in
             self.hostRiderListArray = hostRiderListArray
             self.prepareDataForPresentation()
