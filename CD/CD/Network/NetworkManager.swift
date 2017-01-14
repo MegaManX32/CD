@@ -30,6 +30,43 @@ class NetworkManager {
         failure(errorString ?? defaultErrorMessage)
     }
     
+    // MARK: - Login
+    
+    func login(params: [String : String], success:@escaping (String) -> Void, failure:@escaping (String) -> Void) {
+        Alamofire.request(baseURL + "Auth/login", method: .post, parameters: params, encoding: JSONEncoding.default, headers: nil).validate().responseJSON {[unowned self] (response) in
+            switch response.result {
+            case .success:
+                
+                let context = CoreDataManager.sharedInstance.createScratchpadContext(onMainThread: false)
+                context.perform {
+                    
+                    // check if valid JSON
+                    guard let JSON = response.result.value as? [String: Any]
+                        else {
+                            DispatchQueue.main.async {
+                                failure("JSON not valid")
+                            }
+                            return
+                    }
+                    
+                    // update user with JSON
+                    let user = User.createOrUpdateUserWith(JSON: JSON, context: context)
+                    CoreDataManager.sharedInstance.save(scratchpadContext: context)
+                    
+                    // always return on main queue
+                    let userID = user.uid
+                    DispatchQueue.main.async {
+                        success(userID!)
+                    }
+                }
+            case .failure:
+                
+                // error handling
+                self.generalizedFailure(data: response.data, defaultErrorMessage: "Wrong username or password", failure: failure)
+            }
+        }
+    }
+    
     // MARK: - User
     
     func createOrUpdate(user: User, context: NSManagedObjectContext, success:@escaping (String?) -> Void, failure:@escaping (String) -> Void) {

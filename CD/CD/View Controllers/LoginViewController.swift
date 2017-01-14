@@ -41,19 +41,43 @@ class LoginViewController: UIViewController {
     
     @IBAction func loginAction() {
         
-        // set user
-        StandardUserDefaults.saveUserID(userID: "84cea67a-050c-4397-b9b1-bdf39c35ed6a")
-        
-        // get all users first, we will need them
-        MBProgressHUD.showAdded(to: self.view, animated: true)
-        NetworkManager.sharedInstance.getAllUsers(success: {[unowned self] in
-            let controller = self.storyboard?.instantiateViewController(withIdentifier: "SWRevealViewController") as! SWRevealViewController
-            self.present(controller, animated: true, completion: nil)
-            MBProgressHUD.hide(for: self.view, animated: true)
-        }) {[unowned self] (errorMessage) in
-            print(errorMessage)
-            MBProgressHUD.hide(for: self.view, animated: true)
+        guard let email = self.emailTextField.text, let password = self.passwordTextField.text
+            else {
+                CustomAlert.presentAlert(message: "Wrong username or password", controller: self)
+                return
         }
+        
+        // prepare login params
+        let params = [
+            "email" : email,
+            "password" : password
+        ]
+        
+        // login :-)
+        MBProgressHUD.showAdded(to: self.view, animated: true)
+        NetworkManager.sharedInstance.login(params: params, success: {[unowned self] (userID) in
+            
+            // set user
+            StandardUserDefaults.saveUserID(userID: userID)
+            
+            // get all users
+            NetworkManager.sharedInstance.getAllUsers(success: {[unowned self] in
+                
+                // show main controller
+                let controller = self.storyboard?.instantiateViewController(withIdentifier: "SWRevealViewController") as! SWRevealViewController
+                self.present(controller, animated: true, completion: nil)
+                MBProgressHUD.hide(for: self.view, animated: true)
+                
+            }) {[unowned self] (errorMessage) in
+                print(errorMessage)
+                CustomAlert.presentAlert(message: "Wrong username or password", controller: self)
+                MBProgressHUD.hide(for: self.view, animated: true)
+            }
+            
+        }, failure: {[unowned self] (errorMessage) in
+            CustomAlert.presentAlert(message: errorMessage, controller: self)
+            MBProgressHUD.hide(for: self.view, animated: true)
+        })
     }
     
     @IBAction func backAction() {
