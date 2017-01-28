@@ -87,9 +87,17 @@ class GuestHomeViewController: UIViewController, UITableViewDataSource, UITableV
             let user = User.findUserWith(uid: userID, context: CoreDataManager.sharedInstance.mainContext)!
             self.nameLabel.text = user.firstName
             self.countryLabel.text = user.country
+            
+            // prepare avatar
+            self.avatarImageView.layer.cornerRadius = 43 / 2.0
+            self.avatarImageView.layer.masksToBounds = true
+            self.avatarImageView.layer.borderWidth = 2.0;
+            self.avatarImageView.layer.borderColor = UIColor.white.cgColor
             if let photoURL = user.photoURL {
                 self.avatarImageView.af_setImage(withURL: URL(string: photoURL)!)
             }
+            
+            // prepare details
             self.riderListDetailsLabel.text = self.yourRiderList?.details
             
             // present offers view

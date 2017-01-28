@@ -77,12 +77,13 @@ class HostProfileViewController: UIViewController, UITableViewDataSource, UITabl
     func populateViewsWithUser(user : User) {
         
         // prepare text
-        self.nameLabel.text = user.firstName! + user.lastName!
+        self.nameLabel.text = user.firstName! + " " + user.lastName!
         self.addressLabel.text = user.city! + ", " + user.country!
         
         // prepare avatar
         self.avatarImageView.layer.cornerRadius = 130 / 2.0
-        self.avatarImageView.layer.borderWidth = 2.0;
+        self.avatarImageView.layer.masksToBounds = true
+        self.avatarImageView.layer.borderWidth = 2.0
         self.avatarImageView.layer.borderColor = UIColor.white.cgColor
         if let photoURL = user.photoURL {
             self.avatarImageView.af_setImage(withURL: URL(string: photoURL)!)

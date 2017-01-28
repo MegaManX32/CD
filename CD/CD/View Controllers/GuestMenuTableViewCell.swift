@@ -31,6 +31,7 @@ class GuestMenuTableViewCell: UITableViewCell {
         
         // prepare avatar
         self.avatarImageView.layer.cornerRadius = 43 / 2.0
+        self.avatarImageView.layer.masksToBounds = true
         self.avatarImageView.layer.borderWidth = 2.0;
         self.avatarImageView.layer.borderColor = UIColor.white.cgColor
     }

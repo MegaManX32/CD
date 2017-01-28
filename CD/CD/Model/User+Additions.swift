@@ -51,7 +51,11 @@ extension User {
         self.work = JSON["work"] as? String ?? self.work
         self.zipcode = JSON["zipcode"] as? String ?? self.zipcode
         self.city = JSON["city"] as? String ?? self.city
-        self.photoURL = JSON["photoURL"] as? String ?? self.photoURL
+        
+        // special case for photo URL
+        if let photoURL = JSON["photoURL"] as? String {
+            self.photoURL = "http://" + photoURL
+        }
         
         // create relationships
         self.interests = NSSet.init()
@@ -98,7 +102,7 @@ extension User {
         JSON["work"] = self.work
         JSON["zipcode"] = self.zipcode
         JSON["city"] = self.city
-        JSON["photoURL"] = self.photoURL
+//        JSON["photoURL"] = self.photoURL
         
         // create relationships
         if let interests = self.interests {

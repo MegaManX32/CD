@@ -33,6 +33,7 @@ class SettingsViewController: UIViewController {
         
         // set avatar
         self.avatarImageView.layer.cornerRadius = avatarImageViewHeightAndWidth / 2.0
+        self.avatarImageView.layer.masksToBounds = true
         
         let userID = StandardUserDefaults.userID()
         MBProgressHUD.showAdded(to: self.view, animated: true)
@@ -42,7 +43,7 @@ class SettingsViewController: UIViewController {
             self.nameLabel.text = user.firstName!
             self.emailLabel.text = user.email!
             if let photoURL = user.photoURL {
-                self.avatarImageView.af_setImage(withURL: URL(string: photoURL)!)
+                self.avatarImageView.af_setImage(withURL: URL(string:photoURL)!)
             }
             MBProgressHUD.hide(for: self.view, animated: true)
         }, failure: { [unowned self] (errorMessage) in

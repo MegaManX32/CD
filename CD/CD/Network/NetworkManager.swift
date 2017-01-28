@@ -52,7 +52,7 @@ class NetworkManager {
                 
                 // save user token
                 StandardUserDefaults.saveUserToken(userToken: token)
-                NetworkManager.sharedInstance.headers = ["token" : token]
+                NetworkManager.sharedInstance.headers = ["Authorization" : token]
                 
                 // login success
                 success(token)
@@ -191,6 +191,7 @@ class NetworkManager {
                     }
                     
                     // update user with JSON
+                    print("\(JSON)")
                     let user = User.createOrUpdateUserWith(JSON: JSON, context: context)
                     CoreDataManager.sharedInstance.save(scratchpadContext: context)
                     

@@ -33,6 +33,8 @@ class LoginViewController: UIViewController {
     // MARK: - View Preparation
     
     func prepareTextFields() {
+        self.emailTextField.text = "paul.george@gmail.com"
+        self.passwordTextField.text = "123456"
         self.emailTextField.placeholder = NSLocalizedString("Email Address", comment: "Email Address")
         self.passwordTextField.placeholder = NSLocalizedString("Password", comment: "Password")
     }
