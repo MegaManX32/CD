@@ -8,6 +8,7 @@
 
 import UIKit
 import MBProgressHUD
+import Alamofire
 
 class LoginViewController: UIViewController {
     
@@ -57,6 +58,7 @@ class LoginViewController: UIViewController {
         
         // login :-)
         MBProgressHUD.showAdded(to: self.view, animated: true)
+        NetworkManager.sharedInstance.headers = HTTPHeaders()
         NetworkManager.sharedInstance.login(params: params, success: {[unowned self] (userToken) in
             
             // get user data

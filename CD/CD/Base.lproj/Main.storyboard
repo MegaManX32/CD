@@ -1803,7 +1803,7 @@
                                     <action selector="hostOptionChangedWithSender:" destination="v7N-DX-OI1" eventType="valueChanged" id="HsC-gg-L1X"/>
                                 </connections>
                             </switch>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xoq-Lz-kej">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xoq-Lz-kej">
                                 <rect key="frame" x="16" y="32" width="60" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="8PS-eZ-AwH"/>
@@ -4787,7 +4787,7 @@
                                     <constraint firstItem="WHh-ya-u34" firstAttribute="leading" secondItem="oeP-G9-urc" secondAttribute="leading" constant="10" id="sWV-CX-qih"/>
                                 </constraints>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3tc-wM-Bbr">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3tc-wM-Bbr">
                                 <rect key="frame" x="221" y="36" width="130" height="130"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="130" id="3le-Pw-4fa"/>

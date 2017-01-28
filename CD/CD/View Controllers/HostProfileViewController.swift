@@ -40,7 +40,7 @@ class HostProfileViewController: UIViewController, UITableViewDataSource, UITabl
     @IBOutlet weak var seeMoreButton : UIButton!
     @IBOutlet weak var seeMoreButtonHeightConstraint : NSLayoutConstraint!
     @IBOutlet weak var reviewViewHeightConstraint : NSLayoutConstraint!
-    var reviewArray = [1, 2, 3, 4, 5]
+    var reviewArray = [Int]()
     var reviewsExpanded : Bool = false
     
     @IBOutlet weak var accomodationCollectionView : UICollectionView!
