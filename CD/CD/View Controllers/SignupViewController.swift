@@ -42,9 +42,9 @@ class SignupViewController: UIViewController {
         self.passwordTextField.placeholder = NSLocalizedString("Password", comment: "Password")
         self.confirmPasswordTextField.placeholder = NSLocalizedString("Confirm Password", comment: "Confirm Password")
         
-        self.firstNameTextField.text = "Nemanja"
-        self.lastNameTextField.text = "Raush"
-        self.emailTextField.text = "nemanja.raush123@gmail.com"
+        self.firstNameTextField.text = "Marko"
+        self.lastNameTextField.text = "Markovic"
+        self.emailTextField.text = "marko@gmail.com"
         self.passwordTextField.text = "123456"
         self.confirmPasswordTextField.text = "123456"
     }

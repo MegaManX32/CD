@@ -15,6 +15,7 @@ fileprivate let baseURL = "http://customdeal.tkn.rs/api/"
 class NetworkManager {
     
     static let sharedInstance = NetworkManager()
+    var headers : HTTPHeaders? = HTTPHeaders()
     
     // MARK: - Helper methods
     
@@ -32,13 +33,29 @@ class NetworkManager {
     
     // MARK: - Login
     
-    func login(params: [String : String], success:@escaping () -> Void, failure:@escaping (String) -> Void) {
-        Alamofire.request(baseURL + "Auth/login", method: .post, parameters: params, encoding: JSONEncoding.default, headers: nil).validate().responseJSON {[unowned self] (response) in
+    func login(params: [String : String], success:@escaping (String) -> Void, failure:@escaping (String) -> Void) {
+        Alamofire.request(baseURL + "Auth/login", method: .post, parameters: params, encoding: JSONEncoding.default, headers: self.headers).validate().responseJSON {[unowned self] (response) in
             switch response.result {
             case .success:
                 
-                // user logged
-                success()
+                // check if valid JSON
+                guard let JSON = response.result.value as? [String: Any]
+                    else {
+                        DispatchQueue.main.async {
+                            failure("JSON not valid")
+                        }
+                        return
+                }
+                
+                // get token
+                let token = JSON["token"] as! String
+                
+                // save user token
+                StandardUserDefaults.saveUserToken(userToken: token)
+                NetworkManager.sharedInstance.headers = ["token" : token]
+                
+                // login success
+                success(token)
                 
             case .failure:
                 
@@ -51,7 +68,7 @@ class NetworkManager {
     // MARK: - User
     
     func createOrUpdate(user: User, context: NSManagedObjectContext, success:@escaping (String?) -> Void, failure:@escaping (String) -> Void) {
-        Alamofire.request(baseURL + "Users", method: .post, parameters: user.asJSON(), encoding: JSONEncoding.default, headers: nil).validate().responseJSON {[unowned self] (response) in
+        Alamofire.request(baseURL + "Users", method: .post, parameters: user.asJSON(), encoding: JSONEncoding.default, headers: self.headers).validate().responseJSON {[unowned self] (response) in
             switch response.result {
             case .success:
                 
@@ -85,7 +102,7 @@ class NetworkManager {
     }
     
     func getAllUsers(success:@escaping () -> Void, failure:@escaping (String) -> Void) {
-        Alamofire.request(baseURL + "Users", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).validate().responseJSON {[unowned self] (response) in
+        Alamofire.request(baseURL + "Users", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: self.headers).validate().responseJSON {[unowned self] (response) in
             switch response.result {
             case .success:
                 
@@ -122,7 +139,7 @@ class NetworkManager {
     }
     
     func getUser(userID: String, success:@escaping (String) -> Void, failure:@escaping (String) -> Void) {
-        Alamofire.request(baseURL + "Users/" + userID, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).validate().responseJSON {[unowned self] (response) in
+        Alamofire.request(baseURL + "Users/" + userID, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: self.headers).validate().responseJSON {[unowned self] (response) in
             switch response.result {
             case .success:
                 
@@ -157,7 +174,7 @@ class NetworkManager {
     }
     
     func getLoggedUser(success:@escaping (String) -> Void, failure:@escaping (String) -> Void) {
-        Alamofire.request(baseURL + "Users/info", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).validate().responseJSON {[unowned self] (response) in
+        Alamofire.request(baseURL + "Users/info", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: self.headers).validate().responseJSON {[unowned self] (response) in
             switch response.result {
             case .success:
                 
@@ -194,7 +211,7 @@ class NetworkManager {
     // MARK: - Country and City
     
     func getAllCountries(success:@escaping () -> Void, failure:@escaping (String) -> Void) {
-        Alamofire.request(baseURL + "Settings/country", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).validate().responseJSON {[unowned self] (response) in
+        Alamofire.request(baseURL + "Settings/country", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: self.headers).validate().responseJSON {[unowned self] (response) in
             switch response.result {
             case .success:
                 
@@ -231,7 +248,7 @@ class NetworkManager {
     }
     
     func getAllCities(country: Country, success:@escaping () -> Void, failure:@escaping (String) -> Void) {
-        Alamofire.request(baseURL + "Settings/city/" + country.uid!, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).validate().responseJSON {[unowned self] (response) in
+        Alamofire.request(baseURL + "Settings/city/" + country.uid!, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: self.headers).validate().responseJSON {[unowned self] (response) in
             switch response.result {
             case .success:
                 
@@ -425,7 +442,7 @@ class NetworkManager {
     // MARK: - RiderList
     
     func createOrUpdate(riderList: RiderList, context: NSManagedObjectContext, success:@escaping (String) -> Void, failure:@escaping (String) -> Void) {
-        Alamofire.request(baseURL + "RiderList", method: .post, parameters: riderList.asJSON(), encoding: JSONEncoding.default, headers: nil).validate().responseJSON {[unowned self] (response) in
+        Alamofire.request(baseURL + "RiderList", method: .post, parameters: riderList.asJSON(), encoding: JSONEncoding.default, headers: self.headers).validate().responseJSON {[unowned self] (response) in
             switch response.result {
             case .success:
                 
@@ -461,7 +478,7 @@ class NetworkManager {
     }
     
     func getRiderListForLoggedUser(success:@escaping (String) -> Void, failure:@escaping (String) -> Void) {
-        Alamofire.request(baseURL + "RiderList", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).validate().responseJSON {[unowned self] (response) in
+        Alamofire.request(baseURL + "RiderList", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: self.headers).validate().responseJSON {[unowned self] (response) in
             switch response.result {
             case .success:
                 
@@ -496,7 +513,7 @@ class NetworkManager {
     }
     
     func getRiderList(riderListID: String, success:@escaping (String) -> Void, failure:@escaping (String) -> Void) {
-        Alamofire.request(baseURL + "RiderList/" + riderListID, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).validate().responseJSON {[unowned self] (response) in
+        Alamofire.request(baseURL + "RiderList/" + riderListID, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: self.headers).validate().responseJSON {[unowned self] (response) in
             switch response.result {
             case .success:
                 
@@ -534,7 +551,7 @@ class NetworkManager {
 
     
     func getAllRiderListsForHost(hostID: String, success:@escaping ([HostRiderList]) -> Void, failure:@escaping (String) -> Void) {
-        Alamofire.request(baseURL + "HostRiderList/" + hostID, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).validate().responseJSON {[unowned self] (response) in
+        Alamofire.request(baseURL + "HostRiderList/" + hostID, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: self.headers).validate().responseJSON {[unowned self] (response) in
             switch response.result {
             case .success:
                     
@@ -566,7 +583,7 @@ class NetworkManager {
     // MARK: - RiderListOffer
     
     func createOrUpdate(riderListOffer: RiderListOffer, context: NSManagedObjectContext, success:@escaping (String?) -> Void, failure:@escaping (String) -> Void) {
-        Alamofire.request(baseURL + "RiderListOffer/send", method: .post, parameters: riderListOffer.asJSON(), encoding: JSONEncoding.default, headers: nil).validate().responseJSON {[unowned self] (response) in
+        Alamofire.request(baseURL + "RiderListOffer/send", method: .post, parameters: riderListOffer.asJSON(), encoding: JSONEncoding.default, headers: self.headers).validate().responseJSON {[unowned self] (response) in
             switch response.result {
             case .success:
                 
