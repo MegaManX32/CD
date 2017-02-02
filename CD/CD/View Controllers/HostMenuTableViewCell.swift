@@ -25,6 +25,7 @@ class HostMenuTableViewCell: UITableViewCell {
         
         // prepare avatar
         self.avatarImageView.layer.cornerRadius = 43 / 2.0
+        self.avatarImageView.layer.masksToBounds = true
         self.avatarImageView.layer.borderWidth = 2.0;
         self.avatarImageView.layer.borderColor = UIColor.white.cgColor
     }
@@ -36,9 +37,12 @@ class HostMenuTableViewCell: UITableViewCell {
         self.countryLabel.text = hostRiderList.travelerCountry
         self.descriptionLabel.text = hostRiderList.riderListDetails
         
-        // set avatar
+        // set avatar if exists
         if let photoURL = hostRiderList.travelerPictureUrl {
             self.avatarImageView.af_setImage(withURL: URL(string: photoURL)!)
+        }
+        else {
+            self.avatarImageView.image = nil
         }
         
         // set separator

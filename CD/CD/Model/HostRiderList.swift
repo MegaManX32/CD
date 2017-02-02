@@ -48,9 +48,15 @@ class HostRiderList {
         self.hostUid = JSON["hostUid"] as? String
         self.travelerFullName = JSON["travelerFullName"] as? String
         self.travelerCountry = JSON["travelerCountry"] as? String
-        self.travelerPictureUrl = JSON["travelerPictureUrl"] as? String
+//        self.travelerPictureUrl = JSON["travelerPictureUrl"] as? String
         self.riderListDetails = JSON["riderListDetails"] as? String
         self.riderListUid = JSON["riderListUid"] as? String
+        
+        // special case for photo URL
+        if let photoURL = JSON["travelerPictureUrl"] as? String {
+            self.travelerPictureUrl = "http://" + photoURL
+        }
+
     }
     
     func asJSON() -> [String : Any] {

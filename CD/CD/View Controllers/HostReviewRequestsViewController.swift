@@ -40,6 +40,7 @@ class HostReviewRequestsViewController: UIViewController {
         super.viewDidLoad()
 
         self.avatarImageView.layer.cornerRadius = avatarImageViewHeightAndWidth / 2.0
+        self.avatarImageView.layer.masksToBounds = true
         self.avatarImageView.layer.borderColor = UIColor.white.cgColor
         self.avatarImageView.layer.borderWidth = 2.0
         
@@ -94,14 +95,14 @@ class HostReviewRequestsViewController: UIViewController {
             self.avatarImageView.af_setImage(withURL: URL(string: photoURL)!)
         }
 
-//        // set interests, there should always be 3 interests
-//        let interestArray = Array(riderList.interests!)
-//        var interest = interestArray[0] as! Interest
-//        self.interest1ImageView.image = UIImage.init(named:interest.name!.lowercased())
-//        interest = interestArray[1] as! Interest
-//        self.interest2ImageView.image = UIImage.init(named:interest.name!.lowercased())
-//        interest = interestArray[2] as! Interest
-//        self.interest3ImageView.image = UIImage.init(named:interest.name!.lowercased())
+        // set interests, there should always be 3 interests
+        let interestArray = Array(riderList.interests!)
+        var interest = interestArray[0] as! Interest
+        self.interest1ImageView.image = UIImage.init(named:interest.name!.lowercased())
+        interest = interestArray[1] as! Interest
+        self.interest2ImageView.image = UIImage.init(named:interest.name!.lowercased())
+        interest = interestArray[2] as! Interest
+        self.interest3ImageView.image = UIImage.init(named:interest.name!.lowercased())
     }
     
     // MARK: - User Actions

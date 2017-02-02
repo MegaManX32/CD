@@ -128,7 +128,7 @@ extension User {
             }
             JSON["languages"] = languagesArray
         }
-        
+        NSLog("%@", JSON)
         return JSON
     }
 }

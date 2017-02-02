@@ -34,8 +34,8 @@ class LoginViewController: UIViewController {
     // MARK: - View Preparation
     
     func prepareTextFields() {
-        self.emailTextField.text = "paul.george@gmail.com"
-        self.passwordTextField.text = "123456"
+        self.emailTextField.text = "kozomoramario@yahoo.com"
+        self.passwordTextField.text = "mkmkmk"
         self.emailTextField.placeholder = NSLocalizedString("Email Address", comment: "Email Address")
         self.passwordTextField.placeholder = NSLocalizedString("Password", comment: "Password")
     }
@@ -58,7 +58,7 @@ class LoginViewController: UIViewController {
         
         // login :-)
         MBProgressHUD.showAdded(to: self.view, animated: true)
-        NetworkManager.sharedInstance.headers = HTTPHeaders()
+        NetworkManager.sharedInstance.logout()
         NetworkManager.sharedInstance.login(params: params, success: {[unowned self] (userToken) in
             
             // get user data

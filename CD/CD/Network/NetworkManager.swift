@@ -65,6 +65,12 @@ class NetworkManager {
         }
     }
     
+    func logout() {
+        
+        // just claer authorization token from headers
+        NetworkManager.sharedInstance.headers = HTTPHeaders()
+    }
+    
     // MARK: - User
     
     func createOrUpdate(user: User, context: NSManagedObjectContext, success:@escaping (String?) -> Void, failure:@escaping (String) -> Void) {
@@ -191,7 +197,7 @@ class NetworkManager {
                     }
                     
                     // update user with JSON
-                    print("\(JSON)")
+                    NSLog("%@", JSON)
                     let user = User.createOrUpdateUserWith(JSON: JSON, context: context)
                     CoreDataManager.sharedInstance.save(scratchpadContext: context)
                     
