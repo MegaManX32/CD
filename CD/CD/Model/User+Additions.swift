@@ -58,8 +58,8 @@ extension User {
         }
         
         // create relationships
-        self.interests = NSSet.init()
         if let interests = JSON["interests"] as? [[String : Any]] {
+            self.interests = NSSet.init()
             for interestJSON in interests {
                 self.addToInterests(Interest.createOrUpdateInterestWith(JSON: interestJSON, context: context))
             }
@@ -72,8 +72,8 @@ extension User {
 //            }
 //        }
         
-        self.languages = NSSet.init()
         if let languages = JSON["languages"] as? [[String : Any]] {
+            self.languages = NSSet.init()
             for languageJSON in languages {
                 self.addToLanguages(Language.createOrUpdateLanguageWith(JSON: languageJSON, context: context))
             }
@@ -128,7 +128,7 @@ extension User {
             }
             JSON["languages"] = languagesArray
         }
-        NSLog("%@", JSON)
+        
         return JSON
     }
 }

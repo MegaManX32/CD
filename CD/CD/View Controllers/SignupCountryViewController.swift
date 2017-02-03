@@ -118,10 +118,6 @@ class SignupCountryViewController: UIViewController, GeneralPickerViewController
                 user?.addToLanguages(language!)
             }
             
-            let JSON = user!.asJSON()
-            let prettyJSON =  try! JSONSerialization.data(withJSONObject: JSON, options: .prettyPrinted)
-            print(String.init(data: prettyJSON, encoding: String.Encoding.utf8) ?? "Noting")
-            
             // update user
             NetworkManager.sharedInstance.createOrUpdate(user: user!, context: context, success: { [unowned self] (userID) in
                 

@@ -34,9 +34,8 @@ class SignupAddYourPhotoViewController: UIViewController, UIImagePickerControlle
         // present SignupYouLookGoodViewController
         let controller = self.storyboard?.instantiateViewController(withIdentifier: "SignupYouLookGoodViewController") as! SignupYouLookGoodViewController
         controller.userID = self.userID
-        controller.avatarImage = #imageLiteral(resourceName: "testImage")
+        controller.avatarImage = #imageLiteral(resourceName: "sampras")
         self.show(controller, sender: self)
-        
         
 //        let imagePickerController = UIImagePickerController()
 //        imagePickerController.sourceType = .camera

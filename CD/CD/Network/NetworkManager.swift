@@ -501,6 +501,9 @@ class NetworkManager {
                             return
                     }
                     
+                    // rider list JSON
+                    NSLog("%@", JSON)
+                    
                     // update user with JSON
                     let riderList = RiderList.createOrUpdateRiderListWith(JSON: JSON, context: context)
                     CoreDataManager.sharedInstance.save(scratchpadContext: context)

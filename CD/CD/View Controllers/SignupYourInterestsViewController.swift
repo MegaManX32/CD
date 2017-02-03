@@ -63,8 +63,8 @@ class SignupYourInterestsViewController: UIViewController, UICollectionViewDataS
         }
         
         // at least 3 interests must be selected
-        if selectedInterestsIDArray.count < 3 {
-            CustomAlert.presentAlert(message: "At least 3 interests must be selected", controller: self)
+        if selectedInterestsIDArray.count < 4 {
+            CustomAlert.presentAlert(message: "At least 4 interests must be selected", controller: self)
             return
         }
         

@@ -49,28 +49,28 @@ extension RiderList {
 
         // create relationships
         
-        self.interests = NSSet.init()
         if let interests = JSON["interestList"] as? [[String : Any]] {
+            self.interests = NSSet.init()
             for interestJSON in interests {
                 self.addToInterests(Interest.createOrUpdateInterestWith(JSON: interestJSON, context: context))
             }
         }
         
-        self.languages = NSSet.init()
         if let languages = JSON["languageList"] as? [[String : Any]] {
+            self.languages = NSSet.init()
             for languageJSON in languages {
                 self.addToLanguages(Language.createOrUpdateLanguageWith(JSON: languageJSON, context: context))
             }
         }
         
-        self.riderListOffers = NSSet.init()
         if let riderListOffers = JSON["offerList"] as? [[String : Any]] {
+            self.riderListOffers = NSSet.init()
             for riderListOfferJSON in riderListOffers {
                 self.addToRiderListOffers(RiderListOffer.createOrUpdateRiderListOfferWith(JSON: riderListOfferJSON, context: context))
             }
         }
         
-        self.selectedRiderListOffer = nil
+//        self.selectedRiderListOffer = nil
         if let selectedRiderListOfferJSON = JSON["selectedOffer"] as? [String : Any] {
             self.selectedRiderListOffer = RiderListOffer.createOrUpdateRiderListOfferWith(JSON: selectedRiderListOfferJSON, context: context)
         }
