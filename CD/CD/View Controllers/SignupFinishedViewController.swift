@@ -20,6 +20,11 @@ class SignupFinishedViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // update welcome label
+        let context = CoreDataManager.sharedInstance.mainContext
+        let user = User.findUserWith(uid: self.userID, context: context)!
+        self.titleLabel.text = "Welcome, " + user.firstName!
     }
 
     override func didReceiveMemoryWarning() {

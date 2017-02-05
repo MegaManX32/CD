@@ -125,6 +125,7 @@ class HostCreateServiceOfferViewController: UIViewController, UIImagePickerContr
             
             self.photoArray.append("http://" + photoURL)
             self.collectionView.insertItems(at: [IndexPath.init(row: self.photoArray.count - 1, section: 0)])
+            MBProgressHUD.hide(for: self.view, animated: true)
             
         }, failure: {[unowned self] (errorMessage) in
             print(errorMessage)

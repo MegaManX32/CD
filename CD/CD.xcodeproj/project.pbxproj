@@ -966,6 +966,7 @@
 				151860B31E46937A008936E4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		154A54251D9FD0750021A803 /* Build configuration list for PBXProject "CD" */ = {
 			isa = XCConfigurationList;

@@ -32,10 +32,11 @@ extension ServiceOffer {
     
     func initWith(JSON:[String : Any]) {
         
-        self.name = JSON["name"] as? String
-        self.desc = JSON["description"] as? String
-        self.uid = JSON["uid"] as? String
-        self.photoUrlList = JSON["photoUrlList"] as? [String]
+        self.name = JSON["name"] as? String ?? self.name
+        self.desc = JSON["description"] as? String ?? self.desc
+        self.uid = JSON["uid"] as? String ?? self.uid
+        self.userUid = JSON["userUid"] as? String ?? self.userUid
+        self.photoUrlList = JSON["photoUrlList"] as? [String] ?? self.photoUrlList
     }
     
     func asJSON() -> [String : Any] {
@@ -44,6 +45,7 @@ extension ServiceOffer {
         JSON["name"] = self.name
         JSON["description"] = self.desc
         JSON["uid"] = self.uid
+        JSON["userUid"] = self.userUid
         JSON["photoUrlList"] = self.photoUrlList
         
         return JSON;
