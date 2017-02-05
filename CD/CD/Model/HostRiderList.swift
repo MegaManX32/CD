@@ -12,13 +12,6 @@ import UIKit
 
 class HostRiderList {
     
-//    "Uid": "12b9b551-354a-425c-87f0-49e40b243085",
-//    "HostUid": "84cea67a-050c-4397-b9b1-bdf39c35ed6a",
-//    "TravelerFullName": "Petar Petrovic",
-//    "TravelerCountry": "USA",
-//    "TravelerPictureUrl": null,
-//    "RiderListDetails": "Hteo bih da provedem bozicne i novogodisnje praznike u svojoj domovini..."
-    
     // MARK: - Properties
     
     var uid : String?
@@ -48,7 +41,7 @@ class HostRiderList {
         self.hostUid = JSON["hostUid"] as? String
         self.travelerFullName = JSON["travelerFullName"] as? String
         self.travelerCountry = JSON["travelerCountry"] as? String
-//        self.travelerPictureUrl = JSON["travelerPictureUrl"] as? String
+        self.travelerPictureUrl = JSON["travelerPictureUrl"] as? String
         self.riderListDetails = JSON["riderListDetails"] as? String
         self.riderListUid = JSON["riderListUid"] as? String
         
