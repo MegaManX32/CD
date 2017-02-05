@@ -31,7 +31,6 @@ class HostRiderList {
         hostRiderList.initWith(JSON: JSON)
         return hostRiderList
     }
-
     
     // MARK: - JSON serialization
     
