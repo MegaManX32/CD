@@ -458,8 +458,6 @@ class NetworkManager {
                     // check if valid JSON
                     guard let JSON = response.result.value as? [String: Any]
                         else {
-//                            let errorString = String(data: response.data!, encoding: .utf8)
-//                            print(errorString)
                             DispatchQueue.main.async {
                                 failure("JSON not valid")
                             }
@@ -622,6 +620,42 @@ class NetworkManager {
                 
                 // error handling
                 self.generalizedFailure(data: response.data, defaultErrorMessage: "Could not update rider list offer", failure: failure)
+            }
+        }
+    }
+    
+    // MARK: - ServiceOffer
+    
+    func createOrUpdate(serviceOffer: ServiceOffer, type: String, context: NSManagedObjectContext, success:@escaping (String) -> Void, failure:@escaping (String) -> Void) {
+        Alamofire.request(baseURL + "ServiceOffer/" + type, method: .post, parameters: serviceOffer.asJSON(), encoding: JSONEncoding.default, headers: self.headers).validate().responseJSON {[unowned self] (response) in
+            switch response.result {
+            case .success:
+                
+                context.perform {
+                    
+                    // check if valid JSON
+                    guard let JSON = response.result.value as? [String: Any]
+                        else {
+                            DispatchQueue.main.async {
+                                failure("JSON not valid")
+                            }
+                            return
+                    }
+                    
+                    // update riderList with JSON
+                    serviceOffer.initWith(JSON: JSON)
+                    CoreDataManager.sharedInstance.save(scratchpadContext: context)
+                    
+                    // always return on main queue
+                    let serviceOfferID = serviceOffer.uid!
+                    DispatchQueue.main.async {
+                        success(serviceOfferID)
+                    }
+                }
+            case .failure:
+                
+                // error handling
+                self.generalizedFailure(data: response.data, defaultErrorMessage: "Could not update service offer", failure: failure)
             }
         }
     }

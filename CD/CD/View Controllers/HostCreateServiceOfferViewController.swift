@@ -17,7 +17,7 @@ class HostCreateServiceOfferViewController: UIViewController, UIImagePickerContr
     // MARK: - Properties
     
     var navigationTitle : String!
-    var photoArray = ["http://www.moibbk.com/images/bmw-6-series-red-11.jpg", "http://cdn.bmwblog.com/wp-content/uploads/2015-BMW-6-Series-Convertible-15-750x562.jpg"]
+    var photoArray = [String]()
     
     @IBOutlet weak var titleLabel : UILabel!
     @IBOutlet weak var descriptionTextView : UITextView!
@@ -71,6 +71,30 @@ class HostCreateServiceOfferViewController: UIViewController, UIImagePickerContr
     
     // MARK: - User Actions
     
+    @IBAction func submitAction(sender: UIButton) {
+        
+        // create new service offer
+        MBProgressHUD.showAdded(to: self.view, animated: true)
+        let context = CoreDataManager.sharedInstance.createScratchpadContext(onMainThread: false)
+        context.perform {
+            [unowned self] in
+            
+            let newServiceOffer = ServiceOffer(context: context)
+            newServiceOffer.name = self.titleLabel.text
+            newServiceOffer.desc = self.descriptionTextView.text
+            newServiceOffer.userUid = StandardUserDefaults.userID()
+            newServiceOffer.photoUrlList = self.photoArray
+            
+            NetworkManager.sharedInstance.createOrUpdate(serviceOffer: newServiceOffer, type: self.titleLabel.text!.lowercased(), context: context, success: { [unowned self] (serviceOfferID) in
+                _ = self.navigationController?.popToRootViewController(animated: true)
+                MBProgressHUD.hide(for: self.view, animated: true)
+            }, failure: { [unowned self] (errorMessage) in
+                print(errorMessage)
+                MBProgressHUD.hide(for: self.view, animated: true)
+            })
+        }
+    }
+    
     @IBAction func backAction(sender: UIButton) {
         _ = self.navigationController?.popViewController(animated: true)
     }
@@ -99,7 +123,7 @@ class HostCreateServiceOfferViewController: UIViewController, UIImagePickerContr
         MBProgressHUD.showAdded(to: self.view, animated: true)
         NetworkManager.sharedInstance.upload(photo: image, success: { [unowned self] (photoID, photoURL) in
             
-            self.photoArray.append(photoURL)
+            self.photoArray.append("http://" + photoURL)
             self.collectionView.insertItems(at: [IndexPath.init(row: self.photoArray.count - 1, section: 0)])
             
         }, failure: {[unowned self] (errorMessage) in
