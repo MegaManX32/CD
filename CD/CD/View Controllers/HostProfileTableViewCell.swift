@@ -44,7 +44,7 @@ class HostProfileTableViewCell: UITableViewCell {
     
     func populateCellWithUserReview(userReview:User?) {
         
-        self.avatarImageView.image = #imageLiteral(resourceName: "testImage")
+//        self.avatarImageView.image = #imageLiteral(resourceName: "testImage")
         self.nameLabel.text = "Vlado"
         self.descriptionLabel.text = "Vlado is the best host ever"
         self.setStarRating(rating: 4)

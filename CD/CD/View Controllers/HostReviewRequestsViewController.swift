@@ -60,13 +60,13 @@ class HostReviewRequestsViewController: UIViewController {
         let hostRiderList = self.hostRiderListArray[self.currentOfferIndex]
         let riderList = RiderList.findRiderListWith(uid: hostRiderList.riderListUid!, context: CoreDataManager.sharedInstance.mainContext)
         if let riderList = riderList {
-            self.presentData(riderList: riderList)
+            self.presentData(hostRiderList: hostRiderList, riderList: riderList)
         }
         else {
             MBProgressHUD.showAdded(to: self.view, animated: true)
             NetworkManager.sharedInstance.getRiderList(riderListID: hostRiderList.riderListUid!, success: { [unowned self] (riderListID) in
                 let riderList = RiderList.findRiderListWith(uid: hostRiderList.riderListUid!, context: CoreDataManager.sharedInstance.mainContext)!
-                self.presentData(riderList: riderList)
+                self.presentData(hostRiderList: hostRiderList, riderList: riderList)
                 MBProgressHUD.hide(for: self.view, animated: true)
             }, failure: { [unowned self] (errorMessage) in
                 print(errorMessage)
@@ -75,9 +75,8 @@ class HostReviewRequestsViewController: UIViewController {
         }
     }
     
-    func presentData(riderList : RiderList) {
+    func presentData(hostRiderList: HostRiderList, riderList : RiderList) {
         let context = CoreDataManager.sharedInstance.mainContext
-        let user = User.findUserWith(uid: riderList.userUid!, context: context)!
         let meUser = User.findUserWith(uid: StandardUserDefaults.userID(), context: context)!
 
         // prepare text for guest
@@ -85,24 +84,24 @@ class HostReviewRequestsViewController: UIViewController {
         self.numberOfRequestsLabel.text = "Hi " + meUser.firstName! + ", you have " + "\(self.hostRiderListArray.count) " + "request" + hasMutipleOffersEnding
 
         // set data
-        self.titleLabel.text = user.firstName!
-        self.subtitelLabel.text = user.city!
-        self.subtitleLabel2.text = user.country!
+        self.titleLabel.text = hostRiderList.travelerFullName!
+        self.subtitelLabel.text = "No City"
+        self.subtitleLabel2.text = hostRiderList.travelerCountry!
         self.riderListTextView.text = riderList.details
 
         // set photo
-        if let photoURL = user.photoURL {
+        if let photoURL = hostRiderList.travelerPictureUrl {
             self.avatarImageView.af_setImage(withURL: URL(string: photoURL)!)
         }
 
         // set interests, there should always be 3 interests
-        let interestArray = Array(riderList.interests!)
-        var interest = interestArray[0] as! Interest
-        self.interest1ImageView.image = UIImage.init(named:interest.name!.lowercased())
-        interest = interestArray[1] as! Interest
-        self.interest2ImageView.image = UIImage.init(named:interest.name!.lowercased())
-        interest = interestArray[2] as! Interest
-        self.interest3ImageView.image = UIImage.init(named:interest.name!.lowercased())
+//        let interestArray = Array(riderList.interests!)
+//        var interest = interestArray[0] as! Interest
+//        self.interest1ImageView.image = UIImage.init(named:interest.name!.lowercased())
+//        interest = interestArray[1] as! Interest
+//        self.interest2ImageView.image = UIImage.init(named:interest.name!.lowercased())
+//        interest = interestArray[2] as! Interest
+//        self.interest3ImageView.image = UIImage.init(named:interest.name!.lowercased())
     }
     
     // MARK: - User Actions
