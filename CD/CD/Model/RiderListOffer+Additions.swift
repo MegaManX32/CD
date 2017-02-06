@@ -37,6 +37,14 @@ extension RiderListOffer {
         self.price = JSON["price"] as? NSNumber ?? self.price
         self.riderListId = JSON["riderListId"] as? String ?? self.riderListId
         self.message = JSON["message"] as? String ?? self.message
+        
+        // get offeror info
+        if let offerorInfoDictionary = JSON["offerorInfo"] as? [String : String] {
+            self.offerorFirstName = offerorInfoDictionary["firstName"] ?? self.offerorFirstName
+            self.offerorLastName = offerorInfoDictionary["lastName"] ?? self.offerorLastName
+            self.offerorCountry = offerorInfoDictionary["country"] ?? self.offerorCountry
+            self.offerorPhotoURL = offerorInfoDictionary["photoURL"] ?? self.offerorPhotoURL
+        }
     }
     
     func asJSON() -> [String : Any] {
@@ -47,6 +55,14 @@ extension RiderListOffer {
         JSON["price"] = self.price
         JSON["riderListId"] = self.riderListId
         JSON["message"] = self.message
+        
+        // set offeror info
+        var offerorInfoDictionary = [String : String]()
+        offerorInfoDictionary["firstName"] = self.offerorFirstName
+        offerorInfoDictionary["lastName"] = self.offerorLastName
+        offerorInfoDictionary["country"] = self.offerorCountry
+        offerorInfoDictionary["photoURL"] = self.offerorPhotoURL
+        JSON["offerorInfo"] = offerorInfoDictionary
         
         return JSON;
     }

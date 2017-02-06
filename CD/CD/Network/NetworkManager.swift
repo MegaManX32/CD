@@ -624,6 +624,38 @@ class NetworkManager {
         }
     }
     
+    func accept(riderListOffer: RiderListOffer, success:@escaping () -> Void, failure:@escaping (String) -> Void) {
+        Alamofire.request(baseURL + "RiderListOffer/accept", method: .post, parameters: riderListOffer.asJSON(), encoding: JSONEncoding.default, headers: self.headers).validate().responseJSON {[unowned self] (response) in
+            switch response.result {
+            case .success:
+                
+                // rider list offer accepted
+                success()
+                
+            case .failure:
+                
+                // error handling
+                self.generalizedFailure(data: response.data, defaultErrorMessage: "Could not accept rider list offer", failure: failure)
+            }
+        }
+    }
+    
+    func decline(riderListOffer: RiderListOffer, success:@escaping () -> Void, failure:@escaping (String) -> Void) {
+        Alamofire.request(baseURL + "RiderListOffer/decline", method: .post, parameters: riderListOffer.asJSON(), encoding: JSONEncoding.default, headers: self.headers).validate().responseJSON {[unowned self] (response) in
+            switch response.result {
+            case .success:
+                
+                // rider list offer declined
+                success()
+                
+            case .failure:
+                
+                // error handling
+                self.generalizedFailure(data: response.data, defaultErrorMessage: "Could not decline rider list offer", failure: failure)
+            }
+        }
+    }
+    
     // MARK: - ServiceOffer
     
     func createOrUpdate(serviceOffer: ServiceOffer, type: String, context: NSManagedObjectContext, success:@escaping (String) -> Void, failure:@escaping (String) -> Void) {

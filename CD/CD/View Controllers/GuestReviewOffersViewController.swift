@@ -100,6 +100,7 @@ class GuestReviewOffersViewController: UIViewController {
         let selectedOffer = self.riderListOffersArray[self.currentOfferIndex]
         let selectedOfferID = selectedOffer.uid!
         let selectedOfferOfferorID = selectedOffer.offerorUid!
+        
         let context = CoreDataManager.sharedInstance.createScratchpadContext(onMainThread: false)
         context.perform {
             [unowned self] in
