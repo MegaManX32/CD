@@ -61,7 +61,6 @@ class GuestReviewOffersViewController: UIViewController {
         
         let riderListOffer = self.riderListOffersArray[self.currentOfferIndex]
         let context = CoreDataManager.sharedInstance.mainContext
-        let user = User.findUserWith(uid: riderListOffer.offerorUid!, context: context)!
         let meUser = User.findUserWith(uid: StandardUserDefaults.userID(), context: context)!
         
         // prepare text for guest
@@ -69,21 +68,22 @@ class GuestReviewOffersViewController: UIViewController {
         self.numberOfOffersLabel.text = meUser.firstName! + ", you have " + "\(self.riderListOffersArray.count) " + "offer" + hasMutipleOffersEnding
         
         // set data
-        self.titleLabel.text = user.firstName!
-        self.subtitelLabel.text = user.city!
-        self.subtitleLabel2.text = user.country!
+        self.titleLabel.text = riderListOffer.offerorFirstName
+        self.subtitelLabel.text = "NO DATA"
+        self.subtitleLabel2.text = riderListOffer.offerorCountry
         self.riderListTextView.text = riderListOffer.message
         
         // set price
         self.priceLabel.text = "Price: " + "\(riderListOffer.price)"
         
         // set photo
-        if let photoURL = user.photoURL {
+        if let photoURL = riderListOffer.offerorPhotoURL {
             self.avatarImageView.af_setImage(withURL: URL(string: photoURL)!)
         }
         
         // set interests, there should always be 3 interests
-        let interestArray = Array(user.interests!)
+        let riderList = RiderList.findRiderListWith(uid: riderListOffer.riderListId!, context: context)!
+        let interestArray = Array(riderList.interests!)
         var interest = interestArray[0] as! Interest
         self.interest1ImageView.image = UIImage.init(named:interest.name!.lowercased())
         interest = interestArray[1] as! Interest
