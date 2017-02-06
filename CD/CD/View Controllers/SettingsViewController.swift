@@ -95,4 +95,8 @@ class SettingsViewController: UIViewController {
     @IBAction func logOut(sender : UIButton) {
         self.dismiss(animated: true, completion: nil)
     }
+    
+    @IBAction func comingSoon(sender: UIButton) {
+        CustomAlert.presentAlert(message: "Coming soon :-)", controller: self)
+    }
 }
