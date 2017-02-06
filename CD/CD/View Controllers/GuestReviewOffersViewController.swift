@@ -98,33 +98,16 @@ class GuestReviewOffersViewController: UIViewController {
         
         MBProgressHUD .showAdded(to: self.view, animated: true)
         let selectedOffer = self.riderListOffersArray[self.currentOfferIndex]
-        let selectedOfferID = selectedOffer.uid!
-        let selectedOfferOfferorID = selectedOffer.offerorUid!
-        
-        let context = CoreDataManager.sharedInstance.createScratchpadContext(onMainThread: false)
-        context.perform {
+        NetworkManager.sharedInstance.accept(riderListOffer: selectedOffer, success:{
             [unowned self] in
-            
-            // get rider list
-            let riderList = RiderList.findRiderListWith(uid: self.riderListID, context: context)!
-            
-            // get selected offer
-            let selectedOffer = RiderListOffer.findRiderListOfferWith(id: selectedOfferID, context: context)!
-            
-            // set selected offer
-            riderList.selectedRiderListOffer = selectedOffer
-            
-            // update rider list with selected offer
-            NetworkManager.sharedInstance.createOrUpdate(riderList: riderList, context: context, success: { [unowned self] (riderListID) in
-                let controller = self.storyboard?.instantiateViewController(withIdentifier: "GuestRiderListAcceptedViewController") as! GuestRiderListAcceptedViewController
-                controller.selectedOfferOfferorID = selectedOfferOfferorID
-                self.show(controller, sender: self)
-                MBProgressHUD.hide(for: self.view, animated: true)
-            }, failure: {[unowned self] (errorMessage) in
-                print(errorMessage)
-                MBProgressHUD.hide(for: self.view, animated: true)
-            })
-        }
+            let controller = self.storyboard?.instantiateViewController(withIdentifier: "GuestRiderListAcceptedViewController") as! GuestRiderListAcceptedViewController
+            controller.selectedOfferOfferorFirstName = selectedOffer.offerorFirstName!
+            self.show(controller, sender: self)
+            MBProgressHUD.hide(for: self.view, animated: true)
+        },failure: {[unowned self] (errorMessage) in
+            print(errorMessage)
+            MBProgressHUD.hide(for: self.view, animated: true)
+        })
     }
     
     @IBAction func backAction(sender: UIButton) {

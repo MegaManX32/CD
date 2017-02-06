@@ -12,7 +12,7 @@ class GuestRiderListAcceptedViewController: UIViewController {
 
     // MARK: - Properties
     
-    var selectedOfferOfferorID : String!
+    var selectedOfferOfferorFirstName : String!
     
     @IBOutlet weak var titleLabel : UILabel!
     
@@ -23,10 +23,9 @@ class GuestRiderListAcceptedViewController: UIViewController {
         
         // prepare end message
         let mainContext = CoreDataManager.sharedInstance.mainContext
-        let user = User.findUserWith(uid: self.selectedOfferOfferorID, context: mainContext)!
         let meUser = User.findUserWith(uid: StandardUserDefaults.userID(), context: mainContext)!
         
-        self.titleLabel.text = meUser.firstName! + "your Rider List is accepted," + user.firstName! + "will be your host"
+        self.titleLabel.text = meUser.firstName! + "your Rider List is accepted, " + selectedOfferOfferorFirstName + " will be your host"
     }
     
     override func didReceiveMemoryWarning() {
