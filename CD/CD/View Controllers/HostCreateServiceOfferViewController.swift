@@ -123,7 +123,7 @@ class HostCreateServiceOfferViewController: UIViewController, UIImagePickerContr
         MBProgressHUD.showAdded(to: self.view, animated: true)
         NetworkManager.sharedInstance.upload(photo: image, success: { [unowned self] (photoID, photoURL) in
             
-            self.photoArray.append("http://" + photoURL)
+            self.photoArray.append(photoURL)
             self.collectionView.insertItems(at: [IndexPath.init(row: self.photoArray.count - 1, section: 0)])
             MBProgressHUD.hide(for: self.view, animated: true)
             
