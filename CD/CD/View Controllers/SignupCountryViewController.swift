@@ -18,12 +18,16 @@ class SignupCountryViewController: UIViewController, GeneralPickerViewController
     @IBOutlet weak var zipCodeButtonView: ButtonView!
     @IBOutlet weak var professionButtonView: ButtonView!
     @IBOutlet weak var languageButtonView: ButtonView!
+    @IBOutlet weak var genderButtonView: ButtonView!
+    @IBOutlet weak var birthDateButtonView: ButtonView!
     
     var userID : String!
     var country : Country?
     var city : City?
     var languages : [Language]?
     var profession : Profession?
+    var gender : String?
+    var birthDate : Date?
     
     // MARK: - View Lifecycle
 
@@ -82,13 +86,35 @@ class SignupCountryViewController: UIViewController, GeneralPickerViewController
             controller.delegate = self
             self.show(controller, sender: self)
         }
+        self.genderButtonView.title = NSLocalizedString("Gender", comment: "gender")
+        self.genderButtonView.action = { [unowned self] in
+            let controller = self.storyboard?.instantiateViewController(withIdentifier: "GeneralPickerViewController") as! GeneralPickerViewController
+            controller.topTitle =  self.genderButtonView.title
+            controller.selectionType = .gender
+            controller.delegate = self
+            self.show(controller, sender: self)
+        }
+        self.birthDateButtonView.title = NSLocalizedString("Birth Date", comment: "")
+        self.birthDateButtonView.action = { [unowned self] in
+            let controller = self.storyboard?.instantiateViewController(withIdentifier: "DatePickerViewController") as! DatePickerViewController
+            controller.datePickedAction = { [unowned self] (pickedDate) in
+                self.birthDateButtonView.title = StandardDateFormatter.presentationStringFrom(date: pickedDate)
+                self.birthDate = pickedDate
+                _ = self.navigationController?.popViewController(animated: true)
+            }
+            controller.dateCancelledAction = { [unowned self] in
+                _ = self.navigationController?.popViewController(animated: true)
+            }
+            self.show(controller, sender: self)
+        }
+
     }
     
     // MARK: - User actions
     
     @IBAction func nextAction(sender: UIButton) {
-        guard let countryName = self.country?.countryName, let cityName = self.city?.cityName, let languages = self.languages, let professionName = self.profession?.profession else {
-            CustomAlert.presentAlert(message: "Please select country, city, language and profession", controller: self)
+        guard let countryName = self.country?.countryName, let cityName = self.city?.cityName, let languages = self.languages, let professionName = self.profession?.profession, let gender = self.gender, let birthDate = self.birthDate as NSDate? else {
+            CustomAlert.presentAlert(message: "Please select country, city, language, profession, gender and date of birth", controller: self)
             return;
         }
         
@@ -111,6 +137,8 @@ class SignupCountryViewController: UIViewController, GeneralPickerViewController
             user?.country = countryName
             user?.city = cityName
             user?.proffesion = professionName
+            user?.gender = gender
+            user?.birthDate = birthDate
             
             // add languages
             for languageID in languageIDArray {
@@ -148,6 +176,9 @@ class SignupCountryViewController: UIViewController, GeneralPickerViewController
         case .profession:
             self.profession = object as? Profession
             self.professionButtonView.title = self.profession?.profession
+        case .gender:
+            self.gender = object as? String
+            self.genderButtonView.title = self.gender
         default:
             break
             // do nothing, should never happen
