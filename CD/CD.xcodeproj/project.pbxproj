@@ -152,7 +152,7 @@
 		15327BC01DC63A62000411F7 /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		153C80D11DABB57000DBEDCD /* ButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		1547F1F31DC8FE3F00A04106 /* User+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "User+Additions.swift"; sourceTree = "<group>"; };
-		154A542A1D9FD0750021A803 /* CD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CD.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		154A542A1D9FD0750021A803 /* Custom Deal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Custom Deal.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		154A542D1D9FD0750021A803 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		154A54321D9FD0750021A803 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		154A54351D9FD0750021A803 /* CD.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CD.xcdatamodel; sourceTree = "<group>"; };
@@ -329,7 +329,7 @@
 		154A542B1D9FD0750021A803 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				154A542A1D9FD0750021A803 /* CD.app */,
+				154A542A1D9FD0750021A803 /* Custom Deal.app */,
 				151860A91E469379008936E4 /* Model.framework */,
 			);
 			name = Products;
@@ -524,9 +524,9 @@
 			productReference = 151860A91E469379008936E4 /* Model.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		154A54291D9FD0750021A803 /* CD */ = {
+		154A54291D9FD0750021A803 /* Custom Deal */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 154A543F1D9FD0750021A803 /* Build configuration list for PBXNativeTarget "CD" */;
+			buildConfigurationList = 154A543F1D9FD0750021A803 /* Build configuration list for PBXNativeTarget "Custom Deal" */;
 			buildPhases = (
 				677BF2EE16ACBAEC1658DC4E /* [CP] Check Pods Manifest.lock */,
 				154A54261D9FD0750021A803 /* Sources */,
@@ -541,9 +541,9 @@
 			dependencies = (
 				151860AF1E46937A008936E4 /* PBXTargetDependency */,
 			);
-			name = CD;
+			name = "Custom Deal";
 			productName = CD;
-			productReference = 154A542A1D9FD0750021A803 /* CD.app */;
+			productReference = 154A542A1D9FD0750021A803 /* Custom Deal.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -582,7 +582,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				154A54291D9FD0750021A803 /* CD */,
+				154A54291D9FD0750021A803 /* Custom Deal */,
 				151860A81E469379008936E4 /* Model */,
 			);
 		};
@@ -977,7 +977,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		154A543F1D9FD0750021A803 /* Build configuration list for PBXNativeTarget "CD" */ = {
+		154A543F1D9FD0750021A803 /* Build configuration list for PBXNativeTarget "Custom Deal" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				154A54401D9FD0750021A803 /* Debug */,
