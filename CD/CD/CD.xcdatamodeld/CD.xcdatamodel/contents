@@ -44,6 +44,7 @@
     </entity>
     <entity name="RiderListOffer" representedClassName="RiderListOffer" syncable="YES" codeGenerationType="class">
         <attribute name="message" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="offerorCity" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="offerorCountry" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="offerorFirstName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="offerorLastName" optional="YES" attributeType="String" syncable="YES"/>
@@ -96,7 +97,7 @@
         <element name="Language" positionX="-36" positionY="126" width="128" height="105"/>
         <element name="Profession" positionX="-36" positionY="153" width="128" height="75"/>
         <element name="RiderList" positionX="-54" positionY="135" width="128" height="240"/>
-        <element name="RiderListOffer" positionX="-45" positionY="144" width="128" height="225"/>
+        <element name="RiderListOffer" positionX="-45" positionY="144" width="128" height="240"/>
         <element name="ServiceOffer" positionX="-54" positionY="117" width="128" height="135"/>
         <element name="User" positionX="-63" positionY="-18" width="128" height="390"/>
     </elements>

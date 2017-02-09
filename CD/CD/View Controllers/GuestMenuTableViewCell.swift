@@ -38,12 +38,18 @@ class GuestMenuTableViewCell: UITableViewCell {
     
     // MARK: - Helper methods
     
-    func populateCellWithRaiderListOffer(riderListOffer:RiderListOffer?, isLastCell: Bool) {
-        self.nameLabel.text = "Vlado"
-        self.countryLabel.text = "Serbia"
-        self.avatarImageView.image = nil
-        self.separatorView.isHidden = isLastCell
+    func populateCellWithRaiderListOffer(riderListOffer:RiderListOffer, isLastCell: Bool) {
+        self.nameLabel.text = riderListOffer.offerorFirstName
+        self.countryLabel.text = riderListOffer.offerorCountry
+        self.descriptionLabel.text = riderListOffer.message
         
+        // set avatar
+        self.avatarImageView.image = nil
+        if let photoURL = riderListOffer.offerorPhotoURL {
+            self.avatarImageView.af_setImage(withURL: URL(string: photoURL)!)
+        }
+   
+        self.separatorView.isHidden = isLastCell
         self.setStarRating(rating: 4)
     }
     

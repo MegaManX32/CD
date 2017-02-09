@@ -113,6 +113,9 @@ class GuestHomeViewController: UIViewController, UITableViewDataSource, UITableV
                     
                     let endString = (self.riderListOffersArray.count == 1) ? "!" : "s!"
                     self.numberOfRiderListOffersLabel.text = "You have \(self.riderListOffersArray.count) " + "offer" + endString
+                    
+                    // reload data
+                    self.tableView.reloadData()
                 }
                 else {
                     self.riderListOffersView.alpha = 0
@@ -145,7 +148,7 @@ class GuestHomeViewController: UIViewController, UITableViewDataSource, UITableV
         self.show(controller, sender: self)
     }
     
-    // MARK: - Table view data source
+    // MARK: - UITableViewDelegate Methods
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -157,7 +160,7 @@ class GuestHomeViewController: UIViewController, UITableViewDataSource, UITableV
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier:GuestMenuTableViewCell.cellIdentifier(), for: indexPath) as! GuestMenuTableViewCell
-        cell.populateCellWithRaiderListOffer(riderListOffer: nil, isLastCell: indexPath.row == self.riderListOffersArray.count - 1)
+        cell.populateCellWithRaiderListOffer(riderListOffer: riderListOffersArray[indexPath.row], isLastCell: indexPath.row == self.riderListOffersArray.count - 1)
         return cell
     }
     

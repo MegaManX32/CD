@@ -85,7 +85,7 @@ class HostReviewRequestsViewController: UIViewController {
 
         // set data
         self.titleLabel.text = hostRiderList.travelerFullName!
-        self.subtitelLabel.text = "No City"
+        self.subtitelLabel.text = hostRiderList.travelerCity!
         self.subtitleLabel2.text = hostRiderList.travelerCountry!
         self.riderListTextView.text = riderList.details
 
@@ -95,13 +95,13 @@ class HostReviewRequestsViewController: UIViewController {
         }
 
         // set interests, there should always be 3 interests
-//        let interestArray = Array(riderList.interests!)
-//        var interest = interestArray[0] as! Interest
-//        self.interest1ImageView.image = UIImage.init(named:interest.name!.lowercased())
-//        interest = interestArray[1] as! Interest
-//        self.interest2ImageView.image = UIImage.init(named:interest.name!.lowercased())
-//        interest = interestArray[2] as! Interest
-//        self.interest3ImageView.image = UIImage.init(named:interest.name!.lowercased())
+        let interestArray = Array(riderList.interests!)
+        var interest = interestArray[0] as! Interest
+        self.interest1ImageView.image = UIImage.init(named:interest.name!.lowercased())
+        interest = interestArray[1] as! Interest
+        self.interest2ImageView.image = UIImage.init(named:interest.name!.lowercased())
+        interest = interestArray[2] as! Interest
+        self.interest3ImageView.image = UIImage.init(named:interest.name!.lowercased())
     }
     
     // MARK: - User Actions

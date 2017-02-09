@@ -38,11 +38,9 @@ class HostMenuTableViewCell: UITableViewCell {
         self.descriptionLabel.text = hostRiderList.riderListDetails
         
         // set avatar if exists
+        self.avatarImageView.image = nil
         if let photoURL = hostRiderList.travelerPictureUrl {
             self.avatarImageView.af_setImage(withURL: URL(string: photoURL)!)
-        }
-        else {
-            self.avatarImageView.image = nil
         }
         
         // set separator

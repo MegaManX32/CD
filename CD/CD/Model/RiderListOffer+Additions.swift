@@ -42,6 +42,7 @@ extension RiderListOffer {
         if let offerorInfoDictionary = JSON["offerorInfo"] as? [String : String] {
             self.offerorFirstName = offerorInfoDictionary["firstName"] ?? self.offerorFirstName
             self.offerorLastName = offerorInfoDictionary["lastName"] ?? self.offerorLastName
+            self.offerorCity = offerorInfoDictionary["city"] ?? self.offerorCity
             self.offerorCountry = offerorInfoDictionary["country"] ?? self.offerorCountry
             self.offerorPhotoURL = offerorInfoDictionary["photoURL"] ?? self.offerorPhotoURL
         }
@@ -60,6 +61,7 @@ extension RiderListOffer {
         var offerorInfoDictionary = [String : String]()
         offerorInfoDictionary["firstName"] = self.offerorFirstName
         offerorInfoDictionary["lastName"] = self.offerorLastName
+        offerorInfoDictionary["city"] = self.offerorCity
         offerorInfoDictionary["country"] = self.offerorCountry
         offerorInfoDictionary["photoURL"] = self.offerorPhotoURL
         JSON["offerorInfo"] = offerorInfoDictionary

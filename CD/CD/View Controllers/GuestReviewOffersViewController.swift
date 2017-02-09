@@ -69,12 +69,12 @@ class GuestReviewOffersViewController: UIViewController {
         
         // set data
         self.titleLabel.text = riderListOffer.offerorFirstName
-        self.subtitelLabel.text = "NO DATA"
+        self.subtitelLabel.text = riderListOffer.offerorCity
         self.subtitleLabel2.text = riderListOffer.offerorCountry
         self.riderListTextView.text = riderListOffer.message
         
         // set price
-        self.priceLabel.text = "Price: " + "\(riderListOffer.price)"
+        self.priceLabel.text = "Price: " + "\(riderListOffer.price!)"
         
         // set photo
         if let photoURL = riderListOffer.offerorPhotoURL {

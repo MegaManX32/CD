@@ -17,6 +17,7 @@ class HostRiderList {
     var uid : String?
     var hostUid : String?
     var travelerFullName : String?
+    var travelerCity : String?
     var travelerCountry : String?
     var travelerPictureUrl : String?
     var riderListDetails : String?
@@ -39,6 +40,7 @@ class HostRiderList {
         self.uid = JSON["uid"] as? String
         self.hostUid = JSON["hostUid"] as? String
         self.travelerFullName = JSON["travelerFullName"] as? String
+        self.travelerCity = JSON["travelerCity"] as? String
         self.travelerCountry = JSON["travelerCountry"] as? String
         self.travelerPictureUrl = JSON["travelerPictureUrl"] as? String
         self.riderListDetails = JSON["riderListDetails"] as? String
@@ -51,6 +53,7 @@ class HostRiderList {
         JSON["uid"] = self.uid
         JSON["hostUid"]  = self.hostUid
         JSON["travelerFullName"] = self.travelerFullName
+        JSON["travelerCity"] = self.travelerCity
         JSON["travelerCountry"] =  self.travelerCountry
         JSON["travelerPictureUrl"] = self.travelerPictureUrl
         JSON["riderListDetails"] = self.riderListDetails
