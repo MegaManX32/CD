@@ -33,7 +33,6 @@ extension User {
     func initWith(JSON:[String : Any], context: NSManagedObjectContext) {
         
         // update simple properties from JSON
-        self.birthDate = JSON["birthDate"] as? NSDate ?? self.birthDate
         self.gender = JSON["gender"] as? String ?? self.gender
         self.country = JSON["country"] as? String ?? self.country
         self.email = JSON["email"] as? String ?? self.email
@@ -53,6 +52,11 @@ extension User {
         self.zipcode = JSON["zipcode"] as? String ?? self.zipcode
         self.city = JSON["city"] as? String ?? self.city
         self.photoURL = JSON["photoURL"] as? String ?? self.photoURL
+        
+        // birth date
+        if let birthDateString = JSON["birthDate"] as? String {
+            self.birthDate = StandardDateFormatter.dateFrom(dateString: birthDateString)
+        }
         
         // create relationships
         if let interests = JSON["interests"] as? [[String : Any]] {
@@ -81,7 +85,6 @@ extension User {
         
         // create JSON from properties
         var JSON = [String : Any]()
-        JSON["birthDate"] = self.birthDate
         JSON["gender"] = self.gender
         JSON["country"] = self.country
         JSON["email"] = self.email
@@ -101,6 +104,11 @@ extension User {
         JSON["zipcode"] = self.zipcode
         JSON["city"] = self.city
         JSON["photoURL"] = self.photoURL
+        
+        // birth date
+        if let birthDate = self.birthDate {
+            JSON["birthDate"] = StandardDateFormatter.stringFrom(date: birthDate)
+        }
         
         // create relationships
         if let interests = self.interests {

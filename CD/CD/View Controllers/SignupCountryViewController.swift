@@ -87,6 +87,7 @@ class SignupCountryViewController: UIViewController, GeneralPickerViewController
             self.show(controller, sender: self)
         }
         self.genderButtonView.title = NSLocalizedString("Gender", comment: "gender")
+        self.genderButtonView.isWhite = true
         self.genderButtonView.action = { [unowned self] in
             let controller = self.storyboard?.instantiateViewController(withIdentifier: "GeneralPickerViewController") as! GeneralPickerViewController
             controller.topTitle =  self.genderButtonView.title
@@ -95,6 +96,7 @@ class SignupCountryViewController: UIViewController, GeneralPickerViewController
             self.show(controller, sender: self)
         }
         self.birthDateButtonView.title = NSLocalizedString("Birth Date", comment: "")
+        self.birthDateButtonView.isWhite = true
         self.birthDateButtonView.action = { [unowned self] in
             let controller = self.storyboard?.instantiateViewController(withIdentifier: "DatePickerViewController") as! DatePickerViewController
             controller.datePickedAction = { [unowned self] (pickedDate) in

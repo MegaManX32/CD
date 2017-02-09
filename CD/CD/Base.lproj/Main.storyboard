@@ -26,7 +26,7 @@
         <scene sceneID="8FV-Vi-8xK">
             <objects>
                 <navigationController navigationBarHidden="YES" id="5f1-Mz-Wsz" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="yJV-oC-Rt2">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="yJV-oC-Rt2">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -41,7 +41,7 @@
         <!--Start View Controller-->
         <scene sceneID="Z7m-T0-5B0">
             <objects>
-                <viewController storyboardIdentifier="StartViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="MrJ-Cs-mAe" customClass="StartViewController" customModule="CD" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="StartViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="MrJ-Cs-mAe" customClass="StartViewController" customModule="Custom_Deal" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="TBT-qG-s3M"/>
                         <viewControllerLayoutGuide type="bottom" id="BWU-Ql-fl4"/>
@@ -54,7 +54,7 @@
                                 <rect key="frame" x="-4" y="0.0" width="383" height="667"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="INCREASE YOUR INCOME BY OFFERING SERVICES OR JUST BE A CELEBRITY AND CREATE YOUR RIDER LIST" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9qd-bS-Tea">
-                                <rect key="frame" x="-92.5" y="196" width="560" height="227"/>
+                                <rect key="frame" x="-93" y="196" width="561" height="227"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="227" id="3n5-gr-9iz"/>
                                     <constraint firstAttribute="width" constant="560" id="UK0-cN-9z7"/>
@@ -170,7 +170,7 @@
         <!--Signup View Controller-->
         <scene sceneID="Tnp-Zl-DqT">
             <objects>
-                <viewController storyboardIdentifier="SignupViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="u4Y-yb-Ua9" customClass="SignupViewController" customModule="CD" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignupViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="u4Y-yb-Ua9" customClass="SignupViewController" customModule="Custom_Deal" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="DJF-Pz-VmW"/>
                         <viewControllerLayoutGuide type="bottom" id="bCB-ak-0WG"/>
@@ -206,32 +206,32 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cJs-bb-7de">
                                 <rect key="frame" x="-4" y="64" width="383" height="244"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SQY-pz-4Pp" customClass="IntroTextField" customModule="CD" customModuleProvider="target">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SQY-pz-4Pp" customClass="IntroTextField" customModule="Custom_Deal" customModuleProvider="target">
                                         <rect key="frame" x="20" y="8" width="343" height="30"/>
                                         <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cFr-s5-61D" customClass="IntroTextField" customModule="CD" customModuleProvider="target">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cFr-s5-61D" customClass="IntroTextField" customModule="Custom_Deal" customModuleProvider="target">
                                         <rect key="frame" x="20" y="46" width="343" height="30"/>
                                         <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hlw-ln-rye" customClass="IntroTextField" customModule="CD" customModuleProvider="target">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hlw-ln-rye" customClass="IntroTextField" customModule="Custom_Deal" customModuleProvider="target">
                                         <rect key="frame" x="20" y="84" width="343" height="30"/>
                                         <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="glY-Dr-rNx" customClass="IntroTextField" customModule="CD" customModuleProvider="target">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="glY-Dr-rNx" customClass="IntroTextField" customModule="Custom_Deal" customModuleProvider="target">
                                         <rect key="frame" x="20" y="160" width="343" height="30"/>
                                         <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wAf-4K-FP8" customClass="IntroTextField" customModule="CD" customModuleProvider="target">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wAf-4K-FP8" customClass="IntroTextField" customModule="Custom_Deal" customModuleProvider="target">
                                         <rect key="frame" x="20" y="122" width="343" height="30"/>
                                         <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uO4-cl-UT8" customClass="IntroButton" customModule="CD" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uO4-cl-UT8" customClass="IntroButton" customModule="Custom_Deal" customModuleProvider="target">
                                         <rect key="frame" x="20" y="198" width="343" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="Vjg-fR-36f"/>
@@ -299,7 +299,7 @@
         <!--Signup Finished View Controller-->
         <scene sceneID="DuV-BO-aio">
             <objects>
-                <viewController storyboardIdentifier="SignupFinishedViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="kdu-x8-VBs" customClass="SignupFinishedViewController" customModule="CD" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignupFinishedViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="kdu-x8-VBs" customClass="SignupFinishedViewController" customModule="Custom_Deal" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="iZq-9b-YlV"/>
                         <viewControllerLayoutGuide type="bottom" id="jvy-Yh-RXx"/>
@@ -330,7 +330,7 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vQT-0h-j2u" customClass="IntroButton" customModule="CD" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vQT-0h-j2u" customClass="IntroButton" customModule="Custom_Deal" customModuleProvider="target">
                                 <rect key="frame" x="20" y="524" width="335" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="AFS-cG-JzI"/>
@@ -372,7 +372,7 @@
         <!--Signup Confirm Phone View Controller-->
         <scene sceneID="Kse-od-S5s">
             <objects>
-                <viewController storyboardIdentifier="SignupConfirmPhoneViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cu3-fX-L1V" customClass="SignupConfirmPhoneViewController" customModule="CD" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignupConfirmPhoneViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cu3-fX-L1V" customClass="SignupConfirmPhoneViewController" customModule="Custom_Deal" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zxn-SK-DnY"/>
                         <viewControllerLayoutGuide type="bottom" id="Vwq-pi-lH1"/>
@@ -413,7 +413,7 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qs8-2t-BHJ" customClass="IntroButton" customModule="CD" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qs8-2t-BHJ" customClass="IntroButton" customModule="Custom_Deal" customModuleProvider="target">
                                 <rect key="frame" x="16" y="322" width="343" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="nl5-cp-meD"/>
@@ -480,7 +480,7 @@
         <!--Signup Four Digit Code View Controller-->
         <scene sceneID="AAt-ge-hYU">
             <objects>
-                <viewController storyboardIdentifier="SignupFourDigitCodeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="lah-yn-Zws" customClass="SignupFourDigitCodeViewController" customModule="CD" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignupFourDigitCodeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="lah-yn-Zws" customClass="SignupFourDigitCodeViewController" customModule="Custom_Deal" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ps4-mh-vvT"/>
                         <viewControllerLayoutGuide type="bottom" id="D1m-af-1AT"/>
@@ -626,7 +626,7 @@
         <!--Signup Great View Controller-->
         <scene sceneID="m94-Ab-m92">
             <objects>
-                <viewController storyboardIdentifier="SignupGreatViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gHm-tG-oPM" customClass="SignupGreatViewController" customModule="CD" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignupGreatViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gHm-tG-oPM" customClass="SignupGreatViewController" customModule="Custom_Deal" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="c8i-04-BsT"/>
                         <viewControllerLayoutGuide type="bottom" id="QgA-NG-J5T"/>
@@ -664,7 +664,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hGH-i0-2Dm" customClass="IntroButton" customModule="CD" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hGH-i0-2Dm" customClass="IntroButton" customModule="Custom_Deal" customModuleProvider="target">
                                 <rect key="frame" x="16" y="336" width="343" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="qmd-VY-89l"/>
@@ -701,7 +701,7 @@
         <!--General Picker View Controller-->
         <scene sceneID="UqL-0x-YLx">
             <objects>
-                <viewController storyboardIdentifier="GeneralPickerViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="K4v-N6-Kkb" customClass="GeneralPickerViewController" customModule="CD" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GeneralPickerViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="K4v-N6-Kkb" customClass="GeneralPickerViewController" customModule="Custom_Deal" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="uzB-k0-mVt"/>
                         <viewControllerLayoutGuide type="bottom" id="skW-9A-zeY"/>
@@ -752,7 +752,7 @@
                                 <rect key="frame" x="0.0" y="70" width="375" height="597"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="GeneralPickerTableViewCell" selectionStyle="none" indentationWidth="10" reuseIdentifier="GeneralPickerTableViewCell" rowHeight="44" id="VH1-bQ-fJ8" customClass="GeneralPickerTableViewCell" customModule="CD" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="GeneralPickerTableViewCell" selectionStyle="none" indentationWidth="10" reuseIdentifier="GeneralPickerTableViewCell" rowHeight="44" id="VH1-bQ-fJ8" customClass="GeneralPickerTableViewCell" customModule="Custom_Deal" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VH1-bQ-fJ8" id="dQO-fE-1is">
@@ -814,7 +814,7 @@
         <!--Date Picker View Controller-->
         <scene sceneID="YZj-JE-5Sk">
             <objects>
-                <viewController storyboardIdentifier="DatePickerViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="sBs-Md-9HP" customClass="DatePickerViewController" customModule="CD" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DatePickerViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="sBs-Md-9HP" customClass="DatePickerViewController" customModule="Custom_Deal" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Oey-Tj-nnH"/>
                         <viewControllerLayoutGuide type="bottom" id="JmF-gn-f31"/>
@@ -869,7 +869,7 @@
                                     <!--2016-12-03 21:17:26 +0000-->
                                 </date>
                             </datePicker>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UIu-hh-swG" customClass="IntroButton" customModule="CD" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UIu-hh-swG" customClass="IntroButton" customModule="Custom_Deal" customModuleProvider="target">
                                 <rect key="frame" x="16" y="358" width="343" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="SRf-AQ-PIS"/>
@@ -912,7 +912,7 @@
         <!--Signup Add Your Photo View Controller-->
         <scene sceneID="eWO-wa-tat">
             <objects>
-                <viewController storyboardIdentifier="SignupAddYourPhotoViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="mzx-k3-kEm" customClass="SignupAddYourPhotoViewController" customModule="CD" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignupAddYourPhotoViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="mzx-k3-kEm" customClass="SignupAddYourPhotoViewController" customModule="Custom_Deal" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ngd-wZ-XIc"/>
                         <viewControllerLayoutGuide type="bottom" id="meL-re-uw4"/>
@@ -950,7 +950,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fvx-wQ-vt9" customClass="DotView" customModule="CD" customModuleProvider="target">
+                            <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fvx-wQ-vt9" customClass="DotView" customModule="Custom_Deal" customModuleProvider="target">
                                 <rect key="frame" x="165" y="40" width="10" height="10"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -958,7 +958,7 @@
                                     <constraint firstAttribute="height" constant="10" id="qF4-jd-f4I"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LrU-LX-MUt" customClass="DotView" customModule="CD" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LrU-LX-MUt" customClass="DotView" customModule="Custom_Deal" customModuleProvider="target">
                                 <rect key="frame" x="183" y="40" width="10" height="10"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -966,7 +966,7 @@
                                     <constraint firstAttribute="width" constant="10" id="x6A-GH-k54"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O8Y-Zy-tGg" customClass="DotView" customModule="CD" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O8Y-Zy-tGg" customClass="DotView" customModule="Custom_Deal" customModuleProvider="target">
                                 <rect key="frame" x="201" y="40" width="10" height="10"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -974,7 +974,7 @@
                                     <constraint firstAttribute="height" constant="10" id="KgF-T4-Jx9"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gbC-PF-rWF" customClass="IntroButtonWhite" customModule="CD" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gbC-PF-rWF" customClass="IntroButtonWhite" customModule="Custom_Deal" customModuleProvider="target">
                                 <rect key="frame" x="16" y="325" width="343" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="T5g-qq-AUV"/>
@@ -987,7 +987,7 @@
                                     <action selector="chooseFromPhotoLibraryWithSender:" destination="mzx-k3-kEm" eventType="touchUpInside" id="KOZ-hu-B17"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Sw-So-iiM" customClass="IntroButtonWhite" customModule="CD" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Sw-So-iiM" customClass="IntroButtonWhite" customModule="Custom_Deal" customModuleProvider="target">
                                 <rect key="frame" x="16" y="381" width="343" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="g0C-Lv-Tic"/>
@@ -1035,7 +1035,7 @@
         <!--Signup You Look Good View Controller-->
         <scene sceneID="CwH-kM-3fg">
             <objects>
-                <viewController storyboardIdentifier="SignupYouLookGoodViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="G3N-Eb-I7a" customClass="SignupYouLookGoodViewController" customModule="CD" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignupYouLookGoodViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="G3N-Eb-I7a" customClass="SignupYouLookGoodViewController" customModule="Custom_Deal" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Wju-Vi-t54"/>
                         <viewControllerLayoutGuide type="bottom" id="a36-iY-Yp2"/>
@@ -1073,7 +1073,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mtc-mv-sV9" customClass="DotView" customModule="CD" customModuleProvider="target">
+                            <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mtc-mv-sV9" customClass="DotView" customModule="Custom_Deal" customModuleProvider="target">
                                 <rect key="frame" x="165" y="40" width="10" height="10"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -1081,7 +1081,7 @@
                                     <constraint firstAttribute="width" constant="10" id="Cp4-8d-hCZ"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fe3-Ba-fJU" customClass="DotView" customModule="CD" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fe3-Ba-fJU" customClass="DotView" customModule="Custom_Deal" customModuleProvider="target">
                                 <rect key="frame" x="183" y="40" width="10" height="10"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -1089,7 +1089,7 @@
                                     <constraint firstAttribute="width" constant="10" id="ykn-Ae-Acy"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AOe-Ng-AqI" customClass="DotView" customModule="CD" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AOe-Ng-AqI" customClass="DotView" customModule="Custom_Deal" customModuleProvider="target">
                                 <rect key="frame" x="201" y="40" width="10" height="10"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -1097,7 +1097,7 @@
                                     <constraint firstAttribute="width" constant="10" id="Qoh-rz-xqV"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NoT-xv-id2" customClass="IntroButtonWhite" customModule="CD" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NoT-xv-id2" customClass="IntroButtonWhite" customModule="Custom_Deal" customModuleProvider="target">
                                 <rect key="frame" x="16" y="325" width="343" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="UqB-pG-AJM"/>
@@ -1110,7 +1110,7 @@
                                     <action selector="changePhotoActionWithSender:" destination="G3N-Eb-I7a" eventType="touchUpInside" id="Veg-tp-W0Y"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pD8-3T-yti" customClass="IntroButton" customModule="CD" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pD8-3T-yti" customClass="IntroButton" customModule="Custom_Deal" customModuleProvider="target">
                                 <rect key="frame" x="16" y="381" width="343" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="gtc-Ew-4jQ"/>
@@ -1162,7 +1162,7 @@
         <!--Signup Country View Controller-->
         <scene sceneID="6c6-nc-5bx">
             <objects>
-                <viewController storyboardIdentifier="SignupCountryViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="tBH-wb-ULj" customClass="SignupCountryViewController" customModule="CD" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignupCountryViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="tBH-wb-ULj" customClass="SignupCountryViewController" customModule="Custom_Deal" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="huU-hH-ka1"/>
                         <viewControllerLayoutGuide type="bottom" id="4Zq-kA-w3a"/>
@@ -1174,7 +1174,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="signupBackground" translatesAutoresizingMaskIntoConstraints="NO" id="im4-Ce-nt7">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rEH-D7-cRC" customClass="DotView" customModule="CD" customModuleProvider="target">
+                            <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rEH-D7-cRC" customClass="DotView" customModule="Custom_Deal" customModuleProvider="target">
                                 <rect key="frame" x="165" y="40" width="10" height="10"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -1182,7 +1182,7 @@
                                     <constraint firstAttribute="width" constant="10" id="eqP-aI-Yz4"/>
                                 </constraints>
                             </view>
-                            <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fc7-pp-2fd" customClass="DotView" customModule="CD" customModuleProvider="target">
+                            <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fc7-pp-2fd" customClass="DotView" customModule="Custom_Deal" customModuleProvider="target">
                                 <rect key="frame" x="183" y="40" width="10" height="10"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -1190,7 +1190,7 @@
                                     <constraint firstAttribute="width" constant="10" id="tHf-hI-YFz"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c5g-u3-0EB" customClass="DotView" customModule="CD" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c5g-u3-0EB" customClass="DotView" customModule="Custom_Deal" customModuleProvider="target">
                                 <rect key="frame" x="201" y="40" width="10" height="10"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -1205,7 +1205,7 @@
                                     <constraint firstAttribute="height" constant="2" id="5mJ-Kd-iF4"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e4z-nt-3Un" customClass="IntroButton" customModule="CD" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e4z-nt-3Un" customClass="IntroButton" customModule="Custom_Deal" customModuleProvider="target">
                                 <rect key="frame" x="16" y="583" width="343" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="STB-r4-dma"/>
@@ -1218,42 +1218,42 @@
                                     <action selector="nextActionWithSender:" destination="tBH-wb-ULj" eventType="touchUpInside" id="7YC-Gs-R0H"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zsL-ia-jDV" customClass="ButtonView" customModule="CD" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zsL-ia-jDV" customClass="ButtonView" customModule="Custom_Deal" customModuleProvider="target">
                                 <rect key="frame" x="16" y="104" width="343" height="40"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Ddp-NE-aq9"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qmU-iT-zGL" customClass="ButtonView" customModule="CD" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qmU-iT-zGL" customClass="ButtonView" customModule="Custom_Deal" customModuleProvider="target">
                                 <rect key="frame" x="16" y="152" width="343" height="40"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="K4L-ad-wq8"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8en-yl-25z" customClass="ButtonView" customModule="CD" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8en-yl-25z" customClass="ButtonView" customModule="Custom_Deal" customModuleProvider="target">
                                 <rect key="frame" x="17" y="226" width="343" height="40"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="xTo-Gp-v27"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l3N-JU-osZ" customClass="ButtonView" customModule="CD" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l3N-JU-osZ" customClass="ButtonView" customModule="Custom_Deal" customModuleProvider="target">
                                 <rect key="frame" x="16" y="274" width="343" height="40"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="66v-lK-I76"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oDl-Vy-u2p" customClass="ButtonView" customModule="CD" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oDl-Vy-u2p" customClass="ButtonView" customModule="Custom_Deal" customModuleProvider="target">
                                 <rect key="frame" x="16" y="322" width="343" height="40"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="m0l-85-WPp"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T4k-SC-S95" customClass="ButtonView" customModule="CD" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T4k-SC-S95" customClass="ButtonView" customModule="Custom_Deal" customModuleProvider="target">
                                 <rect key="frame" x="16" y="370" width="343" height="40"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -1314,7 +1314,7 @@
         <!--Signup Your Interests View Controller-->
         <scene sceneID="mRo-dP-Kon">
             <objects>
-                <viewController storyboardIdentifier="SignupYourInterestsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="b0q-Ll-AS5" customClass="SignupYourInterestsViewController" customModule="CD" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignupYourInterestsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="b0q-Ll-AS5" customClass="SignupYourInterestsViewController" customModule="Custom_Deal" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nGD-gg-EM7"/>
                         <viewControllerLayoutGuide type="bottom" id="WCs-tt-h0W"/>
@@ -1326,7 +1326,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="signupBackground" translatesAutoresizingMaskIntoConstraints="NO" id="pQg-CR-9lf">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3ng-ML-Ir2" customClass="DotView" customModule="CD" customModuleProvider="target">
+                            <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3ng-ML-Ir2" customClass="DotView" customModule="Custom_Deal" customModuleProvider="target">
                                 <rect key="frame" x="165" y="40" width="10" height="10"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -1334,7 +1334,7 @@
                                     <constraint firstAttribute="height" constant="10" id="Oc7-8E-Uhf"/>
                                 </constraints>
                             </view>
-                            <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qfZ-xy-ZwC" customClass="DotView" customModule="CD" customModuleProvider="target">
+                            <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qfZ-xy-ZwC" customClass="DotView" customModule="Custom_Deal" customModuleProvider="target">
                                 <rect key="frame" x="183" y="40" width="10" height="10"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -1342,7 +1342,7 @@
                                     <constraint firstAttribute="height" constant="10" id="bnY-Ko-m3l"/>
                                 </constraints>
                             </view>
-                            <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jq3-dC-Gdj" customClass="DotView" customModule="CD" customModuleProvider="target">
+                            <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jq3-dC-Gdj" customClass="DotView" customModule="Custom_Deal" customModuleProvider="target">
                                 <rect key="frame" x="201" y="40" width="10" height="10"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -1379,7 +1379,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="SignupInterestsCollectionViewCell" reuseIdentifier="SignupInterestsCollectionViewCell" id="3Kz-PS-Eiy" customClass="SignupInterestsCollectionViewCell" customModule="CD" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="SignupInterestsCollectionViewCell" reuseIdentifier="SignupInterestsCollectionViewCell" id="3Kz-PS-Eiy" customClass="SignupInterestsCollectionViewCell" customModule="Custom_Deal" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="80" height="90"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -1433,7 +1433,7 @@
                                     <outlet property="delegate" destination="b0q-Ll-AS5" id="CZL-kN-W4e"/>
                                 </connections>
                             </collectionView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SvU-XL-Mrt" customClass="IntroButton" customModule="CD" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SvU-XL-Mrt" customClass="IntroButton" customModule="Custom_Deal" customModuleProvider="target">
                                 <rect key="frame" x="16" y="583" width="343" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="gdF-W8-HgF"/>
@@ -1484,7 +1484,7 @@
         <!--Signup Congratulations View Controller-->
         <scene sceneID="ScI-J6-VkP">
             <objects>
-                <viewController storyboardIdentifier="SignupCongratulationsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="GSb-nh-SIU" customClass="SignupCongratulationsViewController" customModule="CD" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignupCongratulationsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="GSb-nh-SIU" customClass="SignupCongratulationsViewController" customModule="Custom_Deal" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="RtE-fB-0gm"/>
                         <viewControllerLayoutGuide type="bottom" id="3dN-8p-3dj"/>
@@ -1505,7 +1505,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J66-Ia-cQo" customClass="IntroButtonWhite" customModule="CD" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J66-Ia-cQo" customClass="IntroButtonWhite" customModule="Custom_Deal" customModuleProvider="target">
                                 <rect key="frame" x="16" y="583" width="343" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="4sa-63-IHt"/>
@@ -1578,7 +1578,7 @@
         <!--Settings View Controller-->
         <scene sceneID="TB8-q5-eLe">
             <objects>
-                <viewController storyboardIdentifier="SettingsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="v7N-DX-OI1" customClass="SettingsViewController" customModule="CD" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SettingsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="v7N-DX-OI1" customClass="SettingsViewController" customModule="Custom_Deal" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="LME-yV-6gZ"/>
                         <viewControllerLayoutGuide type="bottom" id="9yB-QY-7pL"/>
@@ -1854,7 +1854,7 @@
         <!--Guest Home View Controller-->
         <scene sceneID="zII-RU-reN">
             <objects>
-                <viewController storyboardIdentifier="GuestHomeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="PTd-Wg-Xfc" customClass="GuestHomeViewController" customModule="CD" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GuestHomeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="PTd-Wg-Xfc" customClass="GuestHomeViewController" customModule="Custom_Deal" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="sTh-XY-3qR"/>
                         <viewControllerLayoutGuide type="bottom" id="pMS-WH-7Ih"/>
@@ -2017,7 +2017,7 @@
                                         <rect key="frame" x="8" y="68" width="343" height="252"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="GuestMenuTableViewCell" rowHeight="110" id="zjw-es-ukm" customClass="GuestMenuTableViewCell" customModule="CD" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="GuestMenuTableViewCell" rowHeight="110" id="zjw-es-ukm" customClass="GuestMenuTableViewCell" customModule="Custom_Deal" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="343" height="110"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zjw-es-ukm" id="f31-Dt-fBO">
@@ -2258,7 +2258,7 @@
         <scene sceneID="Yow-Dy-8tN">
             <objects>
                 <navigationController storyboardIdentifier="HostNavigationController" useStoryboardIdentifierAsRestorationIdentifier="YES" navigationBarHidden="YES" id="hk6-Ed-NCd" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="bog-2b-cD5">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bog-2b-cD5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -2273,7 +2273,7 @@
         <!--Host Home View Controller-->
         <scene sceneID="02J-GE-89N">
             <objects>
-                <viewController storyboardIdentifier="HostHomeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="QDY-zz-Rko" customClass="HostHomeViewController" customModule="CD" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HostHomeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="QDY-zz-Rko" customClass="HostHomeViewController" customModule="Custom_Deal" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="auH-hf-nBw"/>
                         <viewControllerLayoutGuide type="bottom" id="zf8-or-aNP"/>
@@ -2451,7 +2451,7 @@
                                         <rect key="frame" x="8" y="68" width="343" height="198"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="HostMenuTableViewCell" rowHeight="100" id="RYT-D6-9U9" customClass="HostMenuTableViewCell" customModule="CD" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="HostMenuTableViewCell" rowHeight="100" id="RYT-D6-9U9" customClass="HostMenuTableViewCell" customModule="Custom_Deal" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="343" height="100"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RYT-D6-9U9" id="TwT-fJ-ji5">
@@ -2611,7 +2611,7 @@
         <!--Host Review Requests View Controller-->
         <scene sceneID="BQ6-v7-7Gg">
             <objects>
-                <viewController storyboardIdentifier="HostReviewRequestsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="1gT-DE-EvA" customClass="HostReviewRequestsViewController" customModule="CD" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HostReviewRequestsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="1gT-DE-EvA" customClass="HostReviewRequestsViewController" customModule="Custom_Deal" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Hvd-J5-KLs"/>
                         <viewControllerLayoutGuide type="bottom" id="pTj-cb-xm6"/>
@@ -2912,7 +2912,7 @@
                                             <constraint firstAttribute="bottom" secondItem="bfK-AO-3bS" secondAttribute="bottom" constant="8" id="x52-oP-p2x"/>
                                         </constraints>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="38V-IU-rdl" customClass="IntroButton" customModule="CD" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="38V-IU-rdl" customClass="IntroButton" customModule="Custom_Deal" customModuleProvider="target">
                                         <rect key="frame" x="16" y="501" width="343" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="dW9-aE-f4M"/>
@@ -2925,7 +2925,7 @@
                                             <action selector="offerWithSender:" destination="1gT-DE-EvA" eventType="touchUpInside" id="4uI-Ib-CoX"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z7E-xp-fuS" customClass="IntroButtonWhite" customModule="CD" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z7E-xp-fuS" customClass="IntroButtonWhite" customModule="Custom_Deal" customModuleProvider="target">
                                         <rect key="frame" x="16" y="549" width="343" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="sbb-oH-rce"/>
@@ -2994,7 +2994,7 @@
         <scene sceneID="wSs-8a-5tp">
             <objects>
                 <navigationController storyboardIdentifier="GuestNavigationController" useStoryboardIdentifierAsRestorationIdentifier="YES" navigationBarHidden="YES" id="xRK-RD-Ybg" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="EgW-Da-Ag3">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="EgW-Da-Ag3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -3009,7 +3009,7 @@
         <!--Create Rider List View Controller-->
         <scene sceneID="hyi-1v-62l">
             <objects>
-                <viewController storyboardIdentifier="CreateRiderListViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="0Om-We-glr" customClass="CreateRiderListViewController" customModule="CD" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CreateRiderListViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="0Om-We-glr" customClass="CreateRiderListViewController" customModule="Custom_Deal" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="dDr-6q-VVH"/>
                         <viewControllerLayoutGuide type="bottom" id="s8T-qW-oix"/>
@@ -3098,14 +3098,14 @@
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eQN-9D-4uz" customClass="ButtonView" customModule="CD" customModuleProvider="target">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eQN-9D-4uz" customClass="ButtonView" customModule="Custom_Deal" customModuleProvider="target">
                                                         <rect key="frame" x="8" y="37" width="175" height="42"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="42" id="a8z-Ji-ViU"/>
                                                         </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fZa-Hx-m5V" customClass="ButtonView" customModule="CD" customModuleProvider="target">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fZa-Hx-m5V" customClass="ButtonView" customModule="Custom_Deal" customModuleProvider="target">
                                                         <rect key="frame" x="193" y="37" width="174" height="42"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <constraints>
@@ -3120,21 +3120,21 @@
                                                             <constraint firstAttribute="width" constant="10" id="Tmc-vh-TPf"/>
                                                         </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vcB-DX-SiJ" customClass="ButtonView" customModule="CD" customModuleProvider="target">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vcB-DX-SiJ" customClass="ButtonView" customModule="Custom_Deal" customModuleProvider="target">
                                                         <rect key="frame" x="8" y="125" width="175" height="42"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="42" id="4zl-0y-1cv"/>
                                                         </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hpt-Dq-U6Y" customClass="ButtonView" customModule="CD" customModuleProvider="target">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hpt-Dq-U6Y" customClass="ButtonView" customModule="Custom_Deal" customModuleProvider="target">
                                                         <rect key="frame" x="192" y="125" width="175" height="42"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="42" id="hFc-Sf-yLS"/>
                                                         </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="evD-1s-z89" customClass="ButtonView" customModule="CD" customModuleProvider="target">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="evD-1s-z89" customClass="ButtonView" customModule="Custom_Deal" customModuleProvider="target">
                                                         <rect key="frame" x="8" y="213" width="108" height="42"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <constraints>
@@ -3142,7 +3142,7 @@
                                                             <constraint firstAttribute="height" constant="42" id="l7E-sd-lKn"/>
                                                         </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="izK-Fy-RT1" customClass="ButtonView" customModule="CD" customModuleProvider="target">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="izK-Fy-RT1" customClass="ButtonView" customModule="Custom_Deal" customModuleProvider="target">
                                                         <rect key="frame" x="134" y="213" width="108" height="42"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <constraints>
@@ -3150,7 +3150,7 @@
                                                             <constraint firstAttribute="height" constant="42" id="XKf-Mb-qG1"/>
                                                         </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eC0-bR-Qgz" customClass="ButtonView" customModule="CD" customModuleProvider="target">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eC0-bR-Qgz" customClass="ButtonView" customModule="Custom_Deal" customModuleProvider="target">
                                                         <rect key="frame" x="259" y="213" width="108" height="42"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <constraints>
@@ -3228,7 +3228,7 @@
                                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 </collectionViewFlowLayout>
                                                 <cells>
-                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="SignupInterestsCollectionViewCell" reuseIdentifier="SignupInterestsCollectionViewCell" id="Ka0-an-mey" customClass="SignupInterestsCollectionViewCell" customModule="CD" customModuleProvider="target">
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="SignupInterestsCollectionViewCell" reuseIdentifier="SignupInterestsCollectionViewCell" id="Ka0-an-mey" customClass="SignupInterestsCollectionViewCell" customModule="Custom_Deal" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="10" width="80" height="90"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -3315,7 +3315,7 @@
                                                             <constraint firstAttribute="height" constant="2" id="5b4-Zj-VFD"/>
                                                         </constraints>
                                                     </view>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UI4-62-d1b" customClass="IntroButton" customModule="CD" customModuleProvider="target">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UI4-62-d1b" customClass="IntroButton" customModule="Custom_Deal" customModuleProvider="target">
                                                         <rect key="frame" x="16" y="167" width="343" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="ajc-Bb-BvA"/>
@@ -3415,7 +3415,7 @@
         <!--Host Feedback View Controller-->
         <scene sceneID="4Vw-xW-1rs">
             <objects>
-                <viewController storyboardIdentifier="HostFeedbackViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="eu3-Qq-MJa" customClass="HostFeedbackViewController" customModule="CD" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HostFeedbackViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="eu3-Qq-MJa" customClass="HostFeedbackViewController" customModule="Custom_Deal" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nGv-Rd-Tse"/>
                         <viewControllerLayoutGuide type="bottom" id="C40-aS-H0Y"/>
@@ -3517,7 +3517,7 @@
                                             <constraint firstAttribute="height" constant="2" id="8Ln-xe-3xw"/>
                                         </constraints>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kPv-iA-wWJ" customClass="IntroButton" customModule="CD" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kPv-iA-wWJ" customClass="IntroButton" customModule="Custom_Deal" customModuleProvider="target">
                                         <rect key="frame" x="16" y="409" width="343" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="ORl-xP-Fv7"/>
@@ -3649,7 +3649,7 @@
         <!--Host Create Service Offer View Controller-->
         <scene sceneID="MJa-wP-pwq">
             <objects>
-                <viewController storyboardIdentifier="HostCreateServiceOfferViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="nK2-il-y7j" customClass="HostCreateServiceOfferViewController" customModule="CD" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HostCreateServiceOfferViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="nK2-il-y7j" customClass="HostCreateServiceOfferViewController" customModule="Custom_Deal" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="S2y-9x-Xds"/>
                         <viewControllerLayoutGuide type="bottom" id="A7y-qg-XA7"/>
@@ -3759,7 +3759,7 @@
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HostProfileCollectionViewCell" id="cvm-EU-LrP" customClass="HostProfileCollectionViewCell" customModule="CD" customModuleProvider="target">
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HostProfileCollectionViewCell" id="cvm-EU-LrP" customClass="HostProfileCollectionViewCell" customModule="Custom_Deal" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="300" height="200"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -3799,7 +3799,7 @@
                                     <constraint firstAttribute="trailing" secondItem="Hc4-4V-QbB" secondAttribute="trailing" id="z8o-fW-jJT"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s8L-0c-tvQ" customClass="IntroButtonWhite" customModule="CD" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s8L-0c-tvQ" customClass="IntroButtonWhite" customModule="Custom_Deal" customModuleProvider="target">
                                 <rect key="frame" x="16" y="398" width="343" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="wdh-bB-X2u"/>
@@ -3812,7 +3812,7 @@
                                     <action selector="chooseFromPhotoLibraryWithSender:" destination="nK2-il-y7j" eventType="touchUpInside" id="6so-fq-AGe"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hFd-gL-hk9" customClass="IntroButtonWhite" customModule="CD" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hFd-gL-hk9" customClass="IntroButtonWhite" customModule="Custom_Deal" customModuleProvider="target">
                                 <rect key="frame" x="16" y="448" width="343" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="UK5-jQ-Luc"/>
@@ -3825,7 +3825,7 @@
                                     <action selector="takePhotoWithSender:" destination="nK2-il-y7j" eventType="touchUpInside" id="wWb-MW-0RM"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AU4-bV-e0U" customClass="IntroButton" customModule="CD" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AU4-bV-e0U" customClass="IntroButton" customModule="Custom_Deal" customModuleProvider="target">
                                 <rect key="frame" x="16" y="498" width="343" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="X2q-yU-lzZ"/>
@@ -3878,7 +3878,7 @@
         <!--Guest Rider List Preview View Controller-->
         <scene sceneID="LIX-24-qWd">
             <objects>
-                <viewController storyboardIdentifier="GuestRiderListPreviewViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Cme-Gr-yXe" customClass="GuestRiderListPreviewViewController" customModule="CD" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GuestRiderListPreviewViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Cme-Gr-yXe" customClass="GuestRiderListPreviewViewController" customModule="Custom_Deal" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="yeR-0p-3jO"/>
                         <viewControllerLayoutGuide type="bottom" id="Jis-vT-7fi"/>
@@ -4202,7 +4202,7 @@
         <!--Guest Review Offers View Controller-->
         <scene sceneID="ZoN-au-sSq">
             <objects>
-                <viewController storyboardIdentifier="GuestReviewOffersViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="67x-lf-2w6" customClass="GuestReviewOffersViewController" customModule="CD" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GuestReviewOffersViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="67x-lf-2w6" customClass="GuestReviewOffersViewController" customModule="Custom_Deal" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5di-8D-cAl"/>
                         <viewControllerLayoutGuide type="bottom" id="QVA-GZ-btE"/>
@@ -4555,7 +4555,7 @@
                                             <constraint firstItem="cKp-he-PKP" firstAttribute="leading" secondItem="XsZ-A0-t6T" secondAttribute="leading" constant="12" id="weA-MJ-fAX"/>
                                         </constraints>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7aY-mC-op0" customClass="IntroButton" customModule="CD" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7aY-mC-op0" customClass="IntroButton" customModule="Custom_Deal" customModuleProvider="target">
                                         <rect key="frame" x="16" y="501" width="343" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="JvR-FY-f1P"/>
@@ -4568,7 +4568,7 @@
                                             <action selector="acceptOfferWithSender:" destination="67x-lf-2w6" eventType="touchUpInside" id="hPn-GG-n6L"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fhg-OJ-PbO" customClass="IntroButtonWhite" customModule="CD" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fhg-OJ-PbO" customClass="IntroButtonWhite" customModule="Custom_Deal" customModuleProvider="target">
                                         <rect key="frame" x="16" y="549" width="343" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="K1R-qz-MvM"/>
@@ -4644,7 +4644,7 @@
         <!--Guest Rider List Accepted View Controller-->
         <scene sceneID="jbz-Ok-Rsw">
             <objects>
-                <viewController storyboardIdentifier="GuestRiderListAcceptedViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="CtS-zM-XRL" customClass="GuestRiderListAcceptedViewController" customModule="CD" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GuestRiderListAcceptedViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="CtS-zM-XRL" customClass="GuestRiderListAcceptedViewController" customModule="Custom_Deal" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="aXE-bJ-hLf"/>
                         <viewControllerLayoutGuide type="bottom" id="BH1-WF-Evt"/>
@@ -4683,7 +4683,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tCt-EE-Mhw" customClass="IntroButtonWhite" customModule="CD" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tCt-EE-Mhw" customClass="IntroButtonWhite" customModule="Custom_Deal" customModuleProvider="target">
                                 <rect key="frame" x="16" y="583" width="343" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="TCu-Sg-5Xe"/>
@@ -4730,7 +4730,7 @@
         <!--Host Profile View Controller-->
         <scene sceneID="dqk-Xw-QP5">
             <objects>
-                <viewController storyboardIdentifier="HostProfileViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="eHm-PQ-DjP" customClass="HostProfileViewController" customModule="CD" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HostProfileViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="eHm-PQ-DjP" customClass="HostProfileViewController" customModule="Custom_Deal" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="NwI-LH-GFb"/>
                         <viewControllerLayoutGuide type="bottom" id="dOe-XR-bfe"/>
@@ -4917,7 +4917,7 @@
                                                         <rect key="frame" x="0.0" y="35" width="375" height="34"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <prototypes>
-                                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HostProfileTableViewCell" rowHeight="100" id="OYu-dJ-XUL" customClass="HostProfileTableViewCell" customModule="CD" customModuleProvider="target">
+                                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HostProfileTableViewCell" rowHeight="100" id="OYu-dJ-XUL" customClass="HostProfileTableViewCell" customModule="Custom_Deal" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OYu-dJ-XUL" id="sIN-GH-iYl">
@@ -5088,7 +5088,7 @@
                                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                         </collectionViewFlowLayout>
                                                         <cells>
-                                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HostProfileCollectionViewCell" id="U60-NI-bYg" customClass="HostProfileCollectionViewCell" customModule="CD" customModuleProvider="target">
+                                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HostProfileCollectionViewCell" id="U60-NI-bYg" customClass="HostProfileCollectionViewCell" customModule="Custom_Deal" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="10" width="300" height="200"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -5166,7 +5166,7 @@
                                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                         </collectionViewFlowLayout>
                                                         <cells>
-                                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="HostProfileCollectionViewCell" reuseIdentifier="HostProfileCollectionViewCell" id="yzg-ta-4td" customClass="HostProfileCollectionViewCell" customModule="CD" customModuleProvider="target">
+                                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="HostProfileCollectionViewCell" reuseIdentifier="HostProfileCollectionViewCell" id="yzg-ta-4td" customClass="HostProfileCollectionViewCell" customModule="Custom_Deal" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="10" width="300" height="200"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -5312,7 +5312,7 @@
         <!--Host Making Offer View Controller-->
         <scene sceneID="fOk-cQ-nyt">
             <objects>
-                <viewController storyboardIdentifier="HostMakingOfferViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="T9L-Sh-79b" customClass="HostMakingOfferViewController" customModule="CD" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HostMakingOfferViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="T9L-Sh-79b" customClass="HostMakingOfferViewController" customModule="Custom_Deal" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="DDs-fg-Sut"/>
                         <viewControllerLayoutGuide type="bottom" id="3Xm-Ue-rJS"/>
@@ -5420,7 +5420,7 @@
                                             <constraint firstItem="iFU-OH-8sl" firstAttribute="top" secondItem="XY4-8S-nTk" secondAttribute="bottom" constant="6" id="x4T-wH-lBD"/>
                                         </constraints>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xma-7V-2v4" customClass="IntroButton" customModule="CD" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xma-7V-2v4" customClass="IntroButton" customModule="Custom_Deal" customModuleProvider="target">
                                         <rect key="frame" x="16" y="244" width="343" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="WpH-Pp-U4A"/>
@@ -5487,7 +5487,7 @@
         <!--Host Rider List Accepted View Controller-->
         <scene sceneID="Gy1-n2-ye5">
             <objects>
-                <viewController storyboardIdentifier="HostRiderListAcceptedViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="v3J-jx-Af3" customClass="HostRiderListAcceptedViewController" customModule="CD" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HostRiderListAcceptedViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="v3J-jx-Af3" customClass="HostRiderListAcceptedViewController" customModule="Custom_Deal" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="sGs-2V-XT4"/>
                         <viewControllerLayoutGuide type="bottom" id="csT-WA-Icl"/>
@@ -5517,7 +5517,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cWc-Be-1kv" customClass="IntroButtonWhite" customModule="CD" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cWc-Be-1kv" customClass="IntroButtonWhite" customModule="Custom_Deal" customModuleProvider="target">
                                 <rect key="frame" x="16" y="583" width="343" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="GRS-9f-3Eh"/>
@@ -5561,7 +5561,7 @@
         <!--Login View Controller-->
         <scene sceneID="CIG-cu-Eb1">
             <objects>
-                <viewController storyboardIdentifier="LoginViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="wEY-UN-dn8" customClass="LoginViewController" customModule="CD" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="wEY-UN-dn8" customClass="LoginViewController" customModule="Custom_Deal" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="UdL-Av-RSb"/>
                         <viewControllerLayoutGuide type="bottom" id="nCM-Dv-qZu"/>
@@ -5597,17 +5597,17 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4rP-Ha-Q5O">
                                 <rect key="frame" x="-4" y="64" width="383" height="244"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iGv-LQ-5s1" customClass="IntroTextField" customModule="CD" customModuleProvider="target">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iGv-LQ-5s1" customClass="IntroTextField" customModule="Custom_Deal" customModuleProvider="target">
                                         <rect key="frame" x="20" y="46" width="343" height="30"/>
                                         <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gph-RX-XXY" customClass="IntroTextField" customModule="CD" customModuleProvider="target">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gph-RX-XXY" customClass="IntroTextField" customModule="Custom_Deal" customModuleProvider="target">
                                         <rect key="frame" x="20" y="84" width="343" height="30"/>
                                         <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4D9-f3-XSK" customClass="IntroButton" customModule="CD" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4D9-f3-XSK" customClass="IntroButton" customModule="Custom_Deal" customModuleProvider="target">
                                         <rect key="frame" x="20" y="130" width="343" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="r1g-vV-qZp"/>
@@ -5662,7 +5662,7 @@
         <!--Mutliple Language Picker View Controller-->
         <scene sceneID="Z4q-dm-wtw">
             <objects>
-                <viewController storyboardIdentifier="MutlipleLanguagePickerViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8Xv-qg-0zE" customClass="MutlipleLanguagePickerViewController" customModule="CD" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MutlipleLanguagePickerViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8Xv-qg-0zE" customClass="MutlipleLanguagePickerViewController" customModule="Custom_Deal" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="DHC-5s-qb9"/>
                         <viewControllerLayoutGuide type="bottom" id="CSY-Tz-RVv"/>
@@ -5714,7 +5714,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="GeneralPickerTableViewCell" selectionStyle="none" indentationWidth="10" reuseIdentifier="GeneralPickerTableViewCell" rowHeight="44" id="D9H-Qy-toy" customClass="GeneralPickerTableViewCell" customModule="CD" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="GeneralPickerTableViewCell" selectionStyle="none" indentationWidth="10" reuseIdentifier="GeneralPickerTableViewCell" rowHeight="44" id="D9H-Qy-toy" customClass="GeneralPickerTableViewCell" customModule="Custom_Deal" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="D9H-Qy-toy" id="fWV-SQ-TFG">
@@ -5748,7 +5748,7 @@
                                     <outlet property="delegate" destination="8Xv-qg-0zE" id="ENM-r5-0hm"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UVp-vF-V2H" customClass="IntroButton" customModule="CD" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UVp-vF-V2H" customClass="IntroButton" customModule="Custom_Deal" customModuleProvider="target">
                                 <rect key="frame" x="16" y="583" width="343" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Rb0-qO-DP6"/>
@@ -5792,7 +5792,7 @@
         <!--Host Provide Service View Controller-->
         <scene sceneID="YTa-Ez-4aV">
             <objects>
-                <viewController storyboardIdentifier="HostProvideServiceViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="KWm-CC-0pe" customClass="HostProvideServiceViewController" customModule="CD" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HostProvideServiceViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="KWm-CC-0pe" customClass="HostProvideServiceViewController" customModule="Custom_Deal" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Bdn-m2-2UZ"/>
                         <viewControllerLayoutGuide type="bottom" id="Qh2-MR-1m8"/>
@@ -5849,7 +5849,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MbJ-r6-lvl" customClass="IntroButtonWhite" customModule="CD" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MbJ-r6-lvl" customClass="IntroButtonWhite" customModule="Custom_Deal" customModuleProvider="target">
                                 <rect key="frame" x="16" y="527" width="343" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Qre-bt-BMM"/>
@@ -5862,7 +5862,7 @@
                                     <action selector="transportationActionWithSender:" destination="KWm-CC-0pe" eventType="touchUpInside" id="M6R-O9-O4p"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tdi-e6-Uin" customClass="IntroButtonWhite" customModule="CD" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tdi-e6-Uin" customClass="IntroButtonWhite" customModule="Custom_Deal" customModuleProvider="target">
                                 <rect key="frame" x="16" y="583" width="343" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="pU2-gs-ssi"/>
