@@ -8,6 +8,7 @@
 
 import UIKit
 import MBProgressHUD
+import HCSStarRatingView
 
 fileprivate let avatarImageViewHeightAndWidth: CGFloat = 80
 fileprivate let interestImageViewHeightAndWidth: CGFloat = 30
@@ -25,11 +26,7 @@ class GuestReviewOffersViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subtitelLabel: UILabel!
     @IBOutlet weak var subtitleLabel2: UILabel!
-    @IBOutlet weak var star1ImageView : UIImageView!
-    @IBOutlet weak var star2ImageView : UIImageView!
-    @IBOutlet weak var star3ImageView : UIImageView!
-    @IBOutlet weak var star4ImageView : UIImageView!
-    @IBOutlet weak var star5ImageView : UIImageView!
+    @IBOutlet weak var ratingView: HCSStarRatingView!
     @IBOutlet weak var interest1ImageView : UIImageView!
     @IBOutlet weak var interest2ImageView : UIImageView!
     @IBOutlet weak var interest3ImageView : UIImageView!
@@ -72,6 +69,7 @@ class GuestReviewOffersViewController: UIViewController {
         self.subtitelLabel.text = riderListOffer.offerorCity
         self.subtitleLabel2.text = riderListOffer.offerorCountry
         self.riderListTextView.text = riderListOffer.message
+        self.ratingView.value = 2.8
         
         // set price
         self.priceLabel.text = "Price: " + "\(riderListOffer.price!)"

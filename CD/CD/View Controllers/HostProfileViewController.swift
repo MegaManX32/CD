@@ -8,6 +8,7 @@
 
 import UIKit
 import MBProgressHUD
+import HCSStarRatingView
 
 fileprivate let defaultShownReviews: Int = 2
 fileprivate let sectionInsets = UIEdgeInsets(top: 0.0, left: 20.0, bottom: 0.0, right: 20.0)
@@ -25,11 +26,7 @@ class HostProfileViewController: UIViewController, UITableViewDataSource, UITabl
     @IBOutlet weak var avatarImageView : UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var addressLabel : UILabel!
-    @IBOutlet weak var star1ImageView : UIImageView!
-    @IBOutlet weak var star2ImageView : UIImageView!
-    @IBOutlet weak var star3ImageView : UIImageView!
-    @IBOutlet weak var star4ImageView : UIImageView!
-    @IBOutlet weak var star5ImageView : UIImageView!
+    @IBOutlet weak var ratingView : HCSStarRatingView!
     
     @IBOutlet weak var containerViewHeightConstraint : NSLayoutConstraint!
     
@@ -79,6 +76,7 @@ class HostProfileViewController: UIViewController, UITableViewDataSource, UITabl
         // prepare text
         self.nameLabel.text = user.firstName! + " " + user.lastName!
         self.addressLabel.text = user.city! + ", " + user.country!
+        self.ratingView.value = 2.8
         
         // prepare avatar
         self.avatarImageView.layer.cornerRadius = 130 / 2.0

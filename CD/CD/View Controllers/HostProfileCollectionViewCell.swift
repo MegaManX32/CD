@@ -14,7 +14,7 @@ class HostProfileCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel?
-    @IBOutlet weak var cancelButton: UIButton!
+    @IBOutlet weak var cancelButton: UIButton?
     var cancelPhotoAction: ((HostProfileCollectionViewCell) -> ())?
     
     // MARK: - Cell Lifecycle
@@ -23,8 +23,8 @@ class HostProfileCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         
         // make cancel button rounded
-        cancelButton.layer.cornerRadius = 40 / 2
-        cancelButton.layer.masksToBounds = true
+        cancelButton?.layer.cornerRadius = 40 / 2
+        cancelButton?.layer.masksToBounds = true
     }
     
     // MARK: - Helper Methods
