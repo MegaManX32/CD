@@ -66,11 +66,14 @@ extension User {
             }
         }
         
-        if let serviceOffers = JSON["serviceOffers"] as? [[String : Any]] {
-            self.serviceOffers = NSSet.init()
-            for serviceOfferJSON in serviceOffers {
-                self.addToServiceOffers(ServiceOffer.createOrUpdateServiceOfferWith(JSON: serviceOfferJSON, context: context))
-            }
+        // add transportation service offer
+        if let serviceOfferJSON = JSON["transportationServiceOffer"] as? [String : Any] {
+            self.addToServiceOffers(ServiceOffer.createOrUpdateServiceOfferWith(JSON: serviceOfferJSON, context: context))
+        }
+        
+        // add accomodation service offer
+        if let serviceOfferJSON = JSON["accomodationServiceOffer"] as? [String : Any] {
+            self.addToServiceOffers(ServiceOffer.createOrUpdateServiceOfferWith(JSON: serviceOfferJSON, context: context))
         }
         
         if let languages = JSON["languages"] as? [[String : Any]] {

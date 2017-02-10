@@ -109,29 +109,23 @@ class HostProfileViewController: UIViewController, UITableViewDataSource, UITabl
         }
         
         // prepare service offers
-        if let serviceOffers = user.serviceOffers {
-            var index = 0
+        self.accomodationViewHeightConstraint.constant = 0
+        self.transportationViewHeight.constant = 0
+        if let serviceOffers = user.serviceOffers as? Set<ServiceOffer> {
             for serviceOffer in serviceOffers {
-                if let singleServiceOffer = serviceOffer as? ServiceOffer {
-                    if (index == 0) {
-                        if let photoArray = singleServiceOffer.photoUrlList {
-                            self.accomodationArray = photoArray
-                            self.accomodationViewHeightConstraint.constant = offerViewsHeight
-                        }
+                if serviceOffer.photoUrlList != nil && serviceOffer.type == "transportation" {
+                    self.transportationArray = serviceOffer.photoUrlList!
+                    self.transportationViewHeight.constant = offerViewsHeight
+                    self.transportationCollectionView.reloadData()
+                }
+                else {
+                    if serviceOffer.photoUrlList != nil {
+                        self.accomodationArray = serviceOffer.photoUrlList!
+                        self.accomodationViewHeightConstraint.constant = offerViewsHeight
+                        self.accomodationCollectionView.reloadData()
                     }
-                    else {
-                        if let photoArray = singleServiceOffer.photoUrlList {
-                            self.transportationArray = photoArray
-                            self.transportationViewHeight.constant = offerViewsHeight
-                        }
-                    }
-                    index += 1
                 }
             }
-        }
-        else {
-            self.accomodationViewHeightConstraint.constant = 0
-            self.transportationViewHeight.constant = 0
         }
         
         // update container view height
@@ -174,7 +168,8 @@ class HostProfileViewController: UIViewController, UITableViewDataSource, UITabl
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HostProfileCollectionViewCell.cellIdentifier(), for: indexPath) as! HostProfileCollectionViewCell
-        cell.populateCellWith(photoURL: nil)
+        let photoURL =  self.accomodationCollectionView == collectionView ? self.accomodationArray[indexPath.row] : self.transportationArray[indexPath.row]
+        cell.populateCellWith(photoURL: photoURL)
         return cell
     }
     

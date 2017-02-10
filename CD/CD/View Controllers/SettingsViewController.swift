@@ -93,6 +93,9 @@ class SettingsViewController: UIViewController {
     }
     
     @IBAction func logOut(sender : UIButton) {
+        
+        // do log out
+        NetworkManager.sharedInstance.logout()
         self.dismiss(animated: true, completion: nil)
     }
     

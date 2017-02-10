@@ -80,7 +80,8 @@ class HostCreateServiceOfferViewController: UIViewController, UIImagePickerContr
             [unowned self] in
             
             let newServiceOffer = ServiceOffer(context: context)
-            newServiceOffer.name = self.titleLabel.text
+            newServiceOffer.serviceName = self.titleLabel.text
+            newServiceOffer.type = self.titleLabel.text?.lowercased()
             newServiceOffer.desc = self.descriptionTextView.text
             newServiceOffer.userUid = StandardUserDefaults.userID()
             newServiceOffer.photoUrlList = self.photoArray
