@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import HCSStarRatingView
 
 class GuestMenuTableViewCell: UITableViewCell {
 
@@ -17,12 +18,7 @@ class GuestMenuTableViewCell: UITableViewCell {
     @IBOutlet weak var countryLabel : UILabel!
     @IBOutlet weak var descriptionLabel : UILabel!
     @IBOutlet weak var separatorView : UIView!
-    
-    @IBOutlet weak var star1ImageView : UIImageView!
-    @IBOutlet weak var star2ImageView : UIImageView!
-    @IBOutlet weak var star3ImageView : UIImageView!
-    @IBOutlet weak var star4ImageView : UIImageView!
-    @IBOutlet weak var star5ImageView : UIImageView!
+    @IBOutlet weak var ratingView : HCSStarRatingView!
     
     // MARK: - Cell Lifecycle
     
@@ -42,6 +38,7 @@ class GuestMenuTableViewCell: UITableViewCell {
         self.nameLabel.text = riderListOffer.offerorFirstName
         self.countryLabel.text = riderListOffer.offerorCountry
         self.descriptionLabel.text = riderListOffer.message
+        self.ratingView.value = 1.4
         
         // set avatar
         self.avatarImageView.image = nil
@@ -50,15 +47,6 @@ class GuestMenuTableViewCell: UITableViewCell {
         }
    
         self.separatorView.isHidden = isLastCell
-        self.setStarRating(rating: 4)
-    }
-    
-    func setStarRating(rating : Float) {
-        self.star1ImageView.image = UIImage.init(named: "smallStarFull")
-        self.star2ImageView.image = UIImage.init(named: "smallStarFull")
-        self.star3ImageView.image = UIImage.init(named: "smallStarFull")
-        self.star4ImageView.image = UIImage.init(named: "smallStarFull")
-        self.star5ImageView.image = UIImage.init(named: "smallStarHalf")
     }
     
     // MARK: - Type methods

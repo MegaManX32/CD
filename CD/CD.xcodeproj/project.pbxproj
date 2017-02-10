@@ -114,8 +114,6 @@
 		1500414E1E15394B0097AC8B /* HostProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HostProfileViewController.swift; sourceTree = "<group>"; };
 		150041501E1548CA0097AC8B /* HostProfileTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HostProfileTableViewCell.swift; sourceTree = "<group>"; };
 		1505043E1E15815500C3EB9E /* HostProfileCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HostProfileCollectionViewCell.swift; sourceTree = "<group>"; };
-		151860AB1E46937A008936E4 /* Model.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
-		151860AC1E46937A008936E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		152080E71DF35953005687C1 /* RiderList+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RiderList+Additions.swift"; sourceTree = "<group>"; };
 		152080E91DF35B8E005687C1 /* RiderListOffer+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RiderListOffer+Additions.swift"; sourceTree = "<group>"; };
 		152080ED1DF36E60005687C1 /* DatePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
@@ -227,15 +225,6 @@
 			name = Start;
 			sourceTree = "<group>";
 		};
-		151860AA1E46937A008936E4 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				151860AB1E46937A008936E4 /* Model.h */,
-				151860AC1E46937A008936E4 /* Info.plist */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		152080EB1DF36470005687C1 /* Guest Menu */ = {
 			isa = PBXGroup;
 			children = (
@@ -301,7 +290,6 @@
 			isa = PBXGroup;
 			children = (
 				154A542C1D9FD0750021A803 /* CD */,
-				151860AA1E46937A008936E4 /* Model */,
 				154A542B1D9FD0750021A803 /* Products */,
 				A074BD721CD0EA59A861ACDC /* Pods */,
 				34B248700B5775622CA85CFB /* Frameworks */,
