@@ -1496,6 +1496,10 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="congratsBackground" translatesAutoresizingMaskIntoConstraints="NO" id="LAk-OH-hTW">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wry-ea-G6t">
+                                <rect key="frame" x="-0.5" y="-0.5" width="375" height="667"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Branko, your profile is awsome." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w37-Nd-CeQ">
                                 <rect key="frame" x="16" y="105" width="343" height="40"/>
                                 <constraints>
@@ -1539,7 +1543,11 @@
                             <constraint firstItem="ZuR-Zu-f8V" firstAttribute="top" secondItem="RtE-fB-0gm" secondAttribute="bottom" constant="47" id="NTt-oM-7kx"/>
                             <constraint firstAttribute="trailingMargin" secondItem="w37-Nd-CeQ" secondAttribute="trailing" id="OiZ-FV-0Cv"/>
                             <constraint firstItem="3dN-8p-3dj" firstAttribute="top" secondItem="J66-Ia-cQo" secondAttribute="bottom" constant="44" id="QXJ-C8-Tpm"/>
+                            <constraint firstItem="wry-ea-G6t" firstAttribute="centerY" secondItem="LAk-OH-hTW" secondAttribute="centerY" id="RTV-cm-Ky8"/>
                             <constraint firstItem="LAk-OH-hTW" firstAttribute="leading" secondItem="LHS-be-gbJ" secondAttribute="leading" id="UOd-qY-qqk"/>
+                            <constraint firstItem="wry-ea-G6t" firstAttribute="width" secondItem="LAk-OH-hTW" secondAttribute="width" id="WR7-az-CFy"/>
+                            <constraint firstItem="wry-ea-G6t" firstAttribute="centerX" secondItem="LAk-OH-hTW" secondAttribute="centerX" id="cWh-yL-TNg"/>
+                            <constraint firstItem="wry-ea-G6t" firstAttribute="height" secondItem="LAk-OH-hTW" secondAttribute="height" id="dQU-K0-igQ"/>
                             <constraint firstItem="w37-Nd-CeQ" firstAttribute="top" secondItem="RtE-fB-0gm" secondAttribute="bottom" constant="85" id="eo8-W4-Vl1"/>
                             <constraint firstItem="LAk-OH-hTW" firstAttribute="top" secondItem="RtE-fB-0gm" secondAttribute="bottom" constant="-20" id="ieL-2a-ZMO"/>
                             <constraint firstItem="3dN-8p-3dj" firstAttribute="top" secondItem="LAk-OH-hTW" secondAttribute="bottom" id="vnC-F7-3Qd"/>
@@ -5139,7 +5147,7 @@
                                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
-                                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Atk-x2-lFy">
+                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Atk-x2-lFy">
                                                                             <rect key="frame" x="8" y="8" width="284" height="167"/>
                                                                         </imageView>
                                                                     </subviews>
