@@ -1,6 +1,0 @@
-framework module Pods_CD {
-  umbrella header "Pods-CD-umbrella.h"
-
-  export *
-  module * { export * }
-}
