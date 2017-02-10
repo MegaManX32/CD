@@ -14,8 +14,20 @@ class HostProfileCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel?
+    @IBOutlet weak var cancelButton: UIButton!
+    var cancelPhotoAction: ((HostProfileCollectionViewCell) -> ())?
     
-    // MARK: - Helper methods
+    // MARK: - Cell Lifecycle
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        // make cancel button rounded
+        cancelButton.layer.cornerRadius = 40 / 2
+        cancelButton.layer.masksToBounds = true
+    }
+    
+    // MARK: - Helper Methods
     
     func populateCellWith(photoURL : String?) {
         if let photoURL = photoURL {
@@ -24,9 +36,15 @@ class HostProfileCollectionViewCell: UICollectionViewCell {
         self.nameLabel?.text = ""
     }
     
-    // MARK: - Type methods
+    // MARK: - Type Methods
     
     class func cellIdentifier() -> String {
         return String(describing:self)
+    }
+    
+    // MARK: - User Actions
+    
+    @IBAction func cancelAction(sender: UIButton) {
+        self.cancelPhotoAction?(self)
     }
 }

@@ -11,6 +11,7 @@ import MBProgressHUD
 
 fileprivate let sectionInsets = UIEdgeInsets(top: 0.0, left: 16.0, bottom: 0.0, right: 16.0)
 fileprivate let sizeOfItem = CGSize.init(width: 300, height: 200)
+fileprivate let collectionViewContainerViewDefaultHeight : CGFloat = 200
 
 class HostCreateServiceOfferViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
@@ -22,6 +23,7 @@ class HostCreateServiceOfferViewController: UIViewController, UIImagePickerContr
     @IBOutlet weak var titleLabel : UILabel!
     @IBOutlet weak var descriptionTextView : UITextView!
     @IBOutlet weak var collectionView : UICollectionView!
+    @IBOutlet weak var collectionViewContainerViewHeight : NSLayoutConstraint!
     
     // MARK: - View Lifecycle
 
@@ -30,11 +32,26 @@ class HostCreateServiceOfferViewController: UIViewController, UIImagePickerContr
         
         // set proper title
         self.titleLabel.text = self.navigationTitle
+
+        // update collection view presentation
+        self.updateCollectionViewPresentationBasedOnPhotos()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    // MARK: - Helper Methods
+    
+    func updateCollectionViewPresentationBasedOnPhotos() {
+        let height = self.photoArray.count == 0 ? 0 : collectionViewContainerViewDefaultHeight
+        if self.collectionViewContainerViewHeight.constant != height {
+            self.collectionViewContainerViewHeight.constant = height
+            UIView.animate(withDuration: 0.2, animations: {
+                self.view.layoutIfNeeded()
+            })
+        }
     }
     
     // MARK: - UICollectionViewDelegate methods
@@ -50,6 +67,15 @@ class HostCreateServiceOfferViewController: UIViewController, UIImagePickerContr
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HostProfileCollectionViewCell.cellIdentifier(), for: indexPath) as! HostProfileCollectionViewCell
         cell.populateCellWith(photoURL: self.photoArray[indexPath.item])
+        
+        // add remove photo action
+        cell.cancelPhotoAction = { [unowned self] (cell) in
+            let indexPathOfCell = self.collectionView.indexPath(for: cell)!
+            self.photoArray.remove(at: indexPathOfCell.row)
+            self.collectionView.deleteItems(at: [indexPathOfCell])
+            self.updateCollectionViewPresentationBasedOnPhotos()
+        }
+        
         return cell
     }
     
@@ -126,6 +152,7 @@ class HostCreateServiceOfferViewController: UIViewController, UIImagePickerContr
             
             self.photoArray.append(photoURL)
             self.collectionView.insertItems(at: [IndexPath.init(row: self.photoArray.count - 1, section: 0)])
+            self.updateCollectionViewPresentationBasedOnPhotos()
             MBProgressHUD.hide(for: self.view, animated: true)
             
         }, failure: {[unowned self] (errorMessage) in
