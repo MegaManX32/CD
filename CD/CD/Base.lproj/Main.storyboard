@@ -1657,9 +1657,6 @@
                                 <state key="normal" title="Home">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="hk6-Ed-NCd" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="1ud-0I-6gX"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FDZ-zb-pOa">
                                 <rect key="frame" x="50" y="224" width="309" height="30"/>
@@ -1671,7 +1668,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="comingSoonWithSender:" destination="v7N-DX-OI1" eventType="touchUpInside" id="HDo-q1-Mlq"/>
+                                    <action selector="aboutUsWithSender:" destination="v7N-DX-OI1" eventType="touchUpInside" id="Hem-iN-zQD"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gCG-fZ-NfT">
@@ -1849,7 +1846,7 @@
                     </view>
                     <connections>
                         <outlet property="avatarImageView" destination="xoq-Lz-kej" id="pDr-id-URu"/>
-                        <outlet property="createListOrProvideService" destination="taF-26-6Sd" id="13M-iq-JBx"/>
+                        <outlet property="createListOrProvideServiceButton" destination="taF-26-6Sd" id="isv-yC-8Cp"/>
                         <outlet property="emailLabel" destination="IvD-kY-PKC" id="RRJ-IP-KDo"/>
                         <outlet property="hostSwitch" destination="etZ-YA-jCy" id="o3g-bY-WAU"/>
                         <outlet property="nameLabel" destination="xio-jz-m8k" id="esV-iO-C3y"/>
@@ -2278,7 +2275,6 @@
                                         <state key="normal" image="menuIcon"/>
                                         <connections>
                                             <action selector="openSideMenuWithSender:" destination="QDY-zz-Rko" eventType="touchUpInside" id="PJL-q9-I9G"/>
-                                            <action selector="openSideMenuWithSender:" destination="PTd-Wg-Xfc" eventType="touchUpInside" id="QcT-wB-b40"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Host Home" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D2l-bI-M6h">
@@ -3875,7 +3871,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vUt-OZ-09w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3004" y="2578"/>
+            <point key="canvasLocation" x="3004" y="2571"/>
         </scene>
         <!--Guest Rider List Preview View Controller-->
         <scene sceneID="LIX-24-qWd">
@@ -5741,6 +5737,100 @@
             </objects>
             <point key="canvasLocation" x="6208.8000000000002" y="-295.50224887556226"/>
         </scene>
+        <!--About Us View Controller-->
+        <scene sceneID="3wM-9U-rYQ">
+            <objects>
+                <viewController storyboardIdentifier="AboutUsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="SEe-3J-h72" customClass="AboutUsViewController" customModule="Custom_Deal" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xkn-uY-XlK"/>
+                        <viewControllerLayoutGuide type="bottom" id="EvU-pr-BSS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="CRS-i1-i6H">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="signupBackground" translatesAutoresizingMaskIntoConstraints="NO" id="grb-Pz-Te9">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K03-NC-4er">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4jZ-PV-6cL">
+                                        <rect key="frame" x="10" y="30" width="40" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="MCZ-32-b7t"/>
+                                            <constraint firstAttribute="width" constant="40" id="RgB-ML-55T"/>
+                                        </constraints>
+                                        <state key="normal" image="menuIcon"/>
+                                        <connections>
+                                            <action selector="openSideMenuWithSender:" destination="PTd-Wg-Xfc" eventType="touchUpInside" id="QV3-0M-em9"/>
+                                            <action selector="openSideMenuWithSender:" destination="SEe-3J-h72" eventType="touchUpInside" id="rG9-xg-YjJ"/>
+                                            <action selector="openSideMenuWithSender:" destination="QDY-zz-Rko" eventType="touchUpInside" id="xi4-ox-ryG"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About Us" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dF6-Wh-zU5">
+                                        <rect key="frame" x="52" y="30" width="130" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="UFP-3u-13y"/>
+                                            <constraint firstAttribute="width" constant="130" id="jCM-FH-GdV"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="18"/>
+                                        <color key="textColor" red="0.33725490200000002" green="0.35294117650000001" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="dF6-Wh-zU5" firstAttribute="centerY" secondItem="K03-NC-4er" secondAttribute="centerY" constant="10" id="3af-Jm-rkp"/>
+                                    <constraint firstItem="dF6-Wh-zU5" firstAttribute="leading" secondItem="4jZ-PV-6cL" secondAttribute="trailing" constant="2" id="CUR-vu-4eg"/>
+                                    <constraint firstAttribute="height" constant="70" id="ZYH-qw-yvp"/>
+                                    <constraint firstItem="4jZ-PV-6cL" firstAttribute="leading" secondItem="K03-NC-4er" secondAttribute="leading" constant="10" id="afe-qt-vOs"/>
+                                    <constraint firstItem="4jZ-PV-6cL" firstAttribute="centerY" secondItem="K03-NC-4er" secondAttribute="centerY" constant="10" id="zFT-dH-BAq"/>
+                                </constraints>
+                            </view>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="s5f-8q-P3A">
+                                <rect key="frame" x="8" y="70" width="359" height="597"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <mutableString key="text">First of all we want to thank you for installing our app.
+
+To keep it short, let us inform you what Custom Deal is all about.
+
+www.custom-deal.com and Custom Deal app is first and one of a kind service that your travelling experince makes it super great.
+
+We say, DONT CHOOSE BEST EXPERIENCE on your trip, insted of that choose YOURS wishes and trnasform them into your dream trip.
+
+We are more than happy to offer you our platform where YOU can organise everything and make it fully tailored BY YOU for YOU when you are traveling.
+
+UNIQUE concept of RIDER LIST gives you an opportunity to feel like a celebrity and simple create your demand of services. DONT CHASE OFFERS LET THEM CHASE YOU!
+
+Custom Deal is P2P platform that will help you to match yourself with best hosts and unforgetable experiences on your trip.
+
+Here at Custom Deal is all about make your travel GREAT, and who knows better what suits for YOU then YOU!
+
+Travel like a celebrity...</mutableString>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" link="YES" address="YES"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="EvU-pr-BSS" firstAttribute="top" secondItem="s5f-8q-P3A" secondAttribute="bottom" id="GBY-NX-DXb"/>
+                            <constraint firstAttribute="trailing" secondItem="s5f-8q-P3A" secondAttribute="trailing" constant="8" id="JEV-Ev-BJo"/>
+                            <constraint firstItem="s5f-8q-P3A" firstAttribute="top" secondItem="K03-NC-4er" secondAttribute="bottom" id="RTJ-tH-b8b"/>
+                            <constraint firstAttribute="trailing" secondItem="K03-NC-4er" secondAttribute="trailing" id="XtT-JW-G4f"/>
+                            <constraint firstItem="K03-NC-4er" firstAttribute="leading" secondItem="CRS-i1-i6H" secondAttribute="leading" id="co4-C6-Q3E"/>
+                            <constraint firstItem="K03-NC-4er" firstAttribute="top" secondItem="CRS-i1-i6H" secondAttribute="top" id="d9x-1P-LI9"/>
+                            <constraint firstItem="s5f-8q-P3A" firstAttribute="leading" secondItem="CRS-i1-i6H" secondAttribute="leading" constant="8" id="kv1-Rr-mAf"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PKh-EW-nfg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1617" y="2571"/>
+        </scene>
         <!--Host Provide Service View Controller-->
         <scene sceneID="YTa-Ez-4aV">
             <objects>
@@ -5850,7 +5940,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8rN-XP-0dA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2326" y="2578"/>
+            <point key="canvasLocation" x="2324" y="2571"/>
         </scene>
     </scenes>
     <resources>

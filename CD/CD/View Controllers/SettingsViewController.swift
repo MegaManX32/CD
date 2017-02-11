@@ -20,7 +20,7 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var avatarImageView : UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var emailLabel : UILabel!
-    @IBOutlet weak var createListOrProvideService : UIButton!
+    @IBOutlet weak var createListOrProvideServiceButton : UIButton!
     @IBOutlet weak var hostSwitch : UISwitch!
     
     // MARK: - View Lifecycle
@@ -61,12 +61,12 @@ class SettingsViewController: UIViewController {
     
     @IBAction func hostOptionChanged(sender: UISwitch) {
         if !sender.isOn {
-            self.createListOrProvideService.setTitle("Create Rider List", for: .normal)
+            self.createListOrProvideServiceButton.setTitle("Create Rider List", for: .normal)
             let controller = self.storyboard?.instantiateViewController(withIdentifier: "GuestNavigationController");
             self.revealViewController().pushFrontViewController(controller, animated: true)
         }
         else {
-            self.createListOrProvideService.setTitle("Provide Service", for: .normal)
+            self.createListOrProvideServiceButton.setTitle("Provide Service", for: .normal)
             let controller = self.storyboard?.instantiateViewController(withIdentifier: "HostNavigationController");
             self.revealViewController().pushFrontViewController(controller, animated: true)
         }
@@ -75,13 +75,25 @@ class SettingsViewController: UIViewController {
     @IBAction func createListOrProvideServiceAction(sender: UIButton) {
         if !self.hostSwitch.isOn {
             let controller = self.storyboard?.instantiateViewController(withIdentifier: "CreateRiderListViewController") as! CreateRiderListViewController
-            self.revealViewController().frontViewController.show(controller, sender: self)
-            self.revealViewController().revealToggle(self)
+            if self.revealViewController().frontViewController is GuestHomeViewController {
+                self.revealViewController().frontViewController.show(controller, sender: self)
+                self.revealViewController().revealToggle(self)
+                return
+            }
+            let navigationController = self.storyboard?.instantiateViewController(withIdentifier: "GuestNavigationController") as! UINavigationController
+            navigationController.pushViewController(controller, animated: false)
+            self.revealViewController().pushFrontViewController(navigationController, animated: true)
         }
         else {
             let controller = self.storyboard?.instantiateViewController(withIdentifier: "HostProvideServiceViewController") as! HostProvideServiceViewController
-            self.revealViewController().frontViewController.show(controller, sender: self)
-            self.revealViewController().revealToggle(self)
+            if self.revealViewController().frontViewController is HostHomeViewController {
+                self.revealViewController().frontViewController.show(controller, sender: self)
+                self.revealViewController().revealToggle(self)
+                return
+            }
+            let navigationController = self.storyboard?.instantiateViewController(withIdentifier: "HostNavigationController") as! UINavigationController
+            navigationController.pushViewController(controller, animated: false)
+            self.revealViewController().pushFrontViewController(navigationController, animated: true)
         }
     }
     
@@ -97,6 +109,11 @@ class SettingsViewController: UIViewController {
         // do log out
         NetworkManager.sharedInstance.logout()
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func aboutUs(sender: UIButton) {
+        let controller = self.storyboard?.instantiateViewController(withIdentifier: "AboutUsViewController");
+        self.revealViewController().pushFrontViewController(controller, animated: true)
     }
     
     @IBAction func comingSoon(sender: UIButton) {
