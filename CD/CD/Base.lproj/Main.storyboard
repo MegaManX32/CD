@@ -1727,7 +1727,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="comingSoonWithSender:" destination="v7N-DX-OI1" eventType="touchUpInside" id="3DZ-pG-2eA"/>
+                                    <action selector="helpAction:" destination="v7N-DX-OI1" eventType="touchUpInside" id="6Dd-XV-pz1"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HIp-uT-Nhi">
@@ -5792,7 +5792,7 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="s5f-8q-P3A">
                                 <rect key="frame" x="8" y="70" width="359" height="597"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <mutableString key="text">First of all we want to thank you for installing our app.
+                                <string key="text">First of all we want to thank you for installing our app.
 
 To keep it short, let us inform you what Custom Deal is all about.
 
@@ -5808,7 +5808,7 @@ Custom Deal is P2P platform that will help you to match yourself with best hosts
 
 Here at Custom Deal is all about make your travel GREAT, and who knows better what suits for YOU then YOU!
 
-Travel like a celebrity...</mutableString>
+Travel like a celebrity...</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>

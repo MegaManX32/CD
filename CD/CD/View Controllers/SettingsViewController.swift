@@ -9,11 +9,12 @@
 import UIKit
 import AlamofireImage
 import MBProgressHUD
+import MessageUI
 
 fileprivate let revealWidthOffset: CGFloat = 60
 fileprivate let avatarImageViewHeightAndWidth: CGFloat = 60
 
-class SettingsViewController: UIViewController {
+class SettingsViewController: UIViewController, MFMailComposeViewControllerDelegate {
     
     // MARK: - Properties
     
@@ -116,7 +117,25 @@ class SettingsViewController: UIViewController {
         self.revealViewController().pushFrontViewController(controller, animated: true)
     }
     
+    @IBAction func helpAction(_ sender: UIButton) {
+        if MFMailComposeViewController.canSendMail() {
+            let mail = MFMailComposeViewController()
+            mail.mailComposeDelegate = self
+            mail.setSubject("Help")
+            mail.setToRecipients(["administrator@custom-deal.com"])
+            present(mail, animated: true)
+        } else {
+            CustomAlert.presentAlert(message: "Please check your email settings", controller: self)
+        }
+    }
+    
     @IBAction func comingSoon(sender: UIButton) {
         CustomAlert.presentAlert(message: "Coming soon :-)", controller: self)
+    }
+    
+    // MARK: - MFMailComposeViewController Methods
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true)
     }
 }
