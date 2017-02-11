@@ -200,6 +200,18 @@ class SignupCountryViewController: UIViewController, GeneralPickerViewController
     
     func mutlipleLanguagePickerViewControllerDidSelect(languages: [Language], controller: MutlipleLanguagePickerViewController) {
         self.languages = languages
+        
+        // upate languages label
+        var languagesTitle = ""
+        var index = 0
+        if let languages = self.languages {
+            for language in languages {
+                languagesTitle += index == 0 ? language.language! : ", \(language.language!)"
+                index += 1
+            }
+        }
+        
+        self.languageButtonView.title = languagesTitle
         _ = self.navigationController?.popViewController(animated: true)
     }
     
