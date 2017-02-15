@@ -34,12 +34,17 @@ extension RiderList {
         
         // update simple properties from JSON
         self.uid = JSON["uid"] as? String ?? self.uid
-        self.age = JSON["age"] as? NSNumber ?? self.age
         self.country = JSON["country"] as? String ?? self.country
         self.city = JSON["city"] as? String ?? self.city
         self.details = JSON["details"] as? String ?? self.details
         self.gender = JSON["gender"] as? String ?? self.gender
         self.userUid = JSON["userUid"] as? String ?? self.userUid
+        
+        // age range
+        if let ageRangeDictionary = JSON["ageRange"] as? [String : NSNumber] {
+            self.ageRangeFrom = ageRangeDictionary["from"] ?? self.ageRangeFrom
+            self.ageRangeTo = ageRangeDictionary["to"] ?? self.ageRangeTo
+        }
         
         // check in and check out
         if let checkInDateString = JSON["checkIn"] as? String, let checkOutDateString = JSON["checkOut"] as? String {
@@ -83,12 +88,19 @@ extension RiderList {
         JSON["uid"] = self.uid
         JSON["country"] = self.country
         JSON["city"] = self.city
-        JSON["age"] = self.age
         JSON["checkIn"] = self.checkIn
         JSON["checkOut"] = self.checkOut
         JSON["details"] = self.details
         JSON["gender"] = self.gender
         JSON["userUid"] = self.userUid
+        
+        // age range
+        if let ageRangeFrom = self.ageRangeFrom, let ageRangeTo = self.ageRangeTo {
+            var ageRangeDictionary = [String : NSNumber]()
+            ageRangeDictionary["from"] = ageRangeFrom
+            ageRangeDictionary["to"] = ageRangeTo
+            JSON["ageRange"] = ageRangeDictionary
+        }
         
         // check in and check out
         if let checkInDate = self.checkIn, let checkOutDate = self.checkOut {

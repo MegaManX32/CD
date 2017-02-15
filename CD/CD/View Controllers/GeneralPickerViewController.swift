@@ -90,9 +90,9 @@ class GeneralPickerViewController: UIViewController, UITableViewDataSource, UITa
         case .gender:
             self.optionsArray = ["Male", "Female"]
         case .age:
-            self.optionsArray.append("18 - 25")
+            self.optionsArray.append((from: 18, to: 25))
             for index in stride(from: 25, to: 65, by: 5) {
-                self.optionsArray.append("\(index) - \(index + 5)")
+                self.optionsArray.append((from: index + 1, to: index + 5))
             }
         }
     }
@@ -131,7 +131,9 @@ class GeneralPickerViewController: UIViewController, UITableViewDataSource, UITa
         case .gender:
             cell.populateCellWithName(name: self.optionsArray[indexPath.row] as! String)
         case .age:
-            cell.populateCellWithName(name: self.optionsArray[indexPath.row] as! String)
+            if let ageRange = self.optionsArray[indexPath.row] as? (from: Int, to: Int) {
+                cell.populateCellWithName(name: "\(ageRange.from) - \(ageRange.to)")
+            }
         }
         
         return cell

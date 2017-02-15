@@ -39,7 +39,7 @@ class CreateRiderListViewController: UIViewController, UICollectionViewDataSourc
     var city : City?
     var languages : [Language]?
     var gender : String?
-    var age : Int?
+    var ageRange : (from: Int, to: Int)?
     var checkInDate : Date?
     var checkOutDate : Date?
     var interestsArray : [(interest : Interest, checked : Bool)] = [(Interest, Bool)]()
@@ -192,7 +192,7 @@ class CreateRiderListViewController: UIViewController, UICollectionViewDataSourc
     
     @IBAction func nextAction(sender: UIButton) {
         
-        guard let countryName = self.country?.countryName, let cityName = self.city?.cityName, let languages = self.languages, let checkInDate = self.checkInDate as NSDate?, let checkOutDate = self.checkOutDate as NSDate?, let gender = self.gender, let age = self.age as NSNumber?, let details = self.riderListTextView.text  else {
+        guard let countryName = self.country?.countryName, let cityName = self.city?.cityName, let languages = self.languages, let checkInDate = self.checkInDate as NSDate?, let checkOutDate = self.checkOutDate as NSDate?, let gender = self.gender, let ageRange = self.ageRange as (from: Int, to: Int)?, let details = self.riderListTextView.text  else {
             CustomAlert.presentAlert(message: "Please select country, city, check in date, check out date, gender, age and language", controller: self)
             return;
         }
@@ -231,7 +231,8 @@ class CreateRiderListViewController: UIViewController, UICollectionViewDataSourc
             newRiderList.checkIn = checkInDate
             newRiderList.checkOut = checkOutDate
             newRiderList.gender = gender
-            newRiderList.age = age
+            newRiderList.ageRangeFrom = NSNumber.init(value: ageRange.from)
+            newRiderList.ageRangeTo = NSNumber.init(value: ageRange.to)
             newRiderList.details = details
             
             // update rider list with interests
@@ -314,8 +315,8 @@ class CreateRiderListViewController: UIViewController, UICollectionViewDataSourc
             self.gender = object as? String
             self.genderButtonView.title = self.gender
         case .age:
-            self.age = selectedIndex
-            self.ageButtonView.title = object as? String
+            self.ageRange = object as? (from: Int, to: Int)
+            self.ageButtonView.title = "\(self.ageRange!.from) - \(self.ageRange!.to)"
         default:
             break
             // do nothing, should never happen
