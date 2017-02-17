@@ -25,7 +25,7 @@ class GuestRiderListAcceptedViewController: UIViewController {
         let mainContext = CoreDataManager.sharedInstance.mainContext
         let meUser = User.findUserWith(uid: StandardUserDefaults.userID(), context: mainContext)!
         
-        self.titleLabel.text = meUser.firstName! + "your Rider List is accepted, " + selectedOfferOfferorFirstName + " will be your host"
+        self.titleLabel.text = meUser.firstName! + " your Rider List is accepted, " + selectedOfferOfferorFirstName + " will be your host"
     }
     
     override func didReceiveMemoryWarning() {

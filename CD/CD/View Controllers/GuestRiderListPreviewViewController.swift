@@ -50,6 +50,7 @@ class GuestRiderListPreviewViewController: UIViewController {
         self.titleLabel.text = user.firstName!
         self.subtitelLabel.text = user.city!
         self.subtitleLabel2.text = user.country!
+        self.bestTimeLabel.text = self.riderList.desc
         self.riderListTextView.text = self.riderList.details
         
         // set photo

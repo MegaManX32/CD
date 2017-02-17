@@ -88,6 +88,7 @@ class HostReviewRequestsViewController: UIViewController {
         self.subtitelLabel.text = hostRiderList.travelerCity!
         self.subtitleLabel2.text = hostRiderList.travelerCountry!
         self.riderListTextView.text = riderList.details
+        self.bestTimeLabel.text = riderList.desc
 
         // set photo
         if let photoURL = hostRiderList.travelerPictureUrl {

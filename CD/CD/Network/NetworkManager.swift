@@ -490,6 +490,8 @@ class NetworkManager {
                 context.perform {
                     
                     // check if valid JSON
+                    let rawValue = response.result.value
+                    print("\(rawValue)")
                     guard let JSON = (response.result.value as? [[String: Any]])?.last
                         else {
                             DispatchQueue.main.async {

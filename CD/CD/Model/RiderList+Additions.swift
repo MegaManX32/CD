@@ -37,6 +37,7 @@ extension RiderList {
         self.country = JSON["country"] as? String ?? self.country
         self.city = JSON["city"] as? String ?? self.city
         self.details = JSON["details"] as? String ?? self.details
+        self.desc = JSON["description"] as? String ?? "WARNING ASSERTION - NO DESCRIPTION RETURNED FROM SERVER"
         self.gender = JSON["gender"] as? String ?? self.gender
         self.userUid = JSON["userUid"] as? String ?? self.userUid
         
@@ -91,6 +92,7 @@ extension RiderList {
         JSON["checkIn"] = self.checkIn
         JSON["checkOut"] = self.checkOut
         JSON["details"] = self.details
+        JSON["description"] = self.desc
         JSON["gender"] = self.gender
         JSON["userUid"] = self.userUid
         
