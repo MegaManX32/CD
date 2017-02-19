@@ -47,7 +47,7 @@ class HostHomeViewController: UIViewController, UITableViewDataSource, UITableVi
         self.hiLabel.text = "Hi, " + user.firstName!
         
         MBProgressHUD.showAdded(to: self.view, animated: true)
-        NetworkManager.sharedInstance.getAllRiderListsForHost(hostID: userID, success: { [unowned self] (hostRiderListArray) in
+        NetworkManager.sharedInstance.getAllRiderListsForHost(success: { [unowned self] (hostRiderListArray) in
             self.hostRiderListArray = hostRiderListArray
             self.prepareDataForPresentation()
             MBProgressHUD.hide(for: self.view, animated: true)
