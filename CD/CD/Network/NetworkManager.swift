@@ -639,7 +639,7 @@ class NetworkManager {
     }
     
     func decline(riderListOffer: RiderListOffer, success:@escaping () -> Void, failure:@escaping (String) -> Void) {
-        Alamofire.request(baseURL + "RiderListOffer/decline" + riderListOffer.uid!, method: .post, parameters: riderListOffer.asJSON(), encoding: JSONEncoding.default, headers: self.headers).validate().responseJSON {[unowned self] (response) in
+        Alamofire.request(baseURL + "RiderListOffer/decline/" + riderListOffer.uid!, method: .post, parameters: riderListOffer.asJSON(), encoding: JSONEncoding.default, headers: self.headers).validate().responseJSON {[unowned self] (response) in
             switch response.result {
             case .success:
                 

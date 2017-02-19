@@ -38,6 +38,7 @@ extension ServiceOffer {
         self.uid = JSON["uid"] as? String ?? self.uid
         self.userUid = JSON["userUid"] as? String ?? self.userUid
         self.photoUrlList = JSON["photoUrlList"] as? [String] ?? self.photoUrlList
+        self.photoIdList = JSON["photoIdList"] as? [String] ?? self.photoIdList
     }
     
     func asJSON() -> [String : Any] {
@@ -49,6 +50,7 @@ extension ServiceOffer {
         JSON["uid"] = self.uid
         JSON["userUid"] = self.userUid
         JSON["photoUrlList"] = self.photoUrlList
+        JSON["photoIdList"] =  self.photoIdList
         
         return JSON;
     }

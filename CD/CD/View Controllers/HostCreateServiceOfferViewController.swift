@@ -19,6 +19,7 @@ class HostCreateServiceOfferViewController: UIViewController, UIImagePickerContr
     
     var navigationTitle : String!
     var photoArray = [String]()
+    var photoIDArray = [String]()
     
     @IBOutlet weak var titleLabel : UILabel!
     @IBOutlet weak var descriptionTextView : UITextView!
@@ -72,6 +73,7 @@ class HostCreateServiceOfferViewController: UIViewController, UIImagePickerContr
         cell.cancelPhotoAction = { [unowned self] (cell) in
             let indexPathOfCell = self.collectionView.indexPath(for: cell)!
             self.photoArray.remove(at: indexPathOfCell.row)
+            self.photoIDArray.remove(at: indexPathOfCell.row)
             self.collectionView.deleteItems(at: [indexPathOfCell])
             self.updateCollectionViewPresentationBasedOnPhotos()
         }
@@ -111,6 +113,7 @@ class HostCreateServiceOfferViewController: UIViewController, UIImagePickerContr
             newServiceOffer.desc = self.descriptionTextView.text
             newServiceOffer.userUid = StandardUserDefaults.userID()
             newServiceOffer.photoUrlList = self.photoArray
+            newServiceOffer.photoIdList = self.photoIDArray
             
             NetworkManager.sharedInstance.createOrUpdate(serviceOffer: newServiceOffer, type: self.titleLabel.text!.lowercased(), context: context, success: { [unowned self] (serviceOfferID) in
                 _ = self.navigationController?.popToRootViewController(animated: true)
@@ -151,6 +154,7 @@ class HostCreateServiceOfferViewController: UIViewController, UIImagePickerContr
         NetworkManager.sharedInstance.upload(photo: image, success: { [unowned self] (photoID, photoURL) in
             
             self.photoArray.append(photoURL)
+            self.photoIDArray.append(photoID)
             self.collectionView.insertItems(at: [IndexPath.init(row: self.photoArray.count - 1, section: 0)])
             self.updateCollectionViewPresentationBasedOnPhotos()
             MBProgressHUD.hide(for: self.view, animated: true)
