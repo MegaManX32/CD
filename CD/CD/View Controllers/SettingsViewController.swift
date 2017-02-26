@@ -101,8 +101,27 @@ class SettingsViewController: UIViewController, MFMailComposeViewControllerDeleg
     @IBAction func profileAction(sender: UIButton) {
         let controller = self.storyboard?.instantiateViewController(withIdentifier: "HostProfileViewController") as! HostProfileViewController
         controller.userID = StandardUserDefaults.userID()
-        self.revealViewController().frontViewController.show(controller, sender: self)
-        self.revealViewController().revealToggle(self)
+        
+        if !self.hostSwitch.isOn {
+            if self.revealViewController().frontViewController is GuestHomeViewController {
+                self.revealViewController().frontViewController.show(controller, sender: self)
+                self.revealViewController().revealToggle(self)
+                return
+            }
+            let navigationController = self.storyboard?.instantiateViewController(withIdentifier: "GuestNavigationController") as! UINavigationController
+            navigationController.pushViewController(controller, animated: false)
+            self.revealViewController().pushFrontViewController(navigationController, animated: true)
+        }
+        else {
+            if self.revealViewController().frontViewController is HostHomeViewController {
+                self.revealViewController().frontViewController.show(controller, sender: self)
+                self.revealViewController().revealToggle(self)
+                return
+            }
+            let navigationController = self.storyboard?.instantiateViewController(withIdentifier: "HostNavigationController") as! UINavigationController
+            navigationController.pushViewController(controller, animated: false)
+            self.revealViewController().pushFrontViewController(navigationController, animated: true)
+        }
     }
     
     @IBAction func logOut(sender : UIButton) {

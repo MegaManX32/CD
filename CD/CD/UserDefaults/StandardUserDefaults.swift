@@ -25,4 +25,12 @@ class StandardUserDefaults: NSObject {
     static func userID() -> String {
         return UserDefaults.standard.value(forKey: "userIDKey") as! String
     }
+    
+    static func setUser(logged: Bool) {
+        
+    }
+    
+    static func userLogged() -> Bool {
+        return UserDefaults.standard.value(forKey: "loggedUser") as! Bool
+    }
 }
