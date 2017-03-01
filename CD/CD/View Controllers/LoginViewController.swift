@@ -59,7 +59,7 @@ class LoginViewController: UIViewController {
         // login :-)
         MBProgressHUD.showAdded(to: self.view, animated: true)
         NetworkManager.sharedInstance.logout()
-        NetworkManager.sharedInstance.login(params: params, success: {[unowned self] (userToken) in
+        NetworkManager.sharedInstance.login(params: params, success: {[unowned self] in
             
             // get user data
             NetworkManager.sharedInstance.getLoggedUser(success: {[unowned self] (userID) in

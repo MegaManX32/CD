@@ -10,7 +10,7 @@ import UIKit
 
 class StandardUserDefaults: NSObject {
     
-    static func saveUserToken(userToken: String) {
+    static func saveUserToken(userToken: String?) {
         UserDefaults.standard.set(userToken, forKey:"userToken")
     }
     
@@ -18,19 +18,15 @@ class StandardUserDefaults: NSObject {
         return UserDefaults.standard.value(forKey: "userToken") as! String
     }
     
-    static func saveUserID(userID : String) {
+    static func isLogged() -> Bool {
+        return UserDefaults.standard.value(forKey: "userToken") != nil
+    }
+    
+    static func saveUserID(userID : String?) {
         UserDefaults.standard.set(userID, forKey: "userIDKey")
     }
     
     static func userID() -> String {
         return UserDefaults.standard.value(forKey: "userIDKey") as! String
-    }
-    
-    static func setUser(logged: Bool) {
-        
-    }
-    
-    static func userLogged() -> Bool {
-        return UserDefaults.standard.value(forKey: "loggedUser") as! Bool
     }
 }

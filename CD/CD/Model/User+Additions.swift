@@ -72,7 +72,7 @@ extension User {
         }
         
         // add accomodation service offer
-        if let serviceOfferJSON = JSON["accomodationServiceOffer"] as? [String : Any] {
+        if let serviceOfferJSON = JSON["accommodationServiceOffer"] as? [String : Any] {
             self.addToServiceOffers(ServiceOffer.createOrUpdateServiceOfferWith(JSON: serviceOfferJSON, context: context))
         }
         

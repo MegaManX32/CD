@@ -15,7 +15,7 @@ fileprivate let baseURL = "http://customdeal.tkn.rs/api/"
 class NetworkManager {
     
     static let sharedInstance = NetworkManager()
-    var headers : HTTPHeaders? = HTTPHeaders()
+    var headers: HTTPHeaders? = HTTPHeaders()
     
     // MARK: - Helper methods
     
@@ -31,9 +31,19 @@ class NetworkManager {
         failure(errorString ?? defaultErrorMessage)
     }
     
+    func updateToken() {
+        self.headers = ["Authorization" : StandardUserDefaults.userToken()]
+    }
+    
+    func clearToken() {
+        StandardUserDefaults.saveUserID(userID: nil)
+        StandardUserDefaults.saveUserToken(userToken: nil)
+        self.headers = HTTPHeaders()
+    }
+    
     // MARK: - Login
     
-    func login(params: [String : String], success:@escaping (String) -> Void, failure:@escaping (String) -> Void) {
+    func login(params: [String : String], success:@escaping () -> Void, failure:@escaping (String) -> Void) {
         Alamofire.request(baseURL + "Auth/login", method: .post, parameters: params, encoding: JSONEncoding.default, headers: self.headers).validate().responseJSON {[unowned self] (response) in
             switch response.result {
             case .success:
@@ -52,10 +62,10 @@ class NetworkManager {
                 
                 // save user token
                 StandardUserDefaults.saveUserToken(userToken: token)
-                NetworkManager.sharedInstance.headers = ["Authorization" : token]
+                self.updateToken()
                 
                 // login success
-                success(token)
+                success()
                 
             case .failure:
                 
@@ -67,8 +77,8 @@ class NetworkManager {
     
     func logout() {
         
-        // just claer authorization token from headers
-        NetworkManager.sharedInstance.headers = HTTPHeaders()
+        // clear user data
+        self.clearToken()
     }
     
     // MARK: - User
@@ -160,6 +170,8 @@ class NetworkManager {
                             }
                             return
                     }
+                    
+                    print(JSON)
                     
                     // update user with JSON
                     let user = User.createOrUpdateUserWith(JSON: JSON, context: context)

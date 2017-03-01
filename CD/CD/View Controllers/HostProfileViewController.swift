@@ -111,13 +111,13 @@ class HostProfileViewController: UIViewController, UITableViewDataSource, UITabl
         self.transportationViewHeight.constant = 0
         if let serviceOffers = user.serviceOffers as? Set<ServiceOffer> {
             for serviceOffer in serviceOffers {
-                if serviceOffer.photoUrlList != nil && serviceOffer.type == "transportation" {
+                if serviceOffer.photoUrlList!.count > 0 && serviceOffer.type == "transportation" {
                     self.transportationArray = serviceOffer.photoUrlList!
                     self.transportationViewHeight.constant = offerViewsHeight
                     self.transportationCollectionView.reloadData()
                 }
                 else {
-                    if serviceOffer.photoUrlList != nil {
+                    if serviceOffer.photoUrlList!.count > 0 {
                         self.accomodationArray = serviceOffer.photoUrlList!
                         self.accomodationViewHeightConstraint.constant = offerViewsHeight
                         self.accomodationCollectionView.reloadData()

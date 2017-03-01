@@ -29,6 +29,21 @@ class StartViewController: UIViewController {
         // prepare buttons
         self.prepareButtons()
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        // if logged, login user automatically
+        if StandardUserDefaults.isLogged() {
+            
+            // update network manager with token
+            NetworkManager.sharedInstance.updateToken()
+            
+            // show reveal view controller
+            let controller = self.storyboard?.instantiateViewController(withIdentifier: "SWRevealViewController") as! SWRevealViewController
+            self.present(controller, animated: true, completion: nil)
+        }
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
