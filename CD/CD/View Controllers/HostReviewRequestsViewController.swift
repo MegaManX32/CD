@@ -20,6 +20,7 @@ class HostReviewRequestsViewController: UIViewController {
     
     var currentOfferIndex : Int!
     var hostRiderListArray : [HostRiderList]!
+    var guestUid: String?
     
     @IBOutlet weak var numberOfRequestsLabel : UILabel!
     @IBOutlet weak var avatarImageView: UIImageView!
@@ -78,6 +79,7 @@ class HostReviewRequestsViewController: UIViewController {
     func presentData(hostRiderList: HostRiderList, riderList : RiderList) {
         let context = CoreDataManager.sharedInstance.mainContext
         let meUser = User.findUserWith(uid: StandardUserDefaults.userID(), context: context)!
+        self.guestUid = riderList.userUid
 
         // prepare text for guest
         let hasMutipleOffersEnding = self.hostRiderListArray.count > 1 ? "s!" : "!"
@@ -113,7 +115,7 @@ class HostReviewRequestsViewController: UIViewController {
     
     @IBAction func avatarPress(_ sender: UIButton) {
         let controller = self.storyboard?.instantiateViewController(withIdentifier: "HostProfileViewController") as! HostProfileViewController
-        controller.userID = StandardUserDefaults.userID()
+        controller.userID = self.guestUid
         self.show(controller, sender: self)
     }
     

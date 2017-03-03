@@ -111,7 +111,7 @@ class GuestReviewOffersViewController: UIViewController {
     
     @IBAction func avatarPress(_ sender: UIButton) {
         let controller = self.storyboard?.instantiateViewController(withIdentifier: "HostProfileViewController") as! HostProfileViewController
-        controller.userID = StandardUserDefaults.userID()
+        controller.userID = self.riderListOffersArray[self.currentOfferIndex].offerorUid
         self.show(controller, sender: self)
     }
     

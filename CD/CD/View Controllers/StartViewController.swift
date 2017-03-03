@@ -38,8 +38,8 @@ class StartViewController: UIViewController {
         NetworkManager.sharedInstance.automaticallyLogin(success: {
             let controller = self.storyboard?.instantiateViewController(withIdentifier: "SWRevealViewController") as! SWRevealViewController
             self.present(controller, animated: true, completion: nil)
+            MBProgressHUD.hide(for: self.view, animated: true)
         }, failure: {[unowned self] (errorMessage) in
-            CustomAlert.presentAlert(message: errorMessage, controller: self)
             MBProgressHUD.hide(for: self.view, animated: true)
         })
     }
@@ -67,7 +67,6 @@ class StartViewController: UIViewController {
         self.logInButton?.layer.cornerRadius = 4
         self.logInButton?.layer.borderColor = UIColor.white.cgColor
         self.logInButton?.layer.borderWidth = 1
-        
     }
     
     func prepareLabels() {

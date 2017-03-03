@@ -28,7 +28,7 @@
                 <navigationController navigationBarHidden="YES" id="5f1-Mz-Wsz" sceneMemberID="viewController">
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="yJV-oC-Rt2">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="yJV-oC-Rt2">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -56,7 +56,7 @@
                                 <rect key="frame" x="-4" y="0.0" width="383" height="667"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="INCREASE YOUR INCOME BY OFFERING SERVICES OR JUST BE A CELEBRITY AND CREATE YOUR RIDER LIST" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9qd-bS-Tea">
-                                <rect key="frame" x="-92.5" y="196" width="560" height="227"/>
+                                <rect key="frame" x="-93" y="196" width="561" height="227"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="227" id="3n5-gr-9iz"/>
                                     <constraint firstAttribute="width" constant="560" id="UK0-cN-9z7"/>
@@ -1499,7 +1499,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wry-ea-G6t">
-                                <rect key="frame" x="-0.5" y="-0.5" width="375" height="667"/>
+                                <rect key="frame" x="-1" y="-1" width="376" height="668"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Branko, your profile is awsome." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w37-Nd-CeQ">
@@ -1792,11 +1792,18 @@
                                     <constraint firstAttribute="height" constant="60" id="EN5-rR-hkY"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5AP-46-A7b">
+                                <rect key="frame" x="16" y="32" width="60" height="60"/>
+                                <connections>
+                                    <action selector="profileActionWithSender:" destination="v7N-DX-OI1" eventType="touchUpInside" id="03G-RP-nlf"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="FBx-fO-xY0" firstAttribute="top" secondItem="IvD-kY-PKC" secondAttribute="bottom" constant="12" id="4Fu-0h-qcj"/>
                             <constraint firstItem="NnO-fx-qZb" firstAttribute="leading" secondItem="HIp-uT-Nhi" secondAttribute="leading" id="4z9-Xs-e2l"/>
+                            <constraint firstItem="5AP-46-A7b" firstAttribute="width" secondItem="xoq-Lz-kej" secondAttribute="width" id="56O-l4-toG"/>
                             <constraint firstItem="4k5-Zd-gGV" firstAttribute="leading" secondItem="taF-26-6Sd" secondAttribute="leading" id="5tW-2x-Hjn"/>
                             <constraint firstItem="W1N-cQ-qof" firstAttribute="top" secondItem="428-eV-XRR" secondAttribute="bottom" constant="8" id="74T-QK-yb7"/>
                             <constraint firstItem="gCG-fZ-NfT" firstAttribute="trailing" secondItem="FDZ-zb-pOa" secondAttribute="trailing" id="8wY-1O-DIt"/>
@@ -1822,6 +1829,7 @@
                             <constraint firstItem="fTm-FE-9NR" firstAttribute="leading" secondItem="W1N-cQ-qof" secondAttribute="leading" id="UMe-NC-LUd"/>
                             <constraint firstItem="HIp-uT-Nhi" firstAttribute="trailing" secondItem="fTm-FE-9NR" secondAttribute="trailing" id="VnM-OW-yAl"/>
                             <constraint firstAttribute="leadingMargin" secondItem="9qh-5y-bUu" secondAttribute="leading" id="Web-3V-a7w"/>
+                            <constraint firstItem="5AP-46-A7b" firstAttribute="height" secondItem="xoq-Lz-kej" secondAttribute="height" id="Wr1-Yq-3iA"/>
                             <constraint firstItem="Gym-LK-Fp8" firstAttribute="top" secondItem="NnO-fx-qZb" secondAttribute="bottom" constant="8" id="Wxd-Gf-Mxx"/>
                             <constraint firstItem="4k5-Zd-gGV" firstAttribute="top" secondItem="taF-26-6Sd" secondAttribute="bottom" constant="8" id="Xmr-ie-k32"/>
                             <constraint firstItem="428-eV-XRR" firstAttribute="trailing" secondItem="gCG-fZ-NfT" secondAttribute="trailing" id="Z0G-9D-nc4"/>
@@ -1832,6 +1840,7 @@
                             <constraint firstAttribute="leading" secondItem="FBx-fO-xY0" secondAttribute="leading" constant="-16" id="b64-ib-49B"/>
                             <constraint firstAttribute="trailing" secondItem="FBx-fO-xY0" secondAttribute="trailing" constant="16" id="coM-np-1TN"/>
                             <constraint firstItem="xoq-Lz-kej" firstAttribute="leading" secondItem="QnB-bC-qNs" secondAttribute="leadingMargin" id="efG-X7-zLn"/>
+                            <constraint firstItem="5AP-46-A7b" firstAttribute="centerX" secondItem="xoq-Lz-kej" secondAttribute="centerX" id="ejY-2L-FMM"/>
                             <constraint firstItem="HIp-uT-Nhi" firstAttribute="top" secondItem="fTm-FE-9NR" secondAttribute="bottom" constant="8" id="g0h-X9-yHm"/>
                             <constraint firstItem="xoq-Lz-kej" firstAttribute="top" secondItem="LME-yV-6gZ" secondAttribute="bottom" constant="12" id="ged-kL-Q2M"/>
                             <constraint firstItem="taF-26-6Sd" firstAttribute="trailing" secondItem="O0X-zr-rg1" secondAttribute="trailing" id="if3-vw-Aoh"/>
@@ -1843,6 +1852,7 @@
                             <constraint firstItem="FDZ-zb-pOa" firstAttribute="leading" secondItem="4k5-Zd-gGV" secondAttribute="leading" id="sjh-bh-JMW"/>
                             <constraint firstItem="etZ-YA-jCy" firstAttribute="centerY" secondItem="NnO-fx-qZb" secondAttribute="centerY" id="tuG-zr-OaY"/>
                             <constraint firstItem="taF-26-6Sd" firstAttribute="leading" secondItem="O0X-zr-rg1" secondAttribute="leading" id="w0a-es-deK"/>
+                            <constraint firstItem="5AP-46-A7b" firstAttribute="centerY" secondItem="xoq-Lz-kej" secondAttribute="centerY" id="x9r-Hc-IBq"/>
                             <constraint firstItem="O0X-zr-rg1" firstAttribute="leading" secondItem="QnB-bC-qNs" secondAttribute="leadingMargin" constant="34" id="yxF-5L-RaM"/>
                         </constraints>
                     </view>
@@ -2240,7 +2250,7 @@
                 <navigationController storyboardIdentifier="HostNavigationController" useStoryboardIdentifierAsRestorationIdentifier="YES" navigationBarHidden="YES" id="hk6-Ed-NCd" sceneMemberID="viewController">
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="bog-2b-cD5">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bog-2b-cD5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -2987,7 +2997,7 @@
                 <navigationController storyboardIdentifier="GuestNavigationController" useStoryboardIdentifierAsRestorationIdentifier="YES" navigationBarHidden="YES" id="xRK-RD-Ybg" sceneMemberID="viewController">
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="EgW-Da-Ag3">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="EgW-Da-Ag3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
