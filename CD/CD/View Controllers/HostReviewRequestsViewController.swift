@@ -111,6 +111,12 @@ class HostReviewRequestsViewController: UIViewController {
         _ = self.navigationController?.popViewController(animated: true)
     }
     
+    @IBAction func avatarPress(_ sender: UIButton) {
+        let controller = self.storyboard?.instantiateViewController(withIdentifier: "HostProfileViewController") as! HostProfileViewController
+        controller.userID = StandardUserDefaults.userID()
+        self.show(controller, sender: self)
+    }
+    
     @IBAction func offer(sender: UIButton) {
         let controller = self.storyboard?.instantiateViewController(withIdentifier: "HostMakingOfferViewController") as! HostMakingOfferViewController
         controller.riderListID = self.hostRiderListArray[self.currentOfferIndex].riderListUid

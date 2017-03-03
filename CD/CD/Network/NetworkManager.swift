@@ -31,11 +31,11 @@ class NetworkManager {
         failure(errorString ?? defaultErrorMessage)
     }
     
-    func updateToken() {
-        self.headers = ["Authorization" : StandardUserDefaults.userToken()]
+    func updateHeadersWithToken(token: String) {
+        self.headers = ["Authorization" : token]
     }
     
-    func clearToken() {
+    func clearHeaders() {
         StandardUserDefaults.saveUserID(userID: nil)
         StandardUserDefaults.saveUserToken(userToken: nil)
         self.headers = HTTPHeaders()
@@ -62,7 +62,7 @@ class NetworkManager {
                 
                 // save user token
                 StandardUserDefaults.saveUserToken(userToken: token)
-                self.updateToken()
+                self.updateHeadersWithToken(token: token)
                 
                 // login success
                 success()
@@ -75,10 +75,20 @@ class NetworkManager {
         }
     }
     
+    func automaticallyLogin(success:@escaping () -> Void, failure:@escaping (String) -> Void) {
+        if StandardUserDefaults.isLogged() {
+            self.updateHeadersWithToken(token: StandardUserDefaults.userToken())
+            success()
+        }
+        else {
+            self.generalizedFailure(data: nil, defaultErrorMessage: "Could not log user automatically", failure: failure)
+        }
+    }
+    
     func logout() {
         
         // clear user data
-        self.clearToken()
+        self.clearHeaders()
     }
     
     // MARK: - User

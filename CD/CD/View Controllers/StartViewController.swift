@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MBProgressHUD
 
 class StartViewController: UIViewController {
     
@@ -33,16 +34,14 @@ class StartViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        // if logged, login user automatically
-        if StandardUserDefaults.isLogged() {
-            
-            // update network manager with token
-            NetworkManager.sharedInstance.updateToken()
-            
-            // show reveal view controller
+        MBProgressHUD.showAdded(to: self.view, animated: true)
+        NetworkManager.sharedInstance.automaticallyLogin(success: {
             let controller = self.storyboard?.instantiateViewController(withIdentifier: "SWRevealViewController") as! SWRevealViewController
             self.present(controller, animated: true, completion: nil)
-        }
+        }, failure: {[unowned self] (errorMessage) in
+            CustomAlert.presentAlert(message: errorMessage, controller: self)
+            MBProgressHUD.hide(for: self.view, animated: true)
+        })
     }
 
     override func didReceiveMemoryWarning() {

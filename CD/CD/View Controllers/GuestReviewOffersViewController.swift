@@ -109,6 +109,12 @@ class GuestReviewOffersViewController: UIViewController {
         })
     }
     
+    @IBAction func avatarPress(_ sender: UIButton) {
+        let controller = self.storyboard?.instantiateViewController(withIdentifier: "HostProfileViewController") as! HostProfileViewController
+        controller.userID = StandardUserDefaults.userID()
+        self.show(controller, sender: self)
+    }
+    
     @IBAction func backAction(sender: UIButton) {
         _ = self.navigationController?.popViewController(animated: true)
     }
