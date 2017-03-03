@@ -63,30 +63,21 @@ class CreateRiderListViewController: UIViewController, UICollectionViewDataSourc
         self.riderListTextView.layer.cornerRadius = 4
         
         // fetch interests
-        let interests = Interest.findAllInterests(context: CoreDataManager.sharedInstance.mainContext)
-        if (interests.isEmpty) {
-            MBProgressHUD.showAdded(to: self.view, animated: true)
-            NetworkManager.sharedInstance.getAllInterests(
-                success: { [unowned self] in
-                    let context = CoreDataManager.sharedInstance.mainContext
-                    let interests = Interest.findAllInterests(context: context)
-                    for interest in interests {
-                        self.interestsArray.append((interest, false))
-                    }
-                    self.collectionView.reloadData()
-                    MBProgressHUD.hide(for: self.view, animated: true)
-                },
-                failure: { [unowned self] (errorMessage) in
-                    print(errorMessage)
-                    MBProgressHUD.hide(for: self.view, animated: true)
-            })
-        }
-        else {
-            for interest in interests {
-                self.interestsArray.append((interest, false))
-            }
-            self.collectionView.reloadData()
-        }
+        MBProgressHUD.showAdded(to: self.view, animated: true)
+        NetworkManager.sharedInstance.getAllInterests(
+            success: { [unowned self] in
+                let context = CoreDataManager.sharedInstance.mainContext
+                let interests = Interest.findAllInterests(context: context)
+                for interest in interests {
+                    self.interestsArray.append((interest, false))
+                }
+                self.collectionView.reloadData()
+                MBProgressHUD.hide(for: self.view, animated: true)
+            },
+            failure: { [unowned self] (errorMessage) in
+                print(errorMessage)
+                MBProgressHUD.hide(for: self.view, animated: true)
+        })
     }
 
     override func didReceiveMemoryWarning() {

@@ -32,29 +32,21 @@ class MutlipleLanguagePickerViewController: UIViewController, UITableViewDataSou
         self.tableView.tableFooterView = UIView.init(frame: .zero)
         
         // fetch languages
-        let languages = Language.findAllLanguages(context: CoreDataManager.sharedInstance.mainContext)
-        if !languages.isEmpty {
-            for language in languages {
-                self.languageOptionArray.append((language, false))
-            }
-        }
-        else {
-            MBProgressHUD.showAdded(to: self.view, animated: true)
-            NetworkManager.sharedInstance.getAllLanguages(
-                success: { [unowned self] in
-                    let context = CoreDataManager.sharedInstance.mainContext
-                    let languages = Language.findAllLanguages(context: context)
-                    for language in languages {
-                        self.languageOptionArray.append((language, false))
-                    }
-                    self.tableView.reloadData()
-                    MBProgressHUD.hide(for: self.view, animated: true)
-                },
-                failure: { [unowned self] (errorMessage) in
-                    print(errorMessage)
-                    MBProgressHUD.hide(for: self.view, animated: true)
-            })
-        }
+        MBProgressHUD.showAdded(to: self.view, animated: true)
+        NetworkManager.sharedInstance.getAllLanguages(
+            success: { [unowned self] in
+                let context = CoreDataManager.sharedInstance.mainContext
+                let languages = Language.findAllLanguages(context: context)
+                for language in languages {
+                    self.languageOptionArray.append((language, false))
+                }
+                self.tableView.reloadData()
+                MBProgressHUD.hide(for: self.view, animated: true)
+            },
+            failure: { [unowned self] (errorMessage) in
+                print(errorMessage)
+                MBProgressHUD.hide(for: self.view, animated: true)
+        })
     }
     
     override func didReceiveMemoryWarning() {
