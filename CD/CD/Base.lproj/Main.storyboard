@@ -28,7 +28,7 @@
                 <navigationController navigationBarHidden="YES" id="5f1-Mz-Wsz" sceneMemberID="viewController">
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="yJV-oC-Rt2">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="yJV-oC-Rt2">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -56,7 +56,7 @@
                                 <rect key="frame" x="-4" y="0.0" width="383" height="667"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="INCREASE YOUR INCOME BY OFFERING SERVICES OR JUST BE A CELEBRITY AND CREATE YOUR RIDER LIST" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9qd-bS-Tea">
-                                <rect key="frame" x="-93" y="196" width="561" height="227"/>
+                                <rect key="frame" x="-92.5" y="196" width="560" height="227"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="227" id="3n5-gr-9iz"/>
                                     <constraint firstAttribute="width" constant="560" id="UK0-cN-9z7"/>
@@ -1499,7 +1499,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wry-ea-G6t">
-                                <rect key="frame" x="-1" y="-1" width="376" height="668"/>
+                                <rect key="frame" x="-0.5" y="-0.5" width="375" height="667"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Branko, your profile is awsome." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w37-Nd-CeQ">
@@ -2250,7 +2250,7 @@
                 <navigationController storyboardIdentifier="HostNavigationController" useStoryboardIdentifierAsRestorationIdentifier="YES" navigationBarHidden="YES" id="hk6-Ed-NCd" sceneMemberID="viewController">
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bog-2b-cD5">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="bog-2b-cD5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -2997,7 +2997,7 @@
                 <navigationController storyboardIdentifier="GuestNavigationController" useStoryboardIdentifierAsRestorationIdentifier="YES" navigationBarHidden="YES" id="xRK-RD-Ybg" sceneMemberID="viewController">
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="EgW-Da-Ag3">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="EgW-Da-Ag3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
