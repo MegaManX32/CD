@@ -48,9 +48,6 @@ class CreateRiderListViewController: UIViewController, UICollectionViewDataSourc
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // set valid back button
-        self.backButton.setImage(UIImage(named:self.presentFromMainMenu ? "menuIcon" : "backIcon"), for: .normal)
 
         // update constraints
         let screenWidth = UIScreen.main.bounds.width

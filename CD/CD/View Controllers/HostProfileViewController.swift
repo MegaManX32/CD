@@ -208,9 +208,15 @@ class HostProfileViewController: UIViewController, UITableViewDataSource, UITabl
         }
     }
     
+    @IBAction func editProfile(_ sender: UIButton) {
+        let controller = self.storyboard?.instantiateViewController(withIdentifier: "EditProfileViewController") as! EditProfileViewController
+        controller.userID = self.userID
+        self.show(controller, sender: self)
+    }
+    
     @IBAction func backAction() {
         if self.presentFromMainMenu {
-             self.revealViewController().revealToggle(sender)
+             self.revealViewController().revealToggle(nil)
         }
         else {
             _ = self.navigationController?.popViewController(animated: true)

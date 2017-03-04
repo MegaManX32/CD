@@ -85,6 +85,7 @@
 		15CAE3801DEC86AF00DED25C /* City+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CAE37F1DEC86AF00DED25C /* City+Additions.swift */; };
 		15CAE3841DEC9B7400DED25C /* Profession+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CAE3831DEC9B7400DED25C /* Profession+Additions.swift */; };
 		15CAE3861DECAD8D00DED25C /* CustomAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CAE3851DECAD8D00DED25C /* CustomAlert.swift */; };
+		15E68A901E6AF3FA005B6E1C /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E68A8F1E6AF3FA005B6E1C /* EditProfileViewController.swift */; };
 		15EE96061DCA0F600003FB51 /* ServiceOffer+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15EE96051DCA0F600003FB51 /* ServiceOffer+Additions.swift */; };
 		15EE96081DCA144A0003FB51 /* Interest+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15EE96071DCA144A0003FB51 /* Interest+Additions.swift */; };
 		15EE960A1DCA14B50003FB51 /* Language+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15EE96091DCA14B50003FB51 /* Language+Additions.swift */; };
@@ -192,6 +193,7 @@
 		15CAE37F1DEC86AF00DED25C /* City+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "City+Additions.swift"; sourceTree = "<group>"; };
 		15CAE3831DEC9B7400DED25C /* Profession+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Profession+Additions.swift"; sourceTree = "<group>"; };
 		15CAE3851DECAD8D00DED25C /* CustomAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAlert.swift; sourceTree = "<group>"; };
+		15E68A8F1E6AF3FA005B6E1C /* EditProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		15EE96051DCA0F600003FB51 /* ServiceOffer+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ServiceOffer+Additions.swift"; sourceTree = "<group>"; };
 		15EE96071DCA144A0003FB51 /* Interest+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Interest+Additions.swift"; sourceTree = "<group>"; };
 		15EE96091DCA14B50003FB51 /* Language+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Language+Additions.swift"; sourceTree = "<group>"; };
@@ -276,6 +278,7 @@
 				1588A6D01E115FC300FEA81F /* Settings Menu */,
 				152080EB1DF36470005687C1 /* Guest Menu */,
 				1574A7531E0EDD2E00EDA4D0 /* Host Menu */,
+				15E68A8E1E6AF3E1005B6E1C /* Profile */,
 				15327BB11DC63A62000411F7 /* AccomodationViewController.swift */,
 				15327BB31DC63A62000411F7 /* HostFeedbackViewController.swift */,
 				15327BB41DC63A62000411F7 /* ReviewRiderLIstViewController.swift */,
@@ -426,6 +429,14 @@
 				150DF6051E4F9AB600716E9F /* AboutUsViewController.swift */,
 			);
 			name = "Settings Menu";
+			sourceTree = "<group>";
+		};
+		15E68A8E1E6AF3E1005B6E1C /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				15E68A8F1E6AF3FA005B6E1C /* EditProfileViewController.swift */,
+			);
+			name = Profile;
 			sourceTree = "<group>";
 		};
 		15EE960B1DCA2CBB0003FB51 /* Network */ = {
@@ -614,6 +625,7 @@
 				1588AD0C1E1E825900B17956 /* GuestRiderListPreviewViewController.swift in Sources */,
 				154A54481D9FD11D0021A803 /* IntroButton.swift in Sources */,
 				15327BD01DC63A62000411F7 /* StartViewController.swift in Sources */,
+				15E68A901E6AF3FA005B6E1C /* EditProfileViewController.swift in Sources */,
 				15327BCD1DC63A62000411F7 /* SignupViewController.swift in Sources */,
 				1574A7551E0EDE1500EDA4D0 /* HostHomeViewController.swift in Sources */,
 				15327BC61DC63A62000411F7 /* SignupConfirmPhoneViewController.swift in Sources */,

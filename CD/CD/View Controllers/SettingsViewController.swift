@@ -102,7 +102,9 @@ class SettingsViewController: UIViewController, MFMailComposeViewControllerDeleg
         let controller = self.storyboard?.instantiateViewController(withIdentifier: "HostProfileViewController") as! HostProfileViewController
         controller.userID = StandardUserDefaults.userID()
         controller.presentFromMainMenu = true
-        self.revealViewController().pushFrontViewController(controller, animated: true)
+        let navigationController = UINavigationController.init(rootViewController: controller)
+        navigationController.isNavigationBarHidden = true
+        self.revealViewController().pushFrontViewController(navigationController, animated: true)
     }
     
     @IBAction func logOut(sender : UIButton) {
