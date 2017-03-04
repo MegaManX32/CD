@@ -28,7 +28,7 @@
                 <navigationController navigationBarHidden="YES" id="5f1-Mz-Wsz" sceneMemberID="viewController">
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="yJV-oC-Rt2">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="yJV-oC-Rt2">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -56,7 +56,7 @@
                                 <rect key="frame" x="-4" y="0.0" width="383" height="667"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="INCREASE YOUR INCOME BY OFFERING SERVICES OR JUST BE A CELEBRITY AND CREATE YOUR RIDER LIST" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9qd-bS-Tea">
-                                <rect key="frame" x="-92.5" y="196" width="560" height="227"/>
+                                <rect key="frame" x="-93" y="196" width="561" height="227"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="227" id="3n5-gr-9iz"/>
                                     <constraint firstAttribute="width" constant="560" id="UK0-cN-9z7"/>
@@ -1499,7 +1499,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wry-ea-G6t">
-                                <rect key="frame" x="-0.5" y="-0.5" width="375" height="667"/>
+                                <rect key="frame" x="-1" y="-1" width="376" height="668"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Branko, your profile is awsome." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w37-Nd-CeQ">
@@ -2250,7 +2250,7 @@
                 <navigationController storyboardIdentifier="HostNavigationController" useStoryboardIdentifierAsRestorationIdentifier="YES" navigationBarHidden="YES" id="hk6-Ed-NCd" sceneMemberID="viewController">
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="bog-2b-cD5">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bog-2b-cD5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -2997,7 +2997,7 @@
                 <navigationController storyboardIdentifier="GuestNavigationController" useStoryboardIdentifierAsRestorationIdentifier="YES" navigationBarHidden="YES" id="xRK-RD-Ybg" sceneMemberID="viewController">
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="EgW-Da-Ag3">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="EgW-Da-Ag3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -3854,7 +3854,7 @@
                                     <constraint firstAttribute="height" constant="40" id="X2q-yU-lzZ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
-                                <state key="normal" title="Submit">
+                                <state key="normal" title="Save">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -4801,7 +4801,7 @@
                                     <action selector="editProfile:" destination="eHm-PQ-DjP" eventType="touchUpInside" id="u3x-8p-AlO"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hi, I'm Branko" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T3z-vM-Ytr">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T3z-vM-Ytr">
                                 <rect key="frame" x="24" y="78" width="189" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="4es-DM-obD"/>
@@ -4810,7 +4810,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Novi Sad, Serbia" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YgS-BC-RpA">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YgS-BC-RpA">
                                 <rect key="frame" x="24" y="104" width="189" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="czJ-eR-lJm"/>
@@ -5602,11 +5602,11 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dqK-HZ-zqQ">
                                         <rect key="frame" x="16" y="10" width="343" height="226"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aim your price:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xjv-bt-1uh">
-                                                <rect key="frame" x="8" y="8" width="104" height="21"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aim your price (€):" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xjv-bt-1uh">
+                                                <rect key="frame" x="8" y="8" width="126" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="21" id="6K1-df-BXf"/>
-                                                    <constraint firstAttribute="width" constant="104" id="C2m-hT-6YO"/>
+                                                    <constraint firstAttribute="width" constant="126" id="C2m-hT-6YO"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="14"/>
                                                 <color key="textColor" red="0.33725490200000002" green="0.35294117650000001" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -5620,7 +5620,7 @@
                                                 </constraints>
                                             </view>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="23O-Ly-hob">
-                                                <rect key="frame" x="109" y="3" width="226" height="30"/>
+                                                <rect key="frame" x="131" y="3" width="204" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="IEn-A3-qNS"/>
                                                 </constraints>
@@ -6227,6 +6227,134 @@ Travel like a celebrity...</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8rN-XP-0dA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2324" y="2571"/>
+        </scene>
+        <!--Edit Profile Photo View Controller-->
+        <scene sceneID="xzx-NU-3Dq">
+            <objects>
+                <viewController storyboardIdentifier="EditProfilePhotoViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ySt-45-ah4" customClass="EditProfilePhotoViewController" customModule="Custom_Deal" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="b8S-vs-6hq"/>
+                        <viewControllerLayoutGuide type="bottom" id="PV7-ad-4Ub"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2bv-3N-RgP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="signupBackground" translatesAutoresizingMaskIntoConstraints="NO" id="Emj-KR-myh">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NZH-64-zCw" customClass="IntroButtonWhite" customModule="Custom_Deal" customModuleProvider="target">
+                                <rect key="frame" x="16" y="216" width="343" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="fWq-hQ-fo0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
+                                <state key="normal" title="Choose from library">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="chooseFromPhotoLibraryWithSender:" destination="ySt-45-ah4" eventType="touchUpInside" id="FuX-Sa-Uja"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d4E-MA-uSL" customClass="IntroButtonWhite" customModule="Custom_Deal" customModuleProvider="target">
+                                <rect key="frame" x="16" y="266" width="343" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="9sd-ar-HA4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
+                                <state key="normal" title="Take photo">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="takePhotoWithSender:" destination="ySt-45-ah4" eventType="touchUpInside" id="Ag5-Zv-T8E"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2eO-3x-q4r">
+                                <rect key="frame" x="122" y="78" width="130" height="130"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="130" id="Lqc-x7-dCV"/>
+                                    <constraint firstAttribute="height" constant="130" id="gBW-N7-PJP"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M12-7A-U3c">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="39l-e2-e9d">
+                                        <rect key="frame" x="10" y="27" width="36" height="36"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="36" id="MAc-bX-UG4"/>
+                                            <constraint firstAttribute="height" constant="36" id="jRm-0b-5Vo"/>
+                                        </constraints>
+                                        <state key="normal" image="backIcon"/>
+                                        <connections>
+                                            <action selector="backActionWithSender:" destination="ySt-45-ah4" eventType="touchUpInside" id="MIG-VY-pfI"/>
+                                            <action selector="backActionWithSender:" destination="cnO-Yx-yTh" eventType="touchUpInside" id="far-nb-uDZ"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Change Photo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZIV-u3-HV0">
+                                        <rect key="frame" x="48" y="30" width="200" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="nRr-Hl-OOp"/>
+                                            <constraint firstAttribute="height" constant="30" id="zO9-4u-Egq"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="18"/>
+                                        <color key="textColor" red="0.33725490200000002" green="0.35294117650000001" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="39l-e2-e9d" firstAttribute="leading" secondItem="M12-7A-U3c" secondAttribute="leading" constant="10" id="9eB-SS-d9N"/>
+                                    <constraint firstItem="39l-e2-e9d" firstAttribute="centerY" secondItem="M12-7A-U3c" secondAttribute="centerY" constant="10" id="WBR-gp-tzj"/>
+                                    <constraint firstAttribute="height" constant="70" id="Xwv-HF-v0S"/>
+                                    <constraint firstItem="ZIV-u3-HV0" firstAttribute="leading" secondItem="39l-e2-e9d" secondAttribute="trailing" constant="2" id="ccS-9z-VFw"/>
+                                    <constraint firstItem="ZIV-u3-HV0" firstAttribute="centerY" secondItem="M12-7A-U3c" secondAttribute="centerY" constant="10" id="ufk-ht-02h"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rgh-OW-oqE" customClass="IntroButton" customModule="Custom_Deal" customModuleProvider="target">
+                                <rect key="frame" x="16" y="316" width="343" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="6Eq-Xj-nrp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
+                                <state key="normal" title="Save">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveActionWithSender:" destination="ySt-45-ah4" eventType="touchUpInside" id="eCE-sL-hXq"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="M12-7A-U3c" firstAttribute="leading" secondItem="2bv-3N-RgP" secondAttribute="leadingMargin" constant="-16" id="0LV-Lg-ijW"/>
+                            <constraint firstItem="NZH-64-zCw" firstAttribute="top" secondItem="2eO-3x-q4r" secondAttribute="bottom" constant="8" id="5Fi-jT-kVp"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="NZH-64-zCw" secondAttribute="trailing" id="5pe-gO-6Zn"/>
+                            <constraint firstItem="Rgh-OW-oqE" firstAttribute="leading" secondItem="2bv-3N-RgP" secondAttribute="leadingMargin" id="7gD-YF-gu4"/>
+                            <constraint firstItem="NZH-64-zCw" firstAttribute="trailing" secondItem="2bv-3N-RgP" secondAttribute="trailingMargin" id="C9U-eK-t6M"/>
+                            <constraint firstItem="PV7-ad-4Ub" firstAttribute="top" secondItem="Emj-KR-myh" secondAttribute="bottom" id="DnK-Sd-GZU"/>
+                            <constraint firstItem="2eO-3x-q4r" firstAttribute="top" secondItem="M12-7A-U3c" secondAttribute="bottom" constant="8" id="Mxc-7E-mco"/>
+                            <constraint firstItem="M12-7A-U3c" firstAttribute="top" secondItem="b8S-vs-6hq" secondAttribute="bottom" constant="-20" id="dRR-Qs-uuy"/>
+                            <constraint firstItem="Rgh-OW-oqE" firstAttribute="top" secondItem="d4E-MA-uSL" secondAttribute="bottom" constant="10" id="df5-tq-ipn"/>
+                            <constraint firstItem="d4E-MA-uSL" firstAttribute="top" secondItem="NZH-64-zCw" secondAttribute="bottom" constant="10" id="drY-se-AiN"/>
+                            <constraint firstItem="Rgh-OW-oqE" firstAttribute="trailing" secondItem="2bv-3N-RgP" secondAttribute="trailingMargin" id="e0Z-3W-rTJ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="d4E-MA-uSL" secondAttribute="trailing" id="eNB-xE-Iub"/>
+                            <constraint firstItem="Emj-KR-myh" firstAttribute="top" secondItem="b8S-vs-6hq" secondAttribute="bottom" constant="-20" id="gMV-mk-DMn"/>
+                            <constraint firstItem="NZH-64-zCw" firstAttribute="leading" secondItem="2bv-3N-RgP" secondAttribute="leadingMargin" id="goC-bv-YCN"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="M12-7A-U3c" secondAttribute="trailing" constant="-16" id="iH2-mQ-YLm"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="d4E-MA-uSL" secondAttribute="leading" id="jL3-pS-Gc4"/>
+                            <constraint firstItem="Emj-KR-myh" firstAttribute="leading" secondItem="2bv-3N-RgP" secondAttribute="leading" id="k2Q-s7-Mfh"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="NZH-64-zCw" secondAttribute="leading" id="s1u-9j-kEB"/>
+                            <constraint firstAttribute="trailing" secondItem="Emj-KR-myh" secondAttribute="trailing" id="ts3-Ua-LN1"/>
+                            <constraint firstItem="2eO-3x-q4r" firstAttribute="centerX" secondItem="Emj-KR-myh" secondAttribute="centerX" id="uGa-rT-Egt"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="avatarImageView" destination="2eO-3x-q4r" id="Ab7-op-Iwh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p32-e7-t5R" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7458" y="1133"/>
         </scene>
     </scenes>
     <resources>

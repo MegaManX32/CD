@@ -73,7 +73,7 @@ class GuestReviewOffersViewController: UIViewController {
         self.ratingView.value = 2.8
         
         // set price
-        self.priceLabel.text = "Price: " + "\(riderListOffer.price!)"
+        self.priceLabel.text = "Price: " + "\(riderListOffer.price!) €" 
         
         // set photo
         if let photoURL = riderListOffer.offerorPhotoURL {

@@ -13,7 +13,7 @@ protocol EditProfileViewControllerDelegate: class {
     func editProfileViewControllerDidFinish(controller: EditProfileViewController)
 }
 
-class EditProfileViewController: UIViewController {
+class EditProfileViewController: UIViewController, EditProfilePhotoViewControllerDelegate {
     
     // MARK: - Properties
     
@@ -57,7 +57,10 @@ class EditProfileViewController: UIViewController {
     // MARK: - User Actions
     
     @IBAction func changeAvatar(sender: UIButton) {
-        
+        let controller = self.storyboard?.instantiateViewController(withIdentifier: "EditProfilePhotoViewController") as! EditProfilePhotoViewController
+        controller.userID = self.userID
+        controller.delegate = self
+        self.show(controller, sender: self)
     }
     
     @IBAction func backAction(sender: UIButton) {
@@ -95,6 +98,19 @@ class EditProfileViewController: UIViewController {
                 print(errorMessage)
                 MBProgressHUD.hide(for: self.view, animated: true)
             })
+        }
+    }
+    
+    // MARK: - EditProfilePhotoViewControllerDelegate Methods
+    
+    func editProfilePhotoViewControllerDidFinish(controller: EditProfilePhotoViewController) {
+        
+        // get user
+        let user = User.findUserWith(uid: self.userID, context: CoreDataManager.sharedInstance.mainContext)!
+        
+        // prepare avatar
+        if let photoURL = user.photoURL {
+            self.avatarImageView.af_setImage(withURL: URL(string: photoURL)!)
         }
     }
 }
