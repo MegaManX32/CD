@@ -9,16 +9,11 @@
 import UIKit
 import MBProgressHUD
 
-protocol EditProfilePhotoViewControllerDelegate: class {
-    func editProfilePhotoViewControllerDidFinish(controller: EditProfilePhotoViewController)
-}
-
 class EditProfilePhotoViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     // MARK: - Properties
     
     var userID: String!
-    weak var delegate: EditProfilePhotoViewControllerDelegate?
     @IBOutlet weak var avatarImageView: UIImageView!
     
     // MARK: - View Lifecycle
@@ -77,7 +72,6 @@ class EditProfilePhotoViewController: UIViewController, UIImagePickerControllerD
                 
                 // create of or update user
                 NetworkManager.sharedInstance.createOrUpdate(user: user, context: context, success: { [unowned self] (userID) in
-                    self.delegate?.editProfilePhotoViewControllerDidFinish(controller: self)
                     _ = self.navigationController?.popViewController(animated: true)
                     MBProgressHUD.hide(for: self.view, animated: true)
                     }, failure: { [unowned self] (errorMessage) in

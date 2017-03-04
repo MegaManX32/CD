@@ -13,7 +13,7 @@ protocol EditProfileViewControllerDelegate: class {
     func editProfileViewControllerDidFinish(controller: EditProfileViewController)
 }
 
-class EditProfileViewController: UIViewController, EditProfilePhotoViewControllerDelegate {
+class EditProfileViewController: UIViewController {
     
     // MARK: - Properties
     
@@ -33,6 +33,19 @@ class EditProfileViewController: UIViewController, EditProfilePhotoViewControlle
         // get user
         let user = User.findUserWith(uid: self.userID, context: CoreDataManager.sharedInstance.mainContext)!
         
+        // prepare first and last name
+        self.firstNameTextField.placeholder = NSLocalizedString("First Name", comment: "First Name")
+        self.firstNameTextField.text = user.firstName
+        self.lastNameTextField.placeholder = NSLocalizedString("Last Name", comment: "Last Name")
+        self.lastNameTextField.text = user.lastName
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // get user
+        let user = User.findUserWith(uid: self.userID, context: CoreDataManager.sharedInstance.mainContext)!
+        
         // prepare avatar
         self.avatarImageView.layer.cornerRadius = 130 / 2.0
         self.avatarImageView.layer.masksToBounds = true
@@ -41,12 +54,6 @@ class EditProfileViewController: UIViewController, EditProfilePhotoViewControlle
         if let photoURL = user.photoURL {
             self.avatarImageView.af_setImage(withURL: URL(string: photoURL)!)
         }
-        
-        // prepare first and last name
-        self.firstNameTextField.placeholder = NSLocalizedString("First Name", comment: "First Name")
-        self.firstNameTextField.text = user.firstName
-        self.lastNameTextField.placeholder = NSLocalizedString("Last Name", comment: "Last Name")
-        self.lastNameTextField.text = user.lastName
     }
 
     override func didReceiveMemoryWarning() {
@@ -59,11 +66,11 @@ class EditProfileViewController: UIViewController, EditProfilePhotoViewControlle
     @IBAction func changeAvatar(sender: UIButton) {
         let controller = self.storyboard?.instantiateViewController(withIdentifier: "EditProfilePhotoViewController") as! EditProfilePhotoViewController
         controller.userID = self.userID
-        controller.delegate = self
         self.show(controller, sender: self)
     }
     
     @IBAction func backAction(sender: UIButton) {
+        self.delegate?.editProfileViewControllerDidFinish(controller: self)
         _ = self.navigationController?.popViewController(animated: true)
     }
     
@@ -98,19 +105,6 @@ class EditProfileViewController: UIViewController, EditProfilePhotoViewControlle
                 print(errorMessage)
                 MBProgressHUD.hide(for: self.view, animated: true)
             })
-        }
-    }
-    
-    // MARK: - EditProfilePhotoViewControllerDelegate Methods
-    
-    func editProfilePhotoViewControllerDidFinish(controller: EditProfilePhotoViewController) {
-        
-        // get user
-        let user = User.findUserWith(uid: self.userID, context: CoreDataManager.sharedInstance.mainContext)!
-        
-        // prepare avatar
-        if let photoURL = user.photoURL {
-            self.avatarImageView.af_setImage(withURL: URL(string: photoURL)!)
         }
     }
 }

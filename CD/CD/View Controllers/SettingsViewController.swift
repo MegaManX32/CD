@@ -36,21 +36,34 @@ class SettingsViewController: UIViewController, MFMailComposeViewControllerDeleg
         self.avatarImageView.layer.cornerRadius = avatarImageViewHeightAndWidth / 2.0
         self.avatarImageView.layer.masksToBounds = true
         
-        let userID = StandardUserDefaults.userID()
-        MBProgressHUD.showAdded(to: self.view, animated: true)
-        NetworkManager.sharedInstance.getUser(userID: userID, success: { [unowned self] (userID) in
-            let context = CoreDataManager.sharedInstance.mainContext
-            let user = User.findUserWith(uid: userID, context: context)!
-            self.nameLabel.text = user.firstName!
-            self.emailLabel.text = user.email!
-            if let photoURL = user.photoURL {
-                self.avatarImageView.af_setImage(withURL: URL(string:photoURL)!)
-            }
-            MBProgressHUD.hide(for: self.view, animated: true)
-        }, failure: { [unowned self] (errorMessage) in
-            print(errorMessage)
-            MBProgressHUD.hide(for: self.view, animated: true)
-        })
+//        let userID = StandardUserDefaults.userID()
+//        MBProgressHUD.showAdded(to: self.view, animated: true)
+//        NetworkManager.sharedInstance.getUser(userID: userID, success: { [unowned self] (userID) in
+//            let context = CoreDataManager.sharedInstance.mainContext
+//            let user = User.findUserWith(uid: userID, context: context)!
+//            self.nameLabel.text = user.firstName!
+//            self.emailLabel.text = user.email!
+//            if let photoURL = user.photoURL {
+//                self.avatarImageView.af_setImage(withURL: URL(string:photoURL)!)
+//            }
+//            MBProgressHUD.hide(for: self.view, animated: true)
+//        }, failure: { [unowned self] (errorMessage) in
+//            print(errorMessage)
+//            MBProgressHUD.hide(for: self.view, animated: true)
+//        })
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // update user
+        let context = CoreDataManager.sharedInstance.mainContext
+        let user = User.findUserWith(uid: StandardUserDefaults.userID(), context: context)!
+        self.nameLabel.text = user.firstName!
+        self.emailLabel.text = user.email!
+        if let photoURL = user.photoURL {
+            self.avatarImageView.af_setImage(withURL: URL(string:photoURL)!)
+        }
     }
 
     override func didReceiveMemoryWarning() {
