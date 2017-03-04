@@ -17,7 +17,7 @@ fileprivate let aboutViewHeight: CGFloat = 116
 fileprivate let reviewViewBaseHeight: CGFloat = 66
 fileprivate let offerViewsHeight: CGFloat = 250
 
-class HostProfileViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+class HostProfileViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, EditProfileViewControllerDelegate {
     
     // MARK: - Properties
     
@@ -211,6 +211,7 @@ class HostProfileViewController: UIViewController, UITableViewDataSource, UITabl
     @IBAction func editProfile(_ sender: UIButton) {
         let controller = self.storyboard?.instantiateViewController(withIdentifier: "EditProfileViewController") as! EditProfileViewController
         controller.userID = self.userID
+        controller.delegate = self
         self.show(controller, sender: self)
     }
     
@@ -221,5 +222,13 @@ class HostProfileViewController: UIViewController, UITableViewDataSource, UITabl
         else {
             _ = self.navigationController?.popViewController(animated: true)
         }
+    }
+    
+    // MARK: - EditProfileViewControllerDelegate Methods
+    
+    func editProfileViewControllerDidFinish(controller: EditProfileViewController) {
+        let context = CoreDataManager.sharedInstance.mainContext
+        let user = User.findUserWith(uid: userID, context: context)!
+        self.populateViewsWithUser(user: user)
     }
 }

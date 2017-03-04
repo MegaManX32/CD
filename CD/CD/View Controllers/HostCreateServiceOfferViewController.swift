@@ -131,7 +131,7 @@ class HostCreateServiceOfferViewController: UIViewController, UIImagePickerContr
             newServiceOffer.photoIdList = self.photoIDArray
             
             NetworkManager.sharedInstance.createOrUpdate(serviceOffer: newServiceOffer, type: self.titleLabel.text!.lowercased(), context: context, success: { [unowned self] (serviceOfferID) in
-                _ = self.navigationController?.popToRootViewController(animated: true)
+                _ = self.navigationController?.popViewController(animated: true)
                 MBProgressHUD.hide(for: self.view, animated: true)
             }, failure: { [unowned self] (errorMessage) in
                 print(errorMessage)
