@@ -17,7 +17,8 @@ class HostCreateServiceOfferViewController: UIViewController, UIImagePickerContr
     
     // MARK: - Properties
     
-    var navigationTitle : String!
+    var navigationTitle: String!
+    var serviceOfferID: String?
     var photoArray = [String]()
     var photoIDArray = [String]()
     
@@ -33,6 +34,20 @@ class HostCreateServiceOfferViewController: UIViewController, UIImagePickerContr
         
         // set proper title
         self.titleLabel.text = self.navigationTitle
+        
+        // load services if any available
+        let user = User.findUserWith(uid: StandardUserDefaults.userID(), context: CoreDataManager.sharedInstance.mainContext)!
+        if let serviceOffers = user.serviceOffers as? Set<ServiceOffer> {
+            for serviceOffer in serviceOffers {
+                if serviceOffer.type == self.navigationTitle.lowercased() {
+                    self.serviceOfferID = serviceOffer.uid
+                    for index in 0 ..< serviceOffer.photoUrlList!.count {
+                        self.photoArray.append(serviceOffer.photoUrlList![index])
+                        self.photoIDArray.append(serviceOffer.photoIdList![index])
+                    }
+                }
+            }
+        }
 
         // update collection view presentation
         self.updateCollectionViewPresentationBasedOnPhotos()
@@ -107,7 +122,7 @@ class HostCreateServiceOfferViewController: UIViewController, UIImagePickerContr
         context.perform {
             [unowned self] in
             
-            let newServiceOffer = ServiceOffer(context: context)
+            let newServiceOffer = self.serviceOfferID != nil ? ServiceOffer.findServiceOfferWith(id: self.serviceOfferID!, context: context)! : ServiceOffer(context: context)
             newServiceOffer.serviceName = self.titleLabel.text
             newServiceOffer.type = self.titleLabel.text?.lowercased()
             newServiceOffer.desc = self.descriptionTextView.text
