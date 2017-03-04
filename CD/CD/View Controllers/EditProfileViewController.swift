@@ -38,6 +38,7 @@ class EditProfileViewController: UIViewController {
         self.firstNameTextField.text = user.firstName
         self.lastNameTextField.placeholder = NSLocalizedString("Last Name", comment: "Last Name")
         self.lastNameTextField.text = user.lastName
+        self.aboutTextView.text = user.aboutUser
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -96,6 +97,7 @@ class EditProfileViewController: UIViewController {
             let user = User.findUserWith(uid: self.userID, context: context)!
             user.firstName = self.firstNameTextField.text
             user.lastName = self.lastNameTextField.text
+            user.aboutUser = self.aboutTextView.text
             
             NetworkManager.sharedInstance.createOrUpdate(user: user, context: context, success: { [unowned self] (userID) in
                 self.delegate?.editProfileViewControllerDidFinish(controller: self)

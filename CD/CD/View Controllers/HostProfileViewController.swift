@@ -24,6 +24,7 @@ class HostProfileViewController: UIViewController, UITableViewDataSource, UITabl
     var userID : String!
     var presentFromMainMenu: Bool = false
     
+    @IBOutlet weak var editButton: UIButton!
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var avatarImageView : UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
@@ -54,6 +55,9 @@ class HostProfileViewController: UIViewController, UITableViewDataSource, UITabl
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // should show edit button
+        self.editButton.isHidden = self.userID != StandardUserDefaults.userID()
         
         // set valid back button
         self.backButton.setImage(UIImage(named:self.presentFromMainMenu ? "menuIcon" : "backIcon"), for: .normal)
@@ -93,8 +97,12 @@ class HostProfileViewController: UIViewController, UITableViewDataSource, UITabl
         }
         
         // prepare about view
+        self.aboutTextLabel.text = user.aboutUser
         if (self.aboutTextLabel.text == nil) {
             self.aboutViewHeightConstraint.constant = 0
+        }
+        else {
+            self.aboutViewHeightConstraint.constant = aboutViewHeight
         }
         
         // prepare review view

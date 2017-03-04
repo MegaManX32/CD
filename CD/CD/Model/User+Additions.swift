@@ -52,6 +52,7 @@ extension User {
         self.zipcode = JSON["zipcode"] as? String ?? self.zipcode
         self.city = JSON["city"] as? String ?? self.city
         self.photoURL = JSON["photoURL"] as? String ?? self.photoURL
+        self.aboutUser = JSON["aboutUser"] as? String ?? self.aboutUser
         
         // birth date
         if let birthDateString = JSON["birthDate"] as? String {
@@ -107,6 +108,7 @@ extension User {
         JSON["zipcode"] = self.zipcode
         JSON["city"] = self.city
         JSON["photoURL"] = self.photoURL
+        JSON["aboutUser"] = self.aboutUser
         
         // birth date
         if let birthDate = self.birthDate {

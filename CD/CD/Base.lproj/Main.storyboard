@@ -4790,13 +4790,13 @@
                                     <constraint firstAttribute="width" constant="130" id="jzX-TE-Wm1"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KuC-Hx-FNz">
-                                <rect key="frame" x="327" y="30" width="30" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KuC-Hx-FNz">
+                                <rect key="frame" x="337" y="28" width="30" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="30" id="Cu3-Mx-WZ3"/>
                                     <constraint firstAttribute="height" constant="30" id="KGs-qg-klJ"/>
                                 </constraints>
-                                <state key="normal" title="EDIT"/>
+                                <state key="normal" image="editPencil"/>
                                 <connections>
                                     <action selector="editProfile:" destination="eHm-PQ-DjP" eventType="touchUpInside" id="u3x-8p-AlO"/>
                                 </connections>
@@ -5263,10 +5263,10 @@
                             <constraint firstItem="B0B-6e-elU" firstAttribute="top" secondItem="3tc-wM-Bbr" secondAttribute="bottom" constant="8" id="1td-7H-QAq"/>
                             <constraint firstItem="dOe-XR-bfe" firstAttribute="top" secondItem="ot9-pP-Lvf" secondAttribute="bottom" id="4wg-Ki-4WR"/>
                             <constraint firstItem="T3z-vM-Ytr" firstAttribute="leading" secondItem="c2t-1z-9pB" secondAttribute="leading" constant="24" id="7dh-NR-M7Y"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="KuC-Hx-FNz" secondAttribute="trailing" constant="2" id="EF7-ov-sqM"/>
+                            <constraint firstAttribute="trailing" secondItem="KuC-Hx-FNz" secondAttribute="trailing" constant="8" id="EF7-ov-sqM"/>
                             <constraint firstItem="XtG-W8-XQM" firstAttribute="leading" secondItem="YgS-BC-RpA" secondAttribute="leading" constant="-2" id="HPt-tA-51m"/>
                             <constraint firstItem="YgS-BC-RpA" firstAttribute="top" secondItem="T3z-vM-Ytr" secondAttribute="bottom" constant="-10" id="LCb-Ue-EGy"/>
-                            <constraint firstItem="KuC-Hx-FNz" firstAttribute="top" secondItem="NwI-LH-GFb" secondAttribute="bottom" constant="10" id="LYL-ki-rol"/>
+                            <constraint firstItem="KuC-Hx-FNz" firstAttribute="top" secondItem="NwI-LH-GFb" secondAttribute="bottom" constant="8" id="LYL-ki-rol"/>
                             <constraint firstAttribute="trailing" secondItem="oeP-G9-urc" secondAttribute="trailing" id="QTf-ru-BG6"/>
                             <constraint firstItem="3tc-wM-Bbr" firstAttribute="leading" secondItem="T3z-vM-Ytr" secondAttribute="trailing" constant="8" id="W6Y-1M-evd"/>
                             <constraint firstItem="oeP-G9-urc" firstAttribute="top" secondItem="c2t-1z-9pB" secondAttribute="top" id="Y07-sx-Ty9"/>
@@ -5293,6 +5293,7 @@
                         <outlet property="avatarImageView" destination="3tc-wM-Bbr" id="iue-km-lOP"/>
                         <outlet property="backButton" destination="WHh-ya-u34" id="Sqe-Yd-2Oc"/>
                         <outlet property="containerViewHeightConstraint" destination="0mD-ZU-TTn" id="DHG-cv-NAR"/>
+                        <outlet property="editButton" destination="KuC-Hx-FNz" id="9Rb-dz-flp"/>
                         <outlet property="nameLabel" destination="T3z-vM-Ytr" id="vhE-gu-tAh"/>
                         <outlet property="ratingView" destination="XtG-W8-XQM" id="2wZ-m0-U8p"/>
                         <outlet property="reviewViewHeightConstraint" destination="KH2-hl-auW" id="Mcu-BL-TaE"/>
@@ -6370,6 +6371,7 @@ Travel like a celebrity...</string>
         <image name="customDealBackImage" width="237" height="237"/>
         <image name="customDealLogo1" width="85" height="85"/>
         <image name="customDealLogoWhite" width="90" height="90"/>
+        <image name="editPencil" width="35" height="35"/>
         <image name="health" width="58" height="58"/>
         <image name="homeBackground" width="375" height="667"/>
         <image name="introBackground" width="375" height="667"/>
