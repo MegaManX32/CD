@@ -22,7 +22,9 @@ class HostProfileViewController: UIViewController, UITableViewDataSource, UITabl
     // MARK: - Properties
     
     var userID : String!
+    var presentFromMainMenu: Bool = false
     
+    @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var avatarImageView : UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var addressLabel : UILabel!
@@ -52,6 +54,9 @@ class HostProfileViewController: UIViewController, UITableViewDataSource, UITabl
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // set valid back button
+        self.backButton.setImage(UIImage(named:self.presentFromMainMenu ? "menuIcon" : "backIcon"), for: .normal)
         
         // get user based on ID
         MBProgressHUD.showAdded(to: self.view, animated: true)
@@ -204,6 +209,11 @@ class HostProfileViewController: UIViewController, UITableViewDataSource, UITabl
     }
     
     @IBAction func backAction() {
-        _ = self.navigationController?.popViewController(animated: true)
+        if self.presentFromMainMenu {
+             self.revealViewController().revealToggle(sender)
+        }
+        else {
+            _ = self.navigationController?.popViewController(animated: true)
+        }
     }
 }

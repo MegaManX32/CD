@@ -4760,7 +4760,7 @@
                                         </constraints>
                                         <state key="normal" image="backIcon"/>
                                         <connections>
-                                            <action selector="backAction" destination="eHm-PQ-DjP" eventType="touchUpInside" id="WPm-hi-D7h"/>
+                                            <action selector="backAction" destination="eHm-PQ-DjP" eventType="touchUpInside" id="TIr-xz-PZV"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RgK-dB-GEw">
@@ -5278,6 +5278,7 @@
                         <outlet property="accomodationViewHeightConstraint" destination="Zea-Ug-Jxg" id="aFv-uv-Gq9"/>
                         <outlet property="addressLabel" destination="YgS-BC-RpA" id="OK9-VB-TcS"/>
                         <outlet property="avatarImageView" destination="3tc-wM-Bbr" id="iue-km-lOP"/>
+                        <outlet property="backButton" destination="WHh-ya-u34" id="Sqe-Yd-2Oc"/>
                         <outlet property="containerViewHeightConstraint" destination="0mD-ZU-TTn" id="DHG-cv-NAR"/>
                         <outlet property="nameLabel" destination="T3z-vM-Ytr" id="vhE-gu-tAh"/>
                         <outlet property="ratingView" destination="XtG-W8-XQM" id="2wZ-m0-U8p"/>
