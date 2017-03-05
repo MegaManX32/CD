@@ -120,6 +120,17 @@ class SettingsViewController: UIViewController, MFMailComposeViewControllerDeleg
         self.revealViewController().pushFrontViewController(navigationController, animated: true)
     }
     
+    @IBAction func homeAction(sender: UIButton) {
+        if !self.hostSwitch.isOn {
+            let controller = self.storyboard?.instantiateViewController(withIdentifier: "GuestNavigationController");
+            self.revealViewController().pushFrontViewController(controller, animated: true)
+        }
+        else {
+            let controller = self.storyboard?.instantiateViewController(withIdentifier: "HostNavigationController");
+            self.revealViewController().pushFrontViewController(controller, animated: true)
+        }
+    }
+    
     @IBAction func logOut(sender : UIButton) {
         
         // do log out
