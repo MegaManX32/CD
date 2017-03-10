@@ -16,7 +16,6 @@ class SignupCountryViewController: UIViewController, GeneralPickerViewController
     @IBOutlet weak var countryButtonView: ButtonView!
     @IBOutlet weak var cityButtonView: ButtonView!
     @IBOutlet weak var zipCodeButtonView: ButtonView!
-    @IBOutlet weak var professionButtonView: ButtonView!
     @IBOutlet weak var languageButtonView: ButtonView!
     @IBOutlet weak var genderButtonView: ButtonView!
     @IBOutlet weak var birthDateButtonView: ButtonView!
@@ -25,7 +24,6 @@ class SignupCountryViewController: UIViewController, GeneralPickerViewController
     var country : Country?
     var city : City?
     var languages : [Language]?
-    var profession : Profession?
     var gender : String?
     var birthDate : Date?
     
@@ -70,15 +68,6 @@ class SignupCountryViewController: UIViewController, GeneralPickerViewController
             controller.delegate = self
             self.show(controller, sender: self)
         }
-        self.professionButtonView.title = NSLocalizedString("Profession", comment: "profession")
-        self.professionButtonView.isWhite = true
-        self.professionButtonView.action = { [unowned self] in
-            let controller = self.storyboard?.instantiateViewController(withIdentifier: "GeneralPickerViewController") as! GeneralPickerViewController
-            controller.topTitle = self.professionButtonView.title
-            controller.selectionType = .profession
-            controller.delegate = self
-            self.show(controller, sender: self)
-        }
         self.languageButtonView.title = NSLocalizedString("Language", comment: "language")
         self.languageButtonView.isWhite = true
         self.languageButtonView.action = { [unowned self] in
@@ -115,8 +104,8 @@ class SignupCountryViewController: UIViewController, GeneralPickerViewController
     // MARK: - User actions
     
     @IBAction func nextAction(sender: UIButton) {
-        guard let countryName = self.country?.countryName, let cityName = self.city?.cityName, let languages = self.languages, let professionName = self.profession?.profession, let gender = self.gender, let birthDate = self.birthDate as NSDate? else {
-            CustomAlert.presentAlert(message: "Please select country, city, language, profession, gender and date of birth", controller: self)
+        guard let countryName = self.country?.countryName, let cityName = self.city?.cityName, let languages = self.languages, let gender = self.gender, let birthDate = self.birthDate as NSDate? else {
+            CustomAlert.presentAlert(message: "Please select country, city, language, gender and date of birth", controller: self)
             return;
         }
         
@@ -138,7 +127,6 @@ class SignupCountryViewController: UIViewController, GeneralPickerViewController
             let user = User.findUserWith(uid: self.userID, context: context)
             user?.country = countryName
             user?.city = cityName
-            user?.proffesion = professionName
             user?.gender = gender
             user?.birthDate = birthDate
             
@@ -176,8 +164,7 @@ class SignupCountryViewController: UIViewController, GeneralPickerViewController
             self.city = object as? City
             self.cityButtonView.title = self.city?.cityName
         case .profession:
-            self.profession = object as? Profession
-            self.professionButtonView.title = self.profession?.profession
+            break
         case .gender:
             self.gender = object as? String
             self.genderButtonView.title = self.gender

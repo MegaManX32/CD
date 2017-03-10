@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MBProgressHUD
 
 class SignupCongratulationsViewController: UIViewController {
     
@@ -25,15 +26,8 @@ class SignupCongratulationsViewController: UIViewController {
         
         // show personalized congrats message
         let mainContext = CoreDataManager.sharedInstance.mainContext
-        mainContext.performAndWait {
-            [unowned self] in
-            
-            // find user
-            let user = User.findUserWith(uid: self.userID, context: mainContext)!
-            
-            // personalize message
-            self.subtitleLabel.text = String.localizedStringWithFormat(NSLocalizedString("%@, your profile is awesome.", comment: "your profile is awesome"), user.firstName!)
-        }
+        let user = User.findUserWith(uid: self.userID, context: mainContext)!
+        self.subtitleLabel.text = String.localizedStringWithFormat(NSLocalizedString("%@, your profile is awesome.", comment: "your profile is awesome"), user.firstName!)
     }
 
     override func didReceiveMemoryWarning() {
@@ -44,6 +38,49 @@ class SignupCongratulationsViewController: UIViewController {
     // MARK: - User Actions
     
     @IBAction func homeAction(sender: UIButton) {
-        _ = self.navigationController?.popToRootViewController(animated: true)
+        self.loginAction()
+    }
+    
+    func loginAction() {
+        
+        // get user
+        let mainContext = CoreDataManager.sharedInstance.mainContext
+        let user = User.findUserWith(uid: self.userID, context: mainContext)!
+        
+        // prepare login params
+        let params = [
+            "email" : user.email!,
+            "password" : user.password!
+        ]
+        
+        // login :-)
+        MBProgressHUD.showAdded(to: self.view, animated: true)
+        NetworkManager.sharedInstance.logout()
+        NetworkManager.sharedInstance.login(params: params, success: {
+            [unowned self] in
+            
+            // get user data
+            NetworkManager.sharedInstance.getLoggedUser(success: {[unowned self] (userID) in
+                
+                // set user
+                StandardUserDefaults.saveUserID(userID: userID)
+                
+                // show reveal view controller
+                let controller = self.storyboard?.instantiateViewController(withIdentifier: "SWRevealViewController") as! SWRevealViewController
+                self.present(controller, animated: true, completion: {
+                    [unowned self] in
+                    _ = self.navigationController?.popToRootViewController(animated: false)
+                })
+                MBProgressHUD.hide(for: self.view, animated: true)
+                
+                }, failure: {[unowned self] (errorMessage) in
+                    CustomAlert.presentAlert(message: errorMessage, controller: self)
+                    MBProgressHUD.hide(for: self.view, animated: true)
+            })
+            
+            }, failure: {[unowned self] (errorMessage) in
+                CustomAlert.presentAlert(message: errorMessage, controller: self)
+                MBProgressHUD.hide(for: self.view, animated: true)
+        })
     }
 }

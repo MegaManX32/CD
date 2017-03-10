@@ -69,7 +69,10 @@ class LoginViewController: UIViewController {
                 
                 // show reveal view controller
                 let controller = self.storyboard?.instantiateViewController(withIdentifier: "SWRevealViewController") as! SWRevealViewController
-                self.present(controller, animated: true, completion: nil)
+                self.present(controller, animated: true, completion: {
+                    [unowned self] in
+                    _ = self.navigationController?.popToRootViewController(animated: false)
+                })
                 MBProgressHUD.hide(for: self.view, animated: true)
                 
             }, failure: {[unowned self] (errorMessage) in
