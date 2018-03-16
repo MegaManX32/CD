@@ -19,7 +19,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // keyboard helper
         IQKeyboardManager.sharedManager().enable = true
-//        IQKeyboardManager.sharedManager().enableAutoToolbar = false
         
         // google maps
         GMSServices.provideAPIKey("AIzaSyAZLtYP7-2ehSUUYT5Ml4lRK3yXOdvABho")
